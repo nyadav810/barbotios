@@ -15,6 +15,7 @@
 		011E3EB21C7A876F00A34C5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 011E3EB01C7A876F00A34C5F /* LaunchScreen.storyboard */; };
 		011E3EBD1C7A87B500A34C5F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E3EBC1C7A87B500A34C5F /* SWRevealViewController.m */; };
 		013854DA1C7D50870070E112 /* DrinkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013854D91C7D50870070E112 /* DrinkTableViewController.swift */; };
+		0159D6681CA1F31300E96445 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0159D6671CA1F31300E96445 /* DataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		011E3EBB1C7A87B500A34C5F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		011E3EBC1C7A87B500A34C5F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		013854D91C7D50870070E112 /* DrinkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkTableViewController.swift; sourceTree = "<group>"; };
+		0159D6671CA1F31300E96445 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				011E3EB01C7A876F00A34C5F /* LaunchScreen.storyboard */,
 				011E3EB31C7A876F00A34C5F /* Info.plist */,
 				011E3EAB1C7A876F00A34C5F /* barbot.xcdatamodeld */,
+				0159D6671CA1F31300E96445 /* DataStore.swift */,
 			);
 			path = barbot;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				011E3EA71C7A876F00A34C5F /* ViewController.swift in Sources */,
+				0159D6681CA1F31300E96445 /* DataStore.swift in Sources */,
 				013854DA1C7D50870070E112 /* DrinkTableViewController.swift in Sources */,
 				011E3EA51C7A876F00A34C5F /* AppDelegate.swift in Sources */,
 				011E3EAD1C7A876F00A34C5F /* barbot.xcdatamodeld in Sources */,
