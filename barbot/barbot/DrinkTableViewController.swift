@@ -8,17 +8,37 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class DrinkTableViewController : UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    var drinks = [String]()
+    var drinks = [NSManagedObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Drinks"
         tableView.registerClass(UITableViewCell.self,
             forCellReuseIdentifier: "Cell")
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: "Drink")
+        
+        do {
+            let results =
+            try managedContext.executeFetchRequest(fetchRequest)
+            drinks = results as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
     }
     
     // MARK: UITableViewDataSource
@@ -34,8 +54,11 @@ class DrinkTableViewController : UIViewController, UITableViewDataSource {
             let cell =
             tableView.dequeueReusableCellWithIdentifier("Cell")
             
-            cell!.textLabel!.text = drinks[indexPath.row]
+            let drink = drinks[indexPath.row]
+            
+            cell!.textLabel!.text = drink.valueForKey("name") as? String
             
             return cell!
     }
+    
 }

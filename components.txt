@@ -1,5 +1,4 @@
 AppDelegate
-DataStore
 
 User Interface
 	Iphone Storyboard
