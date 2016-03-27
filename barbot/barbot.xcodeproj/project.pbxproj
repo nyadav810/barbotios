@@ -14,6 +14,7 @@
 		011E3EB21C7A876F00A34C5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 011E3EB01C7A876F00A34C5F /* LaunchScreen.storyboard */; };
 		011E3EBD1C7A87B500A34C5F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E3EBC1C7A87B500A34C5F /* SWRevealViewController.m */; };
 		013854DA1C7D50870070E112 /* DrinkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013854D91C7D50870070E112 /* DrinkTableViewController.swift */; };
+		017203361CA76D6A002C3168 /* DrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017203351CA76D6A002C3168 /* DrinkViewController.swift */; };
 		018BAFC21CA3B67D008AA729 /* Drink+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 018BAFBF1CA3B67D008AA729 /* Drink+CoreDataProperties.m */; };
 		018BAFC31CA3B67D008AA729 /* Drink.m in Sources */ = {isa = PBXBuildFile; fileRef = 018BAFC11CA3B67D008AA729 /* Drink.m */; };
 		018BAFC71CA3BE3B008AA729 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018BAFC61CA3BE3B008AA729 /* DataManager.swift */; };
@@ -32,6 +33,7 @@
 		011E3EBB1C7A87B500A34C5F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		011E3EBC1C7A87B500A34C5F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		013854D91C7D50870070E112 /* DrinkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkTableViewController.swift; sourceTree = "<group>"; };
+		017203351CA76D6A002C3168 /* DrinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkViewController.swift; sourceTree = "<group>"; };
 		018BAFBE1CA3B67D008AA729 /* Drink+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Drink+CoreDataProperties.h"; path = "Core Data/Drink+CoreDataProperties.h"; sourceTree = "<group>"; };
 		018BAFBF1CA3B67D008AA729 /* Drink+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Drink+CoreDataProperties.m"; path = "Core Data/Drink+CoreDataProperties.m"; sourceTree = "<group>"; };
 		018BAFC01CA3B67D008AA729 /* Drink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Drink.h; path = "Core Data/Drink.h"; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				013854D91C7D50870070E112 /* DrinkTableViewController.swift */,
+				017203351CA76D6A002C3168 /* DrinkViewController.swift */,
 				011E3EB91C7A879500A34C5F /* SWRevealViewController */,
 			);
 			name = ViewControllers;
@@ -197,6 +200,7 @@
 				018BAFC21CA3B67D008AA729 /* Drink+CoreDataProperties.m in Sources */,
 				018BAFC31CA3B67D008AA729 /* Drink.m in Sources */,
 				013854DA1C7D50870070E112 /* DrinkTableViewController.swift in Sources */,
+				017203361CA76D6A002C3168 /* DrinkViewController.swift in Sources */,
 				018BAFC71CA3BE3B008AA729 /* DataManager.swift in Sources */,
 				011E3EA51C7A876F00A34C5F /* AppDelegate.swift in Sources */,
 				011E3EAD1C7A876F00A34C5F /* barbot.xcdatamodeld in Sources */,

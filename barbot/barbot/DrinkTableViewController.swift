@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 import CoreData
 
-class DrinkTableViewController : UIViewController, UITableViewDataSource {
+class DrinkTableViewController : UITableViewController {
     
-    @IBOutlet weak var tableView: UITableView!
     var drinks = [NSManagedObject]()
+    var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +25,9 @@ class DrinkTableViewController : UIViewController, UITableViewDataSource {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        let appDelegate =
-        UIApplication.sharedApplication().delegate as! AppDelegate
+        let fetchRequest = NSFetchRequest(entityName: "Drink")
         
         let managedContext = appDelegate.managedObjectContext
-        
-        let fetchRequest = NSFetchRequest(entityName: "Drink")
         
         do {
             let results =
@@ -41,24 +38,8 @@ class DrinkTableViewController : UIViewController, UITableViewDataSource {
         }
     }
     
-    // MARK: UITableViewDataSource
-    func tableView(tableView: UITableView,
-        numberOfRowsInSection section: Int) -> Int {
-            return drinks.count
+    // MARK: UITableViewController
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
-    
-    func tableView(tableView: UITableView,
-        cellForRowAtIndexPath
-        indexPath: NSIndexPath) -> UITableViewCell {
-            
-            let cell =
-            tableView.dequeueReusableCellWithIdentifier("Cell")
-            
-            let drink = drinks[indexPath.row]
-            
-            cell!.textLabel!.text = drink.valueForKey("name") as? String
-            
-            return cell!
-    }
-    
 }

@@ -21,6 +21,27 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wgT-fG-HIE">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="0jb-44-Qbj">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0jb-44-Qbj" id="poG-Ic-J7s">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRm-G7-7zx">
+                                                    <rect key="frame" x="25" y="8" width="517" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="bME-5r-yqE" kind="show" customClass="SWRevealViewControllerSeguePushController" id="cpt-mO-F8u"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="xM9-OR-llP" id="yKD-9z-cpW"/>
                                 </connections>
@@ -42,6 +63,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g48-DZ-w45" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="522" y="452"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="IcS-iW-iae">
+            <objects>
+                <viewController id="bME-5r-yqE" customClass="DrinkViewController" customModule="barbot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cCi-Ht-k4L"/>
+                        <viewControllerLayoutGuide type="bottom" id="dg0-gi-7lw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="81J-7g-zgh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="jRG-kp-Hrl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J6a-5P-4jC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1296" y="452"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FAD-54-GSp">

@@ -8,15 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "Drink+CoreDataProperties.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Drink : NSManagedObject
 
-// Insert code here to declare functionality of your managed object subclass
+@property (nullable, nonatomic, retain) NSString *name;
 
 @end
 
 NS_ASSUME_NONNULL_END
 
-#import "Drink+CoreDataProperties.h"
+

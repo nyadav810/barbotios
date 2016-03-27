@@ -10,6 +10,6 @@
 
 @implementation Drink
 
-// Insert code here to add functionality to your managed object subclass
+@dynamic name;
 
 @end
