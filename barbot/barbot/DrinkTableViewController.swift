@@ -12,8 +12,16 @@ import CoreData
 
 class DrinkTableViewController : UITableViewController {
     
+    var managedObjectContext : NSManagedObjectContext
+    
     var drinks = [NSManagedObject]()
-    var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        self.managedObjectContext = appDelegate.managedObjectContext
+        super.init(coder: aDecoder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +35,11 @@ class DrinkTableViewController : UITableViewController {
         
         let fetchRequest = NSFetchRequest(entityName: "Drink")
         
-        let managedContext = appDelegate.managedObjectContext
+        //let managedContext = appDelegate.managedObjectContext
         
         do {
             let results =
-            try managedContext.executeFetchRequest(fetchRequest)
+            try managedObjectContext.executeFetchRequest(fetchRequest)
             drinks = results as! [NSManagedObject]
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")

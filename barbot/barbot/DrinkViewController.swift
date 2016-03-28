@@ -10,4 +10,5 @@ import Foundation
 
 class DrinkViewController : UIViewController {
     
+    @IBOutlet weak var titleLabel: UINavigationItem!
 }

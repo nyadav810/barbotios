@@ -15,7 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Drink (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSString *name;
++ (NSString *) entityName;
+
++ (NSArray *)allDrinks:(NSManagedObjectContext *)moc;
 
 @end
 

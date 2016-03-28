@@ -13,6 +13,20 @@
 
 @implementation Drink (CoreDataProperties)
 
-@dynamic name;
++ (NSString *) entityName
+{
+    return @"Drink";
+}
+
++ (NSArray *)allDrinks:(NSManagedObjectContext *)moc
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:[Drink entityName]
+                                   inManagedObjectContext:moc];
+    [fetchRequest setEntity:entity];
+    
+    return [moc executeFetchRequest:fetchRequest error:nil];
+}
 
 @end

@@ -78,6 +78,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="jRG-kp-Hrl"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="jRG-kp-Hrl" id="Oc3-uG-Ypc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J6a-5P-4jC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
