@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let splitViewController : UISplitViewController = self.window?.rootViewController as! UISplitViewController
         let navigationController : UINavigationController = splitViewController.viewControllers.last as! UINavigationController
-        splitViewController.delegate = navigationController.topViewController as! UISplitViewControllerDelegate
+        splitViewController.delegate = navigationController.topViewController as? UISplitViewControllerDelegate
         let masterNavigationController : UINavigationController = splitViewController.viewControllers[0] as! UINavigationController
         let controller : DrinkTableViewController = masterNavigationController.topViewController as! DrinkTableViewController
         controller.managedObjectContext = self.managedObjectContext

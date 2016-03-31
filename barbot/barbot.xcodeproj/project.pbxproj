@@ -15,10 +15,9 @@
 		011E3EBD1C7A87B500A34C5F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E3EBC1C7A87B500A34C5F /* SWRevealViewController.m */; };
 		013854DA1C7D50870070E112 /* DrinkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013854D91C7D50870070E112 /* DrinkTableViewController.swift */; };
 		017203361CA76D6A002C3168 /* DrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017203351CA76D6A002C3168 /* DrinkViewController.swift */; };
-		018BAFC21CA3B67D008AA729 /* Drink+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 018BAFBF1CA3B67D008AA729 /* Drink+CoreDataProperties.m */; };
-		018BAFC31CA3B67D008AA729 /* Drink.m in Sources */ = {isa = PBXBuildFile; fileRef = 018BAFC11CA3B67D008AA729 /* Drink.m */; };
 		018BAFC71CA3BE3B008AA729 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018BAFC61CA3BE3B008AA729 /* DataManager.swift */; };
 		018BAFC91CA3BE59008AA729 /* drinks.json in Resources */ = {isa = PBXBuildFile; fileRef = 018BAFC81CA3BE59008AA729 /* drinks.json */; };
+		01EC327B1CACDF620030F60F /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EC327A1CACDF620030F60F /* Drink.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,17 +28,13 @@
 		011E3EAE1C7A876F00A34C5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		011E3EB11C7A876F00A34C5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		011E3EB31C7A876F00A34C5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		011E3EBA1C7A87B500A34C5F /* barbot-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "barbot-Bridging-Header.h"; sourceTree = "<group>"; };
 		011E3EBB1C7A87B500A34C5F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		011E3EBC1C7A87B500A34C5F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		013854D91C7D50870070E112 /* DrinkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkTableViewController.swift; sourceTree = "<group>"; };
 		017203351CA76D6A002C3168 /* DrinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkViewController.swift; sourceTree = "<group>"; };
-		018BAFBE1CA3B67D008AA729 /* Drink+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Drink+CoreDataProperties.h"; path = "Core Data/Drink+CoreDataProperties.h"; sourceTree = "<group>"; };
-		018BAFBF1CA3B67D008AA729 /* Drink+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Drink+CoreDataProperties.m"; path = "Core Data/Drink+CoreDataProperties.m"; sourceTree = "<group>"; };
-		018BAFC01CA3B67D008AA729 /* Drink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Drink.h; path = "Core Data/Drink.h"; sourceTree = "<group>"; };
-		018BAFC11CA3B67D008AA729 /* Drink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Drink.m; path = "Core Data/Drink.m"; sourceTree = "<group>"; };
 		018BAFC61CA3BE3B008AA729 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		018BAFC81CA3BE59008AA729 /* drinks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = drinks.json; sourceTree = "<group>"; };
+		01EC327A1CACDF620030F60F /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +83,6 @@
 			children = (
 				011E3EBB1C7A87B500A34C5F /* SWRevealViewController.h */,
 				011E3EBC1C7A87B500A34C5F /* SWRevealViewController.m */,
-				011E3EBA1C7A87B500A34C5F /* barbot-Bridging-Header.h */,
 			);
 			name = SWRevealViewController;
 			sourceTree = "<group>";
@@ -97,10 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				011E3EAB1C7A876F00A34C5F /* barbot.xcdatamodeld */,
-				018BAFBE1CA3B67D008AA729 /* Drink+CoreDataProperties.h */,
-				018BAFBF1CA3B67D008AA729 /* Drink+CoreDataProperties.m */,
-				018BAFC01CA3B67D008AA729 /* Drink.h */,
-				018BAFC11CA3B67D008AA729 /* Drink.m */,
+				01EC327A1CACDF620030F60F /* Drink.swift */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -197,13 +188,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				018BAFC21CA3B67D008AA729 /* Drink+CoreDataProperties.m in Sources */,
-				018BAFC31CA3B67D008AA729 /* Drink.m in Sources */,
 				013854DA1C7D50870070E112 /* DrinkTableViewController.swift in Sources */,
 				017203361CA76D6A002C3168 /* DrinkViewController.swift in Sources */,
 				018BAFC71CA3BE3B008AA729 /* DataManager.swift in Sources */,
 				011E3EA51C7A876F00A34C5F /* AppDelegate.swift in Sources */,
 				011E3EAD1C7A876F00A34C5F /* barbot.xcdatamodeld in Sources */,
+				01EC327B1CACDF620030F60F /* Drink.swift in Sources */,
 				011E3EBD1C7A87B500A34C5F /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,7 +310,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.barbot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "barbot/barbot-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -334,7 +324,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.barbot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "barbot/barbot-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
