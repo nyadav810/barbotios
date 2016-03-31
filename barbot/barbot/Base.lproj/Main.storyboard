@@ -38,7 +38,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="bME-5r-yqE" kind="show" customClass="SWRevealViewControllerSeguePushController" id="cpt-mO-F8u"/>
+                                            <segue destination="bME-5r-yqE" kind="show" identifier="showDrink" customClass="SWRevealViewControllerSeguePushController" id="cpt-mO-F8u"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -67,7 +67,7 @@
         <!--Title-->
         <scene sceneID="IcS-iW-iae">
             <objects>
-                <viewController id="bME-5r-yqE" customClass="DrinkViewController" customModule="barbot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bME-5r-yqE" customClass="DrinkViewController" customModule="barbot" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cCi-Ht-k4L"/>
                         <viewControllerLayoutGuide type="bottom" id="dg0-gi-7lw"/>

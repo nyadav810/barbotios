@@ -13,6 +13,7 @@ import CoreData
 class DrinkTableViewController : UITableViewController, NSFetchedResultsControllerDelegate {
     
     let drinkCacheName : String = "drink"
+    var drinks = [NSManagedObject]()
     var managedObjectContext : NSManagedObjectContext
     var fetchedResultsController: NSFetchedResultsController {
         get {
@@ -44,8 +45,6 @@ class DrinkTableViewController : UITableViewController, NSFetchedResultsControll
             self.fetchedResultsController = f
         }
     }
-    var drinks = [NSManagedObject]()
-    
     
     required init?(coder aDecoder: NSCoder) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -56,33 +55,69 @@ class DrinkTableViewController : UITableViewController, NSFetchedResultsControll
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Drinks"
-        tableView.registerClass(UITableViewCell.self,
-            forCellReuseIdentifier: "Cell")
+        
+        // Call DataManager to retrieve drinks
+        
+//        tableView.registerClass(UITableViewCell.self,
+//            forCellReuseIdentifier: "Cell")
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        let fetchRequest = NSFetchRequest(entityName: "Drink")
-        
-        //let managedContext = appDelegate.managedObjectContext
-        
-        do {
-            let results =
-            try managedObjectContext.executeFetchRequest(fetchRequest)
-            drinks = results as! [NSManagedObject]
-        } catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
-        }
     }
     
     // MARK: UITableViewController
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return self.fetchedResultsController.sections!.count
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let sectionInfo : NSFetchedResultsSectionInfo = self.fetchedResultsController.sections![section]
+        return sectionInfo.numberOfObjects
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        self.configureCell(cell, indexPath: indexPath)
+        return cell
     }
     
     func configureCell(cell: UITableViewCell, indexPath: NSIndexPath) {
-        // let object : Drink = self.fetchedResultsController.
+        let object : Drink = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Drink
+        cell.textLabel!.text = object.name
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let object : NSManagedObject = self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
+    }
+    
+    override func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
+        return self.fetchedResultsController.sectionIndexTitles
+    }
+    
+    override func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
+        return self.fetchedResultsController.sectionForSectionIndexTitle(title, atIndex: index)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "showDrink") {
+            let indexPath : NSIndexPath = self.tableView.indexPathForSelectedRow!
+            
+            let nav = segue.destinationViewController as! UINavigationController
+            let destination : DrinkViewController = nav.topViewController as! DrinkViewController
+            destination.drink = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Drink
+        }
+    }
+    
+    /*
+    
+    - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+    {
+    if ([[segue identifier] isEqualToString:@"showCameraGroup"]) {
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    CamerasViewController *destination = segue.destinationViewController;
+    destination.cameraGroup = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+    }
+    }
+    */
 }

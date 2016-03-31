@@ -12,4 +12,18 @@ import UIKit
 class DrinkViewController : UIViewController {
     
     @IBOutlet weak var titleLabel: UINavigationItem!
+    var drink : Drink
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.configureView()
+    }
+    
+    func configureView() {
+        self.titleLabel.title = self.drink.name
+    }
 }
