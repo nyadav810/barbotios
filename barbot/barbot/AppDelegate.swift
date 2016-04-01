@@ -18,13 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        let splitViewController : UISplitViewController = self.window?.rootViewController as! UISplitViewController
-        let navigationController : UINavigationController = splitViewController.viewControllers.last as! UINavigationController
-        splitViewController.delegate = navigationController.topViewController as? UISplitViewControllerDelegate
-        let masterNavigationController : UINavigationController = splitViewController.viewControllers[0] as! UINavigationController
-        let controller : DrinkTableViewController = masterNavigationController.topViewController as! DrinkTableViewController
-        controller.managedObjectContext = self.managedObjectContext
-        
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let navigationController : UINavigationController = storyboard.instantiateInitialViewController() as! UINavigationController
+        let rootViewController : DrinkTableViewController = storyboard.instantiateViewControllerWithIdentifier("DrinkTable") as! DrinkTableViewController
+        navigationController.viewControllers = [rootViewController]
+        self.window?.rootViewController = navigationController
         return true
     }
 

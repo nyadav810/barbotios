@@ -13,38 +13,25 @@ import CoreData
 class DrinkTableViewController : UITableViewController, NSFetchedResultsControllerDelegate {
     
     let drinkCacheName : String = "drink"
-    var drinks = [NSManagedObject]()
     var managedObjectContext : NSManagedObjectContext
-    var fetchedResultsController: NSFetchedResultsController {
-        get {
-            let fetchRequest : NSFetchRequest = NSFetchRequest.init()
-            let drink : Drink = Drink.init()
-            
-            // Edit the entity name as appropriate.
-            let entity : NSEntityDescription = NSEntityDescription.entityForName(drink.entityName(), inManagedObjectContext: self.managedObjectContext)!
-            
-            fetchRequest.entity = entity
-            fetchRequest.fetchBatchSize = 20
-            
-            let sortDescriptor : NSSortDescriptor = NSSortDescriptor.init(key: drink.drinkNameKeyString, ascending: true)
-                //.initWithKey(Drink.drinkNameKeyString, ascending: true)
-            
-            let sortDescriptors : NSArray = [sortDescriptor];
-            
-            fetchRequest.sortDescriptors = sortDescriptors as? [NSSortDescriptor]
-            
-            // Edit the section name key path and cache name if appropriate.
-            // nil for section name key path means "no sections".
-            
-            let aFetchedResultsController : NSFetchedResultsController = NSFetchedResultsController.init(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: drink.drinkNameKeyString, cacheName: drinkCacheName)
-            aFetchedResultsController.delegate = self
-            self.fetchedResultsController = aFetchedResultsController
-            return aFetchedResultsController
-        }
-        set(f) {
-            self.fetchedResultsController = f
-        }
-    }
+    lazy var fetchedResultsController: NSFetchedResultsController = {
+        
+        // example drink
+        let drink : Drink = Drink.init(name: "drink1", managedObjectContext: self.managedObjectContext)
+        
+        // Create fetch request and set entity
+        let fetchRequest : NSFetchRequest = NSFetchRequest(entityName: drink.entityName())
+        fetchRequest.entity = drink.entity
+        
+        // Sort Descriptors
+        let sortDescriptor : NSSortDescriptor = NSSortDescriptor.init(key: drink.drinkNameKeyString, ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        // Create fetched results controller
+        let aFetchedResultsController : NSFetchedResultsController = NSFetchedResultsController.init(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: drink.drinkNameKeyString, cacheName: "drink")
+        aFetchedResultsController.delegate = self
+        return aFetchedResultsController
+    }()
     
     required init?(coder aDecoder: NSCoder) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -54,8 +41,14 @@ class DrinkTableViewController : UITableViewController, NSFetchedResultsControll
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Drinks"
+        self.title = "Drinks"
         
+        do {
+            try self.fetchedResultsController.performFetch()
+        } catch {
+            let fetchError = error as NSError
+            print("\(fetchError), \(fetchError.userInfo)")
+        }
         // Call DataManager to retrieve drinks
         
 //        tableView.registerClass(UITableViewCell.self,
@@ -100,24 +93,13 @@ class DrinkTableViewController : UITableViewController, NSFetchedResultsControll
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "showDrink") {
-            let indexPath : NSIndexPath = self.tableView.indexPathForSelectedRow!
-            
-            let nav = segue.destinationViewController as! UINavigationController
-            let destination : DrinkViewController = nav.topViewController as! DrinkViewController
-            destination.drink = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Drink
+        let indexPath : NSIndexPath = self.tableView.indexPathForSelectedRow!
+        
+        if segue.identifier == "showDrink" {
+            if let viewController = segue.destinationViewController as? DrinkViewController {
+                viewController.managedObjectContext = managedObjectContext
+                viewController.drink = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Drink
+            }
         }
     }
-    
-    /*
-    
-    - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-    {
-    if ([[segue identifier] isEqualToString:@"showCameraGroup"]) {
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    CamerasViewController *destination = segue.destinationViewController;
-    destination.cameraGroup = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-    }
-    }
-    */
 }

@@ -15,4 +15,10 @@ class Drink: NSManagedObject {
     func entityName() -> String {
         return "Drink"
     }
+    
+    init(name: String, managedObjectContext: NSManagedObjectContext!) {
+        let entity = NSEntityDescription.entityForName("Drink", inManagedObjectContext: managedObjectContext)!
+        super.init(entity: entity, insertIntoManagedObjectContext: managedObjectContext)
+        self.name = name
+    }
 }

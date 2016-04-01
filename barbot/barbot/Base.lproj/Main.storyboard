@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nnb-v4-Mbi">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -9,56 +9,39 @@
         <!--Drink Table View Controller-->
         <scene sceneID="lI1-4z-R2U">
             <objects>
-                <viewController id="xM9-OR-llP" customClass="DrinkTableViewController" customModule="barbot" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="EPj-9g-kNe"/>
-                        <viewControllerLayoutGuide type="bottom" id="1d8-UX-viO"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wGK-86-5aR">
+                <viewController storyboardIdentifier="DrinkTable" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xM9-OR-llP" customClass="DrinkTableViewController" customModule="barbot" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nS1-iB-Dig">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wgT-fG-HIE">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="0jb-44-Qbj">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0jb-44-Qbj" id="poG-Ic-J7s">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRm-G7-7zx">
-                                                    <rect key="frame" x="25" y="8" width="517" height="27"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="bME-5r-yqE" kind="show" identifier="showDrink" customClass="SWRevealViewControllerSeguePushController" id="cpt-mO-F8u"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="xM9-OR-llP" id="yKD-9z-cpW"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="wgT-fG-HIE" firstAttribute="top" secondItem="EPj-9g-kNe" secondAttribute="bottom" id="OND-tA-MKL"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wgT-fG-HIE" secondAttribute="trailing" constant="-20" id="Wyp-e5-tOY"/>
-                            <constraint firstItem="1d8-UX-viO" firstAttribute="top" secondItem="wgT-fG-HIE" secondAttribute="bottom" id="ZTz-Vr-HwP"/>
-                            <constraint firstItem="wgT-fG-HIE" firstAttribute="leading" secondItem="wGK-86-5aR" secondAttribute="leadingMargin" constant="-20" id="g3j-Hg-OEB"/>
-                        </constraints>
-                    </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="eWd-gm-z5E">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eWd-gm-z5E" id="kwU-20-Ly5">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jA-iG-6Xu">
+                                            <rect key="frame" x="19" y="11" width="563" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="6jA-iG-6Xu" firstAttribute="centerX" secondItem="kwU-20-Ly5" secondAttribute="centerX" id="Lzc-yW-0vg"/>
+                                        <constraint firstItem="6jA-iG-6Xu" firstAttribute="centerY" secondItem="kwU-20-Ly5" secondAttribute="centerY" id="gJQ-zr-yug"/>
+                                        <constraint firstItem="6jA-iG-6Xu" firstAttribute="leading" secondItem="kwU-20-Ly5" secondAttribute="leadingMargin" constant="11" id="lid-7I-hod"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="bME-5r-yqE" kind="show" identifier="showDrink" id="s7R-0R-DAX"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
                     <navigationItem key="navigationItem" id="E3D-J2-uTu"/>
-                    <connections>
-                        <outlet property="tableView" destination="wgT-fG-HIE" id="OSc-5A-vbH"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g48-DZ-w45" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
