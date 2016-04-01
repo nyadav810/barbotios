@@ -1,21 +1,19 @@
 {
-	"menu": {
-		"drinks": [
-			{
-				"drink": {
-					"name": "Rum and Coke"
-				}
-			},
-			{
-				"drink": {
-					"name": "Vodka Cranberry"
-				}
-			},
-			{
-				"drink": {
-					"name": "Gin and Tonic"
-				}
-			}
-		]
-	}
+    "drinks": [
+        {
+            "drink": {
+                "name": "Rum and Coke"
+            }
+        },
+        {
+            "drink": {
+                "name": "Vodka Cranberry"
+            }
+        },
+        {
+            "drink": {
+                "name": "Gin and Tonic"
+            }
+        }
+    ]
 }

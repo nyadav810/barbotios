@@ -13,14 +13,13 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var dataManager: DataManager?
-
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let navigationController : UINavigationController = storyboard.instantiateInitialViewController() as! UINavigationController
         let rootViewController : DrinkTableViewController = storyboard.instantiateViewControllerWithIdentifier("DrinkTable") as! DrinkTableViewController
+        rootViewController.managedObjectContext = self.managedObjectContext
         navigationController.viewControllers = [rootViewController]
         self.window?.rootViewController = navigationController
         return true

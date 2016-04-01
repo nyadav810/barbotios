@@ -13,11 +13,11 @@ import CoreData
 class DrinkTableViewController : UITableViewController, NSFetchedResultsControllerDelegate {
     
     let drinkCacheName : String = "drink"
-    var managedObjectContext : NSManagedObjectContext
+    var managedObjectContext : NSManagedObjectContext!
     lazy var fetchedResultsController: NSFetchedResultsController = {
         
         // example drink
-        let drink : Drink = Drink.init(name: "drink1", managedObjectContext: self.managedObjectContext)
+        let drink : Drink = Drink.init(name: "Make Your Own", managedObjectContext: self.managedObjectContext)
         
         // Create fetch request and set entity
         let fetchRequest : NSFetchRequest = NSFetchRequest(entityName: drink.entityName())
@@ -32,16 +32,15 @@ class DrinkTableViewController : UITableViewController, NSFetchedResultsControll
         aFetchedResultsController.delegate = self
         return aFetchedResultsController
     }()
-    
-    required init?(coder aDecoder: NSCoder) {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        self.managedObjectContext = appDelegate.managedObjectContext
-        super.init(coder: aDecoder)
-    }
+    var dataManager : DataManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Drinks"
+        
+        // Call DataManager to retrieve drinks
+        let dataManager : DataManager = DataManager.init()
+        dataManager.getDrinkMenuDataFromFile()
         
         do {
             try self.fetchedResultsController.performFetch()
@@ -49,10 +48,6 @@ class DrinkTableViewController : UITableViewController, NSFetchedResultsControll
             let fetchError = error as NSError
             print("\(fetchError), \(fetchError.userInfo)")
         }
-        // Call DataManager to retrieve drinks
-        
-//        tableView.registerClass(UITableViewCell.self,
-//            forCellReuseIdentifier: "Cell")
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -83,14 +78,15 @@ class DrinkTableViewController : UITableViewController, NSFetchedResultsControll
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let object : NSManagedObject = self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
     }
-    
-    override func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
-        return self.fetchedResultsController.sectionIndexTitles
-    }
-    
-    override func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
-        return self.fetchedResultsController.sectionForSectionIndexTitle(title, atIndex: index)
-    }
+
+    // Section Index functions
+//    override func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
+//        return self.fetchedResultsController.sectionIndexTitles
+//    }
+//    
+//    override func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
+//        return self.fetchedResultsController.sectionForSectionIndexTitle(title, atIndex: index)
+//    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let indexPath : NSIndexPath = self.tableView.indexPathForSelectedRow!
