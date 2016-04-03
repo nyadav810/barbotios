@@ -13,6 +13,7 @@ import CoreData
 class DrinkViewController : UIViewController {
     
     @IBOutlet weak var titleLabel: UINavigationItem!
+    @IBOutlet weak var imageView: UIImageView!
     var drink : Drink!
     var managedObjectContext : NSManagedObjectContext!
     
@@ -23,5 +24,9 @@ class DrinkViewController : UIViewController {
     
     func configureView() {
         self.titleLabel.title = self.drink.name
+    }
+    
+    @IBAction func orderDrink(sender: AnyObject) {
+        // Send order to barbot web server
     }
 }

@@ -91,7 +91,7 @@ class DrinkTableViewController : UITableViewController, NSFetchedResultsControll
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let indexPath : NSIndexPath = self.tableView.indexPathForSelectedRow!
         
-        if segue.identifier == "showDrink" {
+        if segue.identifier == "showDrinkScreen" {
             if let viewController = segue.destinationViewController as? DrinkViewController {
                 viewController.managedObjectContext = managedObjectContext
                 viewController.drink = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Drink

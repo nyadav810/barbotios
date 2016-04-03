@@ -29,13 +29,19 @@ class DataManager {
         var json: Payload!
         do {
             json = try NSJSONSerialization.JSONObjectWithData(rawData, options: NSJSONReadingOptions()) as? Payload
+            if let drinks = json["drinks"] as? [[String: AnyObject]] {
+                for drink in drinks {
+                    if let d = drink["drink"] as? [String : AnyObject] {
+                        if let name = d["name"] as? String {
+                            let drinkObject : Drink = Drink.init(name: name, managedObjectContext: self.managedObjectContext)
+                            print(drinkObject.name)
+                        }
+                    }
+                }
+            }
         } catch {
-            print(error)
+            print("error serializing JSON: \(error)")
         }
-        
-        guard let menu = json["menu"] as? Payload,
-            let drinks = menu["drinks"] as? [AnyObject]
-            else { return }
     }
     
     func getDrinkMenuDataFromFile() {

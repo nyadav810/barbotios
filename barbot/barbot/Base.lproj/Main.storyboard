@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nnb-v4-Mbi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="nnb-v4-Mbi">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Drink Table View Controller-->
@@ -11,32 +10,19 @@
             <objects>
                 <viewController storyboardIdentifier="DrinkTable" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xM9-OR-llP" customClass="DrinkTableViewController" customModule="barbot" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nS1-iB-Dig">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="eWd-gm-z5E">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eWd-gm-z5E" id="kwU-20-Ly5">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jA-iG-6Xu">
-                                            <rect key="frame" x="19" y="11" width="563" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="6jA-iG-6Xu" firstAttribute="centerX" secondItem="kwU-20-Ly5" secondAttribute="centerX" id="Lzc-yW-0vg"/>
-                                        <constraint firstItem="6jA-iG-6Xu" firstAttribute="centerY" secondItem="kwU-20-Ly5" secondAttribute="centerY" id="gJQ-zr-yug"/>
-                                        <constraint firstItem="6jA-iG-6Xu" firstAttribute="leading" secondItem="kwU-20-Ly5" secondAttribute="leadingMargin" constant="11" id="lid-7I-hod"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="bME-5r-yqE" kind="show" identifier="showDrink" id="s7R-0R-DAX"/>
+                                    <segue destination="bME-5r-yqE" kind="push" identifier="showDrinkScreen" id="s7R-0R-DAX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -45,29 +31,88 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g48-DZ-w45" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="522" y="452"/>
+            <point key="canvasLocation" x="278.39999999999998" y="427.89333333333332"/>
         </scene>
-        <!--Title-->
+        <!--Drink View Controller-->
         <scene sceneID="IcS-iW-iae">
             <objects>
-                <viewController id="bME-5r-yqE" customClass="DrinkViewController" customModule="barbot" sceneMemberID="viewController">
+                <viewController title="Drink View Controller" id="bME-5r-yqE" customClass="DrinkViewController" customModule="barbot" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cCi-Ht-k4L"/>
                         <viewControllerLayoutGuide type="bottom" id="dg0-gi-7lw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="81J-7g-zgh">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JSj-kp-Hsz">
+                                <rect key="frame" x="0.0" y="64" width="320" height="233"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mnb-Nf-AE0">
+                                <rect key="frame" x="0.0" y="305" width="320" height="186"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iaa-Lo-Ccf">
+                                <rect key="frame" x="140" y="518" width="40" height="30"/>
+                                <state key="normal" title="Order"/>
+                                <connections>
+                                    <action selector="orderDrink:" destination="bME-5r-yqE" eventType="touchUpInside" id="dxO-lM-hi8"/>
+                                    <segue destination="5JM-gA-mRL" kind="push" identifier="showPourScreen" id="4A4-yC-Gvw"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="jRG-kp-Hrl"/>
                     <connections>
+                        <outlet property="imageView" destination="JSj-kp-Hsz" id="Dvc-PY-tof"/>
                         <outlet property="titleLabel" destination="jRG-kp-Hrl" id="Oc3-uG-Ypc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J6a-5P-4jC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1296" y="452"/>
+            <point key="canvasLocation" x="712" y="427"/>
+        </scene>
+        <!--Pour View Controller-->
+        <scene sceneID="TBR-aH-n1a">
+            <objects>
+                <viewController title="Pour View Controller" id="5JM-gA-mRL" customClass="PourViewController" customModule="barbot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xd9-jh-Vhz"/>
+                        <viewControllerLayoutGuide type="bottom" id="5GH-Rx-Vrn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S8b-zp-8w1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9b-1o-Dck">
+                                <rect key="frame" x="144" y="94" width="32" height="30"/>
+                                <state key="normal" title="Pour"/>
+                                <connections>
+                                    <action selector="pourDrink:" destination="5JM-gA-mRL" eventType="touchUpInside" id="Rwe-oP-TOm"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Thanks for ordering!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jA-Fn-Dip">
+                                <rect key="frame" x="83" y="273" width="155" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Z9b-1o-Dck" firstAttribute="centerX" secondItem="S8b-zp-8w1" secondAttribute="centerX" id="3R2-QN-bZW"/>
+                            <constraint firstItem="9jA-Fn-Dip" firstAttribute="centerX" secondItem="S8b-zp-8w1" secondAttribute="centerX" id="QUP-zB-gNn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ulf-dR-xkd"/>
+                    <connections>
+                        <outlet property="thanksLabel" destination="9jA-Fn-Dip" id="wAv-fU-ahe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tIs-IA-iSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1101.3333333333333" y="427.89333333333332"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FAD-54-GSp">
@@ -85,7 +130,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aWp-NG-6qi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-290" y="452"/>
+            <point key="canvasLocation" x="-154.66666666666666" y="427.89333333333332"/>
         </scene>
     </scenes>
 </document>
