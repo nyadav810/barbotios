@@ -2,17 +2,20 @@
     "drinks": [
         {
             "drink": {
-                "name": "Rum and Coke"
+               "name": "Rum and Coke",
+               "id": "1"
             }
         },
         {
             "drink": {
-                "name": "Vodka Cranberry"
+               "name": "Vodka Cranberry",
+               "id": "2"
             }
         },
         {
             "drink": {
-                "name": "Gin and Tonic"
+               "name": "Gin and Tonic",
+               "id": "3"
             }
         }
     ]

@@ -8,11 +8,13 @@
 
 import UIKit
 import CoreData
+import Starscream
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketDelegate {
 
     var window: UIWindow?
+    var socket: WebSocket!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -22,6 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         rootViewController.managedObjectContext = self.managedObjectContext
         navigationController.viewControllers = [rootViewController]
         self.window?.rootViewController = navigationController
+        
+        // initialize web socket
+        self.socket = WebSocket(url: NSURL(string: "http://")!)
+        socket.delegate = self
+        socket.connect()
+        
         return true
     }
 
@@ -111,6 +119,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 abort()
             }
         }
+    }
+    
+    func printAvailableFonts() {
+        for family: String in UIFont.familyNames()
+        {
+            print("\(family)")
+            for names: String in UIFont.fontNamesForFamilyName(family)
+            {
+                print("== \(names)")
+            }
+        }
+    }
+    
+    // MARK: WebSocketDelegate
+    
+    func websocketDidConnect(socket: WebSocket) {
+        print("websocket is connected")
+    }
+    
+    func websocketDidDisconnect(socket: WebSocket, error: NSError?) {
+        print("websocket is disconnected: \(error?.localizedDescription)")
+    }
+    
+    func websocketDidReceiveMessage(socket: WebSocket, text: String) {
+        print("got some text: \(text)")
+    }
+    
+    func websocketDidReceiveData(socket: WebSocket, data: NSData) {
+        print("got some data: \(data.length)")
     }
     
 }

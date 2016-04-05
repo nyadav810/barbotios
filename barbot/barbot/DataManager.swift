@@ -21,7 +21,7 @@ class DataManager {
         self.managedObjectContext = appDelegate.managedObjectContext
     }
 
-    func getDrinkMenuDataFromServerWithSuccess(success: ((drinkMenuData: NSData!) -> Void)) {
+    func getDrinkMenuDataFromServer() {
         
         let url : NSURL = NSURL(string: ServerURL)!
         let rawData : NSData = NSData(contentsOfURL: url)!

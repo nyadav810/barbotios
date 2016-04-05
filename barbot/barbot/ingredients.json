@@ -1,0 +1,70 @@
+{
+    "ingredients": [
+        {
+            "ingredient": {
+                "name": "Gin",
+                "type": "alcohol"
+            },
+            "ingredient": {
+                "name": "Rum",
+                "type": "alcohol"
+            },
+            "ingredient": {
+                "name": "Tequila",
+                "type": "alcohol"
+            },
+            "ingredient": {
+                "name": "Vodka",
+                "type": "alcohol"
+            },
+            "ingredient": {
+                "name": "Whiskey",
+                "type": "alcohol"
+            },
+            "ingredient": {
+                "name": "Cointreau",
+                "type": "liqueur"
+            },
+            "ingredient": {
+                "name": "Triple Sec",
+                "type": "liqueur"
+            },
+            "ingredient": {
+                "name": "Vermouth",
+                "type": "liqueur"
+            },
+            "ingredient": {
+                "name": "Sweet Syrup",
+                "type": "syrup"
+            },
+            "ingredient": {
+                "name": "Sour Syrup",
+                "type": "syrup"
+            },
+            "ingredient": {
+                "name": "Lime Juice",
+                "type": "mixer"
+            },
+            "ingredient": {
+                "name": "Lemon Juice",
+                "type": "mixer"
+            },
+            "ingredient": {
+                "name": "Orange Juice",
+                "type": "mixer"
+            },
+            "ingredient": {
+                "name": "Coca-Cola",
+                "type": "mixer"
+            },
+            "ingredient": {
+                "name": "Tonic Water",
+                "type": "mixer"
+            },
+            "ingredient": {
+                "name": "Red Bull",
+                "type": "mixer"
+            }
+        }
+    ]
+}

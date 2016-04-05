@@ -10,6 +10,7 @@ import Foundation
 import CoreData
 class Drink: NSManagedObject {
     @NSManaged var name: String
+    @NSManaged var id: Int
     var drinkNameKeyString : String = "name"
     
     func entityName() -> String {

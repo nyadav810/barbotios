@@ -73,6 +73,7 @@ class DrinkTableViewController : UITableViewController, NSFetchedResultsControll
     func configureCell(cell: UITableViewCell, indexPath: NSIndexPath) {
         let object : Drink = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Drink
         cell.textLabel!.text = object.name
+        cell.textLabel!.font = UIFont(name: "Montserrat-Regular", size: 16)
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
