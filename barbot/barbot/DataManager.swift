@@ -22,45 +22,54 @@ class DataManager {
     }
 
     func getDrinkMenuDataFromServer() {
-        
         let url : NSURL = NSURL(string: ServerURL)!
-        let rawData : NSData = NSData(contentsOfURL: url)!
+        let data : NSData = NSData(contentsOfURL: url)!
         
+        parseDrinkMenuJSON(data)
+    }
+    
+    // Get drinks from local file for DrinkTableViewController's table view
+    func getDrinkMenuDataFromFile() {
+        let data = self.getJSONDataFromFile("drinks")
+        self.parseDrinkMenuJSON(data)
+    }
+    
+    // User selects a drink, get Recipe from local file to display in
+    // DrinkViewController
+    func getRecipeDataFromFile(drinkId: Int) {
         var json: Payload!
+        let data: NSData! = self.getJSONDataFromFile("recipe")
+        
         do {
-            json = try NSJSONSerialization.JSONObjectWithData(rawData, options: NSJSONReadingOptions()) as? Payload
-            if let drinks = json["drinks"] as? [[String: AnyObject]] {
-                for drink in drinks {
-                    if let d = drink["drink"] as? [String : AnyObject] {
-                        if let name = d["name"] as? String {
-                            let drinkObject : Drink = Drink.init(name: name, managedObjectContext: self.managedObjectContext)
-                            print(drinkObject.name)
-                        }
-                    }
-                }
-            }
+            json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions()) as? Payload
         } catch {
             print("error serializing JSON: \(error)")
         }
     }
     
-    func getDrinkMenuDataFromFile() {
+    // Retrieve JSON from local file, convert to NSData and return
+    private func getJSONDataFromFile(jsonFileName: String) -> NSData {
+        let filePath = NSBundle.mainBundle().pathForResource(jsonFileName, ofType:"json")
+        let data = try! NSData(contentsOfFile:filePath!,
+                               options: NSDataReadingOptions.DataReadingUncached)
+        return data
+    }
+    
+    private func parseDrinkMenuJSON(data: NSData) {
         var json: Payload!
         
-        let filePath = NSBundle.mainBundle().pathForResource("drinks", ofType:"json")
-        let data = try! NSData(contentsOfFile:filePath!,
-                                options: NSDataReadingOptions.DataReadingUncached)
-    
         do {
             json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions()) as? Payload
             if let drinks = json["drinks"] as? [[String: AnyObject]] {
                 for drink in drinks {
-                    if let d = drink["drink"] as? [String : AnyObject] {
-                        if let name = d["name"] as? String {
-                            let drinkObject : Drink = Drink.init(name: name, managedObjectContext: self.managedObjectContext)
-                            print(drinkObject.name)
-                        }
+                    guard let d = drink["drink"] as? [String : AnyObject],
+                        let name = d["name"] as? String,
+                        let id = d["id"] as? String else {
+                            return
                     }
+                    
+                    let drinkObject : Drink = Drink.init(name: name, id: id, managedObjectContext: self.managedObjectContext)
+                    print(drinkObject.name)
                 }
             }
         } catch {

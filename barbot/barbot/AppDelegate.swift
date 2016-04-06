@@ -26,9 +26,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketDelegate {
         self.window?.rootViewController = navigationController
         
         // initialize web socket
-        self.socket = WebSocket(url: NSURL(string: "http://")!)
-        socket.delegate = self
-        socket.connect()
+//        self.socket = WebSocket(url: NSURL(string: "http://")!)
+//        socket.delegate = self
+//        socket.connect()
+//        if (socket.isConnected) {
+//            self.websocketDidConnect(socket)
+//        }
         
         return true
     }
@@ -55,6 +58,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
+        self.socket.disconnect()
+        if (!socket.isConnected) {
+            self.websocketDidDisconnect(socket, error: nil)
+        }
         self.saveContext()
     }
 

@@ -17,7 +17,7 @@ class DrinkTableViewController : UITableViewController, NSFetchedResultsControll
     lazy var fetchedResultsController: NSFetchedResultsController = {
         
         // example drink
-        let drink : Drink = Drink.init(name: "Make Your Own", managedObjectContext: self.managedObjectContext)
+        let drink : Drink = Drink.init(name: "Make Your Own", id:"100", managedObjectContext: self.managedObjectContext)
         
         // Create fetch request and set entity
         let fetchRequest : NSFetchRequest = NSFetchRequest(entityName: drink.entityName())
@@ -45,7 +45,7 @@ class DrinkTableViewController : UITableViewController, NSFetchedResultsControll
         do {
             try self.fetchedResultsController.performFetch()
         } catch {
-            let fetchError = error as NSError
+            let fetchError = error as! NSError
             print("\(fetchError), \(fetchError.userInfo)")
         }
     }
