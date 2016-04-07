@@ -12,15 +12,17 @@
 		011E3EAD1C7A876F00A34C5F /* barbot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 011E3EAB1C7A876F00A34C5F /* barbot.xcdatamodeld */; };
 		011E3EAF1C7A876F00A34C5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 011E3EAE1C7A876F00A34C5F /* Assets.xcassets */; };
 		011E3EB21C7A876F00A34C5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 011E3EB01C7A876F00A34C5F /* LaunchScreen.storyboard */; };
-		011E3EBD1C7A87B500A34C5F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E3EBC1C7A87B500A34C5F /* SWRevealViewController.m */; };
 		013854DA1C7D50870070E112 /* DrinkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013854D91C7D50870070E112 /* DrinkTableViewController.swift */; };
 		0159FA011CB39A88008E65FB /* Starscream.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 0159FA001CB39A88008E65FB /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		017203361CA76D6A002C3168 /* DrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017203351CA76D6A002C3168 /* DrinkViewController.swift */; };
 		018BAFC71CA3BE3B008AA729 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018BAFC61CA3BE3B008AA729 /* DataManager.swift */; };
-		018BAFC91CA3BE59008AA729 /* drinks.json in Resources */ = {isa = PBXBuildFile; fileRef = 018BAFC81CA3BE59008AA729 /* drinks.json */; };
+		018BAFC91CA3BE59008AA729 /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 018BAFC81CA3BE59008AA729 /* menu.json */; };
 		019565A61CB2C94000F16F6C /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 019565A41CB2C94000F16F6C /* Montserrat-Bold.ttf */; };
 		019565A71CB2C94000F16F6C /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 019565A51CB2C94000F16F6C /* Montserrat-Regular.ttf */; };
 		01DA902D1CB0FD6B007A1B02 /* PourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA902C1CB0FD6B007A1B02 /* PourViewController.swift */; };
+		01E8CC161CB61C1600D201B7 /* recipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 01E8CC151CB61C1600D201B7 /* recipe.json */; };
+		01E8CC181CB640FE00D201B7 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8CC171CB640FE00D201B7 /* Ingredient.swift */; };
+		01E8CC1A1CB6412800D201B7 /* ingredients.json in Resources */ = {isa = PBXBuildFile; fileRef = 01E8CC191CB6412800D201B7 /* ingredients.json */; };
 		01EC327B1CACDF620030F60F /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EC327A1CACDF620030F60F /* Drink.swift */; };
 		472F7E105E34E64B1A3B1B7F /* Pods_barbot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E59B7259830B8DD7413C29 /* Pods_barbot.framework */; };
 /* End PBXBuildFile section */
@@ -47,16 +49,17 @@
 		011E3EAE1C7A876F00A34C5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		011E3EB11C7A876F00A34C5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		011E3EB31C7A876F00A34C5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		011E3EBB1C7A87B500A34C5F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		011E3EBC1C7A87B500A34C5F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		013854D91C7D50870070E112 /* DrinkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkTableViewController.swift; sourceTree = "<group>"; };
 		0159FA001CB39A88008E65FB /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Starscream.framework; sourceTree = "<group>"; };
 		017203351CA76D6A002C3168 /* DrinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkViewController.swift; sourceTree = "<group>"; };
 		018BAFC61CA3BE3B008AA729 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		018BAFC81CA3BE59008AA729 /* drinks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = drinks.json; sourceTree = "<group>"; };
+		018BAFC81CA3BE59008AA729 /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
 		019565A41CB2C94000F16F6C /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "Resources/Fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		019565A51CB2C94000F16F6C /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "Resources/Fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		01DA902C1CB0FD6B007A1B02 /* PourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PourViewController.swift; sourceTree = "<group>"; };
+		01E8CC151CB61C1600D201B7 /* recipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipe.json; sourceTree = "<group>"; };
+		01E8CC171CB640FE00D201B7 /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		01E8CC191CB6412800D201B7 /* ingredients.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ingredients.json; sourceTree = "<group>"; };
 		01EC327A1CACDF620030F60F /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		036A008997C1BE395E03C629 /* Pods-barbot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-barbot.release.xcconfig"; path = "Pods/Target Support Files/Pods-barbot/Pods-barbot.release.xcconfig"; sourceTree = "<group>"; };
 		05E59B7259830B8DD7413C29 /* Pods_barbot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_barbot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,18 +106,8 @@
 				018BAFC41CA3BD9D008AA729 /* UI */,
 				011E3EAE1C7A876F00A34C5F /* Assets.xcassets */,
 				011E3EB31C7A876F00A34C5F /* Info.plist */,
-				018BAFC81CA3BE59008AA729 /* drinks.json */,
 			);
 			path = barbot;
-			sourceTree = "<group>";
-		};
-		011E3EB91C7A879500A34C5F /* SWRevealViewController */ = {
-			isa = PBXGroup;
-			children = (
-				011E3EBB1C7A87B500A34C5F /* SWRevealViewController.h */,
-				011E3EBC1C7A87B500A34C5F /* SWRevealViewController.m */,
-			);
-			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 		018BAFBD1CA3B5C1008AA729 /* Core Data */ = {
@@ -122,6 +115,7 @@
 			children = (
 				011E3EAB1C7A876F00A34C5F /* barbot.xcdatamodeld */,
 				01EC327A1CACDF620030F60F /* Drink.swift */,
+				01E8CC171CB640FE00D201B7 /* Ingredient.swift */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -142,7 +136,6 @@
 				013854D91C7D50870070E112 /* DrinkTableViewController.swift */,
 				017203351CA76D6A002C3168 /* DrinkViewController.swift */,
 				01DA902C1CB0FD6B007A1B02 /* PourViewController.swift */,
-				011E3EB91C7A879500A34C5F /* SWRevealViewController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -151,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				019565A31CB2C8E400F16F6C /* Fonts */,
+				01E8CC1B1CB6413300D201B7 /* JSON */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -162,6 +156,16 @@
 				019565A51CB2C94000F16F6C /* Montserrat-Regular.ttf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		01E8CC1B1CB6413300D201B7 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				01E8CC191CB6412800D201B7 /* ingredients.json */,
+				018BAFC81CA3BE59008AA729 /* menu.json */,
+				01E8CC151CB61C1600D201B7 /* recipe.json */,
+			);
+			name = JSON;
 			sourceTree = "<group>";
 		};
 		95C92EF7F1F190DB80EDBCC8 /* Frameworks */ = {
@@ -249,7 +253,9 @@
 				019565A61CB2C94000F16F6C /* Montserrat-Bold.ttf in Resources */,
 				011E3EB21C7A876F00A34C5F /* LaunchScreen.storyboard in Resources */,
 				011E3EAF1C7A876F00A34C5F /* Assets.xcassets in Resources */,
-				018BAFC91CA3BE59008AA729 /* drinks.json in Resources */,
+				01E8CC1A1CB6412800D201B7 /* ingredients.json in Resources */,
+				018BAFC91CA3BE59008AA729 /* menu.json in Resources */,
+				01E8CC161CB61C1600D201B7 /* recipe.json in Resources */,
 				011E3EAA1C7A876F00A34C5F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,10 +319,10 @@
 				013854DA1C7D50870070E112 /* DrinkTableViewController.swift in Sources */,
 				017203361CA76D6A002C3168 /* DrinkViewController.swift in Sources */,
 				018BAFC71CA3BE3B008AA729 /* DataManager.swift in Sources */,
+				01E8CC181CB640FE00D201B7 /* Ingredient.swift in Sources */,
 				011E3EA51C7A876F00A34C5F /* AppDelegate.swift in Sources */,
 				011E3EAD1C7A876F00A34C5F /* barbot.xcdatamodeld in Sources */,
 				01EC327B1CACDF620030F60F /* Drink.swift in Sources */,
-				011E3EBD1C7A87B500A34C5F /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +437,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = barbot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.barbot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -447,6 +454,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = barbot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.barbot;
 				PRODUCT_NAME = "$(TARGET_NAME)";

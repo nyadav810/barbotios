@@ -1,21 +1,21 @@
 {
-    "drinks": [
+    "menu": [
         {
             "drink": {
                "name": "Rum and Coke",
-               "id": "1"
+               "recipe_id": "recipe_1"
             }
         },
         {
             "drink": {
                "name": "Vodka Cranberry",
-               "id": "2"
+               "recipe_id": "recipe_2"
             }
         },
         {
             "drink": {
                "name": "Gin and Tonic",
-               "id": "3"
+               "recipe_id": "recipe_3"
             }
         }
     ]

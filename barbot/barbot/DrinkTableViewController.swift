@@ -17,7 +17,7 @@ class DrinkTableViewController : UITableViewController, NSFetchedResultsControll
     lazy var fetchedResultsController: NSFetchedResultsController = {
         
         // example drink
-        let drink : Drink = Drink.init(name: "Make Your Own", id:"100", managedObjectContext: self.managedObjectContext)
+        let drink : Drink = Drink.init(name: "Make Your Own", recipe_id:"recipe_custom", managedObjectContext: self.managedObjectContext)
         
         // Create fetch request and set entity
         let fetchRequest : NSFetchRequest = NSFetchRequest(entityName: drink.entityName())
@@ -36,17 +36,16 @@ class DrinkTableViewController : UITableViewController, NSFetchedResultsControll
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Drinks"
+        self.title = "Barbot"
         
         // Call DataManager to retrieve drinks
         let dataManager : DataManager = DataManager.init()
-        dataManager.getDrinkMenuDataFromFile()
+        dataManager.getMenuDataFromFile()
         
         do {
             try self.fetchedResultsController.performFetch()
         } catch {
-            let fetchError = error as! NSError
-            print("\(fetchError), \(fetchError.userInfo)")
+            print("error fetching menu: \(error)")
         }
     }
     

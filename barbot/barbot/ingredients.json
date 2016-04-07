@@ -3,7 +3,9 @@
         {
             "ingredient": {
                 "name": "Gin",
-                "type": "alcohol"
+                "brand": "Grey Goose",
+                "type": "alcohol",
+                "ingredient_id": "ingredient_1"
             },
             "ingredient": {
                 "name": "Rum",

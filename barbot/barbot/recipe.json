@@ -1,0 +1,18 @@
+{
+	"recipe": {
+		"name": "Rum and Coke",
+		"id": "recipe_1",
+		"steps": [{
+			"step_number": 1,
+			"type": "add_ingredient",
+			"ingredient_id": "ingredient_1234",
+			"amount": 1
+		}, {
+			"step_number": 2,
+			"type": "mix"
+		}, {
+			"step_number": 3,
+			"type": "pour"
+		}]
+	}
+}
