@@ -84,8 +84,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-barbot/Gloss.framework"
   install_framework "Pods-barbot/Starscream.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-barbot/Gloss.framework"
   install_framework "Pods-barbot/Starscream.framework"
 fi

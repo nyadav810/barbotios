@@ -1,72 +1,99 @@
 {
-    "ingredients": [
-        {
-            "ingredient": {
-                "name": "Gin",
-                "brand": "Grey Goose",
-                "type": "alcohol",
-                "ingredient_id": "ingredient_1"
-            },
-            "ingredient": {
-                "name": "Rum",
-                "type": "alcohol"
-            },
-            "ingredient": {
-                "name": "Tequila",
-                "type": "alcohol"
-            },
-            "ingredient": {
-                "name": "Vodka",
-                "type": "alcohol"
-            },
-            "ingredient": {
-                "name": "Whiskey",
-                "type": "alcohol"
-            },
-            "ingredient": {
-                "name": "Cointreau",
-                "type": "liqueur"
-            },
-            "ingredient": {
-                "name": "Triple Sec",
-                "type": "liqueur"
-            },
-            "ingredient": {
-                "name": "Vermouth",
-                "type": "liqueur"
-            },
-            "ingredient": {
-                "name": "Sweet Syrup",
-                "type": "syrup"
-            },
-            "ingredient": {
-                "name": "Sour Syrup",
-                "type": "syrup"
-            },
-            "ingredient": {
-                "name": "Lime Juice",
-                "type": "mixer"
-            },
-            "ingredient": {
-                "name": "Lemon Juice",
-                "type": "mixer"
-            },
-            "ingredient": {
-                "name": "Orange Juice",
-                "type": "mixer"
-            },
-            "ingredient": {
-                "name": "Coca-Cola",
-                "type": "mixer"
-            },
-            "ingredient": {
-                "name": "Tonic Water",
-                "type": "mixer"
-            },
-            "ingredient": {
-                "name": "Red Bull",
-                "type": "mixer"
+    "payload" : {
+        "barbot_id": "barbot_1234",
+        "ingredients": [
+            {
+                "ingredient": {
+                    "name": "Gin",
+                    "brand": "Seagram's",
+                    "type": "alcohol",
+                    "ingredient_id": "ingredient_1"
+                },
+                "ingredient": {
+                    "name": "Dark Rum",
+                    "brand": "Captain Morgan",
+                    "type": "alcohol",
+                    "ingredient_id": "ingredient_2"
+                },
+                "ingredient": {
+                    "name": "Tequila",
+                    "brand": "El Jimador",
+                    "type": "alcohol",
+                    "ingredient_id": "ingredient_3"
+                },
+                "ingredient": {
+                    "name": "Vodka",
+                    "brand": "Smirnoff",
+                    "type": "alcohol",
+                    "ingredient_id": "ingredient_4"
+                },
+                "ingredient": {
+                    "name": "Whiskey",
+                    "brand": "Jim Beam",
+                    "type": "alcohol",
+                    "ingredient_id": "ingredient_5"
+                },
+                "ingredient": {
+                    "name": "Triple Sec",
+                    "brand": "Cointreau",
+                    "type": "liqueur",
+                    "ingredient_id": "ingredient_6"
+                },
+                "ingredient": {
+                    "name": "Vermouth",
+                    "brand": "Martini",
+                    "type": "wine",
+                    "ingredient_id": "ingredient_7"
+                },
+                "ingredient": {
+                    "name": "Sweet Syrup",
+                    "brand": "Torani",
+                    "type": "syrup",
+                    "ingredient_id": "ingredient_8"
+                },
+                "ingredient": {
+                    "name": "Sour Syrup",
+                    "brand": "Torani",
+                    "type": "syrup",
+                    "ingredient_id": "ingredient_9"
+                },
+                "ingredient": {
+                    "name": "Lime Juice",
+                    "brand": "Santa Cruz",
+                    "type": "mixer",
+                    "ingredient_id": "ingredient_10"
+                },
+                "ingredient": {
+                    "name": "Lemon Juice",
+                    "brand": "Santa Cruz",
+                    "type": "mixer",
+                    "ingredient_id": "ingredient_11"
+                },
+                "ingredient": {
+                    "name": "Orange Juice",
+                    "brand": "Minute Maid",
+                    "type": "mixer",
+                    "ingredient_id": "ingredient_12"
+                },
+                "ingredient": {
+                    "name": "Cola",
+                    "brand": "Coca-Cola",
+                    "type": "mixer",
+                    "ingredient_id": "ingredient_13"
+                },
+                "ingredient": {
+                    "name": "Tonic Water",
+                    "brand": "Canada Dry",
+                    "type": "mixer",
+                    "ingredient_id": "ingredient_14"
+                },
+                "ingredient": {
+                    "name": "Energy Drink",
+                    "brand": "Red Bull",
+                    "type": "mixer",
+                    "ingredient_id": "ingredient_15"
+                }
             }
-        }
-    ]
+        ]
+    }
 }

@@ -15,6 +15,10 @@
 		013854DA1C7D50870070E112 /* DrinkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013854D91C7D50870070E112 /* DrinkTableViewController.swift */; };
 		0159FA011CB39A88008E65FB /* Starscream.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 0159FA001CB39A88008E65FB /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		017203361CA76D6A002C3168 /* DrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017203351CA76D6A002C3168 /* DrinkViewController.swift */; };
+		018A07971CBA1FA000BB063B /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018A07961CBA1FA000BB063B /* Menu.swift */; };
+		018A079B1CBA205600BB063B /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018A07981CBA1FC700BB063B /* Gloss.framework */; };
+		018A079C1CBA205600BB063B /* Gloss.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 018A07981CBA1FC700BB063B /* Gloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		018A079E1CBA219800BB063B /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018A079D1CBA219800BB063B /* Recipe.swift */; };
 		018BAFC71CA3BE3B008AA729 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018BAFC61CA3BE3B008AA729 /* DataManager.swift */; };
 		018BAFC91CA3BE59008AA729 /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 018BAFC81CA3BE59008AA729 /* menu.json */; };
 		019565A61CB2C94000F16F6C /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 019565A41CB2C94000F16F6C /* Montserrat-Bold.ttf */; };
@@ -35,6 +39,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				0159FA011CB39A88008E65FB /* Starscream.framework in Copy Frameworks */,
+				018A079C1CBA205600BB063B /* Gloss.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,6 +57,9 @@
 		013854D91C7D50870070E112 /* DrinkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkTableViewController.swift; sourceTree = "<group>"; };
 		0159FA001CB39A88008E65FB /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Starscream.framework; sourceTree = "<group>"; };
 		017203351CA76D6A002C3168 /* DrinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkViewController.swift; sourceTree = "<group>"; };
+		018A07961CBA1FA000BB063B /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		018A07981CBA1FC700BB063B /* Gloss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Gloss.framework; path = "/Users/Naveen/Library/Developer/Xcode/DerivedData/barbot-eaobhpyjwsiprbaklixnovhmekve/Build/Products/Debug-iphonesimulator/Gloss.framework"; sourceTree = "<absolute>"; };
+		018A079D1CBA219800BB063B /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		018BAFC61CA3BE3B008AA729 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		018BAFC81CA3BE59008AA729 /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
 		019565A41CB2C94000F16F6C /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "Resources/Fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
@@ -72,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				472F7E105E34E64B1A3B1B7F /* Pods_barbot.framework in Frameworks */,
+				018A079B1CBA205600BB063B /* Gloss.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,13 +110,32 @@
 			children = (
 				011E3EA41C7A876F00A34C5F /* AppDelegate.swift */,
 				018BAFC61CA3BE3B008AA729 /* DataManager.swift */,
+				018A07951CBA1F3D00BB063B /* Controller */,
 				018BAFBD1CA3B5C1008AA729 /* Core Data */,
+				018A07941CBA1F0D00BB063B /* Model */,
 				019565A21CB2C8DD00F16F6C /* Resources */,
-				018BAFC41CA3BD9D008AA729 /* UI */,
+				018BAFC41CA3BD9D008AA729 /* View */,
 				011E3EAE1C7A876F00A34C5F /* Assets.xcassets */,
 				011E3EB31C7A876F00A34C5F /* Info.plist */,
 			);
 			path = barbot;
+			sourceTree = "<group>";
+		};
+		018A07941CBA1F0D00BB063B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				018A07961CBA1FA000BB063B /* Menu.swift */,
+				018A079D1CBA219800BB063B /* Recipe.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		018A07951CBA1F3D00BB063B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				018BAFC51CA3BDA4008AA729 /* ViewControllers */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		018BAFBD1CA3B5C1008AA729 /* Core Data */ = {
@@ -120,14 +148,13 @@
 			name = "Core Data";
 			sourceTree = "<group>";
 		};
-		018BAFC41CA3BD9D008AA729 /* UI */ = {
+		018BAFC41CA3BD9D008AA729 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				011E3EA81C7A876F00A34C5F /* Main.storyboard */,
 				011E3EB01C7A876F00A34C5F /* LaunchScreen.storyboard */,
-				018BAFC51CA3BDA4008AA729 /* ViewControllers */,
 			);
-			name = UI;
+			name = View;
 			sourceTree = "<group>";
 		};
 		018BAFC51CA3BDA4008AA729 /* ViewControllers */ = {
@@ -171,6 +198,7 @@
 		95C92EF7F1F190DB80EDBCC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				018A07981CBA1FC700BB063B /* Gloss.framework */,
 				05E59B7259830B8DD7413C29 /* Pods_barbot.framework */,
 				0159FA001CB39A88008E65FB /* Starscream.framework */,
 			);
@@ -321,8 +349,10 @@
 				018BAFC71CA3BE3B008AA729 /* DataManager.swift in Sources */,
 				01E8CC181CB640FE00D201B7 /* Ingredient.swift in Sources */,
 				011E3EA51C7A876F00A34C5F /* AppDelegate.swift in Sources */,
+				018A07971CBA1FA000BB063B /* Menu.swift in Sources */,
 				011E3EAD1C7A876F00A34C5F /* barbot.xcdatamodeld in Sources */,
 				01EC327B1CACDF620030F60F /* Drink.swift in Sources */,
+				018A079E1CBA219800BB063B /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

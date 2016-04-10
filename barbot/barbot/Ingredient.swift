@@ -10,34 +10,15 @@ import Foundation
 
 class Ingredient {
     
-    enum Type : String {
-        case Alcohol = "alcohol"
-        case Liqueur = "liqueur"
-        case Syrup = "syrup"
-        case Mixer = "mixer"
-        case Other = "other"
-    }
-    
     var name : String
     var brand : String
-    var type : Type
+    var type : String
     var ingredient_id : String
     
     init(name: String, brand: String, type: String, ingredient_id: String) {
         self.name = name
-        self.brand = name
-        switch type {
-            case "alcohol":
-                self.type = .Alcohol
-            case "liqueur":
-                self.type = .Liqueur
-            case "syrup":
-                self.type = .Syrup
-            case "mixer":
-                self.type = .Mixer
-            default:
-                self.type = .Other
-        }
+        self.brand = brand
+        self.type = type
         self.ingredient_id = ingredient_id
     }
     

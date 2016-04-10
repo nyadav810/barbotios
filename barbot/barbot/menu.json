@@ -1,22 +1,28 @@
 {
     "menu": [
         {
-            "drink": {
-               "name": "Rum and Coke",
-               "recipe_id": "recipe_1"
-            }
+             "recipe": {
+                "name": "Rum and Coke",
+                "recipe_id": "recipe_1"
+             }
         },
         {
-            "drink": {
-               "name": "Vodka Cranberry",
-               "recipe_id": "recipe_2"
-            }
+             "recipe": {
+                "name": "Vodka Cranberry",
+                "recipe_id": "recipe_2"
+             }
         },
         {
-            "drink": {
-               "name": "Gin and Tonic",
-               "recipe_id": "recipe_3"
-            }
+             "recipe": {
+                "name": "Gin and Tonic",
+                "recipe_id": "recipe_3"
+             }
+        },
+        {
+             "recipe": {
+                "name": "Whiskey Sour",
+                "recipe_id": "recipe_4"
+             }
         }
     ]
 }

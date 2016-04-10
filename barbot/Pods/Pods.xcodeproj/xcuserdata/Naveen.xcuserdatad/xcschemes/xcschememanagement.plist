@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Gloss.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-barbot.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>DC101AFF6D426A02FCE8797F5AF2E627</key>
+		<key>4F1EB87B6A34B235E02F53763E7B0603</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FB24D1A5419C807C519CB5B9097B65BB</key>
+		<key>5088AFFDA21888277E8370603BC91BF8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B07B012AE17952EE777271E277F90284</key>
 		<dict>
 			<key>primary</key>
 			<true/>

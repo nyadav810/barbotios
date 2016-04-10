@@ -16,7 +16,7 @@ class DrinkTableViewController : UITableViewController, NSFetchedResultsControll
     var managedObjectContext : NSManagedObjectContext!
     lazy var fetchedResultsController: NSFetchedResultsController = {
         
-        // example drink
+        // custom drink
         let drink : Drink = Drink.init(name: "Make Your Own", recipe_id:"recipe_custom", managedObjectContext: self.managedObjectContext)
         
         // Create fetch request and set entity
@@ -36,7 +36,6 @@ class DrinkTableViewController : UITableViewController, NSFetchedResultsControll
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Barbot"
         
         // Call DataManager to retrieve drinks
         let dataManager : DataManager = DataManager.init()
@@ -51,6 +50,14 @@ class DrinkTableViewController : UITableViewController, NSFetchedResultsControll
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.title = "Barbot"
+        let attributes = [NSForegroundColorAttributeName : UIColor.init(red: 3.0/255.0, green: 101.0/255.0, blue: 248.0/255.0, alpha: 1.0)]
+        self.navigationController?.navigationBar.titleTextAttributes = attributes
+
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
     }
     
     // MARK: UITableViewController
@@ -78,15 +85,6 @@ class DrinkTableViewController : UITableViewController, NSFetchedResultsControll
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let object : NSManagedObject = self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
     }
-
-    // Section Index functions
-//    override func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
-//        return self.fetchedResultsController.sectionIndexTitles
-//    }
-//    
-//    override func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
-//        return self.fetchedResultsController.sectionForSectionIndexTitle(title, atIndex: index)
-//    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let indexPath : NSIndexPath = self.tableView.indexPathForSelectedRow!

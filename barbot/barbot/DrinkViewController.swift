@@ -22,6 +22,14 @@ class DrinkViewController : UIViewController {
         self.configureView()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+    }
+    
     func configureView() {
         self.titleLabel.title = self.drink.name
     }

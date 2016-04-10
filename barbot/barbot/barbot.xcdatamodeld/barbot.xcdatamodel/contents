@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Automatic">
+    <entity name="Barbot" syncable="YES">
+        <attribute name="barbot_id" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Ingredient" syncable="YES"/>
+    </entity>
     <entity name="Drink" representedClassName=".Drink" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="recipe_id" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Ingredient" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Recipe" syncable="YES"/>
     <elements>
         <element name="Drink" positionX="-63" positionY="-18" width="128" height="75"/>
         <element name="Recipe" positionX="-63" positionY="0" width="128" height="45"/>
+        <element name="Barbot" positionX="-63" positionY="0" width="128" height="75"/>
+        <element name="Ingredient" positionX="-54" positionY="9" width="128" height="60"/>
     </elements>
 </model>

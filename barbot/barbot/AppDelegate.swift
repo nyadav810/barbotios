@@ -66,6 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketDelegate {
     }
 
     // MARK: - Core Data stack
+    // Core Data Usage: Store locally user data, favorite drink/barbot location data
 
     lazy var applicationDocumentsDirectory: NSURL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "com.barbot" in the application's documents Application Support directory.
@@ -124,17 +125,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketDelegate {
                 let nserror = error as NSError
                 NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
                 abort()
-            }
-        }
-    }
-    
-    func printAvailableFonts() {
-        for family: String in UIFont.familyNames()
-        {
-            print("\(family)")
-            for names: String in UIFont.fontNamesForFamilyName(family)
-            {
-                print("== \(names)")
             }
         }
     }
