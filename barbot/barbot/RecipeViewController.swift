@@ -1,5 +1,5 @@
 //
-//  DrinkViewController.swift
+//  RecipeViewController.swift
 //  barbot
 //
 //  Created by Naveen Yadav on 3/26/16.
@@ -8,14 +8,12 @@
 
 import Foundation
 import UIKit
-import CoreData
 
-class DrinkViewController : UIViewController {
+class RecipeViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UINavigationItem!
     @IBOutlet weak var imageView: UIImageView!
-    var drink : Drink!
-    var managedObjectContext : NSManagedObjectContext!
+    var recipe: Recipe!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +29,7 @@ class DrinkViewController : UIViewController {
     }
     
     func configureView() {
-        self.titleLabel.title = self.drink.name
+        self.titleLabel.title = self.recipe.name
     }
     
     @IBAction func orderDrink(sender: AnyObject) {

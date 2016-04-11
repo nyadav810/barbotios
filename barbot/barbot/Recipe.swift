@@ -9,20 +9,22 @@
 import Foundation
 import Gloss
 
-public struct Recipe: Decodable {
+struct Recipe: Decodable {
     
-    public let name: String
-    public let recipe_id: String
+    let recipe_id: String
+    let name: String
+    let steps: [Step]?
     
-    public init?(json: JSON) {
+    init?(json: JSON) {
         guard let recipe: JSON = "recipe" <~~ json
             else { return nil }
         
-        guard let name: String = "name" <~~ recipe,
-            recipe_id: String = "recipe_id" <~~ recipe
+        guard let recipe_id: String = "recipe_id" <~~ recipe,
+            name: String = "name" <~~ recipe
             else { return nil }
 
-        self.name = name
         self.recipe_id = recipe_id
+        self.name = name
+        self.steps = "steps" <~~ json
     }
 }

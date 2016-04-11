@@ -20,8 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketDelegate {
         // Override point for customization after application launch.
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let navigationController : UINavigationController = storyboard.instantiateInitialViewController() as! UINavigationController
-        let rootViewController : DrinkTableViewController = storyboard.instantiateViewControllerWithIdentifier("DrinkTable") as! DrinkTableViewController
-        rootViewController.managedObjectContext = self.managedObjectContext
+        let rootViewController : MenuTableViewController = storyboard.instantiateViewControllerWithIdentifier("MenuTable") as! MenuTableViewController
         navigationController.viewControllers = [rootViewController]
         self.window?.rootViewController = navigationController
         
@@ -129,7 +128,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketDelegate {
         }
     }
     
-    // MARK: WebSocketDelegate
+    // MARK: - WebSocketDelegate
     
     func websocketDidConnect(socket: WebSocket) {
         print("websocket is connected")

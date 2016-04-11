@@ -7,19 +7,29 @@
 //
 
 import Foundation
+import Gloss
 
-class Ingredient {
+struct Ingredient: Decodable {
     
-    var name : String
-    var brand : String
-    var type : String
-    var ingredient_id : String
+    let ingredient_id: String
+    let name: String
+    let brand: String
+    let type: String
     
-    init(name: String, brand: String, type: String, ingredient_id: String) {
+    init?(json: JSON) {
+        guard let ingredient: JSON = "ingredient" <~~ json
+            else { return nil }
+        
+        guard let ingredient_id: String = "ingredient_id" <~~ ingredient,
+            name: String = "name" <~~ ingredient,
+            brand: String = "brand" <~~ ingredient,
+            type: String = "type" <~~ ingredient
+            else { return nil }
+        
+        self.ingredient_id = ingredient_id
         self.name = name
         self.brand = brand
         self.type = type
-        self.ingredient_id = ingredient_id
     }
     
 }

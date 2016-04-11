@@ -9,11 +9,11 @@
 import Foundation
 import Gloss
 
-public struct Menu: Decodable {
+struct Menu: Decodable {
     
-    public let menu: [Recipe]?
+    let menu: [Recipe]?
     
-    public init?(json: JSON) {
+    init?(json: JSON) {
         self.menu = "menu" <~~ json
     }
 }

@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Drink Table View Controller-->
+        <!--Menu Table View Controller-->
         <scene sceneID="lI1-4z-R2U">
             <objects>
-                <viewController storyboardIdentifier="DrinkTable" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xM9-OR-llP" customClass="DrinkTableViewController" customModule="barbot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuTable" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xM9-OR-llP" customClass="MenuTableViewController" customModule="barbot" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nS1-iB-Dig">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -18,7 +18,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eWd-gm-z5E" id="kwU-20-Ly5">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -28,15 +28,18 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" id="E3D-J2-uTu"/>
+                    <connections>
+                        <outlet property="tableView" destination="nS1-iB-Dig" id="57x-Zh-rvL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g48-DZ-w45" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="522" y="451.99999999999994"/>
         </scene>
-        <!--Drink View Controller-->
+        <!--Recipe View Controller-->
         <scene sceneID="IcS-iW-iae">
             <objects>
-                <viewController title="Drink View Controller" id="bME-5r-yqE" customClass="DrinkViewController" customModule="barbot" sceneMemberID="viewController">
+                <viewController title="Recipe View Controller" id="bME-5r-yqE" customClass="RecipeViewController" customModule="barbot" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cCi-Ht-k4L"/>
                         <viewControllerLayoutGuide type="bottom" id="dg0-gi-7lw"/>
@@ -106,26 +109,14 @@
                                     <action selector="pourDrink:" destination="5JM-gA-mRL" eventType="touchUpInside" id="Rwe-oP-TOm"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks for ordering!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jA-Fn-Dip">
-                                <rect key="frame" x="223" y="273" width="155" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5GH-Rx-Vrn" firstAttribute="top" secondItem="9jA-Fn-Dip" secondAttribute="bottom" constant="306" id="5sA-Q4-ebg"/>
-                            <constraint firstItem="9jA-Fn-Dip" firstAttribute="centerX" secondItem="S8b-zp-8w1" secondAttribute="centerX" id="I2t-q8-3w7"/>
                             <constraint firstItem="Z9b-1o-Dck" firstAttribute="top" secondItem="Xd9-jh-Vhz" secondAttribute="bottom" constant="30" id="Sds-9m-QAR"/>
-                            <constraint firstItem="9jA-Fn-Dip" firstAttribute="top" secondItem="Z9b-1o-Dck" secondAttribute="bottom" constant="149" id="UFP-tY-Nla"/>
                             <constraint firstItem="Z9b-1o-Dck" firstAttribute="centerX" secondItem="S8b-zp-8w1" secondAttribute="centerX" id="v4m-by-H8H"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ulf-dR-xkd"/>
-                    <connections>
-                        <outlet property="thanksLabel" destination="9jA-Fn-Dip" id="wAv-fU-ahe"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tIs-IA-iSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

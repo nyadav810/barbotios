@@ -7,24 +7,21 @@
 //
 
 import Foundation
-import CoreData
 import UIKit
 import Starscream
 
 class DataManager {
     
-    var managedObjectContext : NSManagedObjectContext!
-    var socket : WebSocket!
+    var socket: WebSocket!
     typealias Payload = [String: AnyObject]
     
     // Initialize DataManager with AppDelegate properties
     init() {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        self.managedObjectContext = appDelegate.managedObjectContext
         self.socket = appDelegate.socket
     }
     
-    // Retrieve JSON from local file, convert to NSData and return
+    // Retrieve JSON from local file, convert to Payload and return
     private func getJSONDataFromFile(jsonFileName: String) -> Payload {
         let filePath = NSBundle.mainBundle().pathForResource(jsonFileName, ofType:"json")
         let data = try! NSData(contentsOfFile:filePath!,
@@ -40,7 +37,7 @@ class DataManager {
         return json
     }
     
-    // MARK: menu.json get methods
+    // MARK: - menu.json get methods
 
     // Get recipes from server using Websocket
     func getMenuDataFromServer() {
@@ -50,25 +47,22 @@ class DataManager {
     }
     
     // Get recipes from local file for DrinkTableViewController's table view
-    func getMenuDataFromFile() {
+    func getMenuDataFromFile() -> [Recipe]? {
         let json: Payload! = self.getJSONDataFromFile("menu")
-        self.parseMenuJSON(json)
+        return self.parseMenuJSON(json)
     }
     
     // Parse menu JSON using Gloss
-    private func parseMenuJSON(json: Payload) {
+    private func parseMenuJSON(json: Payload) -> [Recipe]? {
         guard let menu = Menu(json: json) else {
             print("Error initializing object")
-            return
+            return nil
         }
         
-        for recipe: Recipe in menu.menu! {
-            let drink: Drink = Drink.init(name: recipe.name, recipe_id: recipe.recipe_id, managedObjectContext: self.managedObjectContext)
-            print("\(drink.recipe_id): \(drink.name)")
-        }
+        return menu.menu!
     }
     
-    // MARK: recipe.json get methods
+    // MARK: - recipe.json get methods
     
     // Get Ingredients from local file to display in
     // DrinkViewController
@@ -81,9 +75,9 @@ class DataManager {
         
     }
     
-    // MARK: ingredients.json get methods
+    // MARK: - ingredients.json get methods
     
-    func getIngredientDataFromFileForBarbot() {
+    func getIngredientDataFromFile() {
         
     }
     
