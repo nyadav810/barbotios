@@ -18,7 +18,7 @@ struct Step: Decodable {
     
     init?(json: JSON) {
         guard let step_number: Int = "step_number" <~~ json,
-            type: String = "type"
+            type: String = "type" <~~ json
             else { return nil }
         
         self.step_number = step_number

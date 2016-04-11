@@ -19,12 +19,12 @@ struct Recipe: Decodable {
         guard let recipe: JSON = "recipe" <~~ json
             else { return nil }
         
-        guard let recipe_id: String = "recipe_id" <~~ recipe,
+        guard let recipe_id: String = "id" <~~ recipe,
             name: String = "name" <~~ recipe
             else { return nil }
 
         self.recipe_id = recipe_id
         self.name = name
-        self.steps = "steps" <~~ json
+        self.steps = "steps" <~~ recipe
     }
 }

@@ -24,6 +24,7 @@
 		019565A71CB2C94000F16F6C /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 019565A51CB2C94000F16F6C /* Montserrat-Regular.ttf */; };
 		01D3609F1CBB25FB009AA383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01D3609E1CBB25FB009AA383 /* Main.storyboard */; };
 		01D360A11CBB2989009AA383 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D360A01CBB2989009AA383 /* Step.swift */; };
+		01D360A31CBB7075009AA383 /* IngredientList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D360A21CBB7075009AA383 /* IngredientList.swift */; };
 		01DA902D1CB0FD6B007A1B02 /* PourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA902C1CB0FD6B007A1B02 /* PourViewController.swift */; };
 		01E8CC161CB61C1600D201B7 /* recipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 01E8CC151CB61C1600D201B7 /* recipe.json */; };
 		01E8CC181CB640FE00D201B7 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8CC171CB640FE00D201B7 /* Ingredient.swift */; };
@@ -65,6 +66,7 @@
 		019565A51CB2C94000F16F6C /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "Resources/Fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		01D3609E1CBB25FB009AA383 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		01D360A01CBB2989009AA383 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
+		01D360A21CBB7075009AA383 /* IngredientList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientList.swift; sourceTree = "<group>"; };
 		01DA902C1CB0FD6B007A1B02 /* PourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PourViewController.swift; sourceTree = "<group>"; };
 		01E8CC151CB61C1600D201B7 /* recipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipe.json; sourceTree = "<group>"; };
 		01E8CC171CB640FE00D201B7 /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				01E8CC171CB640FE00D201B7 /* Ingredient.swift */,
+				01D360A21CBB7075009AA383 /* IngredientList.swift */,
 				018A07961CBA1FA000BB063B /* Menu.swift */,
 				018A079D1CBA219800BB063B /* Recipe.swift */,
 				01D360A01CBB2989009AA383 /* Step.swift */,
@@ -344,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01DA902D1CB0FD6B007A1B02 /* PourViewController.swift in Sources */,
+				01D360A31CBB7075009AA383 /* IngredientList.swift in Sources */,
 				013854DA1C7D50870070E112 /* MenuTableViewController.swift in Sources */,
 				017203361CA76D6A002C3168 /* RecipeViewController.swift in Sources */,
 				018BAFC71CA3BE3B008AA729 /* DataManager.swift in Sources */,

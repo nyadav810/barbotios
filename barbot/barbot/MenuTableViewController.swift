@@ -24,8 +24,8 @@ class MenuTableViewController: UITableViewController {
         self.reloadInputViews()
         
         // Call DataManager to retrieve drinks
-        let dataManager : DataManager = DataManager.init()
-        self.recipeList = dataManager.getMenuDataFromFile()
+        self.dataManager = DataManager.init()
+        self.recipeList = dataManager.getMenuDataFromFile("menu")
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -38,10 +38,6 @@ class MenuTableViewController: UITableViewController {
     }
     
     // MARK: UITableViewController
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.recipeList.count
     }
@@ -59,15 +55,16 @@ class MenuTableViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let indexPath : NSIndexPath = self.tableView.indexPathForSelectedRow!
+//        let indexPath : NSIndexPath = self.tableView.indexPathForSelectedRow!
         
         if segue.identifier == "showDrinkScreen" {
             if let viewController = segue.destinationViewController as? RecipeViewController {
                 // send 'request recipe for recipe_id' message through socket to Server
+//                let recipe: Recipe = self.recipeList[indexPath.row]
+//                viewController.recipe = self.dataManager.getRecipeDataFromServer(recipe.recipe_id)
                 
                 // get response, parse using DataManager, send to DrinkViewController
-                
-                viewController.recipe = self.recipeList[indexPath.row]
+                viewController.recipe = self.dataManager.getRecipeDataFromFile("recipe")
             }
         }
     }

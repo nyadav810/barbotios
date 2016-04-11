@@ -8,13 +8,11 @@
 
 import UIKit
 import CoreData
-import Starscream
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var socket: WebSocket!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -23,14 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketDelegate {
         let rootViewController : MenuTableViewController = storyboard.instantiateViewControllerWithIdentifier("MenuTable") as! MenuTableViewController
         navigationController.viewControllers = [rootViewController]
         self.window?.rootViewController = navigationController
-        
-        // initialize web socket
-//        self.socket = WebSocket(url: NSURL(string: "http://")!)
-//        socket.delegate = self
-//        socket.connect()
-//        if (socket.isConnected) {
-//            self.websocketDidConnect(socket)
-//        }
         
         return true
     }
@@ -57,10 +47,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-        self.socket.disconnect()
-        if (!socket.isConnected) {
-            self.websocketDidDisconnect(socket, error: nil)
-        }
         self.saveContext()
     }
 
@@ -127,24 +113,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketDelegate {
             }
         }
     }
-    
-    // MARK: - WebSocketDelegate
-    
-    func websocketDidConnect(socket: WebSocket) {
-        print("websocket is connected")
-    }
-    
-    func websocketDidDisconnect(socket: WebSocket, error: NSError?) {
-        print("websocket is disconnected: \(error?.localizedDescription)")
-    }
-    
-    func websocketDidReceiveMessage(socket: WebSocket, text: String) {
-        print("got some text: \(text)")
-    }
-    
-    func websocketDidReceiveData(socket: WebSocket, data: NSData) {
-        print("got some data: \(data.length)")
-    }
-    
 }
 

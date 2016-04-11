@@ -57,6 +57,16 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="186" id="GiR-qx-kOf"/>
                                 </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StepCell" id="jWz-BC-mwx">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jWz-BC-mwx" id="gmQ-5c-Uc2">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iaa-Lo-Ccf">
                                 <rect key="frame" x="280" y="536" width="40" height="30"/>
@@ -82,8 +92,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="jRG-kp-Hrl"/>
                     <connections>
-                        <outlet property="imageView" destination="JSj-kp-Hsz" id="Dvc-PY-tof"/>
-                        <outlet property="titleLabel" destination="jRG-kp-Hrl" id="Oc3-uG-Ypc"/>
+                        <outlet property="tableView" destination="mnb-Nf-AE0" id="Hzh-iw-JB0"/>
+                        <outlet property="titleLabel" destination="jRG-kp-Hrl" id="kqq-9x-yhd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J6a-5P-4jC" userLabel="First Responder" sceneMemberID="firstResponder"/>

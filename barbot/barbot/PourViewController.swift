@@ -18,10 +18,13 @@ class PourViewController: UIViewController {
     @IBAction func pourDrink(sender: AnyObject) {
         // Send signal to barbot to pour drink
         
-        self.configureAlertController()
+        self.showAlertController()
     }
     
-    func configureAlertController() {
+    // Creates and shows a AlertView prompt that:
+    // 1. Thanks the user
+    // 2. Allows the user to tap to return to the menu
+    func showAlertController() {
         let alert: UIAlertController = UIAlertController.init(title: "Thank you for ordering!", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
         
         let returnButton: UIAlertAction = UIAlertAction.init(title: "Return to menu", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) in

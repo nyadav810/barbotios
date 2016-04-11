@@ -6,7 +6,8 @@
 			"step_number": 1,
 			"type": "add_ingredient",
 			"ingredient_id": "ingredient_1234",
-			"amount": 1
+			"quantity": 1,
+            "measurement": "oz"
 		}, {
 			"step_number": 2,
 			"type": "mix"
