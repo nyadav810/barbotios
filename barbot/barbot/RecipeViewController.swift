@@ -11,10 +11,19 @@ import UIKit
 
 class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    // UI appearance properties
+    let montserratFont: UIFont! = UIFont(name: "Montserrat-Regular", size: 16)
+    let barbotBlue: UIColor! = UIColor.init(red: 3.0/255.0, green: 101.0/255.0, blue: 248.0/255.0, alpha: 1.0)
     
-    @IBOutlet weak var titleLabel: UINavigationItem!
-    @IBOutlet weak var tableView: UITableView!
     var recipe: Recipe!
+    
+    // UI elements
+    @IBOutlet weak var titleLabel: UINavigationItem!
+    @IBOutlet weak var tableLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var sizeSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var shotSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var orderButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +43,59 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func configureView() {
+        let attributes = [NSForegroundColorAttributeName: barbotBlue, NSFontAttributeName: self.montserratFont]
+        
+        // set title label
         self.titleLabel.title = self.recipe.name
+        
+        // configure table label 'Recipe'
+        self.tableLabel.font = self.montserratFont
+        self.tableLabel.textColor = self.barbotBlue
+        
+        // configure table view
+        self.automaticallyAdjustsScrollViewInsets = false
+        
+        // configure segmented controls
+        self.shotSegmentedControl.setTitleTextAttributes(attributes, forState: UIControlState.Normal)
+        self.sizeSegmentedControl.setTitleTextAttributes(attributes, forState: UIControlState.Normal)
+        
+        // configure order button
+        self.orderButton.titleLabel!.font = self.montserratFont
+        self.orderButton.titleLabel?.textColor = self.barbotBlue
     }
     
     @IBAction func orderDrink(sender: AnyObject) {
         // Send order to barbot web server
+    }
+    
+    @IBAction func sizeSegmentedControlChanged(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+            case 0:
+                // 8oz, update Recipe
+                print("8oz")
+                break;
+            case 1:
+                // 16oz, update Recipe
+                print("16oz")
+                break;
+            default:
+                break;
+        }
+    }
+    
+    @IBAction func shotSegmentedControlChanged(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            // Single, update Recipe
+            print("Single")
+            break;
+        case 1:
+            // Double, update Recipe
+            print("Double")
+            break;
+        default:
+            break;
+        }
     }
     
     // MARK: UITableDataSource
@@ -55,6 +112,6 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func configureCell(cell: UITableViewCell, indexPath: NSIndexPath) {
         let object : Step = self.recipe.steps![indexPath.row]
         cell.textLabel!.text = "\(object.step_number). \(object.type)"
-        cell.textLabel!.font = UIFont(name: "Montserrat-Regular", size: 16)
+        cell.textLabel!.font = self.montserratFont
     }
 }

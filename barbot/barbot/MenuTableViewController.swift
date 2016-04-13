@@ -14,11 +14,13 @@ class MenuTableViewController: UITableViewController {
     var recipeList: [Recipe]!
     var dataManager: DataManager!
     
+    let montserratFont: UIFont! = UIFont(name: "Montserrat-Regular", size: 16)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Barbot"
-        let attributes = [NSForegroundColorAttributeName : UIColor.init(red: 3.0/255.0, green: 101.0/255.0, blue: 248.0/255.0, alpha: 1.0)]
+        let attributes = [NSForegroundColorAttributeName : UIColor.init(red: 3.0/255.0, green: 101.0/255.0, blue: 248.0/255.0, alpha: 1.0), NSFontAttributeName: self.montserratFont]
         self.navigationController?.navigationBar.titleTextAttributes = attributes
         
         self.reloadInputViews()
@@ -51,7 +53,7 @@ class MenuTableViewController: UITableViewController {
     func configureCell(cell: UITableViewCell, indexPath: NSIndexPath) {
         let object : Recipe = self.recipeList[indexPath.row]
         cell.textLabel!.text = object.name
-        cell.textLabel!.font = UIFont(name: "Montserrat-Regular", size: 16)
+        cell.textLabel!.font = self.montserratFont
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

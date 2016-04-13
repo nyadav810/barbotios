@@ -48,28 +48,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JSj-kp-Hsz">
-                                <rect key="frame" x="140" y="64" width="320" height="233"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mnb-Nf-AE0">
-                                <rect key="frame" x="0.0" y="317" width="600" height="186"/>
+                                <rect key="frame" x="0.0" y="101" width="600" height="232"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="186" id="GiR-qx-kOf"/>
-                                </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StepCell" id="jWz-BC-mwx">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StepCell" id="PKg-ms-pke">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jWz-BC-mwx" id="gmQ-5c-Uc2">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PKg-ms-pke" id="Ase-sN-wiS">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FDP-Ez-HHc">
+                                <rect key="frame" x="20" y="341" width="87" height="29"/>
+                                <segments>
+                                    <segment title="8oz"/>
+                                    <segment title="16oz"/>
+                                </segments>
+                                <connections>
+                                    <action selector="sizeSegmentedControlChanged:" destination="bME-5r-yqE" eventType="valueChanged" id="aYh-EB-zOV"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="K7K-Cj-s9a">
+                                <rect key="frame" x="115" y="341" width="115" height="29"/>
+                                <segments>
+                                    <segment title="Single"/>
+                                    <segment title="Double"/>
+                                </segments>
+                                <connections>
+                                    <action selector="shotSegmentedControlChanged:" destination="bME-5r-yqE" eventType="valueChanged" id="WZU-u5-rcV"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s39-JH-pyf">
+                                <rect key="frame" x="20" y="72" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iaa-Lo-Ccf">
-                                <rect key="frame" x="280" y="536" width="40" height="30"/>
+                                <rect key="frame" x="540" y="341" width="40" height="30"/>
                                 <state key="normal" title="Order"/>
                                 <connections>
                                     <action selector="orderDrink:" destination="bME-5r-yqE" eventType="touchUpInside" id="dxO-lM-hi8"/>
@@ -79,19 +99,29 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JSj-kp-Hsz" firstAttribute="leading" secondItem="81J-7g-zgh" secondAttribute="leadingMargin" constant="120" id="2KO-DE-C44"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="JSj-kp-Hsz" secondAttribute="trailing" constant="120" id="MF1-eG-yAv"/>
+                            <constraint firstItem="K7K-Cj-s9a" firstAttribute="top" secondItem="mnb-Nf-AE0" secondAttribute="bottom" constant="8" id="B50-Wp-jur"/>
+                            <constraint firstItem="FDP-Ez-HHc" firstAttribute="leading" secondItem="81J-7g-zgh" secondAttribute="leadingMargin" id="Dez-nv-hzB"/>
                             <constraint firstItem="mnb-Nf-AE0" firstAttribute="leading" secondItem="81J-7g-zgh" secondAttribute="leadingMargin" constant="-20" id="Mfi-zu-kCU"/>
-                            <constraint firstItem="dg0-gi-7lw" firstAttribute="top" secondItem="JSj-kp-Hsz" secondAttribute="bottom" constant="303" id="NX7-aj-66N"/>
-                            <constraint firstItem="JSj-kp-Hsz" firstAttribute="top" secondItem="cCi-Ht-k4L" secondAttribute="bottom" id="h0e-eN-wDS"/>
-                            <constraint firstItem="dg0-gi-7lw" firstAttribute="top" secondItem="Iaa-Lo-Ccf" secondAttribute="bottom" constant="34" id="i4c-DR-Hee"/>
+                            <constraint firstItem="s39-JH-pyf" firstAttribute="leading" secondItem="81J-7g-zgh" secondAttribute="leadingMargin" id="Mwc-EN-BOh"/>
+                            <constraint firstItem="mnb-Nf-AE0" firstAttribute="top" secondItem="s39-JH-pyf" secondAttribute="bottom" constant="8" id="WkQ-i8-LB2"/>
+                            <constraint firstItem="dg0-gi-7lw" firstAttribute="top" secondItem="Iaa-Lo-Ccf" secondAttribute="bottom" constant="229" id="i4c-DR-Hee"/>
+                            <constraint firstItem="K7K-Cj-s9a" firstAttribute="leading" secondItem="FDP-Ez-HHc" secondAttribute="trailing" constant="8" id="jFu-ct-EcL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mnb-Nf-AE0" secondAttribute="trailing" constant="-20" id="kaQ-SR-CgR"/>
-                            <constraint firstItem="Iaa-Lo-Ccf" firstAttribute="centerX" secondItem="81J-7g-zgh" secondAttribute="centerX" id="lPs-jG-4So"/>
-                            <constraint firstItem="dg0-gi-7lw" firstAttribute="top" secondItem="mnb-Nf-AE0" secondAttribute="bottom" constant="97" id="mia-50-gDa"/>
+                            <constraint firstItem="s39-JH-pyf" firstAttribute="top" secondItem="cCi-Ht-k4L" secondAttribute="bottom" constant="8" id="lPX-dc-HaF"/>
+                            <constraint firstItem="Iaa-Lo-Ccf" firstAttribute="trailing" secondItem="81J-7g-zgh" secondAttribute="trailingMargin" id="llc-7i-1Lb"/>
+                            <constraint firstItem="dg0-gi-7lw" firstAttribute="top" secondItem="mnb-Nf-AE0" secondAttribute="bottom" constant="267" id="mia-50-gDa"/>
+                            <constraint firstItem="FDP-Ez-HHc" firstAttribute="top" secondItem="mnb-Nf-AE0" secondAttribute="bottom" constant="8" id="mzZ-Kk-vzw"/>
+                            <constraint firstItem="dg0-gi-7lw" firstAttribute="top" secondItem="K7K-Cj-s9a" secondAttribute="bottom" constant="231" id="pmd-dl-hxD"/>
+                            <constraint firstItem="Iaa-Lo-Ccf" firstAttribute="top" secondItem="mnb-Nf-AE0" secondAttribute="bottom" constant="8" id="qbe-1L-v1K"/>
+                            <constraint firstItem="dg0-gi-7lw" firstAttribute="top" secondItem="FDP-Ez-HHc" secondAttribute="bottom" constant="231" id="xsP-qJ-baB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="jRG-kp-Hrl"/>
                     <connections>
+                        <outlet property="orderButton" destination="Iaa-Lo-Ccf" id="13t-nh-0Tq"/>
+                        <outlet property="shotSegmentedControl" destination="K7K-Cj-s9a" id="bvW-r7-XB7"/>
+                        <outlet property="sizeSegmentedControl" destination="FDP-Ez-HHc" id="cxi-7o-qh8"/>
+                        <outlet property="tableLabel" destination="s39-JH-pyf" id="F12-yD-kwg"/>
                         <outlet property="tableView" destination="mnb-Nf-AE0" id="Hzh-iw-JB0"/>
                         <outlet property="titleLabel" destination="jRG-kp-Hrl" id="kqq-9x-yhd"/>
                     </connections>
