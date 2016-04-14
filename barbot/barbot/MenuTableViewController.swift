@@ -11,8 +11,9 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
     
-    var recipeList: [Recipe]!
     var dataManager: DataManager!
+    var recipeList: [Recipe]!
+    var ingredientList: IngredientList!
     
     let montserratFont: UIFont! = UIFont(name: "Montserrat-Regular", size: 16)
     
@@ -28,6 +29,7 @@ class MenuTableViewController: UITableViewController {
         // Call DataManager to retrieve drinks
         self.dataManager = DataManager.init()
         self.recipeList = dataManager.getMenuDataFromFile("menu")
+        self.ingredientList = dataManager.getIngredientDataFromFile("ingredients")
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -67,6 +69,7 @@ class MenuTableViewController: UITableViewController {
                 
                 // get response, parse using DataManager, send to DrinkViewController
                 viewController.recipe = self.dataManager.getRecipeDataFromFile("recipe")
+                viewController.ingredientList = self.ingredientList
             }
         }
     }

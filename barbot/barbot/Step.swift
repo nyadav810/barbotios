@@ -13,7 +13,7 @@ struct Step: Decodable {
     let step_number: Int
     let type: String
     let ingredient_id: String?
-    let quantity: Int?
+    let quantity: Double?
     let measurement: String?
     
     init?(json: JSON) {

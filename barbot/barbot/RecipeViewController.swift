@@ -16,6 +16,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let barbotBlue: UIColor! = UIColor.init(red: 3.0/255.0, green: 101.0/255.0, blue: 248.0/255.0, alpha: 1.0)
     
     var recipe: Recipe!
+    var ingredientList: IngredientList!
     
     // UI elements
     @IBOutlet weak var titleLabel: UINavigationItem!
@@ -111,7 +112,26 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func configureCell(cell: UITableViewCell, indexPath: NSIndexPath) {
         let object : Step = self.recipe.steps![indexPath.row]
-        cell.textLabel!.text = "\(object.step_number). \(object.type)"
+        
         cell.textLabel!.font = self.montserratFont
+        cell.textLabel!.text = "\(object.step_number). \(object.type)"
+        
+        // add ingredient name
+        if object.type == "Add" {
+            for ingredient: Ingredient in self.ingredientList.ingredientList! {
+                if object.ingredient_id == ingredient.ingredient_id {
+                    var stepString: String = ""
+                    if ingredient.type == "alcohol" {
+                        stepString = " \(object.quantity!) \(object.measurement!) \(ingredient.brand) \(ingredient.name)"
+                    } else if ingredient.type == "mixer" {
+                        stepString = " \(object.quantity!) \(object.measurement!) \(ingredient.name)"
+                    } else {
+                        stepString = " \(ingredient.name)"
+                    }
+                    
+                    cell.textLabel!.text?.appendContentsOf(stepString)
+                }
+            }
+        }
     }
 }

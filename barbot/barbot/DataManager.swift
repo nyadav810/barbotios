@@ -127,17 +127,17 @@ class DataManager: WebSocketDelegate {
 //        return ingredientList
 //    }
     
-    func getIngredientDataFromFile(file: String) -> [Ingredient]? {
+    func getIngredientDataFromFile(file: String) -> IngredientList? {
         let json: Payload = self.getJSONDataFromFile(file)
         return self.parseIngredientJSON(json)
     }
     
-    private func parseIngredientJSON(json: Payload) -> [Ingredient]? {
+    private func parseIngredientJSON(json: Payload) -> IngredientList? {
         guard let ingredients = IngredientList(json: json) else {
             print("Error initializing object")
             return nil
         }
-        return ingredients.ingredientList!
+        return ingredients
     }
     
     // MARK: Websocket Delegate Methods.

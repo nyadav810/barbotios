@@ -12,8 +12,13 @@ import Gloss
 struct IngredientList: Decodable {
     
     let ingredientList: [Ingredient]?
+    let barbotId: String?
     
     init?(json: JSON) {
-        self.ingredientList = "ingredients" <~~ json
+        guard let payload: JSON = "payload" <~~ json
+            else { return nil }
+        
+        self.barbotId = "barbot_id" <~~ payload
+        self.ingredientList = "ingredients" <~~ payload
     }
 }

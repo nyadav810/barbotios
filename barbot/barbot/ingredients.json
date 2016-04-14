@@ -8,85 +8,113 @@
                     "brand": "Seagram's",
                     "type": "alcohol",
                     "ingredient_id": "ingredient_1"
-                },
+                }
+            },
+            {
                 "ingredient": {
-                    "name": "Dark Rum",
+                    "name": "Rum",
                     "brand": "Captain Morgan",
                     "type": "alcohol",
                     "ingredient_id": "ingredient_2"
-                },
+                }
+            },
+            {
                 "ingredient": {
                     "name": "Tequila",
                     "brand": "El Jimador",
                     "type": "alcohol",
                     "ingredient_id": "ingredient_3"
-                },
+                }
+            },
+            {
                 "ingredient": {
                     "name": "Vodka",
                     "brand": "Smirnoff",
                     "type": "alcohol",
                     "ingredient_id": "ingredient_4"
-                },
+                }
+            },
+            {
                 "ingredient": {
                     "name": "Whiskey",
                     "brand": "Jim Beam",
                     "type": "alcohol",
                     "ingredient_id": "ingredient_5"
-                },
+                }
+            },
+            {
                 "ingredient": {
                     "name": "Triple Sec",
                     "brand": "Cointreau",
-                    "type": "liqueur",
+                    "type": "mixer",
                     "ingredient_id": "ingredient_6"
-                },
+                }
+            },
+            {
                 "ingredient": {
                     "name": "Vermouth",
                     "brand": "Martini",
-                    "type": "wine",
+                    "type": "mixer",
                     "ingredient_id": "ingredient_7"
-                },
+                }
+            },
+            {
                 "ingredient": {
                     "name": "Sweet Syrup",
                     "brand": "Torani",
-                    "type": "syrup",
+                    "type": "mixer",
                     "ingredient_id": "ingredient_8"
-                },
+                }
+            },
+            {
                 "ingredient": {
                     "name": "Sour Syrup",
                     "brand": "Torani",
-                    "type": "syrup",
+                    "type": "mixer",
                     "ingredient_id": "ingredient_9"
-                },
+                }
+            },
+            {
                 "ingredient": {
                     "name": "Lime Juice",
                     "brand": "Santa Cruz",
                     "type": "mixer",
                     "ingredient_id": "ingredient_10"
-                },
+                }
+            },
+            {
                 "ingredient": {
                     "name": "Lemon Juice",
                     "brand": "Santa Cruz",
                     "type": "mixer",
                     "ingredient_id": "ingredient_11"
-                },
+                }
+            },
+            {
                 "ingredient": {
                     "name": "Orange Juice",
                     "brand": "Minute Maid",
                     "type": "mixer",
                     "ingredient_id": "ingredient_12"
-                },
+                }
+            },
+            {
                 "ingredient": {
-                    "name": "Cola",
+                    "name": "Coca-Cola",
                     "brand": "Coca-Cola",
                     "type": "mixer",
                     "ingredient_id": "ingredient_13"
-                },
+                }
+            },
+            {
                 "ingredient": {
                     "name": "Tonic Water",
                     "brand": "Canada Dry",
                     "type": "mixer",
                     "ingredient_id": "ingredient_14"
-                },
+                }
+            },
+            {
                 "ingredient": {
                     "name": "Energy Drink",
                     "brand": "Red Bull",
@@ -94,6 +122,7 @@
                     "ingredient_id": "ingredient_15"
                 }
             }
+            
         ]
     }
 }

@@ -2,18 +2,40 @@
 	"recipe": {
 		"name": "Rum and Coke",
 		"id": "recipe_1",
-		"steps": [{
-			"step_number": 1,
-			"type": "add_ingredient",
-			"ingredient_id": "ingredient_1234",
-			"quantity": 1,
-            "measurement": "oz"
-		}, {
-			"step_number": 2,
-			"type": "mix"
-		}, {
-			"step_number": 3,
-			"type": "pour"
-		}]
-	}
+		"steps": [
+            {
+                "step_number": 1,
+                "type": "add_ice",
+            },
+            {
+                "step_number": 2,
+                "type": "add_ingredient",
+                "ingredient_id": "ingredient_2",
+                "quantity": 1.5,
+                "measurement": "oz"
+            },
+            {
+                "step_number": 3,
+                "type": "add_ingredient",
+                "ingredient_id": "ingredient_10",
+                "quantity": 0.5,
+                "measurement": "oz"
+            },
+            {
+                "step_number": 4,
+                "type": "add_ingredient",
+                "ingredient_id": "ingredient_13",
+                "quantity": 4,
+                "measurement": "oz"
+            },
+            {
+                "step_number": 5,
+                "type": "mix"
+            },
+            {
+                "step_number": 6,
+                "type": "pour"
+            }
+        ]
+    }
 }
