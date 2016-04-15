@@ -23,6 +23,7 @@
 		018BAFC91CA3BE59008AA729 /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 018BAFC81CA3BE59008AA729 /* menu.json */; };
 		019565A61CB2C94000F16F6C /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 019565A41CB2C94000F16F6C /* Montserrat-Bold.ttf */; };
 		019565A71CB2C94000F16F6C /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 019565A51CB2C94000F16F6C /* Montserrat-Regular.ttf */; };
+		01BBAF5E1CC07F450019DAE7 /* RecipeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BBAF5D1CC07F450019DAE7 /* RecipeSet.swift */; };
 		01D3609F1CBB25FB009AA383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01D3609E1CBB25FB009AA383 /* Main.storyboard */; };
 		01D360A11CBB2989009AA383 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D360A01CBB2989009AA383 /* Step.swift */; };
 		01D360A31CBB7075009AA383 /* IngredientList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D360A21CBB7075009AA383 /* IngredientList.swift */; };
@@ -66,6 +67,7 @@
 		018BAFC81CA3BE59008AA729 /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
 		019565A41CB2C94000F16F6C /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "Resources/Fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		019565A51CB2C94000F16F6C /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "Resources/Fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		01BBAF5D1CC07F450019DAE7 /* RecipeSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSet.swift; sourceTree = "<group>"; };
 		01D3609E1CBB25FB009AA383 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		01D360A01CBB2989009AA383 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		01D360A21CBB7075009AA383 /* IngredientList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientList.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				01D360A21CBB7075009AA383 /* IngredientList.swift */,
 				018A07961CBA1FA000BB063B /* Menu.swift */,
 				018A079D1CBA219800BB063B /* Recipe.swift */,
+				01BBAF5D1CC07F450019DAE7 /* RecipeSet.swift */,
 				01D360A01CBB2989009AA383 /* Step.swift */,
 			);
 			name = Model;
@@ -357,6 +360,7 @@
 				018BAFC71CA3BE3B008AA729 /* DataManager.swift in Sources */,
 				01E8CC181CB640FE00D201B7 /* Ingredient.swift in Sources */,
 				011E3EA51C7A876F00A34C5F /* AppDelegate.swift in Sources */,
+				01BBAF5E1CC07F450019DAE7 /* RecipeSet.swift in Sources */,
 				018A07971CBA1FA000BB063B /* Menu.swift in Sources */,
 				01D360A11CBB2989009AA383 /* Step.swift in Sources */,
 				011E3EAD1C7A876F00A34C5F /* barbot.xcdatamodeld in Sources */,

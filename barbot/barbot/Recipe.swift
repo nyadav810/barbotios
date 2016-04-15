@@ -11,20 +11,20 @@ import Gloss
 
 struct Recipe: Decodable {
     
-    let recipe_id: String
-    let name: String
-    let steps: [Step]?
+    let recipeId: String?
+    let name: String?
+    var size: String?
+    var shot: String?
+    var steps: [Step]?
     
     init?(json: JSON) {
         guard let recipe: JSON = "recipe" <~~ json
             else { return nil }
-        
-        guard let recipe_id: String = "id" <~~ recipe,
-            name: String = "name" <~~ recipe
-            else { return nil }
 
-        self.recipe_id = recipe_id
-        self.name = name
+        self.recipeId = "id" <~~ recipe
+        self.name = "name" <~~ recipe
+        self.size = "size" <~~ recipe
+        self.shot = "shot" <~~ recipe
         self.steps = "steps" <~~ recipe
     }
 }

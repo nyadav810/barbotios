@@ -15,8 +15,10 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let montserratFont: UIFont! = UIFont(name: "Montserrat-Regular", size: 16)
     let barbotBlue: UIColor! = UIColor.init(red: 3.0/255.0, green: 101.0/255.0, blue: 248.0/255.0, alpha: 1.0)
     
+    var recipeSet: RecipeSet!
     var recipe: Recipe!
     var ingredientList: IngredientList!
+    var dataManager: DataManager!
     
     // UI elements
     @IBOutlet weak var titleLabel: UINavigationItem!
@@ -28,6 +30,11 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.recipeSet = dataManager.getRecipeSetDataFromFile("recipeset")
+        self.recipe.shot = self.recipeSet.recipes![0].shot
+        self.recipe.size = self.recipeSet.recipes![0].size
+        self.recipe.steps = self.recipeSet.recipes![0].steps
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.configureView()
@@ -73,11 +80,23 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         switch sender.selectedSegmentIndex {
             case 0:
                 // 8oz, update Recipe
-                print("8oz")
+                if self.shotSegmentedControl.selectedSegmentIndex == 0 {
+                    self.recipe = self.recipeSet.recipes![0]
+                } else {
+                    self.recipe = self.recipeSet.recipes![1]
+                }
+                
+                self.tableView.reloadData()
                 break;
             case 1:
                 // 16oz, update Recipe
-                print("16oz")
+                if self.shotSegmentedControl.selectedSegmentIndex == 0 {
+                    self.recipe = self.recipeSet.recipes![2]
+                } else {
+                    self.recipe = self.recipeSet.recipes![3]
+                }
+                
+                self.tableView.reloadData()
                 break;
             default:
                 break;
@@ -86,17 +105,33 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func shotSegmentedControlChanged(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
-        case 0:
-            // Single, update Recipe
-            print("Single")
-            break;
-        case 1:
-            // Double, update Recipe
-            print("Double")
-            break;
-        default:
-            break;
-        }
+            case 0:
+                // single, update Recipe
+                if self.sizeSegmentedControl.selectedSegmentIndex == 0 {
+                    // short
+                    self.recipe = self.recipeSet.recipes![0]
+                } else {
+                    // tall
+                    self.recipe = self.recipeSet.recipes![2]
+                }
+                
+                self.tableView.reloadData()
+                break;
+            case 1:
+                // double, update Recipe
+                if self.sizeSegmentedControl.selectedSegmentIndex == 0 {
+                    // short
+                    self.recipe = self.recipeSet.recipes![1]
+                } else {
+                    // tall
+                    self.recipe = self.recipeSet.recipes![3]
+                }
+                
+                self.tableView.reloadData()
+                break;
+            default:
+                break;
+            }
     }
     
     // MARK: UITableDataSource
@@ -114,7 +149,8 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let object : Step = self.recipe.steps![indexPath.row]
         
         cell.textLabel!.font = self.montserratFont
-        cell.textLabel!.text = "\(object.step_number). \(object.type)"
+        cell.textLabel!.text = "\(indexPath.row + 1). \(object.type)"
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         
         // add ingredient name
         if object.type == "Add" {

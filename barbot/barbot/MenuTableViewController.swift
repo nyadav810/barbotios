@@ -9,11 +9,13 @@
 import Foundation
 import UIKit
 
-class MenuTableViewController: UITableViewController {
+class MenuTableViewController: UITableViewController, UISearchControllerDelegate {
     
     var dataManager: DataManager!
     var recipeList: [Recipe]!
     var ingredientList: IngredientList!
+    let searchController = UISearchController(searchResultsController: nil)
+    var filteredRecipes = [Recipe]()
     
     let montserratFont: UIFont! = UIFont(name: "Montserrat-Regular", size: 16)
     
@@ -34,6 +36,14 @@ class MenuTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        // Set up searchController
+        self.searchController.searchResultsUpdater = self
+        self.searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        self.tableView.tableHeaderView = self.searchController.searchBar
+        self.searchController.delegate = self
+        
+        // reload table data
         self.tableView.reloadData()
     }
     
@@ -41,8 +51,11 @@ class MenuTableViewController: UITableViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
     }
     
-    // MARK: UITableViewController
+    // MARK: - UITableViewController
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.active && searchController.searchBar.text != "" {
+            return filteredRecipes.count
+        }
         return self.recipeList.count
     }
     
@@ -53,24 +66,61 @@ class MenuTableViewController: UITableViewController {
     }
     
     func configureCell(cell: UITableViewCell, indexPath: NSIndexPath) {
-        let object : Recipe = self.recipeList[indexPath.row]
-        cell.textLabel!.text = object.name
+        let recipe : Recipe
+        
+        if searchController.active && searchController.searchBar.text != "" {
+            recipe = self.filteredRecipes[indexPath.row]
+        } else {
+            recipe = self.recipeList[indexPath.row]
+        }
+        
+        cell.textLabel!.text = recipe.name
         cell.textLabel!.font = self.montserratFont
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        let indexPath : NSIndexPath = self.tableView.indexPathForSelectedRow!
+    // MARK: - UISearchControllerDelegate
+    func willPresentSearchController(searchController: UISearchController) {
+        // do something before the search controller is presented
+        self.navigationController!.navigationBar.translucent = true;
+    }
+    
+    func willDismissSearchController(searchController: UISearchController) {
+        self.navigationController!.navigationBar.translucent = false;
+    }
+    
+    // MARK: - UISearchResultsUpdating
+    func filterContentForSearchText(searchText: String, scope: String = "All") {
+        filteredRecipes = recipeList.filter { recipe in
+            return recipe.name!.lowercaseString.containsString(searchText.lowercaseString)
+        }
         
-        if segue.identifier == "showDrinkScreen" {
-            if let viewController = segue.destinationViewController as? RecipeViewController {
+        tableView.reloadData()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
                 // send 'request recipe for recipe_id' message through socket to Server
 //                let recipe: Recipe = self.recipeList[indexPath.row]
 //                viewController.recipe = self.dataManager.getRecipeDataFromServer(recipe.recipe_id)
-                
-                // get response, parse using DataManager, send to DrinkViewController
-                viewController.recipe = self.dataManager.getRecipeDataFromFile("recipe")
-                viewController.ingredientList = self.ingredientList
+        
+        if segue.identifier == "showDrinkScreen" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let recipe: Recipe
+                if searchController.active && searchController.searchBar.text != "" {
+                    recipe = filteredRecipes[indexPath.row]
+                } else {
+                    recipe = recipeList[indexPath.row]
+                }
+                let controller = segue.destinationViewController as! RecipeViewController
+                controller.recipe = recipe
+                controller.dataManager = self.dataManager
+                controller.ingredientList = self.ingredientList
             }
         }
+    }
+}
+
+extension MenuTableViewController: UISearchResultsUpdating {
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
     }
 }

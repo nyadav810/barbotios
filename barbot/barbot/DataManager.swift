@@ -97,8 +97,6 @@ class DataManager: WebSocketDelegate {
 //        return recipe
 //    }
     
-    // Get Ingredients from local file to display in
-    // DrinkViewController
     func getRecipeDataFromFile(file: String) -> Recipe? {
         let json: Payload = self.getJSONDataFromFile(file)
         return self.parseRecipeJSON(json)
@@ -111,6 +109,24 @@ class DataManager: WebSocketDelegate {
         }
         
         return recipe
+    }
+    
+    // MARK: - recipeset.json get methods
+    
+    // Get RecipeSet from local file to display in
+    // DrinkViewController
+    func getRecipeSetDataFromFile(file: String) -> RecipeSet? {
+        let json: Payload = self.getJSONDataFromFile(file)
+        return self.parseRecipeSetJSON(json)
+    }
+    
+    private func parseRecipeSetJSON(json: Payload) -> RecipeSet? {
+        guard let recipeSet = RecipeSet(json: json) else {
+            print("Error initializing object")
+            return nil
+        }
+        
+        return recipeSet
     }
     
     // MARK: - ingredients.json get methods

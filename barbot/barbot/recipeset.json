@@ -57,7 +57,7 @@
               "step_number": 2,
               "type": "add_ingredient",
               "ingredient_id": "ingredient_2",
-              "quantity": 1.5,
+              "quantity": 3,
               "measurement": "oz"
             },
             {
@@ -68,7 +68,7 @@
               "measurement": "oz"
             },
             {
-              "step_number": 4,
+              "step_number": 2.5,
               "type": "add_ingredient",
               "ingredient_id": "ingredient_13",
               "quantity": 4,
@@ -105,14 +105,14 @@
               "step_number": 3,
               "type": "add_ingredient",
               "ingredient_id": "ingredient_10",
-              "quantity": 0.5,
+              "quantity": 1,
               "measurement": "oz"
             },
             {
               "step_number": 4,
               "type": "add_ingredient",
               "ingredient_id": "ingredient_13",
-              "quantity": 4,
+              "quantity": 10,
               "measurement": "oz"
             },
             {
@@ -139,21 +139,21 @@
               "step_number": 2,
               "type": "add_ingredient",
               "ingredient_id": "ingredient_2",
-              "quantity": 1.5,
+              "quantity": 3,
               "measurement": "oz"
             },
             {
               "step_number": 3,
               "type": "add_ingredient",
               "ingredient_id": "ingredient_10",
-              "quantity": 0.5,
+              "quantity": 2,
               "measurement": "oz"
             },
             {
               "step_number": 4,
               "type": "add_ingredient",
               "ingredient_id": "ingredient_13",
-              "quantity": 4,
+              "quantity": 8,
               "measurement": "oz"
             },
             {
