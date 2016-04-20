@@ -8,7 +8,6 @@
 
 // TODO: Uncomment websocket init and getFromServer methods when we have a server URL
 
-import Foundation
 import UIKit
 import Starscream
 

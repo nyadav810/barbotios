@@ -6,7 +6,6 @@
 //  Copyright © 2016 BarBot. All rights reserved.
 //
 
-import Foundation
 import Gloss
 
 struct Ingredient: Decodable {

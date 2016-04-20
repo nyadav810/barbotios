@@ -14,6 +14,9 @@
 		013854DA1C7D50870070E112 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013854D91C7D50870070E112 /* MenuTableViewController.swift */; };
 		0159FA011CB39A88008E65FB /* Starscream.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 0159FA001CB39A88008E65FB /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		017203361CA76D6A002C3168 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017203351CA76D6A002C3168 /* RecipeViewController.swift */; };
+		017D28C41CC31DA800EDBD3D /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D28C31CC31DA800EDBD3D /* ContainerViewController.swift */; };
+		017D28C61CC31F2900EDBD3D /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D28C51CC31F2900EDBD3D /* SidePanelViewController.swift */; };
+		017D28C81CC3204E00EDBD3D /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D28C71CC3204E00EDBD3D /* Setting.swift */; };
 		0183789B1CBF59D2003E095A /* recipeset.json in Resources */ = {isa = PBXBuildFile; fileRef = 0183789A1CBF59D2003E095A /* recipeset.json */; };
 		018A07971CBA1FA000BB063B /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018A07961CBA1FA000BB063B /* Menu.swift */; };
 		018A079B1CBA205600BB063B /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018A07981CBA1FC700BB063B /* Gloss.framework */; };
@@ -59,6 +62,9 @@
 		013854D91C7D50870070E112 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		0159FA001CB39A88008E65FB /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Starscream.framework; sourceTree = "<group>"; };
 		017203351CA76D6A002C3168 /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		017D28C31CC31DA800EDBD3D /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		017D28C51CC31F2900EDBD3D /* SidePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidePanelViewController.swift; sourceTree = "<group>"; };
+		017D28C71CC3204E00EDBD3D /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		0183789A1CBF59D2003E095A /* recipeset.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipeset.json; sourceTree = "<group>"; };
 		018A07961CBA1FA000BB063B /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		018A07981CBA1FC700BB063B /* Gloss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Gloss.framework; path = "/Users/Naveen/Library/Developer/Xcode/DerivedData/barbot-eaobhpyjwsiprbaklixnovhmekve/Build/Products/Debug-iphonesimulator/Gloss.framework"; sourceTree = "<absolute>"; };
@@ -135,6 +141,7 @@
 				018A07961CBA1FA000BB063B /* Menu.swift */,
 				018A079D1CBA219800BB063B /* Recipe.swift */,
 				01BBAF5D1CC07F450019DAE7 /* RecipeSet.swift */,
+				017D28C71CC3204E00EDBD3D /* Setting.swift */,
 				01D360A01CBB2989009AA383 /* Step.swift */,
 			);
 			name = Model;
@@ -168,8 +175,10 @@
 		018BAFC51CA3BDA4008AA729 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				017D28C31CC31DA800EDBD3D /* ContainerViewController.swift */,
 				013854D91C7D50870070E112 /* MenuTableViewController.swift */,
 				017203351CA76D6A002C3168 /* RecipeViewController.swift */,
+				017D28C51CC31F2900EDBD3D /* SidePanelViewController.swift */,
 				01DA902C1CB0FD6B007A1B02 /* PourViewController.swift */,
 			);
 			name = ViewControllers;
@@ -355,7 +364,10 @@
 			files = (
 				01DA902D1CB0FD6B007A1B02 /* PourViewController.swift in Sources */,
 				01D360A31CBB7075009AA383 /* IngredientList.swift in Sources */,
+				017D28C41CC31DA800EDBD3D /* ContainerViewController.swift in Sources */,
 				013854DA1C7D50870070E112 /* MenuTableViewController.swift in Sources */,
+				017D28C61CC31F2900EDBD3D /* SidePanelViewController.swift in Sources */,
+				017D28C81CC3204E00EDBD3D /* Setting.swift in Sources */,
 				017203361CA76D6A002C3168 /* RecipeViewController.swift in Sources */,
 				018BAFC71CA3BE3B008AA729 /* DataManager.swift in Sources */,
 				01E8CC181CB640FE00D201B7 /* Ingredient.swift in Sources */,

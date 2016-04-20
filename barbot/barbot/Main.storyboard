@@ -8,7 +8,7 @@
         <!--Menu Table View Controller-->
         <scene sceneID="lI1-4z-R2U">
             <objects>
-                <viewController storyboardIdentifier="MenuTable" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xM9-OR-llP" customClass="MenuTableViewController" customModule="barbot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xM9-OR-llP" customClass="MenuTableViewController" customModule="barbot" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nS1-iB-Dig">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -27,8 +27,15 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" id="E3D-J2-uTu"/>
+                    <navigationItem key="navigationItem" id="E3D-J2-uTu">
+                        <barButtonItem key="leftBarButtonItem" image="RevealIcon" id="XUu-GG-no9">
+                            <connections>
+                                <action selector="slideOutTapped:" destination="xM9-OR-llP" id="eX2-81-qPD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="slideOutBarButtomItem" destination="XUu-GG-no9" id="KGH-0e-OkA"/>
                         <outlet property="tableView" destination="nS1-iB-Dig" id="57x-Zh-rvL"/>
                     </connections>
                 </viewController>
@@ -181,5 +188,58 @@
             </objects>
             <point key="canvasLocation" x="-290" y="451.99999999999994"/>
         </scene>
+        <!--Left View Controller-->
+        <scene sceneID="Ghr-u8-GKT">
+            <objects>
+                <viewController storyboardIdentifier="LeftViewController" title="Left View Controller" id="MBv-JX-110" customClass="SidePanelViewController" customModule="barbot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rru-hd-vPD"/>
+                        <viewControllerLayoutGuide type="bottom" id="1UZ-ex-iCK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pcV-82-vf5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="h6R-MP-cBK">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingCell" id="74Z-rw-pxM" customClass="SettingCell" customModule="barbot" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="22" width="600" height="54"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="74Z-rw-pxM" id="mzV-xn-1zd">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="53.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LE7-GU-Tj6">
+                                                    <rect key="frame" x="26" y="12" width="99" height="30"/>
+                                                    <state key="normal" title="Setting Button"/>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="settingButton" destination="LE7-GU-Tj6" id="rBj-Ig-l7z"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="MBv-JX-110" id="efx-S3-lGn"/>
+                                    <outlet property="delegate" destination="MBv-JX-110" id="bMx-sn-VkB"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="h6R-MP-cBK" id="jbV-51-4Xk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8EE-EL-xNj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-290" y="1246"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="RevealIcon" width="22" height="17"/>
+    </resources>
 </document>
