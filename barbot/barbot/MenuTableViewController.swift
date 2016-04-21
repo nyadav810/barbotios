@@ -11,7 +11,6 @@ import UIKit
 @objc
 protocol MenuTableViewControllerDelegate {
     optional func toggleLeftPanel()
-    optional func toggleRightPanel()
     optional func collapseSidePanels()
 }
 

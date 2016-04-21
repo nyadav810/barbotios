@@ -12,7 +12,7 @@ import UIKit
 enum SlideOutState {
     case BothCollapsed
     case LeftPanelExpanded
-    case RightPanelExpanded
+    case Expanding
 }
 
 class ContainerViewController: UIViewController {
@@ -42,8 +42,8 @@ class ContainerViewController: UIViewController {
 
         self.centerNavigationController.didMoveToParentViewController(self)
         
-        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "handlePanGesture:")
-        centerNavigationController.view.addGestureRecognizer(panGestureRecognizer)
+        //let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(ContainerViewController.handlePanGesture(_:)))
+        //centerNavigationController.view.addGestureRecognizer(panGestureRecognizer)
     }
   
 }
@@ -62,9 +62,6 @@ extension ContainerViewController: MenuTableViewControllerDelegate {
         animateLeftPanel(notAlreadyExpanded)
     }
     
-    func toggleRightPanel() {
-    }
-    
     func addLeftPanelViewController() {
         if (leftViewController == nil) {
             leftViewController = UIStoryboard.leftViewController()
@@ -79,9 +76,6 @@ extension ContainerViewController: MenuTableViewControllerDelegate {
         
         addChildViewController(sidePanelController)
         sidePanelController.didMoveToParentViewController(self)
-    }
-    
-    func addRightPanelViewController() {
     }
     
     func animateLeftPanel(shouldExpand: Bool) {
@@ -100,12 +94,9 @@ extension ContainerViewController: MenuTableViewControllerDelegate {
     }
     
     func animateCenterPanelXPosition(targetPosition: CGFloat, completion: ((Bool) -> Void)! = nil) {
-        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .CurveEaseInOut, animations: {
+        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: .CurveEaseInOut, animations: {
             self.centerNavigationController.view.frame.origin.x = targetPosition
             }, completion: completion)
-    }
-    
-    func animateRightPanel(shouldExpand: Bool) {
     }
     
     func showShadowForCenterViewController(shouldShowShadow: Bool) {
@@ -124,28 +115,35 @@ extension ContainerViewController: UIGestureRecognizerDelegate {
         let gestureIsDraggingFromLeftToRight = (recognizer.velocityInView(view).x > 0)
         
         switch(recognizer.state) {
-        case .Began:
-            if (currentState == .BothCollapsed) {
-                if (gestureIsDraggingFromLeftToRight) {
-                    addLeftPanelViewController()
+            case .Began:
+                if (currentState == .BothCollapsed) {
+                    if (gestureIsDraggingFromLeftToRight) {
+                        addLeftPanelViewController()
+                        showShadowForCenterViewController(true)
+                        currentState = .Expanding
+                    }
+                    
                 }
-                
-                showShadowForCenterViewController(true)
-            }
-        case .Changed:
-            recognizer.view!.center.x = recognizer.view!.center.x + recognizer.translationInView(view).x
-            recognizer.setTranslation(CGPointZero, inView: view)
-        case .Ended:
-            if (leftViewController != nil) {
-                // animate the side panel open or closed based on whether the view has moved more or less than halfway
-                let hasMovedGreaterThanHalfway = recognizer.view!.center.x > view.bounds.size.width
-                animateLeftPanel(hasMovedGreaterThanHalfway)
-            }
-        default:
-            break
+                if (currentState == .LeftPanelExpanded) {
+                    if (gestureIsDraggingFromLeftToRight==false) {
+                        currentState = .Expanding
+                    }
+                }
+            case .Changed:
+                if (currentState == .Expanding){
+                    recognizer.view!.center.x = recognizer.view!.center.x + recognizer.translationInView(view).x
+                    recognizer.setTranslation(CGPointZero, inView: view)
+                }
+            case .Ended:
+                if (leftViewController != nil) {
+                    // animate the side panel open or closed based on whether the view has moved more or less than halfway
+                    let hasMovedGreaterThanHalfway = recognizer.view!.center.x > view.bounds.size.width
+                    animateLeftPanel(hasMovedGreaterThanHalfway)
+                }
+            default:
+                break
         }
     }
-    
 }
 
 private extension UIStoryboard {
@@ -153,10 +151,6 @@ private extension UIStoryboard {
   
   class func leftViewController() -> SidePanelViewController? {
     return mainStoryboard().instantiateViewControllerWithIdentifier("LeftViewController") as? SidePanelViewController
-  }
-  
-  class func rightViewController() -> SidePanelViewController? {
-    return mainStoryboard().instantiateViewControllerWithIdentifier("RightViewController") as? SidePanelViewController
   }
   
   class func menuTableViewController() -> MenuTableViewController? {

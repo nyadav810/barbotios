@@ -65,7 +65,7 @@ class SettingCell: UITableViewCell {
     @IBOutlet weak var settingButton: UIButton!
   
     func configureForSetting(setting: Setting) {
-        settingButton.titleLabel!.text = setting.title
+        settingButton.setTitle(setting.title, forState: UIControlState.Normal)
     }
   
 }
