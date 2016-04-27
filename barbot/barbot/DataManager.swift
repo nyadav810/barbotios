@@ -67,13 +67,13 @@ class DataManager: WebSocketDelegate {
 //    }
     
     // Get recipes from local file for DrinkTableViewController's table view
-    func getMenuDataFromFile(file: String) -> [Recipe]? {
+    func getMenuDataFromFile(file: String) -> [Drink]? {
         let json: Payload! = self.getJSONDataFromFile(file)
         return self.parseMenuJSON(json)
     }
     
     // Parse menu JSON using Gloss
-    private func parseMenuJSON(json: Payload) -> [Recipe]? {
+    private func parseMenuJSON(json: Payload) -> [Drink]? {
         guard let menu = Menu(json: json) else {
             print("Error initializing object")
             return nil
@@ -111,6 +111,12 @@ class DataManager: WebSocketDelegate {
     }
     
     // MARK: - recipeset.json get methods
+    
+    // Get RecipeSet from local file for given recipe id
+    func getRecipeSetDataForDrink(id: String) -> RecipeSet? {
+        let json: Payload = self.getJSONDataFromFile(id)
+        return self.parseRecipeSetJSON(json)
+    }
     
     // Get RecipeSet from local file to display in
     // DrinkViewController

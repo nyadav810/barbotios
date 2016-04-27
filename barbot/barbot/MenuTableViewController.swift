@@ -23,10 +23,10 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
     var delegate: MenuTableViewControllerDelegate?
     
     var dataManager: DataManager!
-    var recipeList: [Recipe]!
+    var drinkList: [Drink]!
     var ingredientList: IngredientList!
     var searchController: UISearchController!
-    var filteredRecipes = [Recipe]()
+    var filteredDrinks = [Drink]()
     
     @IBOutlet weak var slideOutBarButtomItem: UIBarButtonItem!
     
@@ -35,7 +35,7 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
         
         // Call DataManager to retrieve recipes and ingredients
         self.dataManager = DataManager.init()
-        self.recipeList = dataManager.getMenuDataFromFile("menu")
+        self.drinkList = dataManager.getMenuDataFromFile("menu")
         self.ingredientList = dataManager.getIngredientDataFromFile("ingredients")
         
         // Initialize searchController
@@ -75,9 +75,9 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchController.active && searchController.searchBar.text != "" {
-            return filteredRecipes.count
+            return filteredDrinks.count
         }
-        return self.recipeList.count
+        return self.drinkList.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -88,15 +88,15 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
     
     // Set data and styles for tableView cells
     func configureCell(cell: UITableViewCell, indexPath: NSIndexPath) {
-        let recipe : Recipe
+        let drink : Drink
         
         if searchController.active && searchController.searchBar.text != "" {
-            recipe = self.filteredRecipes[indexPath.row]
+            drink = self.filteredDrinks[indexPath.row]
         } else {
-            recipe = self.recipeList[indexPath.row]
+            drink = self.drinkList[indexPath.row]
         }
         
-        cell.textLabel!.text = recipe.name
+        cell.textLabel!.text = drink.name
         cell.textLabel!.font = self.montserratFont
     }
     
@@ -121,8 +121,8 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
     // MARK: - UISearchResultsUpdating
     
     func filterContentForSearchText(searchText: String, scope: String = "All") {
-        filteredRecipes = recipeList.filter { recipe in
-            return recipe.name!.lowercaseString.containsString(searchText.lowercaseString)
+        filteredDrinks = drinkList.filter { drink in
+            return drink.name!.lowercaseString.containsString(searchText.lowercaseString)
         }
         
         tableView.reloadData()
@@ -135,14 +135,14 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
         
         if segue.identifier == "showDrinkScreen" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let recipe: Recipe
+                let drink: Drink
                 if searchController.active && searchController.searchBar.text != "" {
-                    recipe = filteredRecipes[indexPath.row]
+                    drink = filteredDrinks[indexPath.row]
                 } else {
-                    recipe = recipeList[indexPath.row]
+                    drink = drinkList[indexPath.row]
                 }
                 let controller = segue.destinationViewController as! RecipeViewController
-                controller.recipe = recipe
+                controller.recipeSet = self.dataManager.getRecipeSetDataForDrink(drink.recipeId!)
                 controller.dataManager = self.dataManager
                 controller.ingredientList = self.ingredientList
             }

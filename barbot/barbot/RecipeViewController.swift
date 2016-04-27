@@ -29,10 +29,8 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.recipeSet = dataManager.getRecipeSetDataFromFile("recipeset")
-        self.recipe.shot = self.recipeSet.recipes![0].shot
-        self.recipe.size = self.recipeSet.recipes![0].size
-        self.recipe.steps = self.recipeSet.recipes![0].steps
+        
+        self.recipe = self.recipeSet.recipes![0]
         
         self.tableView.delegate = self
         self.tableView.dataSource = self

@@ -10,7 +10,7 @@ import Gloss
 
 struct Menu: Decodable {
     
-    let menu: [Recipe]?
+    let menu: [Drink]?
     
     init?(json: JSON) {
         self.menu = "menu" <~~ json
