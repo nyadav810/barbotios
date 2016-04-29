@@ -10,21 +10,21 @@
       {
         "step_number": 2,
         "type": "add_ingredient",
-        "ingredient_id": "ingredient_2",
+        "ingredientId": "ingredient_2",
         "quantity": 1.5,
         "measurement": "oz"
       },
       {
         "step_number": 3,
         "type": "add_ingredient",
-        "ingredient_id": "ingredient_10",
+        "ingredientId": "ingredient_10",
         "quantity": 0.5,
         "measurement": "oz"
       },
       {
         "step_number": 4,
         "type": "add_ingredient",
-        "ingredient_id": "ingredient_13",
+        "ingredientId": "ingredient_13",
         "quantity": 4,
         "measurement": "oz"
       },

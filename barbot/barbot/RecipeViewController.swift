@@ -51,7 +51,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let attributes = [NSForegroundColorAttributeName: barbotBlue, NSFontAttributeName: self.montserratFont]
         
         // set title label
-        self.titleLabel.title = self.recipe.name
+        self.titleLabel.title = self.recipeSet.name
         
         // configure table label 'Recipe'
         self.tableLabel.font = self.montserratFont
@@ -152,7 +152,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // add ingredient name
         if object.type == "Add" {
             for ingredient: Ingredient in self.ingredientList.ingredientList! {
-                if object.ingredient_id == ingredient.ingredient_id {
+                if object.ingredientId == ingredient.ingredientId {
                     var stepString: String = ""
                     if ingredient.type == "alcohol" {
                         stepString = " \(object.quantity!) \(object.measurement!) \(ingredient.brand) \(ingredient.name)"

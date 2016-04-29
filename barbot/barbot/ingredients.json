@@ -7,7 +7,7 @@
           "name": "Gin",
           "brand": "Seagram's",
           "type": "alcohol",
-          "ingredient_id": "ingredient_1"
+          "ingredientId": "ingredient_1"
         }
       },
       {
@@ -15,7 +15,7 @@
           "name": "Rum",
           "brand": "Captain Morgan",
           "type": "alcohol",
-          "ingredient_id": "ingredient_2"
+          "ingredientId": "ingredient_2"
         }
       },
       {
@@ -23,7 +23,7 @@
           "name": "Tequila",
           "brand": "El Jimador",
           "type": "alcohol",
-          "ingredient_id": "ingredient_3"
+          "ingredientId": "ingredient_3"
         }
       },
       {
@@ -31,7 +31,7 @@
           "name": "Vodka",
           "brand": "Smirnoff",
           "type": "alcohol",
-          "ingredient_id": "ingredient_4"
+          "ingredientId": "ingredient_4"
         }
       },
       {
@@ -39,7 +39,7 @@
           "name": "Whiskey",
           "brand": "Jim Beam",
           "type": "alcohol",
-          "ingredient_id": "ingredient_5"
+          "ingredientId": "ingredient_5"
         }
       },
       {
@@ -47,7 +47,7 @@
           "name": "Triple Sec",
           "brand": "Cointreau",
           "type": "mixer",
-          "ingredient_id": "ingredient_6"
+          "ingredientId": "ingredient_6"
         }
       },
       {
@@ -55,7 +55,7 @@
           "name": "Vermouth",
           "brand": "Martini",
           "type": "mixer",
-          "ingredient_id": "ingredient_7"
+          "ingredientId": "ingredient_7"
         }
       },
       {
@@ -63,7 +63,7 @@
           "name": "Sweet Syrup",
           "brand": "Torani",
           "type": "mixer",
-          "ingredient_id": "ingredient_8"
+          "ingredientId": "ingredient_8"
         }
       },
       {
@@ -71,7 +71,7 @@
           "name": "Sour Syrup",
           "brand": "Torani",
           "type": "mixer",
-          "ingredient_id": "ingredient_9"
+          "ingredientId": "ingredient_9"
         }
       },
       {
@@ -79,7 +79,7 @@
           "name": "Lime Juice",
           "brand": "Santa Cruz",
           "type": "mixer",
-          "ingredient_id": "ingredient_10"
+          "ingredientId": "ingredient_10"
         }
       },
       {
@@ -87,7 +87,7 @@
           "name": "Lemon Juice",
           "brand": "Santa Cruz",
           "type": "mixer",
-          "ingredient_id": "ingredient_11"
+          "ingredientId": "ingredient_11"
         }
       },
       {
@@ -95,7 +95,7 @@
           "name": "Orange Juice",
           "brand": "Minute Maid",
           "type": "mixer",
-          "ingredient_id": "ingredient_12"
+          "ingredientId": "ingredient_12"
         }
       },
       {
@@ -103,7 +103,7 @@
           "name": "Coca-Cola",
           "brand": "Coca-Cola",
           "type": "mixer",
-          "ingredient_id": "ingredient_13"
+          "ingredientId": "ingredient_13"
         }
       },
       {
@@ -111,7 +111,7 @@
           "name": "Tonic Water",
           "brand": "Canada Dry",
           "type": "mixer",
-          "ingredient_id": "ingredient_14"
+          "ingredientId": "ingredient_14"
         }
       },
       {
@@ -119,7 +119,7 @@
           "name": "Energy Drink",
           "brand": "Red Bull",
           "type": "mixer",
-          "ingredient_id": "ingredient_15"
+          "ingredientId": "ingredient_15"
         }
       }
     ]

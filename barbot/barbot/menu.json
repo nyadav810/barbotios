@@ -1,28 +1,20 @@
 {
   "menu": [
     {
-      "drink": {
-        "id": "recipe_1",
+        "id": "drink_1",
         "name": "Rum and Coke"
-      }
     },
     {
-      "drink": {
-        "id": "recipe_2",
+        "id": "drink_2",
         "name": "Vodka Cranberry"
-      }
     },
     {
-      "drink": {
-        "id": "recipe_3",
+        "id": "drink_3",
         "name": "Gin and Tonic"
-      }
     },
     {
-      "drink": {
-        "id": "recipe_4",
+        "id": "drink_4",
         "name": "Whiskey Sour"
-      }
     }
   ]
 }

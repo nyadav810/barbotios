@@ -10,7 +10,7 @@ import Gloss
 
 struct Ingredient: Decodable {
     
-    let ingredient_id: String
+    let ingredientId: String
     let name: String
     let brand: String
     let type: String
@@ -19,13 +19,13 @@ struct Ingredient: Decodable {
         guard let ingredient: JSON = "ingredient" <~~ json
             else { return nil }
         
-        guard let ingredient_id: String = "ingredient_id" <~~ ingredient,
+        guard let ingredientId: String = "ingredientId" <~~ ingredient,
             name: String = "name" <~~ ingredient,
             brand: String = "brand" <~~ ingredient,
             type: String = "type" <~~ ingredient
             else { return nil }
         
-        self.ingredient_id = ingredient_id
+        self.ingredientId = ingredientId
         self.name = name
         self.brand = brand
         self.type = type

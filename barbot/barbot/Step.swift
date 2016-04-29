@@ -11,7 +11,7 @@ import Gloss
 struct Step: Decodable {
     let step_number: Int
     let type: String
-    let ingredient_id: String?
+    let ingredientId: String?
     let quantity: Double?
     let measurement: String?
     
@@ -34,7 +34,7 @@ struct Step: Decodable {
                 return nil;
         }
         
-        self.ingredient_id = "ingredient_id" <~~ json
+        self.ingredientId = "ingredientId" <~~ json
         self.quantity = "quantity" <~~ json
         self.measurement = "measurement" <~~ json
     }
