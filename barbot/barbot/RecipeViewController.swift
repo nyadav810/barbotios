@@ -53,6 +53,8 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // set title label
         self.titleLabel.title = self.recipeSet.name
         
+        self.navigationItem.rightBarButtonItem = editButtonItem()
+        
         // configure table label 'Recipe'
         self.tableLabel.font = self.montserratFont
         self.tableLabel.textColor = self.barbotBlue
@@ -82,8 +84,6 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 } else {
                     self.recipe = self.recipeSet.recipes![1]
                 }
-                
-                self.tableView.reloadData()
                 break;
             case 1:
                 // 16oz, update Recipe
@@ -92,12 +92,11 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 } else {
                     self.recipe = self.recipeSet.recipes![3]
                 }
-                
-                self.tableView.reloadData()
                 break;
             default:
                 break;
         }
+        self.tableView.reloadSections(NSIndexSet.init(index: 0), withRowAnimation: .Fade)
     }
     
     @IBAction func shotSegmentedControlChanged(sender: UISegmentedControl) {
@@ -111,8 +110,6 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     // tall
                     self.recipe = self.recipeSet.recipes![2]
                 }
-                
-                self.tableView.reloadData()
                 break;
             case 1:
                 // double, update Recipe
@@ -123,12 +120,34 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     // tall
                     self.recipe = self.recipeSet.recipes![3]
                 }
-                
-                self.tableView.reloadData()
                 break;
             default:
                 break;
             }
+        self.tableView.reloadSections(NSIndexSet.init(index: 0), withRowAnimation: .Fade)
+    }
+    
+    
+    override func setEditing(editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        self.tableView.setEditing(editing, animated: animated)
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            // Delete the row from the data source
+            self.recipe.steps?.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Top)
+        } else if editingStyle == .Insert {
+            
+        }
+        self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
+        //self.tableView.reloadSections(NSIndexSet.init(index: 0), withRowAnimation: .None)
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
     }
     
     // MARK: UITableDataSource

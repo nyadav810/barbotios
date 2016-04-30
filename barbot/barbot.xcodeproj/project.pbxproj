@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011C9B391CD435D7003B9B46 /* MenuCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011C9B381CD435D7003B9B46 /* MenuCollectionViewController.swift */; };
 		011E3EA51C7A876F00A34C5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011E3EA41C7A876F00A34C5F /* AppDelegate.swift */; };
 		011E3EAD1C7A876F00A34C5F /* barbot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 011E3EAB1C7A876F00A34C5F /* barbot.xcdatamodeld */; };
 		011E3EAF1C7A876F00A34C5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 011E3EAE1C7A876F00A34C5F /* Assets.xcassets */; };
@@ -17,7 +18,7 @@
 		017D28C41CC31DA800EDBD3D /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D28C31CC31DA800EDBD3D /* ContainerViewController.swift */; };
 		017D28C61CC31F2900EDBD3D /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D28C51CC31F2900EDBD3D /* SidePanelViewController.swift */; };
 		017D28C81CC3204E00EDBD3D /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D28C71CC3204E00EDBD3D /* Setting.swift */; };
-		0183789B1CBF59D2003E095A /* recipe_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0183789A1CBF59D2003E095A /* recipe_1.json */; };
+		0183789B1CBF59D2003E095A /* drink_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0183789A1CBF59D2003E095A /* drink_1.json */; };
 		018A07971CBA1FA000BB063B /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018A07961CBA1FA000BB063B /* Menu.swift */; };
 		018A079B1CBA205600BB063B /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018A07981CBA1FC700BB063B /* Gloss.framework */; };
 		018A079C1CBA205600BB063B /* Gloss.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 018A07981CBA1FC700BB063B /* Gloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -54,6 +55,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		011C9B381CD435D7003B9B46 /* MenuCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewController.swift; sourceTree = "<group>"; };
 		011E3EA11C7A876F00A34C5F /* barbot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = barbot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		011E3EA41C7A876F00A34C5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		011E3EAC1C7A876F00A34C5F /* barbot.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = barbot.xcdatamodel; sourceTree = "<group>"; };
@@ -66,7 +68,7 @@
 		017D28C31CC31DA800EDBD3D /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		017D28C51CC31F2900EDBD3D /* SidePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidePanelViewController.swift; sourceTree = "<group>"; };
 		017D28C71CC3204E00EDBD3D /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
-		0183789A1CBF59D2003E095A /* recipe_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipe_1.json; sourceTree = "<group>"; };
+		0183789A1CBF59D2003E095A /* drink_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = drink_1.json; sourceTree = "<group>"; };
 		018A07961CBA1FA000BB063B /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		018A07981CBA1FC700BB063B /* Gloss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Gloss.framework; path = "/Users/Naveen/Library/Developer/Xcode/DerivedData/barbot-eaobhpyjwsiprbaklixnovhmekve/Build/Products/Debug-iphonesimulator/Gloss.framework"; sourceTree = "<absolute>"; };
 		018A079D1CBA219800BB063B /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			children = (
 				017D28C31CC31DA800EDBD3D /* ContainerViewController.swift */,
 				013854D91C7D50870070E112 /* MenuTableViewController.swift */,
+				011C9B381CD435D7003B9B46 /* MenuCollectionViewController.swift */,
 				017203351CA76D6A002C3168 /* RecipeViewController.swift */,
 				017D28C51CC31F2900EDBD3D /* SidePanelViewController.swift */,
 				01DA902C1CB0FD6B007A1B02 /* PourViewController.swift */,
@@ -211,7 +214,7 @@
 				01E8CC191CB6412800D201B7 /* ingredients.json */,
 				018BAFC81CA3BE59008AA729 /* menu.json */,
 				01E8CC151CB61C1600D201B7 /* recipe.json */,
-				0183789A1CBF59D2003E095A /* recipe_1.json */,
+				0183789A1CBF59D2003E095A /* drink_1.json */,
 			);
 			name = JSON;
 			sourceTree = "<group>";
@@ -303,7 +306,7 @@
 				011E3EB21C7A876F00A34C5F /* LaunchScreen.storyboard in Resources */,
 				01D3609F1CBB25FB009AA383 /* Main.storyboard in Resources */,
 				011E3EAF1C7A876F00A34C5F /* Assets.xcassets in Resources */,
-				0183789B1CBF59D2003E095A /* recipe_1.json in Resources */,
+				0183789B1CBF59D2003E095A /* drink_1.json in Resources */,
 				01E8CC1A1CB6412800D201B7 /* ingredients.json in Resources */,
 				018BAFC91CA3BE59008AA729 /* menu.json in Resources */,
 				01E8CC161CB61C1600D201B7 /* recipe.json in Resources */,
@@ -379,6 +382,7 @@
 				018A07971CBA1FA000BB063B /* Menu.swift in Sources */,
 				01D360A11CBB2989009AA383 /* Step.swift in Sources */,
 				011E3EAD1C7A876F00A34C5F /* barbot.xcdatamodeld in Sources */,
+				011C9B391CD435D7003B9B46 /* MenuCollectionViewController.swift in Sources */,
 				01D9E3721CD082F4002A17B9 /* Drink.swift in Sources */,
 				018A079E1CBA219800BB063B /* Recipe.swift in Sources */,
 			);
