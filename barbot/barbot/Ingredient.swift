@@ -16,13 +16,11 @@ struct Ingredient: Decodable {
     let type: String
     
     init?(json: JSON) {
-        guard let ingredient: JSON = "ingredient" <~~ json
-            else { return nil }
         
-        guard let ingredientId: String = "ingredientId" <~~ ingredient,
-            name: String = "name" <~~ ingredient,
-            brand: String = "brand" <~~ ingredient,
-            type: String = "type" <~~ ingredient
+        guard let ingredientId: String = "ingredientId" <~~ json,
+            name: String = "name" <~~ json,
+            brand: String = "brand" <~~ json,
+            type: String = "type" <~~ json
             else { return nil }
         
         self.ingredientId = ingredientId

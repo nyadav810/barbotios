@@ -33,6 +33,11 @@
                                 <action selector="slideOutTapped:" destination="xM9-OR-llP" id="eX2-81-qPD"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GzY-R5-NXF">
+                            <connections>
+                                <action selector="addCustomDrink:" destination="xM9-OR-llP" id="oza-tW-Jz4"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="slideOutBarButtomItem" destination="XUu-GG-no9" id="KGH-0e-OkA"/>
@@ -90,7 +95,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mnb-Nf-AE0">
-                                <rect key="frame" x="0.0" y="101" width="600" height="232"/>
+                                <rect key="frame" x="0.0" y="310" width="600" height="197"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StepCell" id="PKg-ms-pke">
@@ -104,7 +109,7 @@
                                 </prototypes>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FDP-Ez-HHc">
-                                <rect key="frame" x="20" y="341" width="87" height="29"/>
+                                <rect key="frame" x="20" y="522" width="87" height="29"/>
                                 <segments>
                                     <segment title="8oz"/>
                                     <segment title="16oz"/>
@@ -114,7 +119,7 @@
                                 </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="K7K-Cj-s9a">
-                                <rect key="frame" x="115" y="341" width="115" height="29"/>
+                                <rect key="frame" x="115" y="522" width="115" height="29"/>
                                 <segments>
                                     <segment title="Single"/>
                                     <segment title="Double"/>
@@ -123,46 +128,49 @@
                                     <action selector="shotSegmentedControlChanged:" destination="bME-5r-yqE" eventType="valueChanged" id="WZU-u5-rcV"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s39-JH-pyf">
-                                <rect key="frame" x="20" y="72" width="52" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iaa-Lo-Ccf">
-                                <rect key="frame" x="540" y="341" width="40" height="30"/>
+                                <rect key="frame" x="520" y="521" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="pBL-As-tES"/>
+                                </constraints>
                                 <state key="normal" title="Order"/>
                                 <connections>
                                     <action selector="orderDrink:" destination="bME-5r-yqE" eventType="touchUpInside" id="dxO-lM-hi8"/>
                                     <segue destination="5JM-gA-mRL" kind="show" identifier="showPourScreen" id="4A4-yC-Gvw"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b91-aZ-qMX">
+                                <rect key="frame" x="150" y="64" width="300" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="4uK-xI-VrY"/>
+                                    <constraint firstAttribute="width" constant="300" id="f89-44-pJG"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="K7K-Cj-s9a" firstAttribute="top" secondItem="mnb-Nf-AE0" secondAttribute="bottom" constant="8" id="B50-Wp-jur"/>
+                            <constraint firstItem="Iaa-Lo-Ccf" firstAttribute="trailing" secondItem="81J-7g-zgh" secondAttribute="trailingMargin" id="1Bb-WX-BSt"/>
+                            <constraint firstItem="mnb-Nf-AE0" firstAttribute="top" secondItem="b91-aZ-qMX" secondAttribute="bottom" constant="21" id="3jn-aU-vIf"/>
+                            <constraint firstItem="Iaa-Lo-Ccf" firstAttribute="centerY" secondItem="K7K-Cj-s9a" secondAttribute="centerY" id="97z-Jt-2af"/>
+                            <constraint firstItem="K7K-Cj-s9a" firstAttribute="top" secondItem="mnb-Nf-AE0" secondAttribute="bottom" constant="15" id="B50-Wp-jur"/>
                             <constraint firstItem="FDP-Ez-HHc" firstAttribute="leading" secondItem="81J-7g-zgh" secondAttribute="leadingMargin" id="Dez-nv-hzB"/>
+                            <constraint firstItem="b91-aZ-qMX" firstAttribute="top" secondItem="cCi-Ht-k4L" secondAttribute="bottom" id="J6K-49-Woe"/>
                             <constraint firstItem="mnb-Nf-AE0" firstAttribute="leading" secondItem="81J-7g-zgh" secondAttribute="leadingMargin" constant="-20" id="Mfi-zu-kCU"/>
-                            <constraint firstItem="s39-JH-pyf" firstAttribute="leading" secondItem="81J-7g-zgh" secondAttribute="leadingMargin" id="Mwc-EN-BOh"/>
-                            <constraint firstItem="mnb-Nf-AE0" firstAttribute="top" secondItem="s39-JH-pyf" secondAttribute="bottom" constant="8" id="WkQ-i8-LB2"/>
-                            <constraint firstItem="dg0-gi-7lw" firstAttribute="top" secondItem="Iaa-Lo-Ccf" secondAttribute="bottom" constant="229" id="i4c-DR-Hee"/>
+                            <constraint firstItem="b91-aZ-qMX" firstAttribute="leading" secondItem="81J-7g-zgh" secondAttribute="leadingMargin" constant="130" id="fRJ-Mq-30A"/>
                             <constraint firstItem="K7K-Cj-s9a" firstAttribute="leading" secondItem="FDP-Ez-HHc" secondAttribute="trailing" constant="8" id="jFu-ct-EcL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mnb-Nf-AE0" secondAttribute="trailing" constant="-20" id="kaQ-SR-CgR"/>
-                            <constraint firstItem="s39-JH-pyf" firstAttribute="top" secondItem="cCi-Ht-k4L" secondAttribute="bottom" constant="8" id="lPX-dc-HaF"/>
-                            <constraint firstItem="Iaa-Lo-Ccf" firstAttribute="trailing" secondItem="81J-7g-zgh" secondAttribute="trailingMargin" id="llc-7i-1Lb"/>
-                            <constraint firstItem="dg0-gi-7lw" firstAttribute="top" secondItem="mnb-Nf-AE0" secondAttribute="bottom" constant="267" id="mia-50-gDa"/>
-                            <constraint firstItem="FDP-Ez-HHc" firstAttribute="top" secondItem="mnb-Nf-AE0" secondAttribute="bottom" constant="8" id="mzZ-Kk-vzw"/>
-                            <constraint firstItem="dg0-gi-7lw" firstAttribute="top" secondItem="K7K-Cj-s9a" secondAttribute="bottom" constant="231" id="pmd-dl-hxD"/>
-                            <constraint firstItem="Iaa-Lo-Ccf" firstAttribute="top" secondItem="mnb-Nf-AE0" secondAttribute="bottom" constant="8" id="qbe-1L-v1K"/>
-                            <constraint firstItem="dg0-gi-7lw" firstAttribute="top" secondItem="FDP-Ez-HHc" secondAttribute="bottom" constant="231" id="xsP-qJ-baB"/>
+                            <constraint firstItem="dg0-gi-7lw" firstAttribute="top" secondItem="mnb-Nf-AE0" secondAttribute="bottom" constant="93" id="mia-50-gDa"/>
+                            <constraint firstItem="FDP-Ez-HHc" firstAttribute="top" secondItem="mnb-Nf-AE0" secondAttribute="bottom" constant="15" id="mzZ-Kk-vzw"/>
+                            <constraint firstItem="dg0-gi-7lw" firstAttribute="top" secondItem="K7K-Cj-s9a" secondAttribute="bottom" constant="50" id="pmd-dl-hxD"/>
+                            <constraint firstItem="dg0-gi-7lw" firstAttribute="top" secondItem="FDP-Ez-HHc" secondAttribute="bottom" constant="50" id="xsP-qJ-baB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="jRG-kp-Hrl"/>
                     <connections>
+                        <outlet property="imageView" destination="b91-aZ-qMX" id="5ag-gb-TmG"/>
                         <outlet property="orderButton" destination="Iaa-Lo-Ccf" id="13t-nh-0Tq"/>
                         <outlet property="shotSegmentedControl" destination="K7K-Cj-s9a" id="bvW-r7-XB7"/>
                         <outlet property="sizeSegmentedControl" destination="FDP-Ez-HHc" id="cxi-7o-qh8"/>
-                        <outlet property="tableLabel" destination="s39-JH-pyf" id="F12-yD-kwg"/>
                         <outlet property="tableView" destination="mnb-Nf-AE0" id="Hzh-iw-JB0"/>
                         <outlet property="titleLabel" destination="jRG-kp-Hrl" id="kqq-9x-yhd"/>
                     </connections>

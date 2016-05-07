@@ -21,7 +21,8 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // UI elements
     @IBOutlet weak var titleLabel: UINavigationItem!
-    @IBOutlet weak var tableLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    //@IBOutlet weak var tableLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sizeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var shotSegmentedControl: UISegmentedControl!
@@ -56,8 +57,8 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.navigationItem.rightBarButtonItem = editButtonItem()
         
         // configure table label 'Recipe'
-        self.tableLabel.font = self.montserratFont
-        self.tableLabel.textColor = self.barbotBlue
+        //self.tableLabel.font = self.montserratFont
+        //self.tableLabel.textColor = self.barbotBlue
         
         // configure table view
         self.automaticallyAdjustsScrollViewInsets = false
@@ -65,10 +66,17 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // configure segmented controls
         self.shotSegmentedControl.setTitleTextAttributes(attributes, forState: UIControlState.Normal)
         self.sizeSegmentedControl.setTitleTextAttributes(attributes, forState: UIControlState.Normal)
+        self.shotSegmentedControl.tintColor = self.barbotBlue
+        self.sizeSegmentedControl.tintColor = self.barbotBlue
         
         // configure order button
         self.orderButton.titleLabel!.font = self.montserratFont
         self.orderButton.titleLabel?.textColor = self.barbotBlue
+        
+        self.orderButton.layer.cornerRadius = 5.0
+        self.orderButton.layer.borderColor = self.barbotBlue.CGColor
+        self.orderButton.layer.borderWidth = 0.9
+        self.orderButton.titleEdgeInsets = UIEdgeInsetsMake(0.0, 5.0, 0.0, 5.0)
     }
     
     @IBAction func orderDrink(sender: AnyObject) {
@@ -141,8 +149,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else if editingStyle == .Insert {
             
         }
-        self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
-        //self.tableView.reloadSections(NSIndexSet.init(index: 0), withRowAnimation: .None)
+        self.tableView.reloadSections(NSIndexSet.init(index: 0), withRowAnimation: .None)
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -170,20 +177,17 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // add ingredient name
         if object.type == "Add" {
-            for ingredient: Ingredient in self.ingredientList.ingredientList! {
-                if object.ingredientId == ingredient.ingredientId {
-                    var stepString: String = ""
-                    if ingredient.type == "alcohol" {
-                        stepString = " \(object.quantity!) \(object.measurement!) \(ingredient.brand) \(ingredient.name)"
-                    } else if ingredient.type == "mixer" {
-                        stepString = " \(object.quantity!) \(object.measurement!) \(ingredient.name)"
-                    } else {
-                        stepString = " \(ingredient.name)"
-                    }
-                    
-                    cell.textLabel!.text?.appendContentsOf(stepString)
-                }
+            let ingredient: Ingredient = self.ingredientList.getIngredientForIngredientId(object.ingredientId!)!
+            var stepString: String = ""
+            if ingredient.type == "alcohol" {
+                stepString = " \(object.quantity!) \(object.measurement!) \(ingredient.brand) \(ingredient.name)"
+            } else if ingredient.type == "mixer" {
+                stepString = " \(object.quantity!) \(object.measurement!) \(ingredient.name)"
+            } else {
+                stepString = " \(ingredient.name)"
             }
+            
+            cell.textLabel!.text?.appendContentsOf(stepString)
         }
     }
 }

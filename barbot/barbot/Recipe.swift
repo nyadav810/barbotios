@@ -17,13 +17,11 @@ struct Recipe: Decodable {
     var steps: [Step]?
     
     init?(json: JSON) {
-        guard let recipe: JSON = "recipe" <~~ json
-            else { return nil }
 
-        self.recipeId = "id" <~~ recipe
-        self.name = "name" <~~ recipe
-        self.size = "size" <~~ recipe
-        self.shot = "shot" <~~ recipe
-        self.steps = "steps" <~~ recipe
+        self.recipeId = "id" <~~ json
+        self.name = "name" <~~ json
+        self.size = "size" <~~ json
+        self.shot = "shot" <~~ json
+        self.steps = "steps" <~~ json
     }
 }

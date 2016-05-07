@@ -1,0 +1,48 @@
+{
+  "payload": {
+    "name": "Custom Drink",
+    "id": "custom_recipe",
+    "recipe_set": [
+      {
+        "size": "short",
+        "shot": "single",
+        "steps": [
+          {
+            "step_number": 1,
+            "type": "add_ice"
+          }
+        ]
+      },
+      {
+        "size": "short",
+        "shot": "double",
+        "steps": [
+          {
+            "step_number": 1,
+            "type": "add_ice"
+          }
+        ]
+      },
+      {
+        "size": "tall",
+        "shot": "single",
+        "steps": [
+          {
+            "step_number": 1,
+            "type": "add_ice"
+          }
+        ]
+      },
+      {
+        "size": "tall",
+        "shot": "double",
+        "steps": [
+          {
+            "step_number": 1,
+            "type": "add_ice"
+          }
+        ]
+      }
+    ]
+  }
+}

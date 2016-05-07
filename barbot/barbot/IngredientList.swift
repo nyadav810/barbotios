@@ -20,4 +20,14 @@ struct IngredientList: Decodable {
         self.barbotId = "barbot_id" <~~ payload
         self.ingredientList = "ingredients" <~~ payload
     }
+    
+    func getIngredientForIngredientId(ingredientId: String) -> Ingredient? {
+        for ingredient in self.ingredientList! {
+            if ingredientId == ingredient.ingredientId {
+                return ingredient
+            }
+        }
+        
+        return nil
+    }
 }

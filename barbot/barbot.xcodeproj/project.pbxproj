@@ -18,7 +18,7 @@
 		017D28C41CC31DA800EDBD3D /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D28C31CC31DA800EDBD3D /* ContainerViewController.swift */; };
 		017D28C61CC31F2900EDBD3D /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D28C51CC31F2900EDBD3D /* SidePanelViewController.swift */; };
 		017D28C81CC3204E00EDBD3D /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D28C71CC3204E00EDBD3D /* Setting.swift */; };
-		0183789B1CBF59D2003E095A /* drink_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0183789A1CBF59D2003E095A /* drink_1.json */; };
+		0183789B1CBF59D2003E095A /* recipe_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0183789A1CBF59D2003E095A /* recipe_1.json */; };
 		018A07971CBA1FA000BB063B /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018A07961CBA1FA000BB063B /* Menu.swift */; };
 		018A079B1CBA205600BB063B /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018A07981CBA1FC700BB063B /* Gloss.framework */; };
 		018A079C1CBA205600BB063B /* Gloss.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 018A07981CBA1FC700BB063B /* Gloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -27,12 +27,14 @@
 		018BAFC91CA3BE59008AA729 /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 018BAFC81CA3BE59008AA729 /* menu.json */; };
 		019565A61CB2C94000F16F6C /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 019565A41CB2C94000F16F6C /* Montserrat-Bold.ttf */; };
 		019565A71CB2C94000F16F6C /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 019565A51CB2C94000F16F6C /* Montserrat-Regular.ttf */; };
+		01B405951CDD780500997E7A /* custom_recipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 01B405941CDD780500997E7A /* custom_recipe.json */; };
 		01BBAF5E1CC07F450019DAE7 /* RecipeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BBAF5D1CC07F450019DAE7 /* RecipeSet.swift */; };
 		01D3609F1CBB25FB009AA383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01D3609E1CBB25FB009AA383 /* Main.storyboard */; };
 		01D360A11CBB2989009AA383 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D360A01CBB2989009AA383 /* Step.swift */; };
 		01D360A31CBB7075009AA383 /* IngredientList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D360A21CBB7075009AA383 /* IngredientList.swift */; };
 		01D9E3721CD082F4002A17B9 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D9E3711CD082F4002A17B9 /* Drink.swift */; };
 		01DA902D1CB0FD6B007A1B02 /* PourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA902C1CB0FD6B007A1B02 /* PourViewController.swift */; };
+		01E3D4A21CDC2F290099BA80 /* recipe_2.json in Resources */ = {isa = PBXBuildFile; fileRef = 01E3D4A11CDC2F290099BA80 /* recipe_2.json */; };
 		01E8CC161CB61C1600D201B7 /* recipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 01E8CC151CB61C1600D201B7 /* recipe.json */; };
 		01E8CC181CB640FE00D201B7 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8CC171CB640FE00D201B7 /* Ingredient.swift */; };
 		01E8CC1A1CB6412800D201B7 /* ingredients.json in Resources */ = {isa = PBXBuildFile; fileRef = 01E8CC191CB6412800D201B7 /* ingredients.json */; };
@@ -68,7 +70,7 @@
 		017D28C31CC31DA800EDBD3D /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		017D28C51CC31F2900EDBD3D /* SidePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidePanelViewController.swift; sourceTree = "<group>"; };
 		017D28C71CC3204E00EDBD3D /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
-		0183789A1CBF59D2003E095A /* drink_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = drink_1.json; sourceTree = "<group>"; };
+		0183789A1CBF59D2003E095A /* recipe_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipe_1.json; sourceTree = "<group>"; };
 		018A07961CBA1FA000BB063B /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		018A07981CBA1FC700BB063B /* Gloss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Gloss.framework; path = "/Users/Naveen/Library/Developer/Xcode/DerivedData/barbot-eaobhpyjwsiprbaklixnovhmekve/Build/Products/Debug-iphonesimulator/Gloss.framework"; sourceTree = "<absolute>"; };
 		018A079D1CBA219800BB063B /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -76,12 +78,14 @@
 		018BAFC81CA3BE59008AA729 /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
 		019565A41CB2C94000F16F6C /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "Resources/Fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		019565A51CB2C94000F16F6C /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "Resources/Fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		01B405941CDD780500997E7A /* custom_recipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = custom_recipe.json; sourceTree = "<group>"; };
 		01BBAF5D1CC07F450019DAE7 /* RecipeSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSet.swift; sourceTree = "<group>"; };
 		01D3609E1CBB25FB009AA383 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		01D360A01CBB2989009AA383 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		01D360A21CBB7075009AA383 /* IngredientList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientList.swift; sourceTree = "<group>"; };
 		01D9E3711CD082F4002A17B9 /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		01DA902C1CB0FD6B007A1B02 /* PourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PourViewController.swift; sourceTree = "<group>"; };
+		01E3D4A11CDC2F290099BA80 /* recipe_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipe_2.json; sourceTree = "<group>"; };
 		01E8CC151CB61C1600D201B7 /* recipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipe.json; sourceTree = "<group>"; };
 		01E8CC171CB640FE00D201B7 /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		01E8CC191CB6412800D201B7 /* ingredients.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ingredients.json; sourceTree = "<group>"; };
@@ -211,10 +215,12 @@
 		01E8CC1B1CB6413300D201B7 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
+				01B405941CDD780500997E7A /* custom_recipe.json */,
 				01E8CC191CB6412800D201B7 /* ingredients.json */,
 				018BAFC81CA3BE59008AA729 /* menu.json */,
+				0183789A1CBF59D2003E095A /* recipe_1.json */,
+				01E3D4A11CDC2F290099BA80 /* recipe_2.json */,
 				01E8CC151CB61C1600D201B7 /* recipe.json */,
-				0183789A1CBF59D2003E095A /* drink_1.json */,
 			);
 			name = JSON;
 			sourceTree = "<group>";
@@ -304,9 +310,11 @@
 				019565A71CB2C94000F16F6C /* Montserrat-Regular.ttf in Resources */,
 				019565A61CB2C94000F16F6C /* Montserrat-Bold.ttf in Resources */,
 				011E3EB21C7A876F00A34C5F /* LaunchScreen.storyboard in Resources */,
+				01B405951CDD780500997E7A /* custom_recipe.json in Resources */,
+				01E3D4A21CDC2F290099BA80 /* recipe_2.json in Resources */,
 				01D3609F1CBB25FB009AA383 /* Main.storyboard in Resources */,
 				011E3EAF1C7A876F00A34C5F /* Assets.xcassets in Resources */,
-				0183789B1CBF59D2003E095A /* drink_1.json in Resources */,
+				0183789B1CBF59D2003E095A /* recipe_1.json in Resources */,
 				01E8CC1A1CB6412800D201B7 /* ingredients.json in Resources */,
 				018BAFC91CA3BE59008AA729 /* menu.json in Resources */,
 				01E8CC161CB61C1600D201B7 /* recipe.json in Resources */,

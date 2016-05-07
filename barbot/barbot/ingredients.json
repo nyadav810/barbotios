@@ -3,124 +3,100 @@
     "barbot_id": "barbot_1234",
     "ingredients": [
       {
-        "ingredient": {
-          "name": "Gin",
-          "brand": "Seagram's",
-          "type": "alcohol",
-          "ingredientId": "ingredient_1"
-        }
+        "name": "Gin",
+        "brand": "Seagram's",
+        "type": "alcohol",
+        "ingredientId": "ingredient_1"
       },
       {
-        "ingredient": {
-          "name": "Rum",
-          "brand": "Captain Morgan",
-          "type": "alcohol",
-          "ingredientId": "ingredient_2"
-        }
+        "name": "Rum",
+        "brand": "Captain Morgan",
+        "type": "alcohol",
+        "ingredientId": "ingredient_2"
       },
       {
-        "ingredient": {
-          "name": "Tequila",
-          "brand": "El Jimador",
-          "type": "alcohol",
-          "ingredientId": "ingredient_3"
-        }
+        "name": "Tequila",
+        "brand": "El Jimador",
+        "type": "alcohol",
+        "ingredientId": "ingredient_3"
       },
       {
-        "ingredient": {
-          "name": "Vodka",
-          "brand": "Smirnoff",
-          "type": "alcohol",
-          "ingredientId": "ingredient_4"
-        }
+        "name": "Vodka",
+        "brand": "Smirnoff",
+        "type": "alcohol",
+        "ingredientId": "ingredient_4"
       },
       {
-        "ingredient": {
-          "name": "Whiskey",
-          "brand": "Jim Beam",
-          "type": "alcohol",
-          "ingredientId": "ingredient_5"
-        }
+        "name": "Whiskey",
+        "brand": "Jim Beam",
+        "type": "alcohol",
+        "ingredientId": "ingredient_5"
       },
       {
-        "ingredient": {
-          "name": "Triple Sec",
-          "brand": "Cointreau",
-          "type": "mixer",
-          "ingredientId": "ingredient_6"
-        }
+        "name": "Triple Sec",
+        "brand": "Cointreau",
+        "type": "mixer",
+        "ingredientId": "ingredient_6"
       },
       {
-        "ingredient": {
-          "name": "Vermouth",
-          "brand": "Martini",
-          "type": "mixer",
-          "ingredientId": "ingredient_7"
-        }
+        "name": "Vermouth",
+        "brand": "Martini",
+        "type": "mixer",
+        "ingredientId": "ingredient_7"
       },
       {
-        "ingredient": {
-          "name": "Sweet Syrup",
-          "brand": "Torani",
-          "type": "mixer",
-          "ingredientId": "ingredient_8"
-        }
+        "name": "Sweet Syrup",
+        "brand": "Torani",
+        "type": "mixer",
+        "ingredientId": "ingredient_8"
       },
       {
-        "ingredient": {
-          "name": "Sour Syrup",
-          "brand": "Torani",
-          "type": "mixer",
-          "ingredientId": "ingredient_9"
-        }
+        "name": "Sour Syrup",
+        "brand": "Torani",
+        "type": "mixer",
+        "ingredientId": "ingredient_9"
       },
       {
-        "ingredient": {
-          "name": "Lime Juice",
-          "brand": "Santa Cruz",
-          "type": "mixer",
-          "ingredientId": "ingredient_10"
-        }
+        "name": "Lime Juice",
+        "brand": "Santa Cruz",
+        "type": "mixer",
+        "ingredientId": "ingredient_10"
       },
       {
-        "ingredient": {
-          "name": "Lemon Juice",
-          "brand": "Santa Cruz",
-          "type": "mixer",
-          "ingredientId": "ingredient_11"
-        }
+        "name": "Lemon Juice",
+        "brand": "Santa Cruz",
+        "type": "mixer",
+        "ingredientId": "ingredient_11"
       },
       {
-        "ingredient": {
-          "name": "Orange Juice",
-          "brand": "Minute Maid",
-          "type": "mixer",
-          "ingredientId": "ingredient_12"
-        }
+        "name": "Orange Juice",
+        "brand": "Minute Maid",
+        "type": "mixer",
+        "ingredientId": "ingredient_12"
       },
       {
-        "ingredient": {
-          "name": "Coca-Cola",
-          "brand": "Coca-Cola",
-          "type": "mixer",
-          "ingredientId": "ingredient_13"
-        }
+        "name": "Coca-Cola",
+        "brand": "Coca-Cola",
+        "type": "mixer",
+        "ingredientId": "ingredient_13"
       },
       {
-        "ingredient": {
-          "name": "Tonic Water",
-          "brand": "Canada Dry",
-          "type": "mixer",
-          "ingredientId": "ingredient_14"
-        }
+        "name": "Tonic Water",
+        "brand": "Canada Dry",
+        "type": "mixer",
+        "ingredientId": "ingredient_14"
       },
       {
-        "ingredient": {
-          "name": "Energy Drink",
-          "brand": "Red Bull",
-          "type": "mixer",
-          "ingredientId": "ingredient_15"
-        }
+        "name": "Red Bull",
+        "brand": "Red Bull",
+        "type": "mixer",
+        "ingredientId": "ingredient_15"
+      },
+      {
+        "name": "Cranberry Juice",
+        "brand": "Minute Maid",
+        "type": "mixer",
+        "ingredientId": "ingredient_16"
       }
     ]
   }

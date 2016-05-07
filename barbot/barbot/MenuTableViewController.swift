@@ -27,6 +27,7 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
     var ingredientList: IngredientList!
     var searchController: UISearchController!
     var filteredDrinks = [Drink]()
+    weak var actionToEnable: UIAlertAction!
     
     @IBOutlet weak var slideOutBarButtomItem: UIBarButtonItem!
     
@@ -35,6 +36,8 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
         
         // Call DataManager to retrieve recipes and ingredients
         self.dataManager = DataManager.init()
+        
+        // TODO: Change to server retrieval
         self.drinkList = dataManager.getMenuDataFromFile("menu")
         self.ingredientList = dataManager.getIngredientDataFromFile("ingredients")
         
@@ -60,7 +63,7 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
 
         // reload table data
         self.tableView.reloadData()
-//        self.tableView.setContentOffset(CGPointMake(0, self.searchController.searchBar.frame.size.height), animated: false)
+        self.tableView.setContentOffset(CGPointMake(0, self.searchController.searchBar.frame.size.height), animated: false)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -69,6 +72,43 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
     
     @IBAction func slideOutTapped(sender: AnyObject) {
         delegate?.toggleLeftPanel?()
+    }
+    
+    @IBAction func addCustomDrink(sender: AnyObject) {
+        self.showAlertController()
+    }
+    
+    func showAlertController() {
+        let alert: UIAlertController = UIAlertController.init(title: "Name Your Drink", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addTextFieldWithConfigurationHandler { (textField) in
+            textField.placeholder = "Name"
+            textField.addTarget(self, action: #selector(MenuTableViewController.textChanged(_:)), forControlEvents: .EditingChanged)
+        }
+
+        let ok: UIAlertAction = UIAlertAction.init(title: "OK", style: .Default, handler: { (action: UIAlertAction) in
+            let field = alert.textFields!.first!
+            let customDrink: Drink = Drink.init(name: field.text!)
+            self.drinkList.append(customDrink)
+            let newIndexPath: NSIndexPath = NSIndexPath(forRow:self.drinkList.count-1, inSection:0)
+            self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Top)
+        })
+        
+        let cancel: UIAlertAction = UIAlertAction.init(title: "Cancel", style: .Cancel, handler:{
+            (action: UIAlertAction) in
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        })
+        
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        
+        self.actionToEnable = ok
+        ok.enabled = false
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func textChanged(sender:UITextField) {
+        self.actionToEnable?.enabled = (sender.text! != "")
     }
     
     // MARK: - UITableViewController
@@ -141,6 +181,7 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
                 } else {
                     drink = drinkList[indexPath.row]
                 }
+                
                 let controller = segue.destinationViewController as! RecipeViewController
                 controller.recipeSet = self.dataManager.getRecipeSetDataForDrink(drink.recipeId!)
                 controller.dataManager = self.dataManager
