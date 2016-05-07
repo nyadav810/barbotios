@@ -78,14 +78,18 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
         self.showAlertController()
     }
     
+    // Display alert popup when adding a new (custom) drink.
+    // Prompts user to enter a name, and adds it to the menu.
     func showAlertController() {
         let alert: UIAlertController = UIAlertController.init(title: "Name Your Drink", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
         
+        // Configure text view
         alert.addTextFieldWithConfigurationHandler { (textField) in
             textField.placeholder = "Name"
             textField.addTarget(self, action: #selector(MenuTableViewController.textChanged(_:)), forControlEvents: .EditingChanged)
         }
 
+        // OK button
         let ok: UIAlertAction = UIAlertAction.init(title: "OK", style: .Default, handler: { (action: UIAlertAction) in
             let field = alert.textFields!.first!
             let customDrink: Drink = Drink.init(name: field.text!)
@@ -94,6 +98,7 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
             self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Top)
         })
         
+        // Cancel button
         let cancel: UIAlertAction = UIAlertAction.init(title: "Cancel", style: .Cancel, handler:{
             (action: UIAlertAction) in
             alert.dismissViewControllerAnimated(true, completion: nil)
@@ -102,6 +107,7 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
         alert.addAction(ok)
         alert.addAction(cancel)
         
+        // OK should be disable to begin
         self.actionToEnable = ok
         ok.enabled = false
         self.presentViewController(alert, animated: true, completion: nil)
@@ -184,6 +190,9 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
                 
                 let controller = segue.destinationViewController as! RecipeViewController
                 controller.recipeSet = self.dataManager.getRecipeSetDataForDrink(drink.recipeId!)
+                if controller.recipeSet.recipeId == "custom_recipe" {
+                    controller.recipeSet.name = drink.name
+                }
                 controller.dataManager = self.dataManager
                 controller.ingredientList = self.ingredientList
             }

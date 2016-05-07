@@ -29,6 +29,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="E3D-J2-uTu">
                         <barButtonItem key="leftBarButtonItem" image="RevealIcon" id="XUu-GG-no9">
+                            <color key="tintColor" red="0.011764705882352941" green="0.396078431372549" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="slideOutTapped:" destination="xM9-OR-llP" id="eX2-81-qPD"/>
                             </connections>
@@ -102,6 +103,14 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PKg-ms-pke" id="Ase-sN-wiS">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddIngredientCell" id="KQ8-y6-ya9">
+                                        <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KQ8-y6-ya9" id="tgj-Tc-iCz">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>

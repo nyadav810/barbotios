@@ -35,7 +35,6 @@
 		01D9E3721CD082F4002A17B9 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D9E3711CD082F4002A17B9 /* Drink.swift */; };
 		01DA902D1CB0FD6B007A1B02 /* PourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA902C1CB0FD6B007A1B02 /* PourViewController.swift */; };
 		01E3D4A21CDC2F290099BA80 /* recipe_2.json in Resources */ = {isa = PBXBuildFile; fileRef = 01E3D4A11CDC2F290099BA80 /* recipe_2.json */; };
-		01E8CC161CB61C1600D201B7 /* recipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 01E8CC151CB61C1600D201B7 /* recipe.json */; };
 		01E8CC181CB640FE00D201B7 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8CC171CB640FE00D201B7 /* Ingredient.swift */; };
 		01E8CC1A1CB6412800D201B7 /* ingredients.json in Resources */ = {isa = PBXBuildFile; fileRef = 01E8CC191CB6412800D201B7 /* ingredients.json */; };
 		472F7E105E34E64B1A3B1B7F /* Pods_barbot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E59B7259830B8DD7413C29 /* Pods_barbot.framework */; };
@@ -86,7 +85,6 @@
 		01D9E3711CD082F4002A17B9 /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		01DA902C1CB0FD6B007A1B02 /* PourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PourViewController.swift; sourceTree = "<group>"; };
 		01E3D4A11CDC2F290099BA80 /* recipe_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipe_2.json; sourceTree = "<group>"; };
-		01E8CC151CB61C1600D201B7 /* recipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipe.json; sourceTree = "<group>"; };
 		01E8CC171CB640FE00D201B7 /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		01E8CC191CB6412800D201B7 /* ingredients.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ingredients.json; sourceTree = "<group>"; };
 		036A008997C1BE395E03C629 /* Pods-barbot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-barbot.release.xcconfig"; path = "Pods/Target Support Files/Pods-barbot/Pods-barbot.release.xcconfig"; sourceTree = "<group>"; };
@@ -220,7 +218,6 @@
 				018BAFC81CA3BE59008AA729 /* menu.json */,
 				0183789A1CBF59D2003E095A /* recipe_1.json */,
 				01E3D4A11CDC2F290099BA80 /* recipe_2.json */,
-				01E8CC151CB61C1600D201B7 /* recipe.json */,
 			);
 			name = JSON;
 			sourceTree = "<group>";
@@ -317,7 +314,6 @@
 				0183789B1CBF59D2003E095A /* recipe_1.json in Resources */,
 				01E8CC1A1CB6412800D201B7 /* ingredients.json in Resources */,
 				018BAFC91CA3BE59008AA729 /* menu.json in Resources */,
-				01E8CC161CB61C1600D201B7 /* recipe.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

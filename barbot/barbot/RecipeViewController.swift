@@ -48,6 +48,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
     }
     
+    // Configure UI: set label, color, text attributes, etc
     func configureView() {
         let attributes = [NSForegroundColorAttributeName: barbotBlue, NSFontAttributeName: self.montserratFont]
         
@@ -62,6 +63,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // configure table view
         self.automaticallyAdjustsScrollViewInsets = false
+        self.tableView.scrollEnabled = false
         
         // configure segmented controls
         self.shotSegmentedControl.setTitleTextAttributes(attributes, forState: UIControlState.Normal)
@@ -137,6 +139,14 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     override func setEditing(editing: Bool, animated: Bool) {
+        let stepNumber: Int = self.recipe.steps!.count
+        if editing {
+            self.recipe.steps!.append(Step.init(step_number: stepNumber, type: "NewIngredient"))
+            self.tableView.insertRowsAtIndexPaths([NSIndexPath.init(forRow: stepNumber, inSection:0)], withRowAnimation: .Top)
+        } else {
+            self.recipe.steps?.removeAtIndex(stepNumber-1)
+            tableView.deleteRowsAtIndexPaths([NSIndexPath.init(forRow: stepNumber-1, inSection:0)], withRowAnimation: .Top)
+        }
         super.setEditing(editing, animated: animated)
         self.tableView.setEditing(editing, animated: animated)
     }
@@ -152,6 +162,17 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView.reloadSections(NSIndexSet.init(index: 0), withRowAnimation: .None)
     }
     
+    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+        if indexPath.row == self.recipe.steps!.count - 1
+        {
+            return .Insert;
+        }
+        else
+        {
+            return .Delete;
+        }
+    }
+    
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
@@ -163,20 +184,21 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier("StepCell", forIndexPath: indexPath)
+        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("StepCell", forIndexPath: indexPath)
         self.configureCell(cell, indexPath: indexPath)
         return cell
     }
     
     func configureCell(cell: UITableViewCell, indexPath: NSIndexPath) {
-        let object : Step = self.recipe.steps![indexPath.row]
+        let object: Step = self.recipe.steps![indexPath.row]
         
         cell.textLabel!.font = self.montserratFont
-        cell.textLabel!.text = "\(indexPath.row + 1). \(object.type)"
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
         // add ingredient name
         if object.type == "Add" {
+            cell.textLabel!.text = "\(indexPath.row + 1). \(object.type)"
+            
             let ingredient: Ingredient = self.ingredientList.getIngredientForIngredientId(object.ingredientId!)!
             var stepString: String = ""
             if ingredient.type == "alcohol" {
@@ -188,6 +210,10 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
             
             cell.textLabel!.text?.appendContentsOf(stepString)
+        } else if object.type == "NewIngredient" {
+            cell.textLabel!.text = "Add Ingredient"
+        } else {
+            cell.textLabel!.text = "\(indexPath.row + 1). \(object.type)"
         }
     }
 }

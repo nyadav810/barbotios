@@ -1,6 +1,5 @@
 {
   "payload": {
-    "name": "Custom Drink",
     "id": "custom_recipe",
     "recipe_set": [
       {

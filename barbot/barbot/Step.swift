@@ -9,11 +9,16 @@
 import Gloss
 
 struct Step: Decodable {
-    let step_number: Int
-    let type: String
-    let ingredientId: String?
-    let quantity: Double?
-    let measurement: String?
+    var step_number: Int
+    var type: String
+    var ingredientId: String?
+    var quantity: Double?
+    var measurement: String?
+    
+    init(step_number: Int, type: String) {
+        self.step_number = step_number
+        self.type = type
+    }
     
     init?(json: JSON) {
         guard let step_number: Int = "step_number" <~~ json,

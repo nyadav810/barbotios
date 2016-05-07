@@ -1,16 +1,18 @@
 //
 //  ContainerViewController.swift
-//  SlideOutNavigation
+//  barbot
 //
-//  Created by James Frost on 03/08/2014.
-//  Copyright (c) 2014 James Frost. All rights reserved.
+//  Created by Naveen Yadav on 4/10/16.
+//  Copyright © 2016 BarBot. All rights reserved.
 //
+
+//  TODO: Fix pan gesture to move left only
 
 import UIKit
 
 
 enum SlideOutState {
-    case BothCollapsed
+    case Collapsed
     case LeftPanelExpanded
     case Expanding
 }
@@ -21,9 +23,9 @@ class ContainerViewController: UIViewController {
   
     var centerNavigationController: UINavigationController!
     var menuTableViewController: MenuTableViewController!
-    var currentState: SlideOutState = .BothCollapsed {
+    var currentState: SlideOutState = .Collapsed {
         didSet {
-            let shouldShowShadow = currentState != .BothCollapsed
+            let shouldShowShadow = currentState != .Collapsed
             showShadowForCenterViewController(shouldShowShadow)
         }
     }
@@ -42,8 +44,8 @@ class ContainerViewController: UIViewController {
 
         self.centerNavigationController.didMoveToParentViewController(self)
         
-        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(ContainerViewController.handlePanGesture(_:)))
-        centerNavigationController.view.addGestureRecognizer(panGestureRecognizer)
+        //let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(ContainerViewController.handlePanGesture(_:)))
+        //centerNavigationController.view.addGestureRecognizer(panGestureRecognizer)
     }
   
 }
@@ -85,7 +87,7 @@ extension ContainerViewController: MenuTableViewControllerDelegate {
             animateCenterPanelXPosition(CGRectGetWidth(centerNavigationController.view.frame) - centerPanelExpandedOffset)
         } else {
             animateCenterPanelXPosition(0) { finished in
-                self.currentState = .BothCollapsed
+                self.currentState = .Collapsed
                 
                 self.leftViewController!.view.removeFromSuperview()
                 self.leftViewController = nil;
@@ -100,7 +102,7 @@ extension ContainerViewController: MenuTableViewControllerDelegate {
     }
     
     func showShadowForCenterViewController(shouldShowShadow: Bool) {
-        if (shouldShowShadow) {
+        if shouldShowShadow {
             centerNavigationController.view.layer.shadowOpacity = 0.8
         } else {
             centerNavigationController.view.layer.shadowOpacity = 0.0
@@ -116,26 +118,28 @@ extension ContainerViewController: UIGestureRecognizerDelegate {
         
         switch(recognizer.state) {
             case .Began:
-                if (currentState == .BothCollapsed) {
-                    if (gestureIsDraggingFromLeftToRight) {
+                if currentState == .Collapsed {
+                    if gestureIsDraggingFromLeftToRight {
                         addLeftPanelViewController()
                         showShadowForCenterViewController(true)
                         currentState = .Expanding
                     }
-                    
                 }
-                if (currentState == .LeftPanelExpanded) {
-                    if (gestureIsDraggingFromLeftToRight==false) {
+                if currentState == .LeftPanelExpanded {
+                    if !gestureIsDraggingFromLeftToRight {
                         currentState = .Expanding
                     }
                 }
             case .Changed:
-                if (currentState == .Expanding){
-                    recognizer.view!.center.x = recognizer.view!.center.x + recognizer.translationInView(view).x
-                    recognizer.setTranslation(CGPointZero, inView: view)
+                if currentState == .Expanding {
+                    print(recognizer.velocityInView(view).x)
+                    if gestureIsDraggingFromLeftToRight {
+                        recognizer.view!.center.x = recognizer.view!.center.x + recognizer.translationInView(view).x
+                        recognizer.setTranslation(CGPointZero, inView: view)
+                    }
                 }
             case .Ended:
-                if (leftViewController != nil) {
+                if leftViewController != nil {
                     // animate the side panel open or closed based on whether the view has moved more or less than halfway
                     let hasMovedGreaterThanHalfway = recognizer.view!.center.x > view.bounds.size.width
                     animateLeftPanel(hasMovedGreaterThanHalfway)

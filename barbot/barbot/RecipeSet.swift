@@ -10,9 +10,9 @@ import Gloss
 
 struct RecipeSet: Decodable {
     
-    let name: String?
-    let recipeId: String?
-    let recipes: [Recipe]?
+    var name: String?
+    var recipeId: String?
+    var recipes: [Recipe]?
     
     init?(json: JSON) {
         guard let payload: JSON = "payload" <~~ json

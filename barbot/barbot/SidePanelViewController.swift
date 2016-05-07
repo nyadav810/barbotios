@@ -1,9 +1,9 @@
 //
-//  LeftViewController.swift
-//  SlideOutNavigation
+//  SidePanelViewController.swift
+//  barbot
 //
-//  Created by James Frost on 03/08/2014.
-//  Copyright (c) 2014 James Frost. All rights reserved.
+//  Created by Naveen Yadav on 4/10/16.
+//  Copyright © 2016 BarBot. All rights reserved.
 //
 
 import UIKit

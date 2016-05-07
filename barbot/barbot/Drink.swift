@@ -26,11 +26,3 @@ struct Drink: Decodable {
         self.name = "name" <~~ json
     }
 }
-
-func == (left: Drink, right: Drink) -> Bool {
-    return (left.drinkId == right.drinkId) && (left.recipeId == right.recipeId) && (left.name == right.name)
-}
-
-func != (left: Drink, right: Drink) -> Bool {
-    return !(left == right)
-}
