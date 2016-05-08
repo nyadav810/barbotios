@@ -107,12 +107,23 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddIngredientCell" id="KQ8-y6-ya9">
-                                        <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddIngredientCell" rowHeight="216" id="LcK-Dx-lNu">
+                                        <rect key="frame" x="0.0" y="136" width="600" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KQ8-y6-ya9" id="tgj-Tc-iCz">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LcK-Dx-lNu" id="dA3-2w-zPi">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="215.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yAf-TG-gL0">
+                                                    <rect key="frame" x="8" y="8" width="584" height="199.5"/>
+                                                </pickerView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yAf-TG-gL0" firstAttribute="leading" secondItem="dA3-2w-zPi" secondAttribute="leadingMargin" id="0bk-Dz-R1l"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="yAf-TG-gL0" secondAttribute="bottom" id="4E6-gE-ex8"/>
+                                                <constraint firstItem="yAf-TG-gL0" firstAttribute="top" secondItem="dA3-2w-zPi" secondAttribute="topMargin" id="8vI-Sh-ukn"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="yAf-TG-gL0" secondAttribute="trailing" id="faw-ns-zIm"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>

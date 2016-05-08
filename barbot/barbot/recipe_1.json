@@ -31,14 +31,6 @@
             "ingredientId": "ingredient_13",
             "quantity": 4,
             "measurement": "oz"
-          },
-          {
-            "step_number": 5,
-            "type": "mix"
-          },
-          {
-            "step_number": 6,
-            "type": "pour"
           }
         ]
       },
@@ -70,14 +62,6 @@
             "ingredientId": "ingredient_13",
             "quantity": 4,
             "measurement": "oz"
-          },
-          {
-            "step_number": 5,
-            "type": "mix"
-          },
-          {
-            "step_number": 6,
-            "type": "pour"
           }
         ]
       },
@@ -109,14 +93,6 @@
             "ingredientId": "ingredient_13",
             "quantity": 10,
             "measurement": "oz"
-          },
-          {
-            "step_number": 5,
-            "type": "mix"
-          },
-          {
-            "step_number": 6,
-            "type": "pour"
           }
         ]
       },
@@ -148,14 +124,6 @@
             "ingredientId": "ingredient_13",
             "quantity": 8,
             "measurement": "oz"
-          },
-          {
-            "step_number": 5,
-            "type": "mix"
-          },
-          {
-            "step_number": 6,
-            "type": "pour"
           }
         ]
       }

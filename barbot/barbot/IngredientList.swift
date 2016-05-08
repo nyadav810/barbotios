@@ -30,4 +30,16 @@ struct IngredientList: Decodable {
         
         return nil
     }
+    
+    func indexOf(ingredient: Ingredient) -> Int {
+        var index: Int = 0
+        for i in self.ingredientList! {
+            if i.ingredientId == ingredient.ingredientId {
+                break
+            } else {
+                index += 1
+            }
+        }
+        return index
+    }
 }

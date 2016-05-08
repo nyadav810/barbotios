@@ -3,6 +3,12 @@
     "barbot_id": "barbot_1234",
     "ingredients": [
       {
+        "name": "Ice",
+        "brand": "So Icy Entertainment",
+        "type": "ice",
+        "ingredientId": "ingredient_0"
+      },
+      {
         "name": "Gin",
         "brand": "Seagram's",
         "type": "alcohol",

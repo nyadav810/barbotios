@@ -26,6 +26,11 @@ struct Step: Decodable {
             else { return nil }
         
         self.step_number = step_number
+        
+        self.ingredientId = "ingredientId" <~~ json
+        self.quantity = "quantity" <~~ json
+        self.measurement = "measurement" <~~ json
+        
         switch type {
             case "add_ingredient":
                 self.type = "Add"
@@ -35,12 +40,9 @@ struct Step: Decodable {
                 self.type = "Pour"
             case "add_ice":
                 self.type = "Add Ice"
+                self.ingredientId = "ingredient_0"
             default:
                 return nil;
         }
-        
-        self.ingredientId = "ingredientId" <~~ json
-        self.quantity = "quantity" <~~ json
-        self.measurement = "measurement" <~~ json
     }
 }
