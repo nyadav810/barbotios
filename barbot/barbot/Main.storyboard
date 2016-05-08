@@ -114,15 +114,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="215.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yAf-TG-gL0">
-                                                    <rect key="frame" x="8" y="8" width="584" height="199.5"/>
+                                                <pickerView tag="1" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="yAf-TG-gL0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="215"/>
                                                 </pickerView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="yAf-TG-gL0" firstAttribute="leading" secondItem="dA3-2w-zPi" secondAttribute="leadingMargin" id="0bk-Dz-R1l"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="yAf-TG-gL0" secondAttribute="bottom" id="4E6-gE-ex8"/>
-                                                <constraint firstItem="yAf-TG-gL0" firstAttribute="top" secondItem="dA3-2w-zPi" secondAttribute="topMargin" id="8vI-Sh-ukn"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="yAf-TG-gL0" secondAttribute="trailing" id="faw-ns-zIm"/>
+                                                <constraint firstAttribute="bottom" secondItem="yAf-TG-gL0" secondAttribute="bottom" constant="0.5" id="Fuu-CA-qVR"/>
+                                                <constraint firstItem="yAf-TG-gL0" firstAttribute="top" secondItem="dA3-2w-zPi" secondAttribute="top" id="cJm-Dp-naj"/>
+                                                <constraint firstItem="yAf-TG-gL0" firstAttribute="leading" secondItem="dA3-2w-zPi" secondAttribute="leading" id="k6r-lj-28J"/>
+                                                <constraint firstAttribute="trailing" secondItem="yAf-TG-gL0" secondAttribute="trailing" id="zao-ly-1N5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

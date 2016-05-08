@@ -164,6 +164,11 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.recipe.steps!.append(Step.init(step_number: stepNumber, type: "NewIngredient"))
             self.tableView.insertRowsAtIndexPaths([NSIndexPath.init(forRow: stepNumber, inSection:0)], withRowAnimation: .Left)
         } else {                                        // End editing, remove New Ingredient row
+            if self.addIngredientPickerIsShown() {
+                self.tableView.beginUpdates()
+                self.hideExistingPicker()
+                self.tableView.endUpdates()
+            }
             self.recipe.steps?.removeAtIndex(stepNumber-1)
             tableView.deleteRowsAtIndexPaths([NSIndexPath.init(forRow: stepNumber-1, inSection:0)], withRowAnimation: .Left)
         }
@@ -183,12 +188,24 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-        if indexPath.row == self.recipe.steps!.count - 1 {
+        
+        let lastIndexPath: NSIndexPath = NSIndexPath(forRow:(self.tableView(tableView, numberOfRowsInSection: 0) - 1), inSection:0);
+
+        
+        if indexPath.row == lastIndexPath.row {
             return .Insert;
-        } else if self.addIngredientPickerIsShown() && self.addIngredientPickerIndexPath!.row == indexPath.row {
+        } else if self.addIngredientPickerIsShown() && (self.addIngredientPickerIndexPath!.row == indexPath.row || self.addIngredientPickerIndexPath!.row - 1 == indexPath.row) {
             return .None
         } else {
             return .Delete;
+        }
+    }
+    
+    func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if self.addIngredientPickerIsShown() && (self.addIngredientPickerIndexPath!.row == indexPath.row || self.addIngredientPickerIndexPath!.row - 1 == indexPath.row) {
+            return false
+        } else {
+            return true
         }
     }
     
@@ -272,6 +289,21 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return self.ingredientList.ingredientList![row].name
     }
     
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        var parentCellIndexPath: NSIndexPath!
+        
+        if self.addIngredientPickerIsShown() {
+            parentCellIndexPath = NSIndexPath(forRow:self.addIngredientPickerIndexPath!.row - 1, inSection:0)
+        } else {
+            return
+        }
+        
+        let cell: UITableViewCell = self.tableView.cellForRowAtIndexPath(parentCellIndexPath)!
+        self.recipe.steps![parentCellIndexPath!.row].ingredientId = self.ingredientList.ingredientList![row].ingredientId;
+        
+        self.configureStepCell(cell, indexPath: parentCellIndexPath)
+    }
+    
     // MARK: - Inline UIPickerView methods
     
     // Add Ingredient Picker
@@ -300,7 +332,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.tableView.insertRowsAtIndexPaths(indexPaths,
                                               withRowAnimation: .Fade);
-        self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+        self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Middle, animated: true)
     }
     
     // Add Ingredient Picker View Cell
@@ -318,13 +350,20 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // Add Step Cell
     func configureStepCell(cell: UITableViewCell, indexPath: NSIndexPath) -> UITableViewCell {
-        let object: Step = self.recipe.steps![indexPath.row]
+        var object: Step
+        if self.addIngredientPickerIsShown() && indexPath.row > self.addIngredientPickerIndexPath!.row {
+            object = self.recipe.steps![indexPath.row-1]
+            cell.textLabel!.text = "\(indexPath.row). \(object.type)"
+        } else {
+            object = self.recipe.steps![indexPath.row]
+            cell.textLabel!.text = "\(indexPath.row + 1). \(object.type)"
+        }
+        
         
         cell.textLabel!.font = self.montserratFont
         
         // add ingredient name
         if object.type == "Add" {
-            cell.textLabel!.text = "\(indexPath.row + 1). \(object.type)"
             
             let ingredient: Ingredient = self.ingredientList.getIngredientForIngredientId(object.ingredientId!)!
             var stepString: String = ""
