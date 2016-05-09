@@ -8,7 +8,10 @@
         "steps": [
           {
             "step_number": 1,
-            "type": "add_ice"
+            "type": "add_ingredient",
+            "ingredientId": "ingredient_0",
+            "quantity": 2,
+            "measurement": "oz"
           }
         ]
       },
@@ -18,7 +21,10 @@
         "steps": [
           {
             "step_number": 1,
-            "type": "add_ice"
+            "type": "add_ingredient",
+            "ingredientId": "ingredient_0",
+            "quantity": 2,
+            "measurement": "oz"
           }
         ]
       },
@@ -28,7 +34,10 @@
         "steps": [
           {
             "step_number": 1,
-            "type": "add_ice"
+            "type": "add_ingredient",
+            "ingredientId": "ingredient_0",
+            "quantity": 2,
+            "measurement": "oz"
           }
         ]
       },
@@ -38,7 +47,10 @@
         "steps": [
           {
             "step_number": 1,
-            "type": "add_ice"
+            "type": "add_ingredient",
+            "ingredientId": "ingredient_0",
+            "quantity": 2,
+            "measurement": "oz"
           }
         ]
       }

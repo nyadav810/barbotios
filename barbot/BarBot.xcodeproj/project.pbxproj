@@ -281,7 +281,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 011E3E9C1C7A876F00A34C5F /* Build configuration list for PBXProject "barbot" */;
+			buildConfigurationList = 011E3E9C1C7A876F00A34C5F /* Build configuration list for PBXProject "BarBot" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -523,7 +523,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		011E3E9C1C7A876F00A34C5F /* Build configuration list for PBXProject "barbot" */ = {
+		011E3E9C1C7A876F00A34C5F /* Build configuration list for PBXProject "BarBot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				011E3EB41C7A876F00A34C5F /* Debug */,

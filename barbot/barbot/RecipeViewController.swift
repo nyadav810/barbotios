@@ -191,11 +191,10 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let lastIndexPath: NSIndexPath = NSIndexPath(forRow:(self.tableView(tableView, numberOfRowsInSection: 0) - 1), inSection:0);
 
-        
-        if indexPath.row == lastIndexPath.row {
-            return .Insert;
-        } else if self.addIngredientPickerIsShown() && (self.addIngredientPickerIndexPath!.row == indexPath.row || self.addIngredientPickerIndexPath!.row - 1 == indexPath.row) {
+        if self.addIngredientPickerIsShown() && (self.addIngredientPickerIndexPath!.row == indexPath.row || self.addIngredientPickerIndexPath!.row - 1 == indexPath.row) {
             return .None
+        } else if indexPath.row == lastIndexPath.row {
+            return .Insert;
         } else {
             return .Delete;
         }
@@ -312,7 +311,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func hideExistingPicker() {
-        self.tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow:self.addIngredientPickerIndexPath!.row, inSection: 0)], withRowAnimation: .Fade)
+        self.tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow:self.addIngredientPickerIndexPath!.row, inSection: 0)], withRowAnimation: .Middle)
         self.addIngredientPickerIndexPath = nil
     }
     
@@ -331,25 +330,31 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let indexPaths: [NSIndexPath] = [NSIndexPath(forRow:indexPath.row + 1, inSection:0)];
         
         self.tableView.insertRowsAtIndexPaths(indexPaths,
-                                              withRowAnimation: .Fade);
+                                              withRowAnimation: .Middle);
         self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Middle, animated: true)
     }
     
     // Add Ingredient Picker View Cell
     func configureAddIngredientCell(cell: UITableViewCell, indexPath: NSIndexPath) -> UITableViewCell {
         let object: Step = self.recipe.steps![indexPath.row - 1]
-        let ingredient: Ingredient = self.ingredientList.getIngredientForIngredientId(object.ingredientId!)!
         
-        let indexOfIngredient = self.ingredientList.indexOf(ingredient)
         let pickerView: UIPickerView = cell.viewWithTag(kAddIngredientPickerTag) as! UIPickerView
         pickerView.delegate = self
         pickerView.dataSource = self
-        pickerView.selectRow(indexOfIngredient, inComponent: 0, animated: true)
+        
+        
+        if object.ingredientId != nil {
+            let ingredient: Ingredient? = self.ingredientList.getIngredientForIngredientId(object.ingredientId!)
+            let indexOfIngredient: Int? = self.ingredientList.indexOf(ingredient!)
+            pickerView.selectRow(indexOfIngredient!, inComponent: 0, animated: true)
+        }
+
         return cell
     }
     
     // Add Step Cell
     func configureStepCell(cell: UITableViewCell, indexPath: NSIndexPath) -> UITableViewCell {
+        cell.textLabel!.font = self.montserratFont
         var object: Step
         if self.addIngredientPickerIsShown() && indexPath.row > self.addIngredientPickerIndexPath!.row {
             object = self.recipe.steps![indexPath.row-1]
@@ -358,9 +363,6 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
             object = self.recipe.steps![indexPath.row]
             cell.textLabel!.text = "\(indexPath.row + 1). \(object.type)"
         }
-        
-        
-        cell.textLabel!.font = self.montserratFont
         
         // add ingredient name
         if object.type == "Add" {
@@ -372,6 +374,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
             } else if ingredient.type == "mixer" {
                 stepString = " \(object.quantity!) \(object.measurement!) \(ingredient.name)"
             } else {
+                // Ice
                 stepString = " \(ingredient.name)"
             }
             

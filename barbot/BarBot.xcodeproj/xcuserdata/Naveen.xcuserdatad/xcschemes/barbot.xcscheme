@@ -17,7 +17,7 @@
                BlueprintIdentifier = "011E3EA01C7A876F00A34C5F"
                BuildableName = "barbot.app"
                BlueprintName = "barbot"
-               ReferencedContainer = "container:barbot.xcodeproj">
+               ReferencedContainer = "container:BarBot.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
             BlueprintIdentifier = "011E3EA01C7A876F00A34C5F"
             BuildableName = "barbot.app"
             BlueprintName = "barbot"
-            ReferencedContainer = "container:barbot.xcodeproj">
+            ReferencedContainer = "container:BarBot.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -58,7 +58,7 @@
             BlueprintIdentifier = "011E3EA01C7A876F00A34C5F"
             BuildableName = "barbot.app"
             BlueprintName = "barbot"
-            ReferencedContainer = "container:barbot.xcodeproj">
+            ReferencedContainer = "container:BarBot.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -77,7 +77,7 @@
             BlueprintIdentifier = "011E3EA01C7A876F00A34C5F"
             BuildableName = "barbot.app"
             BlueprintName = "barbot"
-            ReferencedContainer = "container:barbot.xcodeproj">
+            ReferencedContainer = "container:BarBot.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -78,6 +78,9 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
         self.showAlertController()
     }
     
+    
+    // TODO: Add text field validation, max field length
+    
     // Display alert popup when adding a new (custom) drink.
     // Prompts user to enter a name, and adds it to the menu.
     func showAlertController() {
