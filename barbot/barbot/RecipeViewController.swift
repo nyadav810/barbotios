@@ -14,7 +14,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // Custom UITableViewCell Identifiers
     let stepCell: String = "StepCell"
-    let addIngredientCell: String = "AddIngredientCell"
+    let addIngredientPickerCell: String = "AddIngredientPickerCell"
     
     // UI appearance properties
     let montserratFont: UIFont! = UIFont(name: "Montserrat-Regular", size: 16)
@@ -47,7 +47,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView.dataSource = self
         
         // get Picker View Cell height
-        let pickerViewCellToCheck: UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier(addIngredientCell)!;
+        let pickerViewCellToCheck: UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier(self.addIngredientPickerCell)!;
         self.pickerCellRowHeight = pickerViewCellToCheck.frame.size.height;
         
         self.configureView()
@@ -97,6 +97,8 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.orderButton.titleEdgeInsets = UIEdgeInsetsMake(0.0, 5.0, 0.0, 5.0)
     }
     
+    // Serializes Recipe JSON to be sent to Web Server
+    // If not flagged as custom, only sends recipe Id
     @IBAction func orderDrink(sender: AnyObject) {
         // Send order to barbot web server
     }
@@ -254,6 +256,9 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView.deselectRowAtIndexPath(indexPath, animated:true);
         
         self.tableView.endUpdates()
+        
+        // scroll row with open picker view to top of table view
+        self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -286,8 +291,8 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var cell: UITableViewCell
         
         if self.addIngredientPickerIsShown() && self.addIngredientPickerIndexPath!.row == indexPath.row {
-            cell = tableView.dequeueReusableCellWithIdentifier(addIngredientCell, forIndexPath: indexPath)
-            cell = self.configureAddIngredientCell(cell, indexPath: indexPath)
+            cell = tableView.dequeueReusableCellWithIdentifier(self.addIngredientPickerCell, forIndexPath: indexPath)
+            cell = self.configureAddIngredientPickerCell(cell, indexPath: indexPath)
         } else {
             cell = tableView.dequeueReusableCellWithIdentifier(stepCell, forIndexPath: indexPath)
             cell = self.configureStepCell(cell, indexPath: indexPath)
@@ -368,11 +373,10 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.tableView.insertRowsAtIndexPaths(indexPaths,
                                               withRowAnimation: .Middle);
-        self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Middle, animated: true)
     }
     
     // Add Ingredient Picker View Cell
-    func configureAddIngredientCell(cell: UITableViewCell, indexPath: NSIndexPath) -> UITableViewCell {
+    func configureAddIngredientPickerCell(cell: UITableViewCell, indexPath: NSIndexPath) -> UITableViewCell {
         let object: Step = self.recipe.steps![indexPath.row - 1]
         
         let pickerView: UIPickerView = cell.viewWithTag(kAddIngredientPickerTag) as! UIPickerView
@@ -395,7 +399,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var object: Step
         var stepString: String = ""
         
-        // Configure cells that are below the shown UIPickerView in the UITableView
+        // Configure cells that are below the shown picker view in the table view
         if self.addIngredientPickerIsShown() && indexPath.row > self.addIngredientPickerIndexPath!.row {
             object = self.recipe.steps![indexPath.row-1]
             stepString.appendContentsOf("\(indexPath.row). Add")

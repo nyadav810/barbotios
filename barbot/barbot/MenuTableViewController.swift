@@ -58,7 +58,7 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
     }
     
     override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+        //super.viewWillAppear(animated)
         
         // Set UI elements
         self.title = "Barbot"
@@ -67,11 +67,15 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
 
         // reload table data
         self.tableView.reloadData()
-        self.tableView.setContentOffset(CGPointMake(0, self.searchController.searchBar.frame.size.height), animated: false)
+        self.hideSearchBar(CGPointMake(0, self.searchController.searchBar.frame.size.height), animated: false)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
     }
     
     override func viewWillDisappear(animated: Bool) {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardDidHideNotification, object: nil)
     }
     
     @IBAction func slideOutTapped(sender: AnyObject) {
@@ -82,6 +86,9 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
         self.showAlertController()
     }
     
+    func hideSearchBar(contentOffset: CGPoint, animated: Bool) {
+        self.tableView.setContentOffset(contentOffset, animated: animated)
+    }
     
     // TODO: Add text field validation, max field length
     
