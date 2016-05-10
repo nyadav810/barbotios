@@ -51,6 +51,10 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
         self.searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         self.tableView.tableHeaderView = self.searchController.searchBar
+        
+        // TODO: Finish slide out navigation
+        self.navigationItem.leftBarButtonItem = nil;
+        self.navigationItem.hidesBackButton = true;
     }
     
     override func viewWillAppear(animated: Bool) {

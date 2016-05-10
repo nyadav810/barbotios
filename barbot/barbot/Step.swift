@@ -22,27 +22,14 @@ struct Step: Decodable {
     
     init?(json: JSON) {
         guard let step_number: Int = "step_number" <~~ json,
-            type: String = "type" <~~ json
+            let type: String = "type" <~~ json
             else { return nil }
         
         self.step_number = step_number
+        self.type = type
         
         self.ingredientId = "ingredientId" <~~ json
         self.quantity = "quantity" <~~ json
         self.measurement = "measurement" <~~ json
-        
-        switch type {
-            case "add_ingredient":
-                self.type = "Add"
-            case "mix":
-                self.type = "Mix"
-            case "pour":
-                self.type = "Pour"
-            case "add_ice":
-                self.type = "Add Ice"
-                self.ingredientId = "ingredient_0"
-            default:
-                return nil;
-        }
     }
 }
