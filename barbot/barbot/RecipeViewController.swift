@@ -222,15 +222,6 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView.insertRowsAtIndexPaths([NSIndexPath.init(forRow: stepNumber, inSection:0)], withRowAnimation: .Fade)
     }
     
-    // Take contents of 'Add Ingredient' Cell and add to Recipe
-    func addNewIngredientToRecipe(row: Int) {
-        // additional setup for new ingredients
-        // add new Ingredient to Steps array
-        if row == self.recipe.steps!.count-1 {
-            self.showAddNewIngredientRow()
-        }
-    }
-    
     // Hides 'Add Ingredient' cell from UITableView and removes from Steps array
     func hideAddNewIngredientRow() {
         let stepNumber: Int = self.recipe.steps!.count
@@ -275,6 +266,9 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView.beginUpdates()
         
         if self.addIngredientPickerIsShown() && self.addIngredientPickerIndexPath!.row - 1 == indexPath.row {
+            if rowIsAddIngredientCell(indexPath.row) {
+                self.showAddNewIngredientRow()
+            }
             self.hideExistingPicker()
         } else {
             let newPickerIndexPath: NSIndexPath = self.calculateIndexPathForNewPicker(indexPath)
@@ -410,7 +404,17 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.tableView.insertRowsAtIndexPaths(indexPaths,
                                               withRowAnimation: .Middle);
-        self.recipe.steps![indexPath.row].type = "add_ingredient"
+        
+        if rowIsAddIngredientCell(indexPath.row) {
+            // initialize some Step fields: transition from new ingredient to added ingredient
+            self.recipe.steps![indexPath.row].type = "add_ingredient"
+            self.recipe.steps![indexPath.row].ingredientId = "ingredient_0"
+            self.recipe.steps![indexPath.row].quantity = 0.5
+        }
+    }
+    
+    func rowIsAddIngredientCell(row: Int) -> Bool {
+        return row == self.recipe.steps!.count - 1
     }
     
     // Add Ingredient Picker View Cell
