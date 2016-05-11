@@ -20,4 +20,14 @@ struct Recipe: Decodable {
         self.shot = "shot" <~~ json
         self.steps = "steps" <~~ json
     }
+    
+    func getRecipeVolume() -> Double {
+        var volume: Double = 0.0
+        for step in self.steps! {
+            if step.ingredientId != "ingredient_0" {
+                volume += step.quantity!
+            }
+        }
+        return volume
+    }
 }

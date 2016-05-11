@@ -15,9 +15,10 @@ struct Step: Decodable {
     var quantity: Double?
     var measurement: String?
     
-    init(step_number: Int, type: String) {
+    init(step_number: Int, type: String, measurement: String) {
         self.step_number = step_number
         self.type = type
+        self.measurement = measurement
     }
     
     init?(json: JSON) {
