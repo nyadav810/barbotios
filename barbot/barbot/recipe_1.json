@@ -9,29 +9,28 @@
         "steps": [
           {
             "step_number": 1,
-            "type": "add_ingredient",
-            "ingredientId": "ingredient_0",
+            "type": 4,
             "quantity": 2,
             "measurement": "oz"
           },
           {
             "step_number": 2,
-            "type": "add_ingredient",
-            "ingredientId": "ingredient_2",
+            "type": 1,
+            "ingredientId": "ingredient_afb779",
             "quantity": 1.5,
             "measurement": "oz"
           },
           {
             "step_number": 3,
-            "type": "add_ingredient",
-            "ingredientId": "ingredient_10",
+            "type": 1,
+            "ingredientId": "ingredient_6e91db",
             "quantity": 0.5,
             "measurement": "oz"
           },
           {
             "step_number": 4,
-            "type": "add_ingredient",
-            "ingredientId": "ingredient_13",
+            "type": 1,
+            "ingredientId": "ingredient_4184c5",
             "quantity": 4,
             "measurement": "oz"
           }
@@ -43,29 +42,28 @@
         "steps": [
           {
             "step_number": 1,
-            "type": "add_ingredient",
-            "ingredientId": "ingredient_0",
+            "type": 4,
             "quantity": 2,
             "measurement": "oz"
           },
           {
             "step_number": 2,
-            "type": "add_ingredient",
-            "ingredientId": "ingredient_2",
+            "type": 1,
+            "ingredientId": "ingredient_afb779",
             "quantity": 3,
             "measurement": "oz"
           },
           {
             "step_number": 3,
-            "type": "add_ingredient",
-            "ingredientId": "ingredient_10",
+            "type": 1,
+            "ingredientId": "ingredient_6e91db",
             "quantity": 0.5,
             "measurement": "oz"
           },
           {
             "step_number": 2.5,
-            "type": "add_ingredient",
-            "ingredientId": "ingredient_13",
+            "type": 1,
+            "ingredientId": "ingredient_4184c5",
             "quantity": 4,
             "measurement": "oz"
           }
@@ -77,29 +75,28 @@
         "steps": [
           {
             "step_number": 1,
-            "type": "add_ingredient",
-            "ingredientId": "ingredient_0",
-            "quantity": 2,
+            "type": 4,
+            "quantity": 4,
             "measurement": "oz"
           },
           {
             "step_number": 2,
-            "type": "add_ingredient",
-            "ingredientId": "ingredient_2",
+            "type": 1,
+            "ingredientId": "ingredient_afb779",
             "quantity": 1.5,
             "measurement": "oz"
           },
           {
             "step_number": 3,
-            "type": "add_ingredient",
-            "ingredientId": "ingredient_10",
+            "type": 1,
+            "ingredientId": "ingredient_6e91db",
             "quantity": 1,
             "measurement": "oz"
           },
           {
             "step_number": 4,
-            "type": "add_ingredient",
-            "ingredientId": "ingredient_13",
+            "type": 1,
+            "ingredientId": "ingredient_4184c5",
             "quantity": 10,
             "measurement": "oz"
           }
@@ -111,29 +108,28 @@
         "steps": [
           {
             "step_number": 1,
-            "type": "add_ingredient",
-            "ingredientId": "ingredient_0",
-            "quantity": 2,
+            "type": 4,
+            "quantity": 4,
             "measurement": "oz"
           },
           {
             "step_number": 2,
-            "type": "add_ingredient",
-            "ingredientId": "ingredient_2",
+            "type": 1,
+            "ingredientId": "ingredient_afb779",
             "quantity": 3,
             "measurement": "oz"
           },
           {
             "step_number": 3,
-            "type": "add_ingredient",
-            "ingredientId": "ingredient_10",
+            "type": 1,
+            "ingredientId": "ingredient_6e91db",
             "quantity": 2,
             "measurement": "oz"
           },
           {
             "step_number": 4,
-            "type": "add_ingredient",
-            "ingredientId": "ingredient_13",
+            "type": 1,
+            "ingredientId": "ingredient_4184c5",
             "quantity": 8,
             "measurement": "oz"
           }

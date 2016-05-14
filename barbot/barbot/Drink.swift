@@ -10,19 +10,20 @@ import Gloss
 
 struct Drink: Decodable {
     
-    let drinkId: String?
     let recipeId: String?
     let name: String?
     
     init(name: String) {
-        self.drinkId = "custom_drink"
         self.recipeId = "custom_recipe"
         self.name = name
     }
     
     init?(json: JSON) {
-        self.drinkId = "id" <~~ json
-        self.recipeId = "recipeId" <~~ json
-        self.name = "name" <~~ json
+        guard let recipeId: String = "id" <~~ json,
+            name: String = "name" <~~ json
+            else { return nil }
+        
+        self.recipeId = recipeId
+        self.name = name
     }
 }

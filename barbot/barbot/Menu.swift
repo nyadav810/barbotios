@@ -13,6 +13,6 @@ struct Menu: Decodable {
     let menu: [Drink]?
     
     init?(json: JSON) {
-        self.menu = "menu" <~~ json
+        self.menu = "recipes" <~~ json
     }
 }

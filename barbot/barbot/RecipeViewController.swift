@@ -218,7 +218,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // Adds a 'Add Ingredient' cell to UITableView and Steps array
     func showAddNewIngredientRow() {
         let stepNumber: Int = self.recipe.steps!.count
-        self.recipe.steps!.append(Step.init(step_number: stepNumber, type: "new_ingredient", measurement: "oz"))
+        self.recipe.steps!.append(Step.init(step_number: stepNumber, type: 99, measurement: "oz"))
         self.tableView.insertRowsAtIndexPaths([NSIndexPath.init(forRow: stepNumber, inSection:0)], withRowAnimation: .Fade)
     }
     
@@ -342,7 +342,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if component == 0 {
             return self.quantityArray.count
         } else {
-            return self.ingredientList.ingredientList!.count
+            return self.ingredientList.ingredientList.count
         }
     }
     
@@ -351,7 +351,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if component == 0 {
             return String(self.quantityArray![row])
         } else {
-            return self.ingredientList.ingredientList![row].name
+            return self.ingredientList.ingredientList[row].name
         }
     }
     
@@ -370,7 +370,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if component == 0 {
             self.recipe.steps![parentCellIndexPath.row].quantity = self.quantityArray[row]
         } else if component == 1 {
-            self.recipe.steps![parentCellIndexPath!.row].ingredientId = self.ingredientList.ingredientList![row].ingredientId
+            self.recipe.steps![parentCellIndexPath!.row].ingredientId = self.ingredientList.ingredientList[row].ingredientId
         }
         
         self.configureStepCell(cell, indexPath: parentCellIndexPath)
@@ -407,7 +407,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if rowIsAddIngredientCell(indexPath.row) {
             // initialize some Step fields: transition from new ingredient to added ingredient
-            self.recipe.steps![indexPath.row].type = "add_ingredient"
+            self.recipe.steps![indexPath.row].type = 1
             self.recipe.steps![indexPath.row].ingredientId = "ingredient_0"
             self.recipe.steps![indexPath.row].quantity = 0.5
         }
@@ -470,19 +470,22 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         // add ingredient name
-        if object.type == "add_ingredient" {
+        if object.type == 1 {
             let ingredient: Ingredient = self.ingredientList.getIngredientForIngredientId(object.ingredientId!)!
             
-            if ingredient.type == "alcohol" {
-                stepString.appendContentsOf(" \(object.quantity!) \(object.measurement!) \(ingredient.brand) \(ingredient.name)")
-            } else if ingredient.type == "mixer" {
+            // Uncomment for Ingredient brand, type
+//            if ingredient.type == "alcohol" {
+//                stepString.appendContentsOf(" \(object.quantity!) \(object.measurement!) \(ingredient.brand!) \(ingredient.name)")
+//            } else if ingredient.type == "mixer" {
+//                stepString.appendContentsOf(" \(object.quantity!) \(object.measurement!) \(ingredient.name)")
+//            } else {
+//                // Ice
                 stepString.appendContentsOf(" \(object.quantity!) \(object.measurement!) \(ingredient.name)")
-            } else {
-                // Ice
-                stepString.appendContentsOf(" \(ingredient.name)")
-            }
-        } else if object.type == "new_ingredient" {
+//            }
+        } else if object.type == 99 {
             stepString.appendContentsOf(" Ingredient")
+        } else if object.type == 4 {
+            stepString.appendContentsOf(" Ice")
         }
         
         return stepString

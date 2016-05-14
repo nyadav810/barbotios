@@ -24,7 +24,6 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
     
     var dataManager: DataManager!
     var drinkList: [Drink]!
-    var ingredientList: IngredientList!
     var searchController: UISearchController!
     var filteredDrinks = [Drink]()
     weak var actionToEnable: UIAlertAction!
@@ -39,7 +38,6 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
         
         // TODO: Change to server retrieval
         self.drinkList = dataManager.getMenuDataFromFile("menu")
-        self.ingredientList = dataManager.getIngredientDataFromFile("ingredients")
         
         // Initialize searchController
         self.searchController = UISearchController(searchResultsController: nil)
@@ -208,7 +206,7 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
                     controller.recipeSet.name = drink.name
                 }
                 controller.dataManager = self.dataManager
-                controller.ingredientList = self.ingredientList
+                controller.ingredientList = self.dataManager.ingredientList
             }
         }
     }

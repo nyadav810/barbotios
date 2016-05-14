@@ -13,15 +13,18 @@ import Starscream
 
 class DataManager: WebSocketDelegate {
 
-//    var socket: WebSocket!
+    var socket: WebSocket!
+    
+    var drinkList: [Drink]?
+    var ingredientList: IngredientList?
+    
     typealias Payload = [String: AnyObject]
     
-    // Initialize DataManager with AppDelegate properties
+    // Initialize DataManager properties
     init() {
-        // initialize web socket
-//        self.socket = WebSocket(url: NSURL(string: "http://")!)
-//        socket.delegate = self
-//        socket.connect()
+        self.socket = WebSocket(url: NSURL(string: "ws://localhost:8000?id=user_348604")!)
+        self.socket.delegate = self
+        self.socket.connect()
     }
     
     // Serialize JSON from NSData
@@ -51,13 +54,20 @@ class DataManager: WebSocketDelegate {
         return getJSONFromData(data)
     }
     
+    private func getDataFromJSONFile(jsonFileName: String) -> NSData {
+        let filePath = NSBundle.mainBundle().pathForResource(jsonFileName, ofType:"json")
+        let data = try! NSData(contentsOfFile:filePath!,
+                               options: NSDataReadingOptions.DataReadingUncached)
+        return data
+    }
+    
     // MARK: - menu.json get methods
 
-    // Get recipes from server using Websocket
-//    func getMenuDataFromServer(barbotId: String) -> [Recipe]? {
-//        socket.writeString("getMenu(" + barbotId + ")")
+//     Get recipes from server using Websocket
+//    func getMenuDataFromServer(barbotId: String) -> [Drink]? {
+//        socket.writeData(json)
 //        
-//        var menu: [Recipe]?
+//        var menu: [Drink]?
 //        socket.onText = {(text: String) in
 //            let json: Payload! = self.getJSONDataFromServer(text)
 //            menu = self.parseMenuJSON(json)
@@ -136,17 +146,25 @@ class DataManager: WebSocketDelegate {
     
     // MARK: - ingredients.json get methods
     
-//    func getIngredientDataFromServer(barbotId: String) -> [Ingredient]? {
-//        socket.writeString("getIngredients(" + barbotId + ")")
+//    func getIngredientDataFromServer(barbotId: String) -> IngredientList? {
+//        let data: NSData = getDataFromJSONFile("get_ingredients")
 //        
+//        socket.writeData(data)
+//    
 //        var ingredientList: IngredientList?
-//        socket.onText = {(text: String) in
-//            let json: Payload! = self.getJSONDataFromServer(text)
-//            ingredientList = self.parseIngredientJSON(json)
-//        }
-//        
+//        self.ingredientList = self.parseIngredientJSON(self.json)
 //        return ingredientList
 //    }
+    
+    func requestIngredientDataFromServer() {
+        let data: NSData = getDataFromJSONFile("get_ingredients")
+        socket.writeData(data)
+    }
+    
+    func getIngredientDataFromServer(text: String) {
+        let json: Payload = self.getJSONDataFromServer(text)
+        self.ingredientList = self.parseIngredientJSON(json)
+    }
     
     func getIngredientDataFromFile(file: String) -> IngredientList? {
         let json: Payload = self.getJSONDataFromFile(file)
@@ -165,6 +183,7 @@ class DataManager: WebSocketDelegate {
     
     func websocketDidConnect(ws: WebSocket) {
         print("websocket is connected")
+        self.requestIngredientDataFromServer()
     }
     
     func websocketDidDisconnect(ws: WebSocket, error: NSError?) {
@@ -177,6 +196,7 @@ class DataManager: WebSocketDelegate {
     
     func websocketDidReceiveMessage(ws: WebSocket, text: String) {
         print("Received text: \(text)")
+        self.getIngredientDataFromServer(text)
     }
     
     func websocketDidReceiveData(ws: WebSocket, data: NSData) {

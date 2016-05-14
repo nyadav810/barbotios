@@ -1,0 +1,7 @@
+{
+    "type": "command",
+    "command": "get_ingredients_for_barbot",
+    "args": {
+        "barbot_id": "barbot_805d2a"
+    }
+}

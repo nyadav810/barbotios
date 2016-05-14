@@ -10,12 +10,12 @@ import Gloss
 
 struct Step: Decodable {
     var step_number: Int
-    var type: String
+    var type: Int
     var ingredientId: String?
     var quantity: Double?
     var measurement: String?
     
-    init(step_number: Int, type: String, measurement: String) {
+    init(step_number: Int, type: Int, measurement: String) {
         self.step_number = step_number
         self.type = type
         self.measurement = measurement
@@ -23,7 +23,7 @@ struct Step: Decodable {
     
     init?(json: JSON) {
         guard let step_number: Int = "step_number" <~~ json,
-            let type: String = "type" <~~ json
+            let type: Int = "type" <~~ json
             else { return nil }
         
         self.step_number = step_number

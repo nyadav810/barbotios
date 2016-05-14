@@ -10,19 +10,17 @@ import Gloss
 
 struct IngredientList: Decodable {
     
-    let ingredientList: [Ingredient]?
-    let barbotId: String?
+    let ingredientList: [Ingredient]
     
     init?(json: JSON) {
-        guard let payload: JSON = "payload" <~~ json
+        guard let ingredientList: [Ingredient] = "ingredients" <~~ json
             else { return nil }
         
-        self.barbotId = "barbot_id" <~~ payload
-        self.ingredientList = "ingredients" <~~ payload
+        self.ingredientList = ingredientList
     }
     
     func getIngredientForIngredientId(ingredientId: String) -> Ingredient? {
-        for ingredient in self.ingredientList! {
+        for ingredient in self.ingredientList {
             if ingredientId == ingredient.ingredientId {
                 return ingredient
             }
@@ -33,7 +31,7 @@ struct IngredientList: Decodable {
     
     func indexOf(ingredient: Ingredient) -> Int {
         var index: Int = 0
-        for i in self.ingredientList! {
+        for i in self.ingredientList {
             if i.ingredientId == ingredient.ingredientId {
                 break
             } else {

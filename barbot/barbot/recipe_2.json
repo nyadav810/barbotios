@@ -65,7 +65,7 @@
             "step_number": 1,
             "type": "add_ingredient",
             "ingredientId": "ingredient_0",
-            "quantity": 2,
+            "quantity": 4,
             "measurement": "oz"
           },
           {
@@ -92,7 +92,7 @@
             "step_number": 1,
             "type": "add_ingredient",
             "ingredientId": "ingredient_0",
-            "quantity": 2,
+            "quantity": 4,
             "measurement": "oz"
           },
           {
