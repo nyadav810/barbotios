@@ -76,7 +76,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // Configure UI: set label, color, text attributes, etc
     func configureView() {
-        let attributes = [NSForegroundColorAttributeName: barbotBlue, NSFontAttributeName: self.montserratFont]
+        let attributes = [NSForegroundColorAttributeName: barbotBlue]//, NSFontAttributeName: self.montserratFont]
         
         // set title label
         self.titleLabel.title = self.recipeSet.name
@@ -99,7 +99,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.sizeSegmentedControl.tintColor = self.barbotBlue
         
         // configure order button
-        self.orderButton.titleLabel!.font = self.montserratFont
+        // self.orderButton.titleLabel!.font = self.montserratFont
         self.orderButton.titleLabel?.textColor = self.barbotBlue
         
         self.orderButton.layer.cornerRadius = 5.0
@@ -408,7 +408,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if rowIsAddIngredientCell(indexPath.row) {
             // initialize some Step fields: transition from new ingredient to added ingredient
             self.recipe.steps![indexPath.row].type = 1
-            self.recipe.steps![indexPath.row].ingredientId = "ingredient_0"
+            self.recipe.steps![indexPath.row].ingredientId = self.ingredientList.ingredientList.first?.ingredientId
             self.recipe.steps![indexPath.row].quantity = 0.5
         }
     }

@@ -22,7 +22,7 @@ class DataManager: WebSocketDelegate {
     
     // Initialize DataManager properties
     init() {
-        self.socket = WebSocket(url: NSURL(string: "ws://localhost:8000?id=user_348604")!)
+        self.socket = WebSocket(url: NSURL(string: "ws://192.168.1.36:8000?id=user_348604")!)
         self.socket.delegate = self
         self.socket.connect()
     }
@@ -54,13 +54,6 @@ class DataManager: WebSocketDelegate {
         return getJSONFromData(data)
     }
     
-    private func getDataFromJSONFile(jsonFileName: String) -> NSData {
-        let filePath = NSBundle.mainBundle().pathForResource(jsonFileName, ofType:"json")
-        let data = try! NSData(contentsOfFile:filePath!,
-                               options: NSDataReadingOptions.DataReadingUncached)
-        return data
-    }
-    
     // MARK: - menu.json get methods
 
 //     Get recipes from server using Websocket
@@ -78,8 +71,8 @@ class DataManager: WebSocketDelegate {
     
     // Get recipes from local file for DrinkTableViewController's table view
     func getMenuDataFromFile(file: String) -> [Drink]? {
-        let json: Payload! = self.getJSONDataFromFile(file)
-        return self.parseMenuJSON(json)
+        let json: Payload! = getJSONDataFromFile(file)
+        return parseMenuJSON(json)
     }
     
     // Parse menu JSON using Gloss
@@ -90,6 +83,43 @@ class DataManager: WebSocketDelegate {
         }
         
         return menu.menu!
+    }
+    
+    // MARK: - ingredients.json get methods
+    
+    // write request to web socket
+    func requestDataFromServer(command: String, args: Payload) {
+        let json: Payload = [
+            "type": "command",
+            "command": command,
+            "args": args
+        ]
+        
+        do {
+            let data: NSData = try NSJSONSerialization.dataWithJSONObject(json, options: .PrettyPrinted)
+            socket.writeData(data)
+        } catch {
+            print("error serializing JSON: \(error)")
+        }
+    }
+    
+    // process response from web socket
+    func getIngredientDataFromServer(text: String) {
+        let json: Payload = getJSONDataFromServer(text)
+        self.ingredientList = parseIngredientJSON(json)
+    }
+    
+    func getIngredientDataFromFile(file: String) -> IngredientList? {
+        let json: Payload = getJSONDataFromFile(file)
+        return parseIngredientJSON(json)
+    }
+    
+    private func parseIngredientJSON(json: Payload) -> IngredientList? {
+        guard let ingredients = IngredientList(json: json) else {
+            print("Error initializing object")
+            return nil
+        }
+        return ingredients
     }
     
     // MARK: - recipe.json get methods
@@ -107,8 +137,8 @@ class DataManager: WebSocketDelegate {
 //    }
     
     func getRecipeDataFromFile(file: String) -> Recipe? {
-        let json: Payload = self.getJSONDataFromFile(file)
-        return self.parseRecipeJSON(json)
+        let json: Payload = getJSONDataFromFile(file)
+        return parseRecipeJSON(json)
     }
     
     private func parseRecipeJSON(json: Payload) -> Recipe? {
@@ -124,15 +154,15 @@ class DataManager: WebSocketDelegate {
     
     // Get RecipeSet from local file for given recipe id
     func getRecipeSetDataForDrink(id: String) -> RecipeSet? {
-        let json: Payload = self.getJSONDataFromFile(id)
-        return self.parseRecipeSetJSON(json)
+        let json: Payload = getJSONDataFromFile(id)
+        return parseRecipeSetJSON(json)
     }
     
     // Get RecipeSet from local file to display in
     // DrinkViewController
     func getRecipeSetDataFromFile(file: String) -> RecipeSet? {
-        let json: Payload = self.getJSONDataFromFile(file)
-        return self.parseRecipeSetJSON(json)
+        let json: Payload = getJSONDataFromFile(file)
+        return parseRecipeSetJSON(json)
     }
     
     private func parseRecipeSetJSON(json: Payload) -> RecipeSet? {
@@ -144,46 +174,12 @@ class DataManager: WebSocketDelegate {
         return recipeSet
     }
     
-    // MARK: - ingredients.json get methods
-    
-//    func getIngredientDataFromServer(barbotId: String) -> IngredientList? {
-//        let data: NSData = getDataFromJSONFile("get_ingredients")
-//        
-//        socket.writeData(data)
-//    
-//        var ingredientList: IngredientList?
-//        self.ingredientList = self.parseIngredientJSON(self.json)
-//        return ingredientList
-//    }
-    
-    func requestIngredientDataFromServer() {
-        let data: NSData = getDataFromJSONFile("get_ingredients")
-        socket.writeData(data)
-    }
-    
-    func getIngredientDataFromServer(text: String) {
-        let json: Payload = self.getJSONDataFromServer(text)
-        self.ingredientList = self.parseIngredientJSON(json)
-    }
-    
-    func getIngredientDataFromFile(file: String) -> IngredientList? {
-        let json: Payload = self.getJSONDataFromFile(file)
-        return self.parseIngredientJSON(json)
-    }
-    
-    private func parseIngredientJSON(json: Payload) -> IngredientList? {
-        guard let ingredients = IngredientList(json: json) else {
-            print("Error initializing object")
-            return nil
-        }
-        return ingredients
-    }
-    
     // MARK: Websocket Delegate Methods.
     
     func websocketDidConnect(ws: WebSocket) {
         print("websocket is connected")
-        self.requestIngredientDataFromServer()
+        requestDataFromServer("get_recipes_for_barbot", args: ["barbot_id": "barbot_805d2a"])
+        requestDataFromServer("get_ingredients_for_barbot", args: ["barbot_id": "barbot_805d2a"])
     }
     
     func websocketDidDisconnect(ws: WebSocket, error: NSError?) {
@@ -196,7 +192,7 @@ class DataManager: WebSocketDelegate {
     
     func websocketDidReceiveMessage(ws: WebSocket, text: String) {
         print("Received text: \(text)")
-        self.getIngredientDataFromServer(text)
+        getIngredientDataFromServer(text)
     }
     
     func websocketDidReceiveData(ws: WebSocket, data: NSData) {

@@ -15,7 +15,6 @@
 		013854DA1C7D50870070E112 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013854D91C7D50870070E112 /* MenuTableViewController.swift */; };
 		0159FA011CB39A88008E65FB /* Starscream.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 0159FA001CB39A88008E65FB /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		017203361CA76D6A002C3168 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017203351CA76D6A002C3168 /* RecipeViewController.swift */; };
-		01781F021CE6F9BB00CF67D5 /* get_ingredients.json in Resources */ = {isa = PBXBuildFile; fileRef = 01781F011CE6F9BB00CF67D5 /* get_ingredients.json */; };
 		017D28C41CC31DA800EDBD3D /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D28C31CC31DA800EDBD3D /* ContainerViewController.swift */; };
 		017D28C61CC31F2900EDBD3D /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D28C51CC31F2900EDBD3D /* SidePanelViewController.swift */; };
 		017D28C81CC3204E00EDBD3D /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D28C71CC3204E00EDBD3D /* Setting.swift */; };
@@ -67,7 +66,6 @@
 		013854D91C7D50870070E112 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		0159FA001CB39A88008E65FB /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Starscream.framework; sourceTree = "<group>"; };
 		017203351CA76D6A002C3168 /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
-		01781F011CE6F9BB00CF67D5 /* get_ingredients.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = get_ingredients.json; sourceTree = "<group>"; };
 		017D28C31CC31DA800EDBD3D /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		017D28C51CC31F2900EDBD3D /* SidePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidePanelViewController.swift; sourceTree = "<group>"; };
 		017D28C71CC3204E00EDBD3D /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 		01E8CC1B1CB6413300D201B7 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				01781F011CE6F9BB00CF67D5 /* get_ingredients.json */,
 				01B405941CDD780500997E7A /* custom_recipe.json */,
 				01E8CC191CB6412800D201B7 /* ingredients.json */,
 				018BAFC81CA3BE59008AA729 /* menu.json */,
@@ -310,7 +307,6 @@
 				019565A71CB2C94000F16F6C /* Montserrat-Regular.ttf in Resources */,
 				019565A61CB2C94000F16F6C /* Montserrat-Bold.ttf in Resources */,
 				011E3EB21C7A876F00A34C5F /* LaunchScreen.storyboard in Resources */,
-				01781F021CE6F9BB00CF67D5 /* get_ingredients.json in Resources */,
 				01B405951CDD780500997E7A /* custom_recipe.json in Resources */,
 				01E3D4A21CDC2F290099BA80 /* recipe_2.json in Resources */,
 				01D3609F1CBB25FB009AA383 /* Main.storyboard in Resources */,
