@@ -192,6 +192,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ulf-dR-xkd"/>
+                    <connections>
+                        <outlet property="pourButton" destination="Z9b-1o-Dck" id="WQV-Ra-7kt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tIs-IA-iSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

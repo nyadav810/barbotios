@@ -65,8 +65,6 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     override func viewWillAppear(animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.tableView.reloadData()
         self.dataManager.socket.onText = { (text: String) in
             self.dataManager.parseResponseDataFromServer(text)
             self.recipe = self.dataManager.recipe
@@ -125,7 +123,9 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
             default:
                 break
-            }
+        }
+        
+        self.dataManager.requestDataFromServer("order_drink", args: ["barbot_id": self.dataManager.barbotId, "recipe_id": self.recipe.id])
     }
     
     // MARK: - Segmented Controls
@@ -260,6 +260,14 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else {
             return true
         }
+    }
+    
+    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        let cell: UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        if cell.selectionStyle == .None {
+            return nil
+        }
+        return indexPath
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -411,6 +419,8 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.recipe.steps[indexPath.row].type = 1
             self.recipe.steps[indexPath.row].ingredientId = self.ingredientList.ingredientList.first?.ingredientId
             self.recipe.steps[indexPath.row].quantity = 0.5
+            let cell: UITableViewCell = self.tableView.cellForRowAtIndexPath(indexPath)!
+            self.configureStepCell(cell, indexPath: indexPath)
         }
     }
     
@@ -464,31 +474,43 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Configure cells that are below the shown picker view in the table view
         if self.addIngredientPickerIsShown() && indexPath.row > self.addIngredientPickerIndexPath!.row {
             object = self.recipe.steps[indexPath.row-1]
-            stepString.appendContentsOf("\(indexPath.row). Add")
+            stepString.appendContentsOf("\(indexPath.row).")
         } else {
             object = self.recipe.steps[indexPath.row]
-            stepString.appendContentsOf("\(indexPath.row + 1). Add")
+            stepString.appendContentsOf("\(indexPath.row + 1).")
         }
         
         // add ingredient name
         switch (object.type) {
             case 1:
                 let ingredient: Ingredient = self.ingredientList.getIngredientForIngredientId(object.ingredientId!)!
-                stepString.appendContentsOf(" \(object.quantity!) \(object.measurement!) \(ingredient.name)")
+                stepString.appendContentsOf(" Add \(object.quantity!) \(object.measurement!) \(ingredient.name)")
             case 2:
-                stepString = "\(indexPath.row + 1). Mix"
+                stepString.appendContentsOf(" Mix")
+                cell.selectionStyle = .None
             case 3:
-                stepString = "\(indexPath.row + 1). Stir"
+                stepString.appendContentsOf(" Stir")
+                cell.selectionStyle = .None
             case 4:
-                stepString.appendContentsOf(" Ice")
+                stepString.appendContentsOf(" Add Ice")
+                cell.selectionStyle = .None
             case 5:
-                stepString = "\(indexPath.row + 1). Pour"
+                stepString.appendContentsOf(" Pour")
+                cell.selectionStyle = .None
             case 99:
-                stepString.appendContentsOf(" Ingredient")
+                stepString = "Add Ingredient"
             default:
                 break
         }
         
         return stepString
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showPourScreen" {
+            let controller = segue.destinationViewController as! PourViewController
+            
+            controller.dataManager = self.dataManager
+        }
     }
 }

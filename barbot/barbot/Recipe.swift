@@ -10,13 +10,15 @@ import Gloss
 
 struct Recipe: Decodable {
     
-    var name: String?
-    var id: String?
+    var name: String
+    var id: String
     var size: String?
     var shot: String?
     var steps: [Step]
     
     init() {
+        self.name = ""
+        self.id = ""
         self.steps = []
     }
     
@@ -24,11 +26,13 @@ struct Recipe: Decodable {
         guard let recipe: [String: AnyObject] = "recipe" <~~ json
             else { return nil }
         
-        guard let steps: [Step] = "steps" <~~ recipe
+        guard let steps: [Step] = "steps" <~~ recipe,
+            let name: String = "name" <~~ recipe,
+            let id: String = "id" <~~ recipe
             else { return nil }
         
-        self.name = "name" <~~ recipe
-        self.id = "id" <~~ recipe
+        self.name = name
+        self.id = id
         self.size = "size" <~~ recipe
         self.shot = "shot" <~~ recipe
         self.steps = steps
@@ -37,7 +41,7 @@ struct Recipe: Decodable {
     func getRecipeVolume() -> Double {
         var volume: Double = 0.0
         for step in self.steps {
-            if step.ingredientId != "ingredient_0" {
+            if step.type == 1 {
                 volume += step.quantity!
             }
         }

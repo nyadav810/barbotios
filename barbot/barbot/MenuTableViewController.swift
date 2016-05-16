@@ -145,6 +145,10 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
     // Set data and styles for tableView cells
     func configureCell(cell: UITableViewCell, indexPath: NSIndexPath) {
         let drink : Drink

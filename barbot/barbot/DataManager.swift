@@ -13,15 +13,23 @@ class DataManager: WebSocketDelegate {
 
     var socket: WebSocket!
     
+    var barbotId: String!
+    var userId: String!
+    
     var drinkList: [Drink]?
     var ingredientList: IngredientList?
     var recipe: Recipe?
+    var drinkOrder: String = ""
+    var result: String!
     
     typealias Payload = [String: AnyObject]
     
     // Initialize DataManager properties
     init() {
-        self.socket = WebSocket(url: NSURL(string: "ws://192.168.1.36:8000?id=user_348604")!)
+        self.barbotId = "barbot_805d2a"
+        self.userId = "user_348604"
+        
+        self.socket = WebSocket(url: NSURL(string: "ws://192.168.1.36:8000?id=\(self.userId)")!)
         self.socket.delegate = self
         self.socket.connect()
     }
@@ -74,6 +82,10 @@ class DataManager: WebSocketDelegate {
                 self.drinkList = parseMenuJSON(json)
             case "recipe":
                 self.recipe = parseRecipeJSON(json)
+            case "drink_order_id":
+                self.drinkOrder = parseSingleStringJSON(json, key: "drink_order_id")
+            case "result":
+                self.result = parseSingleStringJSON(json, key: "result")
             default:
                 break
         }
@@ -85,13 +97,7 @@ class DataManager: WebSocketDelegate {
         return getJSONFromData(data)
     }
     
-    // MARK: - menu.json get methods
-    
-    // Get recipes from local file for DrinkTableViewController's table view
-    func getMenuDataFromFile(file: String) -> [Drink]? {
-        let json: Payload! = getJSONDataFromFile(file)
-        return parseMenuJSON(json)
-    }
+    // MARK: - Menu get methods
     
     // Parse menu JSON using Gloss
     private func parseMenuJSON(json: Payload) -> [Drink]? {
@@ -103,12 +109,7 @@ class DataManager: WebSocketDelegate {
         return menu.menu!
     }
     
-    // MARK: - ingredients.json get methods
-    
-    func getIngredientDataFromFile(file: String) -> IngredientList? {
-        let json: Payload = getJSONDataFromFile(file)
-        return parseIngredientJSON(json)
-    }
+    // MARK: - Ingredient get methods
     
     private func parseIngredientJSON(json: Payload) -> IngredientList? {
         guard let ingredients = IngredientList(json: json) else {
@@ -118,12 +119,7 @@ class DataManager: WebSocketDelegate {
         return ingredients
     }
     
-    // MARK: - recipe.json get methods
-    
-    func getRecipeDataFromFile(file: String) -> Recipe? {
-        let json: Payload = getJSONDataFromFile(file)
-        return parseRecipeJSON(json)
-    }
+    // MARK: - Recipe get methods
     
     private func parseRecipeJSON(json: Payload) -> Recipe? {
         guard let recipe = Recipe(json: json) else {
@@ -134,20 +130,7 @@ class DataManager: WebSocketDelegate {
         return recipe
     }
     
-    // MARK: - recipeset.json get methods
-    
-    // Get RecipeSet from local file for given recipe id
-    func getRecipeSetDataForDrink(id: String) -> RecipeSet? {
-        let json: Payload = getJSONDataFromFile(id)
-        return parseRecipeSetJSON(json)
-    }
-    
-    // Get RecipeSet from local file to display in
-    // DrinkViewController
-    func getRecipeSetDataFromFile(file: String) -> RecipeSet? {
-        let json: Payload = getJSONDataFromFile(file)
-        return parseRecipeSetJSON(json)
-    }
+    // MARK: - RecipeSet get methods
     
     private func parseRecipeSetJSON(json: Payload) -> RecipeSet? {
         guard let recipeSet = RecipeSet(json: json) else {
@@ -158,12 +141,22 @@ class DataManager: WebSocketDelegate {
         return recipeSet
     }
     
+    // MARK: - Result get methods
+    
+    private func parseSingleStringJSON(json: Payload, key: String) -> String! {
+//        guard let s: String = String(json[key]) else {
+//            print("Error initializing object")
+//            return ""
+//        }
+        return String(json[key]!)
+    }
+    
     // MARK: Websocket Delegate Methods.
     
     func websocketDidConnect(ws: WebSocket) {
         print("websocket is connected")
-        requestDataFromServer("get_recipes_for_barbot", args: ["barbot_id": "barbot_805d2a"])
-        requestDataFromServer("get_ingredients_for_barbot", args: ["barbot_id": "barbot_805d2a"])
+        requestDataFromServer("get_recipes_for_barbot", args: ["barbot_id": self.barbotId])
+        requestDataFromServer("get_ingredients_for_barbot", args: ["barbot_id": self.barbotId])
     }
     
     func websocketDidDisconnect(ws: WebSocket, error: NSError?) {

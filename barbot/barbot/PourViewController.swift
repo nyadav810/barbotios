@@ -10,12 +10,27 @@ import UIKit
 
 class PourViewController: UIViewController {
     
+    var dataManager: DataManager!
+    var drinkOrder: String = ""
+    var result: String!
+    
+    @IBOutlet weak var pourButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.dataManager.socket.onText = { (text: String) in
+            self.dataManager.parseResponseDataFromServer(text)
+            self.drinkOrder = self.dataManager.drinkOrder
+        }
+    }
+    
     @IBAction func pourDrink(sender: AnyObject) {
         // Send signal to barbot to pour drink
+        
+        self.dataManager.requestDataFromServer("pour_drink", args: ["drink_order_id": self.dataManager.drinkOrder])
         
         self.showAlertController()
     }
