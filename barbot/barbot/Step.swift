@@ -29,8 +29,8 @@ struct Step: Decodable {
         self.step_number = step_number
         self.type = type
         
-        self.ingredientId = "ingredientId" <~~ json
-        self.quantity = "quantity" <~~ json
-        self.measurement = "measurement" <~~ json
+        self.ingredientId = "ingredient_id" <~~ json
+        self.quantity = "amount" <~~ json
+        self.measurement = "oz" //"measurement" <~~ json
     }
 }

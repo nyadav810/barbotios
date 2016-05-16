@@ -19,11 +19,7 @@ struct Drink: Decodable {
     }
     
     init?(json: JSON) {
-        guard let recipeId: String = "id" <~~ json,
-            name: String = "name" <~~ json
-            else { return nil }
-        
-        self.recipeId = recipeId
-        self.name = name
+        self.recipeId = "id" <~~ json
+        self.name = "name" <~~ json
     }
 }

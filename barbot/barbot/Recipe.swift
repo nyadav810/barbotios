@@ -10,20 +10,33 @@ import Gloss
 
 struct Recipe: Decodable {
     
+    var name: String?
+    var id: String?
     var size: String?
     var shot: String?
-    var steps: [Step]?
+    var steps: [Step]
+    
+    init() {
+        self.steps = []
+    }
     
     init?(json: JSON) {
-
-        self.size = "size" <~~ json
-        self.shot = "shot" <~~ json
-        self.steps = "steps" <~~ json
+        guard let recipe: [String: AnyObject] = "recipe" <~~ json
+            else { return nil }
+        
+        guard let steps: [Step] = "steps" <~~ recipe
+            else { return nil }
+        
+        self.name = "name" <~~ recipe
+        self.id = "id" <~~ recipe
+        self.size = "size" <~~ recipe
+        self.shot = "shot" <~~ recipe
+        self.steps = steps
     }
     
     func getRecipeVolume() -> Double {
         var volume: Double = 0.0
-        for step in self.steps! {
+        for step in self.steps {
             if step.ingredientId != "ingredient_0" {
                 volume += step.quantity!
             }

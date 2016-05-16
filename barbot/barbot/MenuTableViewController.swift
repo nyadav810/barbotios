@@ -31,13 +31,13 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
     @IBOutlet weak var slideOutBarButtomItem: UIBarButtonItem!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        //super.viewDidLoad()
         
         // Call DataManager to retrieve recipes and ingredients
-        self.dataManager = DataManager.init()
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        self.dataManager = appDelegate.dataManager
         
-        // TODO: Change to server retrieval
-        self.drinkList = dataManager.getMenuDataFromFile("menu")
+        self.drinkList = []
         
         // Initialize searchController
         self.searchController = UISearchController(searchResultsController: nil)
@@ -56,16 +56,18 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
     }
     
     override func viewWillAppear(animated: Bool) {
-        //super.viewWillAppear(animated)
-        
         // Set UI elements
         self.title = "Barbot"
         let attributes = [NSForegroundColorAttributeName : self.barbotBlue, NSFontAttributeName: self.montserratFont]
         self.navigationController?.navigationBar.titleTextAttributes = attributes
 
-        // reload table data
-        self.tableView.reloadData()
         self.hideSearchBar(CGPointMake(0, self.searchController.searchBar.frame.size.height), animated: false)
+        
+        self.dataManager.socket.onText = { (text: String) in
+            self.dataManager.parseResponseDataFromServer(text)
+            self.drinkList = self.dataManager.drinkList
+            self.tableView.reloadData()
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -73,7 +75,6 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
     
     override func viewWillDisappear(animated: Bool) {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardDidHideNotification, object: nil)
     }
     
     @IBAction func slideOutTapped(sender: AnyObject) {
@@ -187,9 +188,6 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-                // send 'request recipe for recipe_id' message through socket to Server
-//                let recipe: Recipe = self.recipeList[indexPath.row]
-//                viewController.recipe = self.dataManager.getRecipeDataFromServer(recipe.recipe_id)
         
         if segue.identifier == "showDrinkScreen" {
             if let indexPath = tableView.indexPathForSelectedRow {
@@ -201,10 +199,13 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
                 }
                 
                 let controller = segue.destinationViewController as! RecipeViewController
-                controller.recipeSet = self.dataManager.getRecipeSetDataForDrink(drink.recipeId!)
-                if controller.recipeSet.recipeId == "custom_recipe" {
-                    controller.recipeSet.name = drink.name
+                
+                if drink.recipeId == "custom_recipe" {
+                    
+                } else {
+                    self.dataManager.requestDataFromServer("get_recipe_details", args: ["recipe_id": drink.recipeId!])
                 }
+                controller.titleLabel.title = drink.name
                 controller.dataManager = self.dataManager
                 controller.ingredientList = self.dataManager.ingredientList
             }
