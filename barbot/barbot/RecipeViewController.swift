@@ -20,7 +20,6 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let montserratFont: UIFont! = UIFont(name: "Montserrat-Regular", size: 16)
     let barbotBlue: UIColor! = UIColor.init(red: 3.0/255.0, green: 101.0/255.0, blue: 248.0/255.0, alpha: 1.0)
     
-    var recipeSet: RecipeSet!
     var recipe: Recipe!
     var ingredientList: IngredientList!
     var dataManager: DataManager!
@@ -37,13 +36,10 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sizeSegmentedControl: UISegmentedControl!
-    @IBOutlet weak var shotSegmentedControl: UISegmentedControl!
     @IBOutlet weak var orderButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        self.recipe = Recipe.init()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -81,10 +77,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let attributes = [NSForegroundColorAttributeName: barbotBlue]//, NSFontAttributeName: self.montserratFont]
         
         self.navigationItem.rightBarButtonItem = editButtonItem()
-        
-        // configure table label 'Recipe'
-        //self.tableLabel.font = self.montserratFont
-        //self.tableLabel.textColor = self.barbotBlue
+
         
         // configure table view
         self.automaticallyAdjustsScrollViewInsets = false
@@ -92,9 +85,9 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView.allowsSelectionDuringEditing = true
         
         // configure segmented controls
-        self.shotSegmentedControl.setTitleTextAttributes(attributes, forState: UIControlState.Normal)
+        //self.shotSegmentedControl.setTitleTextAttributes(attributes, forState: UIControlState.Normal)
+        //self.shotSegmentedControl.tintColor = self.barbotBlue
         self.sizeSegmentedControl.setTitleTextAttributes(attributes, forState: UIControlState.Normal)
-        self.shotSegmentedControl.tintColor = self.barbotBlue
         self.sizeSegmentedControl.tintColor = self.barbotBlue
         
         // configure order button
@@ -154,71 +147,71 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // MARK: - Segmented Controls
     
     @IBAction func sizeSegmentedControlChanged(sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-            case 0:
-                // 8oz, update Recipe
-                if self.shotSegmentedControl.selectedSegmentIndex == 0 {
-                    self.recipe = self.recipeSet.recipes![0]
-                } else {
-                    self.recipe = self.recipeSet.recipes![1]
-                }
-                break
-            case 1:
-                // 16oz, update Recipe
-                if self.shotSegmentedControl.selectedSegmentIndex == 0 {
-                    self.recipe = self.recipeSet.recipes![2]
-                } else {
-                    self.recipe = self.recipeSet.recipes![3]
-                }
-                break
-            default:
-                break
-        }
-        
-        self.tableView.reloadSections(NSIndexSet.init(index: 0), withRowAnimation: .Fade)
-        
-        // Add 'new ingredient row' back if editing
-        if self.tableView.editing {
-            self.tableView.beginUpdates()
-            self.showAddNewIngredientRow()
-            self.tableView.endUpdates()
-        }
+//        switch sender.selectedSegmentIndex {
+//            case 0:
+//                // 8oz, update Recipe
+//                if self.shotSegmentedControl.selectedSegmentIndex == 0 {
+//                    self.recipe = self.recipeSet.recipes![0]
+//                } else {
+//                    self.recipe = self.recipeSet.recipes![1]
+//                }
+//                break
+//            case 1:
+//                // 16oz, update Recipe
+//                if self.shotSegmentedControl.selectedSegmentIndex == 0 {
+//                    self.recipe = self.recipeSet.recipes![2]
+//                } else {
+//                    self.recipe = self.recipeSet.recipes![3]
+//                }
+//                break
+//            default:
+//                break
+//        }
+//        
+//        self.tableView.reloadSections(NSIndexSet.init(index: 0), withRowAnimation: .Fade)
+//        
+//        // Add 'new ingredient row' back if editing
+//        if self.tableView.editing {
+//            self.tableView.beginUpdates()
+//            self.showAddNewIngredientRow()
+//            self.tableView.endUpdates()
+//        }
     }
     
-    @IBAction func shotSegmentedControlChanged(sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-            case 0:
-                // single, update Recipe
-                if self.sizeSegmentedControl.selectedSegmentIndex == 0 {
-                    // short
-                    self.recipe = self.recipeSet.recipes![0]
-                } else {
-                    // tall
-                    self.recipe = self.recipeSet.recipes![2]
-                }
-                break
-            case 1:
-                // double, update Recipe
-                if self.sizeSegmentedControl.selectedSegmentIndex == 0 {
-                    // short
-                    self.recipe = self.recipeSet.recipes![1]
-                } else {
-                    // tall
-                    self.recipe = self.recipeSet.recipes![3]
-                }
-                break
-            default:
-                break
-        }
-        self.tableView.reloadSections(NSIndexSet.init(index: 0), withRowAnimation: .Fade)
-        
-        // Add 'new ingredient row' back if editing
-        if self.tableView.editing {
-            self.tableView.beginUpdates()
-            self.showAddNewIngredientRow()
-            self.tableView.endUpdates()
-        }
-    }
+//    @IBAction func shotSegmentedControlChanged(sender: UISegmentedControl) {
+//        switch sender.selectedSegmentIndex {
+//            case 0:
+//                // single, update Recipe
+//                if self.sizeSegmentedControl.selectedSegmentIndex == 0 {
+//                    // short
+//                    //self.recipe = self.recipeSet.recipes![0]
+//                } else {
+//                    // tall
+//                    //self.recipe = self.recipeSet.recipes![2]
+//                }
+//                break
+//            case 1:
+//                // double, update Recipe
+//                if self.sizeSegmentedControl.selectedSegmentIndex == 0 {
+//                    // short
+//                    //self.recipe = self.recipeSet.recipes![1]
+//                } else {
+//                    // tall
+//                    //self.recipe = self.recipeSet.recipes![3]
+//                }
+//                break
+//            default:
+//                break
+//        }
+//        self.tableView.reloadSections(NSIndexSet.init(index: 0), withRowAnimation: .Fade)
+//        
+//        // Add 'new ingredient row' back if editing
+//        if self.tableView.editing {
+//            self.tableView.beginUpdates()
+//            self.showAddNewIngredientRow()
+//            self.tableView.endUpdates()
+//        }
+//    }
     
     // MARK: - UITableView Editing
     
@@ -565,7 +558,6 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
             switch self.sizeSegmentedControl.selectedSegmentIndex {
             case 0:
                 if volume > 8.0 {
-                    print("drink too big")
                     showAlertController()
                     return false
                 } else {
@@ -573,7 +565,6 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
             case 1:
                 if volume > 16.0 {
-                    print("drink too big")
                     showAlertController()
                     return false
                 } else {

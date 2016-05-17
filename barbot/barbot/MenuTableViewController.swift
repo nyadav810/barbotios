@@ -50,21 +50,23 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
         definesPresentationContext = true
         self.tableView.tableHeaderView = self.searchController.searchBar
         
+        // Set UI elements
+        self.title = "Barbot"
+        let attributes = [NSForegroundColorAttributeName : self.barbotBlue, NSFontAttributeName: self.montserratFont]
+        self.navigationController?.navigationBar.titleTextAttributes = attributes
+        
         // TODO: Finish slide out navigation
         self.navigationItem.leftBarButtonItem = nil;
         self.navigationItem.hidesBackButton = true;
     }
     
     override func viewWillAppear(animated: Bool) {
-        // Set UI elements
-        self.title = "Barbot"
-        let attributes = [NSForegroundColorAttributeName : self.barbotBlue, NSFontAttributeName: self.montserratFont]
-        self.navigationController?.navigationBar.titleTextAttributes = attributes
-
         self.hideSearchBar(CGPointMake(0, self.searchController.searchBar.frame.size.height), animated: false)
         
+        // request updated drink list
         self.dataManager.requestDataFromServer("get_recipes_for_barbot", args: ["barbot_id": self.dataManager.barbotId])
         
+        // parse response, reload drink list
         self.dataManager.socket.onText = { (text: String) in
             self.dataManager.parseResponseDataFromServer(text)
             self.drinkList = self.dataManager.drinkList
