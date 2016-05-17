@@ -20,6 +20,7 @@ class DataManager: WebSocketDelegate {
     var ingredientList: IngredientList?
     var recipe: Recipe?
     var drinkOrder: String = ""
+    var recipeId: String = ""
     var result: String!
     
     typealias Payload = [String: AnyObject]
@@ -84,6 +85,8 @@ class DataManager: WebSocketDelegate {
                 self.recipe = parseRecipeJSON(json)
             case "drink_order_id":
                 self.drinkOrder = parseSingleStringJSON(json, key: "drink_order_id")
+            case "recipe_id":
+                self.recipeId = parseSingleStringJSON(json, key: "recipe_id")
             case "result":
                 self.result = parseSingleStringJSON(json, key: "result")
             default:

@@ -43,7 +43,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.recipe = Recipe.init()
+//        self.recipe = Recipe.init()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -125,7 +125,18 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 break
         }
         
-        self.dataManager.requestDataFromServer("order_drink", args: ["barbot_id": self.dataManager.barbotId, "recipe_id": self.recipe.id])
+        if recipe.custom {
+            self.dataManager.requestDataFromServer("create_custom_drink", args: recipe.toJSON()!)
+            self.dataManager.socket.onText = {(text: String) in
+                self.dataManager.socket.onText = nil
+                self.dataManager.parseResponseDataFromServer(text)
+                self.recipe.id = self.dataManager.recipeId
+                self.dataManager.requestDataFromServer("order_drink", args: ["barbot_id": self.dataManager.barbotId, "recipe_id": self.dataManager.recipeId])
+            }
+            
+        } else {
+            self.dataManager.requestDataFromServer("order_drink", args: ["barbot_id": self.dataManager.barbotId, "recipe_id": self.recipe.id])
+        }
     }
     
     // MARK: - Segmented Controls
@@ -238,7 +249,6 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else if editingStyle == .Insert {
             
         }
-        self.tableView.reloadSections(NSIndexSet.init(index: 0), withRowAnimation: .None)
     }
     
     func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
@@ -381,6 +391,8 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else if component == 1 {
             self.recipe.steps[parentCellIndexPath!.row].ingredientId = self.ingredientList.ingredientList[row].ingredientId
         }
+        
+        self.recipe.custom = true
         
         self.configureStepCell(cell, indexPath: parentCellIndexPath)
     }

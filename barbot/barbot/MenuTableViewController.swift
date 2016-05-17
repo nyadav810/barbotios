@@ -71,6 +71,7 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
     }
     
     override func viewDidAppear(animated: Bool) {
+        self.tableView.reloadData()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -205,11 +206,12 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
                 let controller = segue.destinationViewController as! RecipeViewController
                 
                 if drink.recipeId == "custom_recipe" {
-                    
+                    controller.recipe = Recipe.init(name: drink.name!, custom: true)
                 } else {
                     self.dataManager.requestDataFromServer("get_recipe_details", args: ["recipe_id": drink.recipeId!])
+                    controller.recipe = Recipe.init(name: drink.name!, custom: false)
                 }
-                controller.titleLabel.title = drink.name
+                controller.titleLabel.title = controller.recipe.name
                 controller.dataManager = self.dataManager
                 controller.ingredientList = self.dataManager.ingredientList
             }

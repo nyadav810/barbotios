@@ -8,18 +8,20 @@
 
 import Gloss
 
-struct Recipe: Decodable {
+struct Recipe: Glossy {
     
     var name: String
     var id: String
     var size: String?
     var shot: String?
     var steps: [Step]
+    var custom: Bool
     
-    init() {
-        self.name = ""
+    init(name: String, custom: Bool) {
+        self.name = name
         self.id = ""
         self.steps = []
+        self.custom = custom
     }
     
     init?(json: JSON) {
@@ -36,6 +38,14 @@ struct Recipe: Decodable {
         self.size = "size" <~~ recipe
         self.shot = "shot" <~~ recipe
         self.steps = steps
+        self.custom = false
+    }
+    
+    func toJSON() -> JSON? {
+        return jsonify([
+            "recipe.name" ~~> self.name,
+            "recipe.steps" ~~> self.steps
+        ])
     }
     
     func getRecipeVolume() -> Double {

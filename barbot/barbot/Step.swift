@@ -8,7 +8,7 @@
 
 import Gloss
 
-struct Step: Decodable {
+struct Step: Glossy {
     var step_number: Int
     var type: Int
     var ingredientId: String?
@@ -32,5 +32,13 @@ struct Step: Decodable {
         self.ingredientId = "ingredient_id" <~~ json
         self.quantity = "amount" <~~ json
         self.measurement = "oz" //"measurement" <~~ json
+    }
+    
+    func toJSON() -> JSON? {
+        return jsonify([
+            "type" ~~> self.type,
+            "ingredient_id" ~~> self.ingredientId,
+            "amount" ~~> self.quantity
+        ])
     }
 }
