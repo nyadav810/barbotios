@@ -111,15 +111,16 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // If not flagged as custom, only sends recipe Id
     @IBAction func orderDrink(sender: AnyObject) {
         // Send order to barbot web server
+        
         let volume: Double = self.recipe.getRecipeVolume()
         switch self.sizeSegmentedControl.selectedSegmentIndex {
             case 0:
                 if volume > 8.0 {
-                    print("drink too big")
+                    return
                 }
             case 1:
                 if volume > 16.0 {
-                    print("drink too big")
+                    return
                 }
             default:
                 break
@@ -283,13 +284,13 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
-        let cell: UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
-        if cell.selectionStyle == .None {
-            return nil
-        }
-        return indexPath
-    }
+//    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+//        let cell: UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+//        if cell.selectionStyle == .None {
+//            return nil
+//        }
+//        return indexPath
+//    }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // edit ingredient, quantity
@@ -510,16 +511,16 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 stepString.appendContentsOf(" Add \(object.quantity!) \(object.measurement!) \(ingredient.name)")
             case 2:
                 stepString.appendContentsOf(" Mix")
-                cell.selectionStyle = .None
+                //cell.selectionStyle = .None
             case 3:
                 stepString.appendContentsOf(" Stir")
-                cell.selectionStyle = .None
+                //cell.selectionStyle = .None
             case 4:
                 stepString.appendContentsOf(" Add Ice")
-                cell.selectionStyle = .None
+                //cell.selectionStyle = .None
             case 5:
                 stepString.appendContentsOf(" Pour")
-                cell.selectionStyle = .None
+                //cell.selectionStyle = .None
             case 99:
                 stepString = "Add Ingredient"
             default:
@@ -535,5 +536,53 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             controller.dataManager = self.dataManager
         }
+    }
+    
+    // Creates and shows a AlertView prompt that:
+    // 1. Thanks the user
+    // 2. Allows the user to tap to return to the menu
+    func showAlertController() {
+        var size: String = ""
+        if self.sizeSegmentedControl.selectedSegmentIndex == 0 {
+            size = "8oz"
+        } else {
+            size = "16oz"
+        }
+        
+        let alert: UIAlertController = UIAlertController.init(title: "Drink too large", message: "Please reduce volume to \(size)", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let ok: UIAlertAction = UIAlertAction.init(title: "OK", style: .Default, handler:{
+            (action: UIAlertAction) in
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        })
+        alert.addAction(ok)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if identifier == "showPourScreen" {
+            let volume: Double = self.recipe.getRecipeVolume()
+            switch self.sizeSegmentedControl.selectedSegmentIndex {
+            case 0:
+                if volume > 8.0 {
+                    print("drink too big")
+                    showAlertController()
+                    return false
+                } else {
+                    return true
+                }
+            case 1:
+                if volume > 16.0 {
+                    print("drink too big")
+                    showAlertController()
+                    return false
+                } else {
+                    return true
+                }
+            default:
+                return true
+            }
+        }
+        return true
     }
 }
