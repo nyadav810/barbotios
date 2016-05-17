@@ -36,6 +36,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sizeSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var iceSegmentedControl: UISegmentedControl!
     @IBOutlet weak var orderButton: UIButton!
     
     override func viewDidLoad() {
@@ -64,6 +65,11 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.dataManager.socket.onText = { (text: String) in
             self.dataManager.parseResponseDataFromServer(text)
             self.recipe = self.dataManager.recipe
+            if self.recipe.hasIce() {
+                self.iceSegmentedControl.selectedSegmentIndex = 0
+            } else {
+                self.iceSegmentedControl.selectedSegmentIndex = 1
+            }
             self.tableView.reloadData()
         }
     }
@@ -178,6 +184,21 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //        }
     }
     
+    @IBAction func iceSegmentedControlChanged(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+            case 0:
+                self.recipe.addIce(0)
+                self.tableView.insertRowsAtIndexPaths([NSIndexPath.init(forRow: 0, inSection:0)], withRowAnimation: .Fade)
+                break
+            case 1:
+                self.recipe.removeIce()
+                self.tableView.deleteRowsAtIndexPaths([NSIndexPath.init(forRow: 0, inSection:0)], withRowAnimation: .Fade)
+                break
+            default:
+                break
+        }
+        self.tableView.reloadSections(NSIndexSet.init(index: 0), withRowAnimation: .Fade)
+    }
 //    @IBAction func shotSegmentedControlChanged(sender: UISegmentedControl) {
 //        switch sender.selectedSegmentIndex {
 //            case 0:

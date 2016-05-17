@@ -69,7 +69,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PKg-ms-pke" id="Ase-sN-wiS">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -77,7 +77,7 @@
                                         <rect key="frame" x="0.0" y="136" width="600" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LcK-Dx-lNu" id="dA3-2w-zPi">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="216"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="215.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView tag="1" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="yAf-TG-gL0">
@@ -122,12 +122,24 @@
                                     <segue destination="5JM-gA-mRL" kind="show" identifier="showPourScreen" id="4A4-yC-Gvw"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="GO1-fD-hMk">
+                                <rect key="frame" x="115" y="522" width="107" height="29"/>
+                                <segments>
+                                    <segment title="Ice"/>
+                                    <segment title="No Ice"/>
+                                </segments>
+                                <connections>
+                                    <action selector="iceSegmentedControlChanged:" destination="bME-5r-yqE" eventType="valueChanged" id="Igm-I5-H5e"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="GO1-fD-hMk" firstAttribute="top" secondItem="mnb-Nf-AE0" secondAttribute="bottom" constant="15" id="09H-0G-KEJ"/>
                             <constraint firstItem="mnb-Nf-AE0" firstAttribute="top" secondItem="b91-aZ-qMX" secondAttribute="bottom" constant="21" id="3jn-aU-vIf"/>
                             <constraint firstItem="FDP-Ez-HHc" firstAttribute="leading" secondItem="81J-7g-zgh" secondAttribute="leadingMargin" id="Dez-nv-hzB"/>
                             <constraint firstItem="b91-aZ-qMX" firstAttribute="top" secondItem="cCi-Ht-k4L" secondAttribute="bottom" id="J6K-49-Woe"/>
+                            <constraint firstItem="GO1-fD-hMk" firstAttribute="leading" secondItem="FDP-Ez-HHc" secondAttribute="trailing" constant="8" id="JhN-7Z-JW2"/>
                             <constraint firstItem="mnb-Nf-AE0" firstAttribute="leading" secondItem="81J-7g-zgh" secondAttribute="leadingMargin" constant="-20" id="Mfi-zu-kCU"/>
                             <constraint firstItem="b91-aZ-qMX" firstAttribute="leading" secondItem="81J-7g-zgh" secondAttribute="leadingMargin" constant="130" id="fRJ-Mq-30A"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mnb-Nf-AE0" secondAttribute="trailing" constant="-20" id="kaQ-SR-CgR"/>
@@ -136,10 +148,12 @@
                             <constraint firstItem="Iaa-Lo-Ccf" firstAttribute="centerY" secondItem="FDP-Ez-HHc" secondAttribute="centerY" id="scx-a6-brl"/>
                             <constraint firstItem="Iaa-Lo-Ccf" firstAttribute="trailing" secondItem="81J-7g-zgh" secondAttribute="trailingMargin" id="u5a-za-lpq"/>
                             <constraint firstItem="dg0-gi-7lw" firstAttribute="top" secondItem="FDP-Ez-HHc" secondAttribute="bottom" constant="50" id="xsP-qJ-baB"/>
+                            <constraint firstItem="dg0-gi-7lw" firstAttribute="top" secondItem="GO1-fD-hMk" secondAttribute="bottom" constant="50" id="ymF-VP-gx0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="jRG-kp-Hrl"/>
                     <connections>
+                        <outlet property="iceSegmentedControl" destination="GO1-fD-hMk" id="dQS-JF-Ye2"/>
                         <outlet property="imageView" destination="b91-aZ-qMX" id="5ag-gb-TmG"/>
                         <outlet property="orderButton" destination="Iaa-Lo-Ccf" id="13t-nh-0Tq"/>
                         <outlet property="sizeSegmentedControl" destination="FDP-Ez-HHc" id="cxi-7o-qh8"/>

@@ -26,7 +26,6 @@
 		018BAFC71CA3BE3B008AA729 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018BAFC61CA3BE3B008AA729 /* DataManager.swift */; };
 		019565A61CB2C94000F16F6C /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 019565A41CB2C94000F16F6C /* Montserrat-Bold.ttf */; };
 		019565A71CB2C94000F16F6C /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 019565A51CB2C94000F16F6C /* Montserrat-Regular.ttf */; };
-		01B405951CDD780500997E7A /* custom_recipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 01B405941CDD780500997E7A /* custom_recipe.json */; };
 		01BBAF5E1CC07F450019DAE7 /* RecipeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BBAF5D1CC07F450019DAE7 /* RecipeSet.swift */; };
 		01D3609F1CBB25FB009AA383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01D3609E1CBB25FB009AA383 /* Main.storyboard */; };
 		01D360A11CBB2989009AA383 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D360A01CBB2989009AA383 /* Step.swift */; };
@@ -71,7 +70,6 @@
 		018BAFC61CA3BE3B008AA729 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		019565A41CB2C94000F16F6C /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "Resources/Fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		019565A51CB2C94000F16F6C /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "Resources/Fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
-		01B405941CDD780500997E7A /* custom_recipe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = custom_recipe.json; sourceTree = "<group>"; };
 		01BBAF5D1CC07F450019DAE7 /* RecipeSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSet.swift; sourceTree = "<group>"; };
 		01D3609E1CBB25FB009AA383 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		01D360A01CBB2989009AA383 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
@@ -187,7 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				019565A31CB2C8E400F16F6C /* Fonts */,
-				01E8CC1B1CB6413300D201B7 /* JSON */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -199,14 +196,6 @@
 				019565A51CB2C94000F16F6C /* Montserrat-Regular.ttf */,
 			);
 			name = Fonts;
-			sourceTree = "<group>";
-		};
-		01E8CC1B1CB6413300D201B7 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				01B405941CDD780500997E7A /* custom_recipe.json */,
-			);
-			name = JSON;
 			sourceTree = "<group>";
 		};
 		093D3981A24D336807B9EB90 /* Pods */ = {
@@ -293,7 +282,6 @@
 				019565A71CB2C94000F16F6C /* Montserrat-Regular.ttf in Resources */,
 				019565A61CB2C94000F16F6C /* Montserrat-Bold.ttf in Resources */,
 				011E3EB21C7A876F00A34C5F /* LaunchScreen.storyboard in Resources */,
-				01B405951CDD780500997E7A /* custom_recipe.json in Resources */,
 				01D3609F1CBB25FB009AA383 /* Main.storyboard in Resources */,
 				011E3EAF1C7A876F00A34C5F /* Assets.xcassets in Resources */,
 			);

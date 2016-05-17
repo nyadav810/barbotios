@@ -57,4 +57,25 @@ struct Recipe: Glossy {
         }
         return volume
     }
+    
+    func hasIce() -> Bool {
+        for step: Step in self.steps {
+            if step.type == 4 {
+                return true
+            }
+        }
+        return false
+    }
+    
+    mutating func addIce(stepNumber: Int) {
+        if !self.hasIce() {
+            self.steps.insert(Step.init(step_number: stepNumber, type: 4, measurement: "oz"), atIndex: stepNumber)
+        }
+    }
+    
+    mutating func removeIce() {
+        if self.hasIce() {
+            self.steps.removeFirst()
+        }
+    }
 }
