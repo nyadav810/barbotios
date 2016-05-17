@@ -63,6 +63,8 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
 
         self.hideSearchBar(CGPointMake(0, self.searchController.searchBar.frame.size.height), animated: false)
         
+        self.dataManager.requestDataFromServer("get_recipes_for_barbot", args: ["barbot_id": self.dataManager.barbotId])
+        
         self.dataManager.socket.onText = { (text: String) in
             self.dataManager.parseResponseDataFromServer(text)
             self.drinkList = self.dataManager.drinkList

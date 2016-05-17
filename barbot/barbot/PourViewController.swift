@@ -11,7 +11,6 @@ import UIKit
 class PourViewController: UIViewController {
     
     var dataManager: DataManager!
-    var drinkOrder: String = ""
     var result: String!
     
     @IBOutlet weak var pourButton: UIButton!
@@ -21,10 +20,7 @@ class PourViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.dataManager.socket.onText = { (text: String) in
-            self.dataManager.parseResponseDataFromServer(text)
-            self.drinkOrder = self.dataManager.drinkOrder
-        }
+        
     }
     
     @IBAction func pourDrink(sender: AnyObject) {

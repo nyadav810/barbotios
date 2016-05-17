@@ -114,11 +114,11 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let volume: Double = self.recipe.getRecipeVolume()
         switch self.sizeSegmentedControl.selectedSegmentIndex {
             case 0:
-                if volume > 6.0 {
+                if volume > 8.0 {
                     print("drink too big")
                 }
             case 1:
-                if volume > 14.0 {
+                if volume > 16.0 {
                     print("drink too big")
                 }
             default:
@@ -127,14 +127,25 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if recipe.custom {
             self.dataManager.requestDataFromServer("create_custom_drink", args: recipe.toJSON()!)
+            
+            // respond to create_custom_drink
             self.dataManager.socket.onText = {(text: String) in
-                self.dataManager.socket.onText = nil
+                
+                // respond to order_drink
+                self.dataManager.socket.onText = { (text: String) in
+                    self.dataManager.parseResponseDataFromServer(text)
+                    self.dataManager.socket.onText = nil                // set nil to avoid loop
+                }
                 self.dataManager.parseResponseDataFromServer(text)
                 self.recipe.id = self.dataManager.recipeId
                 self.dataManager.requestDataFromServer("order_drink", args: ["barbot_id": self.dataManager.barbotId, "recipe_id": self.dataManager.recipeId])
             }
             
         } else {
+            // respond to order_drink
+            self.dataManager.socket.onText = { (text: String) in
+                self.dataManager.parseResponseDataFromServer(text)
+            }
             self.dataManager.requestDataFromServer("order_drink", args: ["barbot_id": self.dataManager.barbotId, "recipe_id": self.recipe.id])
         }
     }

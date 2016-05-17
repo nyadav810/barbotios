@@ -158,7 +158,7 @@ class DataManager: WebSocketDelegate {
     
     func websocketDidConnect(ws: WebSocket) {
         print("websocket is connected")
-        requestDataFromServer("get_recipes_for_barbot", args: ["barbot_id": self.barbotId])
+        //requestDataFromServer("get_recipes_for_barbot", args: ["barbot_id": self.barbotId])
         requestDataFromServer("get_ingredients_for_barbot", args: ["barbot_id": self.barbotId])
     }
     
