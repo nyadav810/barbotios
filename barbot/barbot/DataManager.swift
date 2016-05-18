@@ -15,6 +15,7 @@ class DataManager: WebSocketDelegate {
     
     var barbotId: String!
     var userId: String!
+    var ipAddress: String!
     
     var drinkList: [Drink]?
     var ingredientList: IngredientList?
@@ -27,10 +28,11 @@ class DataManager: WebSocketDelegate {
     
     // Initialize DataManager properties
     init() {
-        self.barbotId = "barbot_805d2a"
+        self.barbotId = "barbot_1db433" //805d2a"
         self.userId = "user_348604"
+        self.ipAddress = "192.168.1.41" //36"
         
-        self.socket = WebSocket(url: NSURL(string: "ws://192.168.1.36:8000?id=\(self.userId)")!)
+        self.socket = WebSocket(url: NSURL(string: "ws://\(self.ipAddress):8000?id=\(self.userId)")!)
         self.socket.delegate = self
         self.socket.connect()
     }

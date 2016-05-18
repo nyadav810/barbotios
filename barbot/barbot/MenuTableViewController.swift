@@ -31,7 +31,6 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
     @IBOutlet weak var slideOutBarButtomItem: UIBarButtonItem!
     
     override func viewDidLoad() {
-        //super.viewDidLoad()
         
         // Call DataManager to retrieve recipes and ingredients
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -111,8 +110,8 @@ class MenuTableViewController: UITableViewController, UISearchControllerDelegate
         let ok: UIAlertAction = UIAlertAction.init(title: "OK", style: .Default, handler: { (action: UIAlertAction) in
             let field = alert.textFields!.first!
             let customDrink: Drink = Drink.init(name: field.text!)
-            self.drinkList.append(customDrink)
-            let newIndexPath: NSIndexPath = NSIndexPath(forRow:self.drinkList.count-1, inSection:0)
+            self.drinkList.insert(customDrink, atIndex: 0)
+            let newIndexPath: NSIndexPath = NSIndexPath(forRow:0, inSection:0)
             self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Top)
         })
         
