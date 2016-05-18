@@ -59,12 +59,10 @@ struct Recipe: Glossy {
     }
     
     func hasIce() -> Bool {
-        for step: Step in self.steps {
-            if step.type == 4 {
-                return true
-            }
+        if self.steps.isEmpty {
+            return false
         }
-        return false
+        return self.steps.first!.type == 4
     }
     
     mutating func addIce(stepNumber: Int) {

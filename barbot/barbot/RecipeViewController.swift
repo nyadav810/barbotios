@@ -270,8 +270,13 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
+            if self.recipe.hasIce() && indexPath.row == 0 {
+                self.iceSegmentedControl.selectedSegmentIndex = 1
+            }
+            
             self.recipe.steps.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Top)
+            tableView.reloadSections(NSIndexSet.init(index: 0), withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             
         }
@@ -307,6 +312,11 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //    }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if self.recipe.hasIce() && indexPath.row == 0 {
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            return
+        }
+        
         // edit ingredient, quantity
         self.tableView.beginUpdates()
         

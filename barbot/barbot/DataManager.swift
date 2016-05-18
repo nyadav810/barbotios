@@ -28,9 +28,9 @@ class DataManager: WebSocketDelegate {
     
     // Initialize DataManager properties
     init() {
-        self.barbotId = "barbot_1db433" //805d2a"
+        self.barbotId = "barbot_1db433" //805d2a = naveen, 1db433 = alex
         self.userId = "user_348604"
-        self.ipAddress = "192.168.1.41" //36"
+        self.ipAddress = "192.168.1.41" // 36 = naveen, 41 = alex
         
         self.socket = WebSocket(url: NSURL(string: "ws://\(self.ipAddress):8000?id=\(self.userId)")!)
         self.socket.delegate = self
