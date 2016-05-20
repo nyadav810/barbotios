@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01004BB31CECF82500AE7472 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01004BB11CECF82500AE7472 /* Montserrat-Bold.ttf */; };
+		01004BB41CECF82500AE7472 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01004BB21CECF82500AE7472 /* Montserrat-Regular.ttf */; };
+		011C49A71CED17A7002A0926 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 011C49A51CED17A1002A0926 /* Gloss.framework */; };
+		011C49A81CED17A7002A0926 /* Gloss.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 011C49A51CED17A1002A0926 /* Gloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		011C9B391CD435D7003B9B46 /* MenuCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011C9B381CD435D7003B9B46 /* MenuCollectionViewController.swift */; };
 		011E3EA51C7A876F00A34C5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011E3EA41C7A876F00A34C5F /* AppDelegate.swift */; };
 		011E3EAD1C7A876F00A34C5F /* barbot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 011E3EAB1C7A876F00A34C5F /* barbot.xcdatamodeld */; };
 		011E3EAF1C7A876F00A34C5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 011E3EAE1C7A876F00A34C5F /* Assets.xcassets */; };
 		011E3EB21C7A876F00A34C5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 011E3EB01C7A876F00A34C5F /* LaunchScreen.storyboard */; };
 		013854DA1C7D50870070E112 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013854D91C7D50870070E112 /* MenuTableViewController.swift */; };
-		0145CA4D1CEBAD8200A1BAD2 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018A07981CBA1FC700BB063B /* Gloss.framework */; };
-		0145CA4E1CEBAD8200A1BAD2 /* Gloss.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 018A07981CBA1FC700BB063B /* Gloss.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0145CA501CEBAD8700A1BAD2 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0159FA001CB39A88008E65FB /* Starscream.framework */; };
-		0145CA511CEBAD8700A1BAD2 /* Starscream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0159FA001CB39A88008E65FB /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		016AE99E1CED418A0005196C /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016AE99D1CED418A0005196C /* Starscream.framework */; };
+		016AE9A11CED41A10005196C /* Starscream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 016AE99F1CED41A10005196C /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		017203361CA76D6A002C3168 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017203351CA76D6A002C3168 /* RecipeViewController.swift */; };
 		017D28C41CC31DA800EDBD3D /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D28C31CC31DA800EDBD3D /* ContainerViewController.swift */; };
 		017D28C61CC31F2900EDBD3D /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D28C51CC31F2900EDBD3D /* SidePanelViewController.swift */; };
@@ -24,8 +26,6 @@
 		018A07971CBA1FA000BB063B /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018A07961CBA1FA000BB063B /* Menu.swift */; };
 		018A079E1CBA219800BB063B /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018A079D1CBA219800BB063B /* Recipe.swift */; };
 		018BAFC71CA3BE3B008AA729 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018BAFC61CA3BE3B008AA729 /* DataManager.swift */; };
-		019565A61CB2C94000F16F6C /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 019565A41CB2C94000F16F6C /* Montserrat-Bold.ttf */; };
-		019565A71CB2C94000F16F6C /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 019565A51CB2C94000F16F6C /* Montserrat-Regular.ttf */; };
 		01BBAF5E1CC07F450019DAE7 /* RecipeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BBAF5D1CC07F450019DAE7 /* RecipeSet.swift */; };
 		01D3609F1CBB25FB009AA383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01D3609E1CBB25FB009AA383 /* Main.storyboard */; };
 		01D360A11CBB2989009AA383 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D360A01CBB2989009AA383 /* Step.swift */; };
@@ -33,6 +33,7 @@
 		01D9E3721CD082F4002A17B9 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D9E3711CD082F4002A17B9 /* Drink.swift */; };
 		01DA902D1CB0FD6B007A1B02 /* PourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA902C1CB0FD6B007A1B02 /* PourViewController.swift */; };
 		01E8CC181CB640FE00D201B7 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8CC171CB640FE00D201B7 /* Ingredient.swift */; };
+		3B73FDD5300DB64DF0021583 /* Pods_barbot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E001886DF6B17829ED6309 /* Pods_barbot.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,8 +43,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0145CA4E1CEBAD8200A1BAD2 /* Gloss.framework in Embed Frameworks */,
-				0145CA511CEBAD8700A1BAD2 /* Starscream.framework in Embed Frameworks */,
+				011C49A81CED17A7002A0926 /* Gloss.framework in Embed Frameworks */,
+				016AE9A11CED41A10005196C /* Starscream.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,6 +52,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		01004BB11CECF82500AE7472 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "Res/Fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		01004BB21CECF82500AE7472 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "Res/Fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		011C49A51CED17A1002A0926 /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = "Build/Products/Debug-iphoneos/Gloss/Gloss.framework"; sourceTree = "<group>"; };
 		011C9B381CD435D7003B9B46 /* MenuCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewController.swift; sourceTree = "<group>"; };
 		011E3EA11C7A876F00A34C5F /* barbot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = barbot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		011E3EA41C7A876F00A34C5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,17 +63,15 @@
 		011E3EB11C7A876F00A34C5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		011E3EB31C7A876F00A34C5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		013854D91C7D50870070E112 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
-		0159FA001CB39A88008E65FB /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Starscream.framework; sourceTree = "<group>"; };
+		016AE99D1CED418A0005196C /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = "Build/Products/Debug-iphoneos/Starscream/Starscream.framework"; sourceTree = "<group>"; };
+		016AE99F1CED41A10005196C /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = "build/Products/Debug-iphoneos/Starscream/Starscream.framework"; sourceTree = "<group>"; };
 		017203351CA76D6A002C3168 /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		017D28C31CC31DA800EDBD3D /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		017D28C51CC31F2900EDBD3D /* SidePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidePanelViewController.swift; sourceTree = "<group>"; };
 		017D28C71CC3204E00EDBD3D /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		018A07961CBA1FA000BB063B /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
-		018A07981CBA1FC700BB063B /* Gloss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Gloss.framework; path = "/Users/Naveen/Library/Developer/Xcode/DerivedData/barbot-eaobhpyjwsiprbaklixnovhmekve/Build/Products/Debug-iphonesimulator/Gloss.framework"; sourceTree = "<absolute>"; };
 		018A079D1CBA219800BB063B /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		018BAFC61CA3BE3B008AA729 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		019565A41CB2C94000F16F6C /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "Resources/Fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
-		019565A51CB2C94000F16F6C /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "Resources/Fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		01BBAF5D1CC07F450019DAE7 /* RecipeSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSet.swift; sourceTree = "<group>"; };
 		01D3609E1CBB25FB009AA383 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		01D360A01CBB2989009AA383 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		01DA902C1CB0FD6B007A1B02 /* PourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PourViewController.swift; sourceTree = "<group>"; };
 		01E8CC171CB640FE00D201B7 /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		02B52AACC7FC612FDCC419E6 /* Pods-barbot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-barbot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-barbot/Pods-barbot.debug.xcconfig"; sourceTree = "<group>"; };
+		04E001886DF6B17829ED6309 /* Pods_barbot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_barbot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA91C8E2BC8A7E9DD5561A42 /* Pods-barbot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-barbot.release.xcconfig"; path = "Pods/Target Support Files/Pods-barbot/Pods-barbot.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,8 +89,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0145CA4D1CEBAD8200A1BAD2 /* Gloss.framework in Frameworks */,
-				0145CA501CEBAD8700A1BAD2 /* Starscream.framework in Frameworks */,
+				016AE99E1CED418A0005196C /* Starscream.framework in Frameworks */,
+				3B73FDD5300DB64DF0021583 /* Pods_barbot.framework in Frameworks */,
+				011C49A71CED17A7002A0926 /* Gloss.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +101,7 @@
 		011E3E981C7A876F00A34C5F = {
 			isa = PBXGroup;
 			children = (
+				016AE99F1CED41A10005196C /* Starscream.framework */,
 				011E3EA31C7A876F00A34C5F /* barbot */,
 				011E3EA21C7A876F00A34C5F /* Products */,
 				95C92EF7F1F190DB80EDBCC8 /* Frameworks */,
@@ -120,7 +125,7 @@
 				018A07951CBA1F3D00BB063B /* Controller */,
 				018BAFBD1CA3B5C1008AA729 /* Core Data */,
 				018A07941CBA1F0D00BB063B /* Model */,
-				019565A21CB2C8DD00F16F6C /* Resources */,
+				019565A21CB2C8DD00F16F6C /* Res */,
 				018BAFC41CA3BD9D008AA729 /* View */,
 				011E3EAE1C7A876F00A34C5F /* Assets.xcassets */,
 				011E3EB31C7A876F00A34C5F /* Info.plist */,
@@ -181,19 +186,19 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		019565A21CB2C8DD00F16F6C /* Resources */ = {
+		019565A21CB2C8DD00F16F6C /* Res */ = {
 			isa = PBXGroup;
 			children = (
 				019565A31CB2C8E400F16F6C /* Fonts */,
 			);
-			name = Resources;
+			name = Res;
 			sourceTree = "<group>";
 		};
 		019565A31CB2C8E400F16F6C /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				019565A41CB2C94000F16F6C /* Montserrat-Bold.ttf */,
-				019565A51CB2C94000F16F6C /* Montserrat-Regular.ttf */,
+				01004BB11CECF82500AE7472 /* Montserrat-Bold.ttf */,
+				01004BB21CECF82500AE7472 /* Montserrat-Regular.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -210,8 +215,9 @@
 		95C92EF7F1F190DB80EDBCC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				018A07981CBA1FC700BB063B /* Gloss.framework */,
-				0159FA001CB39A88008E65FB /* Starscream.framework */,
+				016AE99D1CED418A0005196C /* Starscream.framework */,
+				011C49A51CED17A1002A0926 /* Gloss.framework */,
+				04E001886DF6B17829ED6309 /* Pods_barbot.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -247,12 +253,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = BarBot;
 				TargetAttributes = {
 					011E3EA01C7A876F00A34C5F = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = J25PML7XA6;
+						DevelopmentTeam = VR6T95D8VJ;
 					};
 				};
 			};
@@ -279,10 +285,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				019565A71CB2C94000F16F6C /* Montserrat-Regular.ttf in Resources */,
-				019565A61CB2C94000F16F6C /* Montserrat-Bold.ttf in Resources */,
+				01004BB31CECF82500AE7472 /* Montserrat-Bold.ttf in Resources */,
 				011E3EB21C7A876F00A34C5F /* LaunchScreen.storyboard in Resources */,
 				01D3609F1CBB25FB009AA383 /* Main.storyboard in Resources */,
+				01004BB41CECF82500AE7472 /* Montserrat-Regular.ttf in Resources */,
 				011E3EAF1C7A876F00A34C5F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,10 +399,11 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: n_yadav@comcast.net (E933DHCSW2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Naveen Yadav (ULY8T46758)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -438,10 +445,11 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: n_yadav@comcast.net (E933DHCSW2)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Naveen Yadav (VR6T95D8VJ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -454,6 +462,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -466,17 +475,26 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Naveen Yadav (ULY8T46758)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Build/Products/Debug-iphoneos/Gloss",
+					"$(PROJECT_DIR)/build/Products/Debug-iphoneos/Starscream",
+					"$(PROJECT_DIR)/Build/Products/Debug-iphoneos/Starscream",
 				);
 				INFOPLIST_FILE = barbot/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.barbot;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.barbot.drinkapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6539e4ce-2b78-4c47-9480-230f2752badb";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -486,17 +504,24 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Naveen Yadav (VR6T95D8VJ)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Build/Products/Debug-iphoneos/Gloss",
+					"$(PROJECT_DIR)/build/Products/Debug-iphoneos/Starscream",
+					"$(PROJECT_DIR)/Build/Products/Debug-iphoneos/Starscream",
 				);
 				INFOPLIST_FILE = barbot/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.barbot;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.barbot.drinkapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6539e4ce-2b78-4c47-9480-230f2752badb";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};

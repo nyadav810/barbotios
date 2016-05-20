@@ -1,0 +1,53 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "Drink"
+provides-nominal:
+- "V6barbot5Drink"
+provides-member:
+- ["V6barbot5Drink", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "String"
+- !private "StringLiteralType"
+- "JSON"
+- !private "<~~"
+- "Decodable"
+- "Drink"
+depends-member:
+- ["P5Gloss9Decodable", "init"]
+- !private ["P5Gloss9Decodable", "name"]
+- !private ["P5Gloss9Decodable", "recipeId"]
+- ["P5Gloss9Decodable", ""]
+- ["V6barbot5Drink", "JSON"]
+- ["V6barbot5Drink", "String"]
+- ["V6barbot5Drink", "deinit"]
+- ["V6barbot5Drink", "init"]
+- ["V6barbot5Drink", "name"]
+- ["V6barbot5Drink", "recipeId"]
+- !private ["Sq", "deinit"]
+- !private ["SS", "deinit"]
+depends-nominal:
+- "P5Gloss9Decodable"
+- "V6barbot5Drink"
+- !private "Sq"
+- !private "SS"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreImage.swiftmodule"
+- "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Intermediates/ArchiveIntermediates/barbot/BuildProductsPath/Release-iphoneos/Gloss/Gloss.framework/Modules/Gloss.swiftmodule/arm.swiftmodule"
+- "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Intermediates/ArchiveIntermediates/barbot/BuildProductsPath/Release-iphoneos/Gloss/Gloss.framework/Headers/Gloss-Swift.h"
+- "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Intermediates/ArchiveIntermediates/barbot/BuildProductsPath/Release-iphoneos/Gloss/Gloss.framework/Headers/Gloss-umbrella.h"
+- "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Intermediates/ArchiveIntermediates/barbot/BuildProductsPath/Release-iphoneos/Gloss/Gloss.framework/Modules/module.modulemap"
+- "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Intermediates/ArchiveIntermediates/barbot/BuildProductsPath/Release-iphoneos/Starscream/Starscream.framework/Modules/Starscream.swiftmodule/arm.swiftmodule"
+- "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Intermediates/ArchiveIntermediates/barbot/BuildProductsPath/Release-iphoneos/Starscream/Starscream.framework/Headers/Starscream-Swift.h"
+- "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Intermediates/ArchiveIntermediates/barbot/BuildProductsPath/Release-iphoneos/Starscream/Starscream.framework/Headers/Starscream-umbrella.h"
+- "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Intermediates/ArchiveIntermediates/barbot/BuildProductsPath/Release-iphoneos/Starscream/Starscream.framework/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreData.swiftmodule"
+interface-hash: "84514f81db6d83a7fe1c874e74ad50ea"

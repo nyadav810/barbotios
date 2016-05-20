@@ -1,0 +1,10 @@
+version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
+options: "d155aa1e0a2ca117780c10c0557c0eab"
+build_time: [517023611, 97859000]
+inputs:
+  "/Users/Naveen/Documents/barbot/barbotios/barbot/Pods/Gloss/Sources/Decoder.swift": [516934144, 0]
+  "/Users/Naveen/Documents/barbot/barbotios/barbot/Pods/Gloss/Sources/Encoder.swift": [516934144, 0]
+  "/Users/Naveen/Documents/barbot/barbotios/barbot/Pods/Gloss/Sources/ExtensionArray.swift": [516934144, 0]
+  "/Users/Naveen/Documents/barbot/barbotios/barbot/Pods/Gloss/Sources/ExtensionDictionary.swift": [516934144, 0]
+  "/Users/Naveen/Documents/barbot/barbotios/barbot/Pods/Gloss/Sources/Gloss.swift": [516934144, 0]
+  "/Users/Naveen/Documents/barbot/barbotios/barbot/Pods/Gloss/Sources/Operators.swift": [516934144, 0]
