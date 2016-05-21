@@ -6,47 +6,47 @@ provides-nominal:
 provides-member:
 - ["C6barbot11AppDelegate", ""]
 provides-dynamic-lookup:
-- "application"
-- "applicationDidBecomeActive"
-- "applicationWillTerminate"
-- "applicationDocumentsDirectory"
-- "managedObjectModel"
-- "managedObjectContext"
-- "persistentStoreCoordinator"
-- "window"
-- "applicationWillResignActive"
-- "applicationDidEnterBackground"
-- "saveContext"
 - "applicationWillEnterForeground"
+- "applicationDidEnterBackground"
+- "applicationDidBecomeActive"
+- "application"
+- "applicationWillResignActive"
+- "applicationWillTerminate"
+- "managedObjectModel"
+- "window"
+- "persistentStoreCoordinator"
+- "saveContext"
+- "managedObjectContext"
+- "applicationDocumentsDirectory"
 depends-top-level:
-- "NSManagedObjectContext"
-- !private "String"
-- !private "-"
-- !private "NSLocalizedFailureReasonErrorKey"
-- "NSManagedObjectModel"
-- "AppDelegate"
-- "UIApplication"
-- !private "abort"
-- "DataManager"
-- "UIApplicationDelegate"
-- !private "NSSQLiteStoreType"
 - !private "BooleanLiteralType"
-- !private "NSError"
-- "UIResponder"
-- "Bool"
-- !private "NSFileManager"
-- !private "NSLocalizedDescriptionKey"
-- !private "ContainerViewController"
-- !private "NSUnderlyingErrorKey"
 - "NSPersistentStoreCoordinator"
-- "AnyObject"
-- !private "NSLog"
-- "StringLiteralType"
-- !private "UIScreen"
+- !private "NSLocalizedDescriptionKey"
 - !private "NSBundle"
+- "AppDelegate"
+- !private "UIScreen"
+- "NSManagedObjectModel"
+- !private "NSUnderlyingErrorKey"
 - "UIWindow"
+- "AnyObject"
+- !private "NSSQLiteStoreType"
+- !private "NSLog"
+- "UIApplication"
 - "NSObject"
+- "Bool"
+- "DataManager"
+- "NSManagedObjectContext"
 - "NSURL"
+- !private "abort"
+- "UIResponder"
+- "StringLiteralType"
+- !private "NSError"
+- "UIApplicationDelegate"
+- !private "NSFileManager"
+- !private "ContainerViewController"
+- !private "String"
+- !private "NSLocalizedFailureReasonErrorKey"
+- !private "-"
 depends-member:
 - !private ["Ps9AnyObject", "AnyObject"]
 - !private ["Ps9AnyObject", "ContainerViewController"]
@@ -85,9 +85,11 @@ depends-member:
 - ["Ps9AnyObject", "applicationWillResignActive"]
 - ["Ps9AnyObject", "applicationWillTerminate"]
 - !private ["Ps9AnyObject", "bounds"]
+- !private ["Ps9AnyObject", "connect"]
 - ["Ps9AnyObject", "dataManager"]
 - !private ["Ps9AnyObject", "defaultManager"]
 - !private ["Ps9AnyObject", "deinit"]
+- !private ["Ps9AnyObject", "disconnect"]
 - !private ["Ps9AnyObject", "hasChanges"]
 - ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "mainBundle"]
@@ -102,6 +104,7 @@ depends-member:
 - !private ["Ps9AnyObject", "rootViewController"]
 - !private ["Ps9AnyObject", "save"]
 - ["Ps9AnyObject", "saveContext"]
+- !private ["Ps9AnyObject", "socket"]
 - !private ["Ps9AnyObject", "userInfo"]
 - ["Ps9AnyObject", "window"]
 - ["Ps9AnyObject", ""]
@@ -213,8 +216,10 @@ depends-member:
 - ["Ps11CVarArgType", "applicationWillResignActive"]
 - ["Ps11CVarArgType", "applicationWillTerminate"]
 - !private ["Ps11CVarArgType", "bounds"]
+- !private ["Ps11CVarArgType", "connect"]
 - ["Ps11CVarArgType", "dataManager"]
 - !private ["Ps11CVarArgType", "defaultManager"]
+- !private ["Ps11CVarArgType", "disconnect"]
 - !private ["Ps11CVarArgType", "hasChanges"]
 - ["Ps11CVarArgType", "init"]
 - !private ["Ps11CVarArgType", "mainBundle"]
@@ -284,9 +289,11 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "applicationWillResignActive"]
 - ["Ps28CustomDebugStringConvertible", "applicationWillTerminate"]
 - !private ["Ps28CustomDebugStringConvertible", "bounds"]
+- !private ["Ps28CustomDebugStringConvertible", "connect"]
 - !private ["Ps28CustomDebugStringConvertible", "count"]
 - ["Ps28CustomDebugStringConvertible", "dataManager"]
 - !private ["Ps28CustomDebugStringConvertible", "defaultManager"]
+- !private ["Ps28CustomDebugStringConvertible", "disconnect"]
 - !private ["Ps28CustomDebugStringConvertible", "hasChanges"]
 - ["Ps28CustomDebugStringConvertible", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "mainBundle"]
@@ -348,9 +355,11 @@ depends-member:
 - ["Ps23CustomStringConvertible", "applicationWillResignActive"]
 - ["Ps23CustomStringConvertible", "applicationWillTerminate"]
 - !private ["Ps23CustomStringConvertible", "bounds"]
+- !private ["Ps23CustomStringConvertible", "connect"]
 - !private ["Ps23CustomStringConvertible", "count"]
 - ["Ps23CustomStringConvertible", "dataManager"]
 - !private ["Ps23CustomStringConvertible", "defaultManager"]
+- !private ["Ps23CustomStringConvertible", "disconnect"]
 - !private ["Ps23CustomStringConvertible", "hasChanges"]
 - ["Ps23CustomStringConvertible", "init"]
 - !private ["Ps23CustomStringConvertible", "mainBundle"]
@@ -370,6 +379,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "window"]
 - ["Ps23CustomStringConvertible", ""]
 - !private ["C6barbot11DataManager", "init"]
+- !private ["C6barbot11DataManager", "socket"]
 - !private ["Vs10Dictionary", "init"]
 - !private ["Vs10Dictionary", "subscript"]
 - !private ["Ps28DictionaryLiteralConvertible", "init"]
@@ -418,8 +428,10 @@ depends-member:
 - ["Ps9Equatable", "applicationWillResignActive"]
 - ["Ps9Equatable", "applicationWillTerminate"]
 - !private ["Ps9Equatable", "bounds"]
+- !private ["Ps9Equatable", "connect"]
 - ["Ps9Equatable", "dataManager"]
 - !private ["Ps9Equatable", "defaultManager"]
+- !private ["Ps9Equatable", "disconnect"]
 - !private ["Ps9Equatable", "hasChanges"]
 - ["Ps9Equatable", "init"]
 - !private ["Ps9Equatable", "mainBundle"]
@@ -486,8 +498,10 @@ depends-member:
 - ["Ps8Hashable", "applicationWillResignActive"]
 - ["Ps8Hashable", "applicationWillTerminate"]
 - !private ["Ps8Hashable", "bounds"]
+- !private ["Ps8Hashable", "connect"]
 - ["Ps8Hashable", "dataManager"]
 - !private ["Ps8Hashable", "defaultManager"]
+- !private ["Ps8Hashable", "disconnect"]
 - !private ["Ps8Hashable", "hasChanges"]
 - ["Ps8Hashable", "init"]
 - !private ["Ps8Hashable", "mainBundle"]
@@ -617,8 +631,10 @@ depends-member:
 - ["CSo8NSObject", "applicationWillResignActive"]
 - ["CSo8NSObject", "applicationWillTerminate"]
 - !private ["CSo8NSObject", "bounds"]
+- !private ["CSo8NSObject", "connect"]
 - ["CSo8NSObject", "dataManager"]
 - !private ["CSo8NSObject", "defaultManager"]
+- !private ["CSo8NSObject", "disconnect"]
 - !private ["CSo8NSObject", "hasChanges"]
 - ["CSo8NSObject", "init"]
 - !private ["CSo8NSObject", "mainBundle"]
@@ -672,8 +688,10 @@ depends-member:
 - ["PSo16NSObjectProtocol", "applicationWillResignActive"]
 - ["PSo16NSObjectProtocol", "applicationWillTerminate"]
 - !private ["PSo16NSObjectProtocol", "bounds"]
+- !private ["PSo16NSObjectProtocol", "connect"]
 - ["PSo16NSObjectProtocol", "dataManager"]
 - !private ["PSo16NSObjectProtocol", "defaultManager"]
+- !private ["PSo16NSObjectProtocol", "disconnect"]
 - !private ["PSo16NSObjectProtocol", "hasChanges"]
 - ["PSo16NSObjectProtocol", "init"]
 - !private ["PSo16NSObjectProtocol", "mainBundle"]
@@ -698,6 +716,8 @@ depends-member:
 - !private ["PSo14NSSecureCoding", "URLByAppendingPathComponent"]
 - !private ["PSo14NSSecureCoding", "init"]
 - !private ["PSo14NSSecureCoding", "userInfo"]
+- !private ["PSo16NSStreamDelegate", "connect"]
+- !private ["PSo16NSStreamDelegate", "disconnect"]
 - !private ["CSo8NSString", "init"]
 - !private ["CSo5NSURL", "URLByAppendingPathComponent"]
 - !private ["Ps13OptionSetType", "UserDomainMask"]
@@ -866,7 +886,10 @@ depends-member:
 - !private ["Vs5UInt8", "deinit"]
 - !private ["Sc", "deinit"]
 - !private ["Ps31UnicodeScalarLiteralConvertible", "init"]
+- !private ["C10Starscream9WebSocket", "connect"]
+- !private ["C10Starscream9WebSocket", "disconnect"]
 - !private ["P10Starscream17WebSocketDelegate", "init"]
+- !private ["P10Starscream17WebSocketDelegate", "socket"]
 - !private ["Ps10_ArrayType", "Generator"]
 - !private ["Ps10_ArrayType", "Index"]
 - !private ["Ps10_ArrayType", "SubSequence"]
@@ -978,6 +1001,7 @@ depends-nominal:
 - !private "OSC21NSSearchPathDirectory"
 - !private "VSC22NSSearchPathDomainMask"
 - !private "PSo14NSSecureCoding"
+- !private "PSo16NSStreamDelegate"
 - !private "CSo8NSString"
 - !private "CSo5NSURL"
 - !private "Ps13OptionSetType"
@@ -1019,6 +1043,7 @@ depends-nominal:
 - !private "Vs5UInt8"
 - !private "Sc"
 - !private "Ps31UnicodeScalarLiteralConvertible"
+- !private "C10Starscream9WebSocket"
 - !private "P10Starscream17WebSocketDelegate"
 - !private "Ps10_ArrayType"
 - !private "Ps33_BuiltinBooleanLiteralConvertible"

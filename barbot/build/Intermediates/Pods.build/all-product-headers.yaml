@@ -4,12 +4,12 @@
   'roots': [
     {
       'type': 'directory',
-      'name': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Products/Debug-iphonesimulator/Gloss/Gloss.framework/Headers",
+      'name': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Products/Debug-iphoneos/Gloss/Gloss.framework/Headers",
       'contents': [
         {
           'type': 'file',
           'name': "Gloss-Swift.h",
-          'external-contents': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Products/Debug-iphonesimulator/Gloss/Gloss.framework/Headers/Gloss-Swift.h"
+          'external-contents': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Products/Debug-iphoneos/Gloss/Gloss.framework/Headers/Gloss-Swift.h"
         },
         {
           'type': 'file',
@@ -20,18 +20,18 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Products/Debug-iphonesimulator/Gloss/Gloss.framework/Modules",
+      'name': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Products/Debug-iphoneos/Gloss/Gloss.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Intermediates/Pods.build/Debug-iphonesimulator/Gloss.build/module.modulemap"
+          'external-contents': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Intermediates/Pods.build/Debug-iphoneos/Gloss.build/module.modulemap"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Products/Debug-iphonesimulator/Pods_barbot.framework/Headers",
+      'name': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Products/Debug-iphoneos/Pods_barbot.framework/Headers",
       'contents': [
         {
           'type': 'file',
@@ -41,29 +41,29 @@
         {
           'type': 'file',
           'name': "Pods_barbot-Swift.h",
-          'external-contents': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Products/Debug-iphonesimulator/Pods_barbot.framework/Headers/Pods_barbot-Swift.h"
+          'external-contents': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Products/Debug-iphoneos/Pods_barbot.framework/Headers/Pods_barbot-Swift.h"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Products/Debug-iphonesimulator/Pods_barbot.framework/Modules",
+      'name': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Products/Debug-iphoneos/Pods_barbot.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods-barbot.build/module.modulemap"
+          'external-contents': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Intermediates/Pods.build/Debug-iphoneos/Pods-barbot.build/module.modulemap"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Products/Debug-iphonesimulator/Starscream/Starscream.framework/Headers",
+      'name': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Products/Debug-iphoneos/Starscream/Starscream.framework/Headers",
       'contents': [
         {
           'type': 'file',
           'name': "Starscream-Swift.h",
-          'external-contents': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Products/Debug-iphonesimulator/Starscream/Starscream.framework/Headers/Starscream-Swift.h"
+          'external-contents': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Products/Debug-iphoneos/Starscream/Starscream.framework/Headers/Starscream-Swift.h"
         },
         {
           'type': 'file',
@@ -74,12 +74,12 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Products/Debug-iphonesimulator/Starscream/Starscream.framework/Modules",
+      'name': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Products/Debug-iphoneos/Starscream/Starscream.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Intermediates/Pods.build/Debug-iphonesimulator/Starscream.build/module.modulemap"
+          'external-contents': "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Intermediates/Pods.build/Debug-iphoneos/Starscream.build/module.modulemap"
         }
       ]
     }

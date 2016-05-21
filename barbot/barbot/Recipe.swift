@@ -12,15 +12,17 @@ struct Recipe: Glossy {
     
     var name: String
     var id: String
-    var size: String?
-    var shot: String?
+    //var size: String?
+    //var shot: String?
     var steps: [Step]
+    var imageURLString: String
     var custom: Bool
     
     init(name: String, custom: Bool) {
         self.name = name
         self.id = ""
         self.steps = []
+        self.imageURLString = "/custom.png"
         self.custom = custom
     }
     
@@ -30,14 +32,16 @@ struct Recipe: Glossy {
         
         guard let steps: [Step] = "steps" <~~ recipe,
             let name: String = "name" <~~ recipe,
-            let id: String = "id" <~~ recipe
+            let id: String = "id" <~~ recipe,
+            let imageURLString: String = "img" <~~ recipe
             else { return nil }
         
         self.name = name
         self.id = id
-        self.size = "size" <~~ recipe
-        self.shot = "shot" <~~ recipe
+        //self.size = "size" <~~ recipe
+        //self.shot = "shot" <~~ recipe
         self.steps = steps
+        self.imageURLString = imageURLString
         self.custom = false
     }
     

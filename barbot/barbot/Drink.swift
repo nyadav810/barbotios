@@ -12,14 +12,17 @@ struct Drink: Decodable {
     
     let recipeId: String?
     let name: String?
+    let imageURLString: String?
     
     init(name: String) {
         self.recipeId = "custom_recipe"
         self.name = name
+        self.imageURLString = "/custom.png"
     }
     
     init?(json: JSON) {
         self.recipeId = "id" <~~ json
         self.name = "name" <~~ json
+        self.imageURLString = "img" <~~ json
     }
 }

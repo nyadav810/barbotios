@@ -26,6 +26,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // Array with valid oz values for an ingredient
     var quantityArray: [Double]!
+    var uniqueQuantity: Bool = false
     
     // Add Ingredient Picker
     var addIngredientPickerIndexPath: NSIndexPath?
@@ -71,6 +72,33 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.iceSegmentedControl.selectedSegmentIndex = 1
             }
             self.tableView.reloadData()
+            
+            // load image from web server url
+            if !self.recipe.custom {
+                let request = NSURLRequest(URL: NSURL(string: self.recipe.imageURLString)!)
+                NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) -> Void in
+                    
+                    if error != nil {
+                        print("Failed to load image for url: \(self.recipe.imageURLString), error: \(error?.description)")
+                        return
+                    }
+                    
+                    guard let httpResponse = response as? NSHTTPURLResponse else {
+                        print("Not an NSHTTPURLResponse from loading url: \(self.recipe.imageURLString)")
+                        return
+                    }
+                    
+                    if httpResponse.statusCode != 200 {
+                        print("Bad response statusCode: \(httpResponse.statusCode) while loading url: \(self.recipe.imageURLString)")
+                        return
+                    }
+                    
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.imageView.image = UIImage(data: data!)
+                    })
+                    
+                }.resume()
+            }
         }
     }
     
@@ -83,7 +111,6 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let attributes = [NSForegroundColorAttributeName: barbotBlue]//, NSFontAttributeName: self.montserratFont]
         
         self.navigationItem.rightBarButtonItem = editButtonItem()
-
         
         // configure table view
         self.automaticallyAdjustsScrollViewInsets = false
@@ -443,6 +470,10 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func hideExistingPicker() {
         self.tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow:self.addIngredientPickerIndexPath!.row, inSection: 0)], withRowAnimation: .Middle)
         self.addIngredientPickerIndexPath = nil
+        if self.uniqueQuantity {
+            self.quantityArray.removeFirst()
+            self.uniqueQuantity = false
+        }
     }
     
     func calculateIndexPathForNewPicker(indexPath: NSIndexPath) -> NSIndexPath {
@@ -487,8 +518,12 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // select default quantity (volume) value for new picker view
         if object.quantity != nil {
-            let measurement = object.quantity
-            pickerView.selectRow(self.quantityArray.indexOf(measurement!)!, inComponent: 0, animated: true)
+            let quantity = object.quantity
+            if !self.quantityArray.contains(quantity!) {
+                self.quantityArray.insert(quantity!, atIndex: 0)
+                self.uniqueQuantity = true
+            }
+            pickerView.selectRow(self.quantityArray.indexOf(quantity!)!, inComponent: 0, animated: true)
         } else {
             pickerView.selectRow(0, inComponent: 0, animated: true)
         }

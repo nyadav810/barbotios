@@ -104,12 +104,8 @@
                                     <action selector="sizeSegmentedControlChanged:" destination="bME-5r-yqE" eventType="valueChanged" id="aYh-EB-zOV"/>
                                 </connections>
                             </segmentedControl>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="b91-aZ-qMX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DrinkImage" translatesAutoresizingMaskIntoConstraints="NO" id="b91-aZ-qMX">
                                 <rect key="frame" x="150" y="64" width="300" height="225"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="225" id="4uK-xI-VrY"/>
-                                    <constraint firstAttribute="width" constant="300" id="f89-44-pJG"/>
-                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iaa-Lo-Ccf">
                                 <rect key="frame" x="520" y="521" width="60" height="30"/>
@@ -136,13 +132,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="GO1-fD-hMk" firstAttribute="top" secondItem="mnb-Nf-AE0" secondAttribute="bottom" constant="15" id="09H-0G-KEJ"/>
-                            <constraint firstItem="mnb-Nf-AE0" firstAttribute="top" secondItem="b91-aZ-qMX" secondAttribute="bottom" constant="21" id="3jn-aU-vIf"/>
                             <constraint firstItem="FDP-Ez-HHc" firstAttribute="leading" secondItem="81J-7g-zgh" secondAttribute="leadingMargin" id="Dez-nv-hzB"/>
-                            <constraint firstItem="b91-aZ-qMX" firstAttribute="top" secondItem="cCi-Ht-k4L" secondAttribute="bottom" id="J6K-49-Woe"/>
                             <constraint firstItem="GO1-fD-hMk" firstAttribute="leading" secondItem="FDP-Ez-HHc" secondAttribute="trailing" constant="8" id="JhN-7Z-JW2"/>
                             <constraint firstItem="mnb-Nf-AE0" firstAttribute="leading" secondItem="81J-7g-zgh" secondAttribute="leadingMargin" constant="-20" id="Mfi-zu-kCU"/>
-                            <constraint firstItem="b91-aZ-qMX" firstAttribute="leading" secondItem="81J-7g-zgh" secondAttribute="leadingMargin" constant="130" id="fRJ-Mq-30A"/>
+                            <constraint firstItem="b91-aZ-qMX" firstAttribute="top" secondItem="cCi-Ht-k4L" secondAttribute="bottom" id="dhJ-EL-Hok"/>
+                            <constraint firstItem="b91-aZ-qMX" firstAttribute="centerX" secondItem="81J-7g-zgh" secondAttribute="centerX" id="iRw-tq-8nd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mnb-Nf-AE0" secondAttribute="trailing" constant="-20" id="kaQ-SR-CgR"/>
+                            <constraint firstItem="mnb-Nf-AE0" firstAttribute="top" secondItem="b91-aZ-qMX" secondAttribute="bottom" constant="21" id="m7C-Gg-I8F"/>
                             <constraint firstItem="dg0-gi-7lw" firstAttribute="top" secondItem="mnb-Nf-AE0" secondAttribute="bottom" constant="93" id="mia-50-gDa"/>
                             <constraint firstItem="FDP-Ez-HHc" firstAttribute="top" secondItem="mnb-Nf-AE0" secondAttribute="bottom" constant="15" id="mzZ-Kk-vzw"/>
                             <constraint firstItem="Iaa-Lo-Ccf" firstAttribute="centerY" secondItem="FDP-Ez-HHc" secondAttribute="centerY" id="scx-a6-brl"/>
@@ -281,7 +277,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LaunchIcon" width="180" height="180"/>
+        <image name="DrinkImage" width="300" height="225"/>
         <image name="RevealIcon" width="22" height="17"/>
     </resources>
 </document>

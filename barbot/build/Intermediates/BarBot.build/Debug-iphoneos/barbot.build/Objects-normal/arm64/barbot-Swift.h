@@ -248,6 +248,7 @@ SWIFT_CLASS("_TtC6barbot20RecipeViewController")
 @property (nonatomic, readonly, strong) UIFont * _Null_unspecified montserratFont;
 @property (nonatomic, readonly, strong) UIColor * _Null_unspecified barbotBlue;
 @property (nonatomic, copy) NSArray<NSNumber *> * _Null_unspecified quantityArray;
+@property (nonatomic) BOOL uniqueQuantity;
 @property (nonatomic, strong) NSIndexPath * _Nullable addIngredientPickerIndexPath;
 @property (nonatomic, weak) IBOutlet UINavigationItem * _Null_unspecified titleLabel;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified imageView;

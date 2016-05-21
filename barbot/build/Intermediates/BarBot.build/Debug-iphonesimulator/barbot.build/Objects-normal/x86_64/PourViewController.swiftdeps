@@ -6,27 +6,27 @@ provides-nominal:
 provides-member:
 - ["C6barbot18PourViewController", ""]
 provides-dynamic-lookup:
-- "pourButton"
 - "viewDidLoad"
 - "showAlertController"
-- "viewWillAppear"
 - "result"
+- "pourButton"
 - "pourDrink"
+- "viewWillAppear"
 depends-top-level:
+- !private "UIAlertControllerStyle"
+- "DataManager"
+- !private "StringLiteralType"
+- "String"
+- !private "UIAlertActionStyle"
+- !private "UIAlertAction"
+- "AnyObject"
+- !private "UIAlertController"
+- "PourViewController"
+- "Bool"
 - !private "BooleanLiteralType"
 - "UIViewController"
-- !private "UIAlertControllerStyle"
 - "UIButton"
-- "PourViewController"
-- !private "UIAlertController"
-- !private "UIAlertActionStyle"
-- "String"
-- "Bool"
-- !private "UIAlertAction"
-- !private "StringLiteralType"
-- "AnyObject"
 - !private "Dictionary"
-- "DataManager"
 depends-member:
 - !private ["Ps9AnyObject", "UIAlertAction"]
 - !private ["Ps9AnyObject", "UIAlertActionStyle"]
