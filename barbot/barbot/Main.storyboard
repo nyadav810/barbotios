@@ -18,7 +18,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eWd-gm-z5E" id="kwU-20-Ly5">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -69,7 +69,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PKg-ms-pke" id="Ase-sN-wiS">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -77,7 +77,7 @@
                                         <rect key="frame" x="0.0" y="136" width="600" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LcK-Dx-lNu" id="dA3-2w-zPi">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="215"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="215.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView tag="1" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="yAf-TG-gL0">
@@ -173,9 +173,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9b-1o-Dck">
-                                <rect key="frame" x="284" y="94" width="32" height="30"/>
-                                <state key="normal" title="Pour"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9b-1o-Dck">
+                                <rect key="frame" x="203" y="274" width="194" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="194" id="oIF-Eo-4ge"/>
+                                    <constraint firstAttribute="height" constant="51" id="yEc-gl-PSK"/>
+                                </constraints>
+                                <state key="normal" title="Pour" image="PourButton"/>
                                 <connections>
                                     <action selector="pourDrink:" destination="5JM-gA-mRL" eventType="touchUpInside" id="Rwe-oP-TOm"/>
                                 </connections>
@@ -183,8 +187,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Z9b-1o-Dck" firstAttribute="top" secondItem="Xd9-jh-Vhz" secondAttribute="bottom" constant="30" id="Sds-9m-QAR"/>
-                            <constraint firstItem="Z9b-1o-Dck" firstAttribute="centerX" secondItem="S8b-zp-8w1" secondAttribute="centerX" id="v4m-by-H8H"/>
+                            <constraint firstItem="Z9b-1o-Dck" firstAttribute="centerX" secondItem="S8b-zp-8w1" secondAttribute="centerX" id="eKa-KY-fwi"/>
+                            <constraint firstItem="Z9b-1o-Dck" firstAttribute="centerY" secondItem="S8b-zp-8w1" secondAttribute="centerY" id="i4A-WD-XxM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ulf-dR-xkd"/>
@@ -194,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tIs-IA-iSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2065" y="451.99999999999994"/>
+            <point key="canvasLocation" x="2065" y="451"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FAD-54-GSp">
@@ -240,7 +244,7 @@
                                         <rect key="frame" x="0.0" y="66" width="600" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="74Z-rw-pxM" id="mzV-xn-1zd">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="53"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="53.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LE7-GU-Tj6">
@@ -278,6 +282,7 @@
     </scenes>
     <resources>
         <image name="DrinkImage" width="300" height="225"/>
+        <image name="PourButton" width="194" height="51"/>
         <image name="RevealIcon" width="22" height="17"/>
     </resources>
 </document>

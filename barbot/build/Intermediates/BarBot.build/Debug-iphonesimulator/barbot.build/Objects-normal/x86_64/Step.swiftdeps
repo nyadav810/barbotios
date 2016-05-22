@@ -7,17 +7,17 @@ provides-member:
 - ["V6barbot4Step", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "String"
-- "JSON"
-- !private "<~~"
-- !private "jsonify"
 - !private "~~>"
-- !private "Array"
-- "Int"
-- "Double"
-- "Step"
-- "Glossy"
 - !private "StringLiteralType"
+- "String"
+- !private "jsonify"
+- !private "Array"
+- !private "<~~"
+- "JSON"
+- "Double"
+- "Glossy"
+- "Step"
+- "Int"
 depends-member:
 - !private ["Sa", "Element"]
 - !private ["Ps23ArrayLiteralConvertible", "Element"]

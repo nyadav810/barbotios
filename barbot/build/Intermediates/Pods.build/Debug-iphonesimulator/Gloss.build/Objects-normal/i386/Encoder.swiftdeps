@@ -7,20 +7,20 @@ provides-member:
 - ["V5Gloss7Encoder", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "Encodable"
-- "Dictionary"
-- "NSURL"
-- "Int32"
-- !private "GlossDateFormatterISO8601"
-- "Encoder"
-- "NSDate"
-- !private "AnyObject"
-- !private "NSNumber"
-- "JSON"
-- "RawRepresentable"
-- "String"
-- "NSDateFormatter"
 - "Int64"
+- "Encoder"
+- "RawRepresentable"
+- !private "GlossDateFormatterISO8601"
+- "JSON"
+- "Dictionary"
+- "Encodable"
+- !private "NSNumber"
+- "Int32"
+- "NSDate"
+- "NSURL"
+- "NSDateFormatter"
+- !private "AnyObject"
+- "String"
 depends-member:
 - !private ["Ps9AnyObject", "absoluteString"]
 - !private ["Ps9AnyObject", "init"]

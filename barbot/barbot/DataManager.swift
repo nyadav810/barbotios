@@ -23,6 +23,7 @@ class DataManager: WebSocketDelegate {
     var drinkOrder: String = ""
     var recipeId: String = ""
     var result: String!
+    var status: Bool = false
     
     typealias Payload = [String: AnyObject]
     
@@ -97,6 +98,24 @@ class DataManager: WebSocketDelegate {
                 self.recipeId = parseSingleStringJSON(json, key: "recipe_id")
             case "result":
                 self.result = parseSingleStringJSON(json, key: "result")
+            case "event":
+                let event: Event = parseEventJSON(json)!
+                if event.event == "barbot.status" {
+                    if event.data == "ready" {
+                        self.status = true
+                    } else {
+                        self.status = false
+                    }
+                }
+            case "data":
+                let event: Event = parseEventJSON(json)!
+                if event.event == "barbot.status" {
+                    if event.data == "ready" {
+                        self.status = true
+                    } else {
+                        self.status = false
+                    }
+            }
             default:
                 break
         }
@@ -150,6 +169,16 @@ class DataManager: WebSocketDelegate {
         }
         
         return recipeSet
+    }
+    
+    // MARK: - Event get methods
+    
+    private func parseEventJSON(json: Payload) -> Event? {
+        guard let event = Event(json: json) else {
+            print("Error initializing object")
+            return nil
+        }
+        return event
     }
     
     // MARK: - Result get methods

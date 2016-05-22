@@ -10,9 +10,9 @@ depends-top-level:
 - !private "<~~"
 - "JSON"
 - "Drink"
-- "String"
-- !private "StringLiteralType"
 - "Decodable"
+- !private "StringLiteralType"
+- "String"
 depends-member:
 - !private ["P5Gloss9Decodable", "imageURLString"]
 - ["P5Gloss9Decodable", "init"]

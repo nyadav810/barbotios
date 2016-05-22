@@ -8,11 +8,11 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - "Drink"
-- !private "StringLiteralType"
 - !private "<~~"
 - "JSON"
-- "Decodable"
 - "Menu"
+- !private "StringLiteralType"
+- "Decodable"
 depends-member:
 - !private ["Sa", "deinit"]
 - ["P5Gloss9Decodable", "init"]

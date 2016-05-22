@@ -7,11 +7,11 @@ provides-member:
 - ["V6barbot10Ingredient", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "Ingredient"
-- !private "StringLiteralType"
+- "String"
 - !private "<~~"
 - "JSON"
-- "String"
+- "Ingredient"
+- !private "StringLiteralType"
 - "Decodable"
 depends-member:
 - ["Ps28CustomDebugStringConvertible", "Some"]

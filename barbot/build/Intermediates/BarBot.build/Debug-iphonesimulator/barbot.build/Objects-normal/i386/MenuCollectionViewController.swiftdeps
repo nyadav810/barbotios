@@ -7,8 +7,8 @@ provides-member:
 - ["C6barbot28MenuCollectionViewController", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "UICollectionViewController"
 - "MenuCollectionViewController"
+- "UICollectionViewController"
 depends-member:
 - ["Ps9AnyObject", "init"]
 - ["Ps9AnyObject", ""]

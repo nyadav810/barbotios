@@ -7,20 +7,20 @@ provides-member:
 - ["V5Gloss7Decoder", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "Int64"
-- !private "GlossKeyPathDelimiter"
-- !private "GlossDateFormatterISO8601"
-- "Decoder"
-- "String"
-- "Decodable"
-- !private "NSNumber"
 - !private "NSCharacterSet"
 - "NSDateFormatter"
-- "NSDate"
-- "JSON"
-- "Int32"
-- "NSURL"
 - "RawRepresentable"
+- "Int64"
+- "JSON"
+- !private "GlossDateFormatterISO8601"
+- "NSDate"
+- "Decodable"
+- !private "NSNumber"
+- !private "GlossKeyPathDelimiter"
+- "Decoder"
+- "Int32"
+- "String"
+- "NSURL"
 depends-member:
 - !private ["Ps9AnyObject", "URLQueryAllowedCharacterSet"]
 - !private ["Ps9AnyObject", "dateFromString"]

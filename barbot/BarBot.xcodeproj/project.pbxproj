@@ -27,6 +27,7 @@
 		018A079E1CBA219800BB063B /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018A079D1CBA219800BB063B /* Recipe.swift */; };
 		018BAFC71CA3BE3B008AA729 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018BAFC61CA3BE3B008AA729 /* DataManager.swift */; };
 		01BBAF5E1CC07F450019DAE7 /* RecipeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BBAF5D1CC07F450019DAE7 /* RecipeSet.swift */; };
+		01C3C5DE1CF11AFF00511FAC /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C3C5DD1CF11AFF00511FAC /* Event.swift */; };
 		01D3609F1CBB25FB009AA383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01D3609E1CBB25FB009AA383 /* Main.storyboard */; };
 		01D360A11CBB2989009AA383 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D360A01CBB2989009AA383 /* Step.swift */; };
 		01D360A31CBB7075009AA383 /* IngredientList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D360A21CBB7075009AA383 /* IngredientList.swift */; };
@@ -73,6 +74,7 @@
 		018A079D1CBA219800BB063B /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		018BAFC61CA3BE3B008AA729 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		01BBAF5D1CC07F450019DAE7 /* RecipeSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSet.swift; sourceTree = "<group>"; };
+		01C3C5DD1CF11AFF00511FAC /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		01D3609E1CBB25FB009AA383 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		01D360A01CBB2989009AA383 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		01D360A21CBB7075009AA383 /* IngredientList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientList.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				01D9E3711CD082F4002A17B9 /* Drink.swift */,
+				01C3C5DD1CF11AFF00511FAC /* Event.swift */,
 				01E8CC171CB640FE00D201B7 /* Ingredient.swift */,
 				01D360A21CBB7075009AA383 /* IngredientList.swift */,
 				018A07961CBA1FA000BB063B /* Menu.swift */,
@@ -358,6 +361,7 @@
 				018BAFC71CA3BE3B008AA729 /* DataManager.swift in Sources */,
 				01E8CC181CB640FE00D201B7 /* Ingredient.swift in Sources */,
 				011E3EA51C7A876F00A34C5F /* AppDelegate.swift in Sources */,
+				01C3C5DE1CF11AFF00511FAC /* Event.swift in Sources */,
 				01BBAF5E1CC07F450019DAE7 /* RecipeSet.swift in Sources */,
 				018A07971CBA1FA000BB063B /* Menu.swift in Sources */,
 				01D360A11CBB2989009AA383 /* Step.swift in Sources */,

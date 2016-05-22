@@ -7,12 +7,12 @@ provides-member:
 - ["V6barbot9RecipeSet", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "Decodable"
-- "RecipeSet"
 - !private "StringLiteralType"
+- "Decodable"
+- "String"
+- "RecipeSet"
 - !private "<~~"
 - "JSON"
-- "String"
 - "Recipe"
 depends-member:
 - !private ["Ps9AnyObject", "deinit"]

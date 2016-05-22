@@ -28,17 +28,17 @@ provides-nominal:
 provides-member:
 provides-dynamic-lookup:
 depends-top-level:
-- "String"
-- "Int64"
-- "Decodable"
-- !private "Encoder"
-- "~~>"
-- !private "Decoder"
-- "<~~"
-- "JSON"
-- "Encodable"
-- "RawRepresentable"
 - "Int32"
+- "JSON"
+- "<~~"
+- "Encodable"
+- !private "Encoder"
+- "Decodable"
+- "~~>"
+- "Int64"
+- !private "Decoder"
+- "RawRepresentable"
+- "String"
 - "NSURL"
 depends-member:
 - !private ["Sa", "deinit"]

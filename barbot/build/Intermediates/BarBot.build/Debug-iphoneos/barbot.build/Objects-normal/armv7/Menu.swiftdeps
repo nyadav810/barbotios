@@ -7,12 +7,12 @@ provides-member:
 - ["V6barbot4Menu", ""]
 provides-dynamic-lookup:
 depends-top-level:
+- "Menu"
+- "Drink"
 - "Decodable"
 - !private "StringLiteralType"
-- "Drink"
 - !private "<~~"
 - "JSON"
-- "Menu"
 depends-member:
 - !private ["Sa", "deinit"]
 - ["P5Gloss9Decodable", "init"]

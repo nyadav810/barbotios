@@ -9,76 +9,76 @@ provides-member:
 - ["P6barbot31MenuTableViewControllerDelegate", ""]
 - ["C6barbot23MenuTableViewController", ""]
 provides-dynamic-lookup:
-- "searchController"
-- "addCustomDrink"
-- "hideSearchBar"
+- "delegate"
 - "collapseSidePanels"
 - "montserratFont"
-- "barbotBlue"
-- "showAlertController"
+- "slideOutBarButtomItem"
+- "configureCell"
 - "viewDidLoad"
+- "viewDidAppear"
+- "toggleLeftPanel"
 - "slideOutTapped"
+- "searchController"
 - "tableView"
 - "tableView"
 - "tableView"
+- "textChanged"
 - "actionToEnable"
 - "willPresentSearchController"
+- "addCustomDrink"
 - "viewWillAppear"
-- "configureCell"
-- "toggleLeftPanel"
-- "textChanged"
+- "barbotBlue"
 - "willDismissSearchController"
+- "showAlertController"
 - "prepareForSegue"
+- "hideSearchBar"
 - "filterContentForSearchText"
 - "viewWillDisappear"
-- "viewDidAppear"
-- "delegate"
-- "searchBarCancelButtonClicked"
 - "updateSearchResultsForSearchController"
-- "slideOutBarButtomItem"
+- "searchBarCancelButtonClicked"
 depends-top-level:
-- "NSIndexPath"
-- "UISearchControllerDelegate"
+- "UIFont"
 - "UISearchResultsUpdating"
 - "CGPoint"
-- !private "&&"
-- !private "CGPointMake"
-- !private "UIAlertControllerStyle"
-- "UITableViewCell"
 - "/"
-- "MenuTableViewControllerDelegate"
-- !private "NSForegroundColorAttributeName"
-- !private "RecipeViewController"
-- !private "BooleanLiteralType"
-- "UISearchBarDelegate"
-- "Drink"
-- "UIAlertAction"
-- "DataManager"
-- "UIFont"
-- "UITextField"
-- "UIStoryboardSegue"
-- !private "!="
-- "UIBarButtonItem"
-- !private "NSFontAttributeName"
-- "UITableView"
-- !private "UIAlertController"
-- "UITableViewController"
-- "UISearchController"
-- "Bool"
-- !private "AppDelegate"
-- !private "Recipe"
-- !private "=="
-- "AnyObject"
-- "UIColor"
-- "Int"
-- "StringLiteralType"
-- !private "Array"
-- !private "UIApplication"
 - "MenuTableViewController"
-- "UISearchBar"
-- !private "Dictionary"
+- "MenuTableViewControllerDelegate"
+- "DataManager"
+- "UITableView"
+- "UISearchController"
+- !private "Array"
+- "UIBarButtonItem"
+- !private "NSForegroundColorAttributeName"
+- "Int"
+- "NSIndexPath"
+- !private "RecipeViewController"
+- "UISearchControllerDelegate"
+- !private "NSFontAttributeName"
 - "String"
+- "UISearchBarDelegate"
+- !private "UIAlertControllerStyle"
+- "StringLiteralType"
+- !private "CGPointMake"
+- !private "=="
+- !private "Dictionary"
+- "UITableViewCell"
+- !private "Recipe"
+- "Drink"
+- "Bool"
+- "UIStoryboardSegue"
+- "AnyObject"
+- !private "UIAlertController"
+- !private "!="
+- "UIAlertAction"
+- "UITableViewController"
+- "UIColor"
+- !private "AppDelegate"
+- "UISearchBar"
 - !private "UIBarButtonItemStyle"
+- !private "UIApplication"
+- !private "BooleanLiteralType"
+- !private "&&"
+- "UITextField"
 depends-member:
 - !private ["Ps9AnyObject", "CGPointMake"]
 - ["Ps9AnyObject", "Drink"]
@@ -104,7 +104,6 @@ depends-member:
 - !private ["Ps9AnyObject", "addTextFieldWithConfigurationHandler"]
 - !private ["Ps9AnyObject", "backBarButtonItem"]
 - ["Ps9AnyObject", "barbotBlue"]
-- !private ["Ps9AnyObject", "barbotId"]
 - ["Ps9AnyObject", "configureCell"]
 - !private ["Ps9AnyObject", "containsString"]
 - ["Ps9AnyObject", "dataManager"]
@@ -564,7 +563,6 @@ depends-member:
 - ["Ps23CustomStringConvertible", "willDismissSearchController"]
 - ["Ps23CustomStringConvertible", "willPresentSearchController"]
 - ["Ps23CustomStringConvertible", ""]
-- !private ["C6barbot11DataManager", "barbotId"]
 - !private ["C6barbot11DataManager", "drinkList"]
 - !private ["C6barbot11DataManager", "ingredientList"]
 - !private ["C6barbot11DataManager", "parseResponseDataFromServer"]
@@ -2663,7 +2661,6 @@ depends-member:
 - !private ["Ps31UnicodeScalarLiteralConvertible", "containsString"]
 - !private ["Ps31UnicodeScalarLiteralConvertible", "lowercaseString"]
 - !private ["C10Starscream9WebSocket", "onText"]
-- !private ["P10Starscream17WebSocketDelegate", "barbotId"]
 - !private ["P10Starscream17WebSocketDelegate", "drinkList"]
 - !private ["P10Starscream17WebSocketDelegate", "ingredientList"]
 - !private ["P10Starscream17WebSocketDelegate", "parseResponseDataFromServer"]

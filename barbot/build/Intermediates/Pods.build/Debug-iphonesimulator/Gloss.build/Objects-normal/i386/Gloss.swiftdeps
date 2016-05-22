@@ -17,23 +17,23 @@ provides-member:
 - ["P5Gloss9Encodable", ""]
 provides-dynamic-lookup:
 depends-top-level:
+- "GlossDateFormatterISO8601"
+- "Encodable"
+- "UnicodeScalarType"
 - "GlossKeyPathDelimiter"
 - "Decodable"
-- !private "!="
-- "AnyObject"
-- "NSDateFormatter"
 - "jsonify"
-- "UnicodeScalarType"
-- "Encodable"
-- "NSTimeZone"
-- !private "Dictionary"
-- "String"
+- "NSCalendarIdentifierGregorian"
+- "AnyObject"
 - "NSLocale"
+- !private "Dictionary"
+- "NSDateFormatter"
+- "String"
+- !private "!="
 - "StringLiteralType"
 - "NSCalendar"
-- "NSCalendarIdentifierGregorian"
 - "Glossy"
-- "GlossDateFormatterISO8601"
+- "NSTimeZone"
 - "JSON"
 depends-member:
 - ["Ps9AnyObject", "calendar"]

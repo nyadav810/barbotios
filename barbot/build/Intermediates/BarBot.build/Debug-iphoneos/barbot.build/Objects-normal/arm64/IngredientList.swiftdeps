@@ -7,16 +7,16 @@ provides-member:
 - ["V6barbot14IngredientList", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "+="
-- !private "<~~"
-- "JSON"
-- "Int"
 - "IngredientList"
-- "Decodable"
-- "Ingredient"
+- "JSON"
 - !private "StringLiteralType"
 - !private "=="
+- "Int"
+- !private "<~~"
+- "Ingredient"
 - "String"
+- !private "+="
+- "Decodable"
 depends-member:
 - !private ["Sa", "Generator"]
 - !private ["Sa", "Index"]

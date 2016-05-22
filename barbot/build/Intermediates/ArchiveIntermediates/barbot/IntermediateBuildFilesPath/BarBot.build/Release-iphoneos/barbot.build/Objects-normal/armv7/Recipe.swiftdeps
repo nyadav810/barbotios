@@ -7,24 +7,24 @@ provides-member:
 - ["V6barbot6Recipe", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "Glossy"
-- "Bool"
+- "Recipe"
 - "Int"
+- !private "!"
 - !private "StringLiteralType"
-- !private "jsonify"
 - !private "=="
-- !private "~~>"
+- !private "jsonify"
+- "JSON"
+- "String"
 - "Step"
 - !private "+="
 - "Double"
-- "String"
-- "Recipe"
-- "JSON"
-- !private "Array"
 - !private "<~~"
-- !private "BooleanLiteralType"
+- !private "~~>"
+- !private "Array"
 - !private "AnyObject"
-- !private "!"
+- "Glossy"
+- "Bool"
+- !private "BooleanLiteralType"
 depends-member:
 - !private ["Ps9AnyObject", "deinit"]
 - !private ["Sa", "Element"]
@@ -94,12 +94,11 @@ depends-member:
 - !private ["P5Gloss9Decodable", "custom"]
 - !private ["P5Gloss9Decodable", "hasIce"]
 - !private ["P5Gloss9Decodable", "id"]
+- !private ["P5Gloss9Decodable", "imageURLString"]
 - ["P5Gloss9Decodable", "init"]
 - !private ["P5Gloss9Decodable", "jsonify"]
 - !private ["P5Gloss9Decodable", "name"]
 - !private ["P5Gloss9Decodable", "quantity"]
-- !private ["P5Gloss9Decodable", "shot"]
-- !private ["P5Gloss9Decodable", "size"]
 - !private ["P5Gloss9Decodable", "steps"]
 - ["P5Gloss9Decodable", "toJSON"]
 - !private ["P5Gloss9Decodable", "type"]
@@ -109,12 +108,11 @@ depends-member:
 - !private ["P5Gloss9Encodable", "custom"]
 - !private ["P5Gloss9Encodable", "hasIce"]
 - !private ["P5Gloss9Encodable", "id"]
+- !private ["P5Gloss9Encodable", "imageURLString"]
 - ["P5Gloss9Encodable", "init"]
 - !private ["P5Gloss9Encodable", "jsonify"]
 - !private ["P5Gloss9Encodable", "name"]
 - !private ["P5Gloss9Encodable", "quantity"]
-- !private ["P5Gloss9Encodable", "shot"]
-- !private ["P5Gloss9Encodable", "size"]
 - !private ["P5Gloss9Encodable", "steps"]
 - ["P5Gloss9Encodable", "toJSON"]
 - !private ["P5Gloss9Encodable", "type"]
@@ -129,12 +127,11 @@ depends-member:
 - !private ["P5Gloss6Glossy", "custom"]
 - !private ["P5Gloss6Glossy", "hasIce"]
 - !private ["P5Gloss6Glossy", "id"]
+- !private ["P5Gloss6Glossy", "imageURLString"]
 - ["P5Gloss6Glossy", "init"]
 - !private ["P5Gloss6Glossy", "jsonify"]
 - !private ["P5Gloss6Glossy", "name"]
 - !private ["P5Gloss6Glossy", "quantity"]
-- !private ["P5Gloss6Glossy", "shot"]
-- !private ["P5Gloss6Glossy", "size"]
 - !private ["P5Gloss6Glossy", "steps"]
 - ["P5Gloss6Glossy", "toJSON"]
 - !private ["P5Gloss6Glossy", "type"]
@@ -215,12 +212,11 @@ depends-member:
 - ["V6barbot6Recipe", "getRecipeVolume"]
 - ["V6barbot6Recipe", "hasIce"]
 - ["V6barbot6Recipe", "id"]
+- ["V6barbot6Recipe", "imageURLString"]
 - ["V6barbot6Recipe", "init"]
 - !private ["V6barbot6Recipe", "jsonify"]
 - ["V6barbot6Recipe", "name"]
 - ["V6barbot6Recipe", "removeIce"]
-- ["V6barbot6Recipe", "shot"]
-- ["V6barbot6Recipe", "size"]
 - ["V6barbot6Recipe", "steps"]
 - ["V6barbot6Recipe", "toJSON"]
 - !private ["Ps12SequenceType", "Element"]
@@ -373,4 +369,4 @@ depends-external:
 - "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Intermediates/ArchiveIntermediates/barbot/BuildProductsPath/Release-iphoneos/Starscream/Starscream.framework/Headers/Starscream-umbrella.h"
 - "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Intermediates/ArchiveIntermediates/barbot/BuildProductsPath/Release-iphoneos/Starscream/Starscream.framework/Modules/module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreData.swiftmodule"
-interface-hash: "99cd96793fd137f73d30147b560b0aaf"
+interface-hash: "b6510408a72abdb2872a9dbc59f96421"

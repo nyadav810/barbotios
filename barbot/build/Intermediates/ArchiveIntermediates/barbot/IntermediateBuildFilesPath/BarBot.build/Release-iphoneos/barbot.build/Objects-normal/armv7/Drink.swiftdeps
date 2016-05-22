@@ -7,13 +7,14 @@ provides-member:
 - ["V6barbot5Drink", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "String"
-- !private "StringLiteralType"
-- "JSON"
-- !private "<~~"
-- "Decodable"
 - "Drink"
+- "Decodable"
+- !private "StringLiteralType"
+- "String"
+- !private "<~~"
+- "JSON"
 depends-member:
+- !private ["P5Gloss9Decodable", "imageURLString"]
 - ["P5Gloss9Decodable", "init"]
 - !private ["P5Gloss9Decodable", "name"]
 - !private ["P5Gloss9Decodable", "recipeId"]
@@ -21,6 +22,7 @@ depends-member:
 - ["V6barbot5Drink", "JSON"]
 - ["V6barbot5Drink", "String"]
 - ["V6barbot5Drink", "deinit"]
+- ["V6barbot5Drink", "imageURLString"]
 - ["V6barbot5Drink", "init"]
 - ["V6barbot5Drink", "name"]
 - ["V6barbot5Drink", "recipeId"]
@@ -50,4 +52,4 @@ depends-external:
 - "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Intermediates/ArchiveIntermediates/barbot/BuildProductsPath/Release-iphoneos/Starscream/Starscream.framework/Headers/Starscream-umbrella.h"
 - "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Intermediates/ArchiveIntermediates/barbot/BuildProductsPath/Release-iphoneos/Starscream/Starscream.framework/Modules/module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreData.swiftmodule"
-interface-hash: "84514f81db6d83a7fe1c874e74ad50ea"
+interface-hash: "77072afa20893e62fa60573974a03525"

@@ -7,29 +7,34 @@ provides-member:
 - ["C6barbot11DataManager", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "IngredientList"
+- "BooleanLiteralType"
+- !private "NSBundle"
+- "DataManager"
+- !private "print"
 - !private "NSUTF8StringEncoding"
-- "WebSocket"
+- "NSError"
+- !private "NSURL"
+- "String"
+- "AnyObject"
 - !private "NSDataReadingOptions"
+- !private "Dictionary"
+- !private "Menu"
+- !private "RecipeSet"
+- "IngredientList"
 - "NSData"
+- "WebSocketDelegate"
 - "Drink"
+- "Recipe"
+- "WebSocket"
+- "Bool"
+- !private "NSJSONSerialization"
 - "StringLiteralType"
 - !private "~="
-- !private "NSURL"
-- !private "Dictionary"
-- !private "NSBundle"
-- "NSError"
+- !private "=="
 - !private "NSJSONReadingOptions"
-- !private "RecipeSet"
-- "String"
-- !private "Menu"
-- "Recipe"
-- !private "print"
-- !private "NSJSONSerialization"
-- "DataManager"
-- "WebSocketDelegate"
-- "AnyObject"
+- !private "Event"
 depends-member:
+- !private ["Ps9AnyObject", "Event"]
 - !private ["Ps9AnyObject", "IngredientList"]
 - !private ["Ps9AnyObject", "JSONObjectWithData"]
 - !private ["Ps9AnyObject", "Menu"]
@@ -60,6 +65,7 @@ depends-member:
 - !private ["Ps9AnyObject", "length"]
 - !private ["Ps9AnyObject", "localizedDescription"]
 - !private ["Ps9AnyObject", "mainBundle"]
+- !private ["Ps9AnyObject", "parseEventJSON"]
 - !private ["Ps9AnyObject", "parseIngredientJSON"]
 - !private ["Ps9AnyObject", "parseMenuJSON"]
 - !private ["Ps9AnyObject", "parseRecipeJSON"]
@@ -71,6 +77,7 @@ depends-member:
 - !private ["Ps9AnyObject", "requestDataFromServer"]
 - !private ["Ps9AnyObject", "result"]
 - !private ["Ps9AnyObject", "socket"]
+- !private ["Ps9AnyObject", "status"]
 - !private ["Ps9AnyObject", "userId"]
 - ["Ps9AnyObject", "websocketDidConnect"]
 - ["Ps9AnyObject", "websocketDidDisconnect"]
@@ -157,7 +164,9 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "subscript"]
 - !private ["Ps23CustomStringConvertible", "writeData"]
 - ["C6barbot11DataManager", "AnyObject"]
+- ["C6barbot11DataManager", "Bool"]
 - ["C6barbot11DataManager", "Drink"]
+- !private ["C6barbot11DataManager", "Event"]
 - ["C6barbot11DataManager", "IngredientList"]
 - !private ["C6barbot11DataManager", "Menu"]
 - !private ["C6barbot11DataManager", "NSBundle"]
@@ -183,6 +192,7 @@ depends-member:
 - ["C6barbot11DataManager", "ingredientList"]
 - ["C6barbot11DataManager", "init"]
 - ["C6barbot11DataManager", "ipAddress"]
+- !private ["C6barbot11DataManager", "parseEventJSON"]
 - !private ["C6barbot11DataManager", "parseIngredientJSON"]
 - !private ["C6barbot11DataManager", "parseMenuJSON"]
 - !private ["C6barbot11DataManager", "parseRecipeJSON"]
@@ -195,11 +205,14 @@ depends-member:
 - ["C6barbot11DataManager", "requestDataFromServer"]
 - ["C6barbot11DataManager", "result"]
 - ["C6barbot11DataManager", "socket"]
+- ["C6barbot11DataManager", "status"]
 - ["C6barbot11DataManager", "userId"]
 - ["C6barbot11DataManager", "websocketDidConnect"]
 - ["C6barbot11DataManager", "websocketDidDisconnect"]
 - ["C6barbot11DataManager", "websocketDidReceiveData"]
 - ["C6barbot11DataManager", "websocketDidReceiveMessage"]
+- !private ["P5Gloss9Decodable", "data"]
+- !private ["P5Gloss9Decodable", "event"]
 - !private ["P5Gloss9Decodable", "init"]
 - !private ["P5Gloss9Decodable", "menu"]
 - !private ["Vs10Dictionary", "Generator"]
@@ -244,6 +257,10 @@ depends-member:
 - !private ["Ps9Equatable", "pathForResource"]
 - !private ["Ps9Equatable", "writeData"]
 - !private ["Ps9ErrorType", "localizedDescription"]
+- !private ["V6barbot5Event", "data"]
+- !private ["V6barbot5Event", "deinit"]
+- !private ["V6barbot5Event", "event"]
+- !private ["V6barbot5Event", "init"]
 - !private ["Ps41ExtendedGraphemeClusterLiteralConvertible", "dataUsingEncoding"]
 - !private ["Ps41ExtendedGraphemeClusterLiteralConvertible", "init"]
 - !private ["Sf", "deinit"]
@@ -413,6 +430,7 @@ depends-member:
 - !private ["C10Starscream9WebSocket", "delegate"]
 - !private ["C10Starscream9WebSocket", "init"]
 - !private ["C10Starscream9WebSocket", "writeData"]
+- !private ["P10Starscream17WebSocketDelegate", "Event"]
 - !private ["P10Starscream17WebSocketDelegate", "IngredientList"]
 - !private ["P10Starscream17WebSocketDelegate", "Menu"]
 - !private ["P10Starscream17WebSocketDelegate", "NSBundle"]
@@ -433,6 +451,7 @@ depends-member:
 - !private ["P10Starscream17WebSocketDelegate", "getJSONFromData"]
 - !private ["P10Starscream17WebSocketDelegate", "ingredientList"]
 - !private ["P10Starscream17WebSocketDelegate", "ipAddress"]
+- !private ["P10Starscream17WebSocketDelegate", "parseEventJSON"]
 - !private ["P10Starscream17WebSocketDelegate", "parseIngredientJSON"]
 - !private ["P10Starscream17WebSocketDelegate", "parseMenuJSON"]
 - !private ["P10Starscream17WebSocketDelegate", "parseRecipeJSON"]
@@ -443,6 +462,7 @@ depends-member:
 - !private ["P10Starscream17WebSocketDelegate", "requestDataFromServer"]
 - !private ["P10Starscream17WebSocketDelegate", "result"]
 - !private ["P10Starscream17WebSocketDelegate", "socket"]
+- !private ["P10Starscream17WebSocketDelegate", "status"]
 - !private ["P10Starscream17WebSocketDelegate", "userId"]
 - ["P10Starscream17WebSocketDelegate", "websocketDidConnect"]
 - ["P10Starscream17WebSocketDelegate", "websocketDidDisconnect"]
@@ -517,6 +537,7 @@ depends-nominal:
 - !private "P5Gloss9Encodable"
 - !private "Ps9Equatable"
 - !private "Ps9ErrorType"
+- !private "V6barbot5Event"
 - !private "Ps41ExtendedGraphemeClusterLiteralConvertible"
 - !private "Sf"
 - !private "Ps16ForwardIndexType"
@@ -615,4 +636,4 @@ depends-external:
 - "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Intermediates/ArchiveIntermediates/barbot/BuildProductsPath/Release-iphoneos/Starscream/Starscream.framework/Headers/Starscream-umbrella.h"
 - "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Intermediates/ArchiveIntermediates/barbot/BuildProductsPath/Release-iphoneos/Starscream/Starscream.framework/Modules/module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreData.swiftmodule"
-interface-hash: "72c4fbe5e646e6dce0cfed10054012e2"
+interface-hash: "5649ab513fc0d576cc11e119dcba9eca"

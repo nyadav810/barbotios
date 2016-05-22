@@ -9,14 +9,14 @@ provides-dynamic-lookup:
 depends-top-level:
 - !private "<~~"
 - "JSON"
-- "String"
-- !private "StringLiteralType"
+- !private "+="
 - "Int"
 - "IngredientList"
-- !private "=="
-- "Ingredient"
-- !private "+="
 - "Decodable"
+- !private "StringLiteralType"
+- !private "=="
+- "String"
+- "Ingredient"
 depends-member:
 - !private ["Sa", "Generator"]
 - !private ["Sa", "Index"]

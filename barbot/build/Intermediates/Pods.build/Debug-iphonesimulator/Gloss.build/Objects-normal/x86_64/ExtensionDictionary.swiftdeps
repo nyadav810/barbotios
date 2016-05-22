@@ -9,17 +9,17 @@ provides-member:
 - ["Vs10Dictionary", "add"]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "GlossKeyPathDelimiter"
-- !private "print"
-- !private "JSON"
 - !private "Any"
+- !private "JSON"
 - "AnyObject"
-- !private ">"
-- !private "StringLiteralType"
-- "Dictionary"
-- "Hashable"
-- "String"
 - !private "..<"
+- "String"
+- !private ">"
+- "Dictionary"
+- !private "StringLiteralType"
+- "Hashable"
+- !private "print"
+- !private "GlossKeyPathDelimiter"
 depends-member:
 - !private ["Ps9AnyObject", "componentsSeparatedByString"]
 - !private ["Ps9AnyObject", "init"]

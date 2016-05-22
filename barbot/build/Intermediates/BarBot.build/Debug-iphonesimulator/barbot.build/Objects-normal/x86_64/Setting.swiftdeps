@@ -7,10 +7,10 @@ provides-member:
 - ["C6barbot7Setting", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "Setting"
 - "Array"
 - !private "StringLiteralType"
 - "String"
+- "Setting"
 depends-member:
 - !private ["Ps9AnyObject", "Setting"]
 - !private ["Ps9AnyObject", "init"]

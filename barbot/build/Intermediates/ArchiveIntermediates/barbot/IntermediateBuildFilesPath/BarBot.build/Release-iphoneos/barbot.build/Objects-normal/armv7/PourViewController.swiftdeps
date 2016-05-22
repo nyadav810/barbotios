@@ -10,22 +10,23 @@ provides-dynamic-lookup:
 - "pourDrink"
 - "viewWillAppear"
 - "viewDidLoad"
+- "viewDidAppear"
 - "showAlertController"
 - "result"
 depends-top-level:
-- !private "UIAlertAction"
+- !private "Dictionary"
+- "AnyObject"
 - "PourViewController"
-- !private "UIAlertController"
-- "Bool"
 - !private "StringLiteralType"
+- !private "UIAlertControllerStyle"
+- "Bool"
 - "UIButton"
 - "UIViewController"
-- "AnyObject"
-- !private "UIAlertControllerStyle"
-- !private "Dictionary"
-- "DataManager"
 - !private "UIAlertActionStyle"
+- !private "UIAlertController"
+- "DataManager"
 - "String"
+- !private "UIAlertAction"
 - !private "BooleanLiteralType"
 depends-member:
 - !private ["Ps9AnyObject", "UIAlertAction"]
@@ -35,8 +36,11 @@ depends-member:
 - !private ["Ps9AnyObject", "addAction"]
 - ["Ps9AnyObject", "dataManager"]
 - !private ["Ps9AnyObject", "drinkOrder"]
+- !private ["Ps9AnyObject", "enabled"]
 - ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "navigationController"]
+- !private ["Ps9AnyObject", "onText"]
+- !private ["Ps9AnyObject", "parseResponseDataFromServer"]
 - !private ["Ps9AnyObject", "popToRootViewControllerAnimated"]
 - ["Ps9AnyObject", "pourButton"]
 - ["Ps9AnyObject", "pourDrink"]
@@ -44,6 +48,9 @@ depends-member:
 - !private ["Ps9AnyObject", "requestDataFromServer"]
 - ["Ps9AnyObject", "result"]
 - ["Ps9AnyObject", "showAlertController"]
+- !private ["Ps9AnyObject", "socket"]
+- !private ["Ps9AnyObject", "status"]
+- ["Ps9AnyObject", "viewDidAppear"]
 - ["Ps9AnyObject", "viewDidLoad"]
 - ["Ps9AnyObject", "viewWillAppear"]
 - ["Ps9AnyObject", ""]
@@ -53,14 +60,17 @@ depends-member:
 - !private ["Ps11CVarArgType", "UIAlertControllerStyle"]
 - !private ["Ps11CVarArgType", "addAction"]
 - ["Ps11CVarArgType", "dataManager"]
+- !private ["Ps11CVarArgType", "enabled"]
 - ["Ps11CVarArgType", "init"]
 - !private ["Ps11CVarArgType", "navigationController"]
+- !private ["Ps11CVarArgType", "onText"]
 - !private ["Ps11CVarArgType", "popToRootViewControllerAnimated"]
 - ["Ps11CVarArgType", "pourButton"]
 - ["Ps11CVarArgType", "pourDrink"]
 - !private ["Ps11CVarArgType", "presentViewController"]
 - ["Ps11CVarArgType", "result"]
 - ["Ps11CVarArgType", "showAlertController"]
+- ["Ps11CVarArgType", "viewDidAppear"]
 - ["Ps11CVarArgType", "viewDidLoad"]
 - ["Ps11CVarArgType", "viewWillAppear"]
 - ["Ps11CVarArgType", ""]
@@ -74,14 +84,17 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "Value"]
 - !private ["Ps28CustomDebugStringConvertible", "addAction"]
 - ["Ps28CustomDebugStringConvertible", "dataManager"]
+- !private ["Ps28CustomDebugStringConvertible", "enabled"]
 - ["Ps28CustomDebugStringConvertible", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "navigationController"]
+- !private ["Ps28CustomDebugStringConvertible", "onText"]
 - !private ["Ps28CustomDebugStringConvertible", "popToRootViewControllerAnimated"]
 - ["Ps28CustomDebugStringConvertible", "pourButton"]
 - ["Ps28CustomDebugStringConvertible", "pourDrink"]
 - !private ["Ps28CustomDebugStringConvertible", "presentViewController"]
 - ["Ps28CustomDebugStringConvertible", "result"]
 - ["Ps28CustomDebugStringConvertible", "showAlertController"]
+- ["Ps28CustomDebugStringConvertible", "viewDidAppear"]
 - ["Ps28CustomDebugStringConvertible", "viewDidLoad"]
 - ["Ps28CustomDebugStringConvertible", "viewWillAppear"]
 - ["Ps28CustomDebugStringConvertible", ""]
@@ -93,19 +106,25 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "Value"]
 - !private ["Ps23CustomStringConvertible", "addAction"]
 - ["Ps23CustomStringConvertible", "dataManager"]
+- !private ["Ps23CustomStringConvertible", "enabled"]
 - ["Ps23CustomStringConvertible", "init"]
 - !private ["Ps23CustomStringConvertible", "navigationController"]
+- !private ["Ps23CustomStringConvertible", "onText"]
 - !private ["Ps23CustomStringConvertible", "popToRootViewControllerAnimated"]
 - ["Ps23CustomStringConvertible", "pourButton"]
 - ["Ps23CustomStringConvertible", "pourDrink"]
 - !private ["Ps23CustomStringConvertible", "presentViewController"]
 - ["Ps23CustomStringConvertible", "result"]
 - ["Ps23CustomStringConvertible", "showAlertController"]
+- ["Ps23CustomStringConvertible", "viewDidAppear"]
 - ["Ps23CustomStringConvertible", "viewDidLoad"]
 - ["Ps23CustomStringConvertible", "viewWillAppear"]
 - ["Ps23CustomStringConvertible", ""]
 - !private ["C6barbot11DataManager", "drinkOrder"]
+- !private ["C6barbot11DataManager", "parseResponseDataFromServer"]
 - !private ["C6barbot11DataManager", "requestDataFromServer"]
+- !private ["C6barbot11DataManager", "socket"]
+- !private ["C6barbot11DataManager", "status"]
 - !private ["Vs10Dictionary", "Key"]
 - !private ["Vs10Dictionary", "Value"]
 - !private ["Ps28DictionaryLiteralConvertible", "Key"]
@@ -118,14 +137,17 @@ depends-member:
 - !private ["Ps9Equatable", "UIAlertControllerStyle"]
 - !private ["Ps9Equatable", "addAction"]
 - ["Ps9Equatable", "dataManager"]
+- !private ["Ps9Equatable", "enabled"]
 - ["Ps9Equatable", "init"]
 - !private ["Ps9Equatable", "navigationController"]
+- !private ["Ps9Equatable", "onText"]
 - !private ["Ps9Equatable", "popToRootViewControllerAnimated"]
 - ["Ps9Equatable", "pourButton"]
 - ["Ps9Equatable", "pourDrink"]
 - !private ["Ps9Equatable", "presentViewController"]
 - ["Ps9Equatable", "result"]
 - ["Ps9Equatable", "showAlertController"]
+- ["Ps9Equatable", "viewDidAppear"]
 - ["Ps9Equatable", "viewDidLoad"]
 - ["Ps9Equatable", "viewWillAppear"]
 - ["Ps9Equatable", ""]
@@ -137,14 +159,17 @@ depends-member:
 - !private ["Ps8Hashable", "UIAlertControllerStyle"]
 - !private ["Ps8Hashable", "addAction"]
 - ["Ps8Hashable", "dataManager"]
+- !private ["Ps8Hashable", "enabled"]
 - ["Ps8Hashable", "init"]
 - !private ["Ps8Hashable", "navigationController"]
+- !private ["Ps8Hashable", "onText"]
 - !private ["Ps8Hashable", "popToRootViewControllerAnimated"]
 - ["Ps8Hashable", "pourButton"]
 - ["Ps8Hashable", "pourDrink"]
 - !private ["Ps8Hashable", "presentViewController"]
 - ["Ps8Hashable", "result"]
 - ["Ps8Hashable", "showAlertController"]
+- ["Ps8Hashable", "viewDidAppear"]
 - ["Ps8Hashable", "viewDidLoad"]
 - ["Ps8Hashable", "viewWillAppear"]
 - ["Ps8Hashable", ""]
@@ -156,6 +181,7 @@ depends-member:
 - !private ["PSo8NSCoding", "UIAlertControllerStyle"]
 - !private ["PSo8NSCoding", "addAction"]
 - ["PSo8NSCoding", "dataManager"]
+- !private ["PSo8NSCoding", "enabled"]
 - ["PSo8NSCoding", "init"]
 - !private ["PSo8NSCoding", "navigationController"]
 - !private ["PSo8NSCoding", "popToRootViewControllerAnimated"]
@@ -164,6 +190,7 @@ depends-member:
 - !private ["PSo8NSCoding", "presentViewController"]
 - ["PSo8NSCoding", "result"]
 - ["PSo8NSCoding", "showAlertController"]
+- ["PSo8NSCoding", "viewDidAppear"]
 - ["PSo8NSCoding", "viewDidLoad"]
 - ["PSo8NSCoding", "viewWillAppear"]
 - ["PSo8NSCoding", ""]
@@ -182,6 +209,7 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "presentViewController"]
 - ["PSo26NSExtensionRequestHandling", "result"]
 - ["PSo26NSExtensionRequestHandling", "showAlertController"]
+- ["PSo26NSExtensionRequestHandling", "viewDidAppear"]
 - ["PSo26NSExtensionRequestHandling", "viewDidLoad"]
 - ["PSo26NSExtensionRequestHandling", "viewWillAppear"]
 - ["PSo26NSExtensionRequestHandling", ""]
@@ -196,14 +224,17 @@ depends-member:
 - ["CSo8NSObject", "UIButton"]
 - !private ["CSo8NSObject", "addAction"]
 - ["CSo8NSObject", "dataManager"]
+- !private ["CSo8NSObject", "enabled"]
 - ["CSo8NSObject", "init"]
 - !private ["CSo8NSObject", "navigationController"]
+- !private ["CSo8NSObject", "onText"]
 - !private ["CSo8NSObject", "popToRootViewControllerAnimated"]
 - ["CSo8NSObject", "pourButton"]
 - ["CSo8NSObject", "pourDrink"]
 - !private ["CSo8NSObject", "presentViewController"]
 - ["CSo8NSObject", "result"]
 - ["CSo8NSObject", "showAlertController"]
+- ["CSo8NSObject", "viewDidAppear"]
 - ["CSo8NSObject", "viewDidLoad"]
 - ["CSo8NSObject", "viewWillAppear"]
 - !private ["PSo16NSObjectProtocol", "UIAlertAction"]
@@ -212,17 +243,21 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "UIAlertControllerStyle"]
 - !private ["PSo16NSObjectProtocol", "addAction"]
 - ["PSo16NSObjectProtocol", "dataManager"]
+- !private ["PSo16NSObjectProtocol", "enabled"]
 - ["PSo16NSObjectProtocol", "init"]
 - !private ["PSo16NSObjectProtocol", "navigationController"]
+- !private ["PSo16NSObjectProtocol", "onText"]
 - !private ["PSo16NSObjectProtocol", "popToRootViewControllerAnimated"]
 - ["PSo16NSObjectProtocol", "pourButton"]
 - ["PSo16NSObjectProtocol", "pourDrink"]
 - !private ["PSo16NSObjectProtocol", "presentViewController"]
 - ["PSo16NSObjectProtocol", "result"]
 - ["PSo16NSObjectProtocol", "showAlertController"]
+- ["PSo16NSObjectProtocol", "viewDidAppear"]
 - ["PSo16NSObjectProtocol", "viewDidLoad"]
 - ["PSo16NSObjectProtocol", "viewWillAppear"]
 - ["PSo16NSObjectProtocol", ""]
+- !private ["PSo16NSStreamDelegate", "onText"]
 - !private ["Sq", "deinit"]
 - ["C6barbot18PourViewController", "AnyObject"]
 - ["C6barbot18PourViewController", "Bool"]
@@ -242,6 +277,7 @@ depends-member:
 - !private ["C6barbot18PourViewController", "presentViewController"]
 - ["C6barbot18PourViewController", "result"]
 - ["C6barbot18PourViewController", "showAlertController"]
+- ["C6barbot18PourViewController", "viewDidAppear"]
 - ["C6barbot18PourViewController", "viewDidLoad"]
 - ["C6barbot18PourViewController", "viewWillAppear"]
 - !private ["Ps16RawRepresentable", "Alert"]
@@ -249,17 +285,20 @@ depends-member:
 - !private ["Ps12SequenceType", "Key"]
 - !private ["Ps12SequenceType", "Value"]
 - !private ["SS", "deinit"]
+- !private ["PSo29UIAccessibilityIdentification", "enabled"]
 - !private ["CSo13UIAlertAction", "init"]
 - !private ["OSC18UIAlertActionStyle", "Default"]
 - !private ["CSo17UIAlertController", "addAction"]
 - !private ["CSo17UIAlertController", "init"]
 - !private ["OSC22UIAlertControllerStyle", "Alert"]
+- !private ["PSo12UIAppearance", "enabled"]
 - !private ["PSo21UIAppearanceContainer", "UIAlertAction"]
 - !private ["PSo21UIAppearanceContainer", "UIAlertActionStyle"]
 - !private ["PSo21UIAppearanceContainer", "UIAlertController"]
 - !private ["PSo21UIAppearanceContainer", "UIAlertControllerStyle"]
 - !private ["PSo21UIAppearanceContainer", "addAction"]
 - ["PSo21UIAppearanceContainer", "dataManager"]
+- !private ["PSo21UIAppearanceContainer", "enabled"]
 - ["PSo21UIAppearanceContainer", "init"]
 - !private ["PSo21UIAppearanceContainer", "navigationController"]
 - !private ["PSo21UIAppearanceContainer", "popToRootViewControllerAnimated"]
@@ -268,9 +307,11 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "presentViewController"]
 - ["PSo21UIAppearanceContainer", "result"]
 - ["PSo21UIAppearanceContainer", "showAlertController"]
+- ["PSo21UIAppearanceContainer", "viewDidAppear"]
 - ["PSo21UIAppearanceContainer", "viewDidLoad"]
 - ["PSo21UIAppearanceContainer", "viewWillAppear"]
 - ["PSo21UIAppearanceContainer", ""]
+- !private ["CSo8UIButton", "enabled"]
 - !private ["PSo18UIContentContainer", "UIAlertAction"]
 - !private ["PSo18UIContentContainer", "UIAlertActionStyle"]
 - !private ["PSo18UIContentContainer", "UIAlertController"]
@@ -285,15 +326,20 @@ depends-member:
 - !private ["PSo18UIContentContainer", "presentViewController"]
 - ["PSo18UIContentContainer", "result"]
 - ["PSo18UIContentContainer", "showAlertController"]
+- ["PSo18UIContentContainer", "viewDidAppear"]
 - ["PSo18UIContentContainer", "viewDidLoad"]
 - ["PSo18UIContentContainer", "viewWillAppear"]
 - ["PSo18UIContentContainer", ""]
+- !private ["CSo9UIControl", "enabled"]
+- !private ["PSo17UICoordinateSpace", "enabled"]
+- !private ["PSo13UIDynamicItem", "enabled"]
 - !private ["PSo18UIFocusEnvironment", "UIAlertAction"]
 - !private ["PSo18UIFocusEnvironment", "UIAlertActionStyle"]
 - !private ["PSo18UIFocusEnvironment", "UIAlertController"]
 - !private ["PSo18UIFocusEnvironment", "UIAlertControllerStyle"]
 - !private ["PSo18UIFocusEnvironment", "addAction"]
 - ["PSo18UIFocusEnvironment", "dataManager"]
+- !private ["PSo18UIFocusEnvironment", "enabled"]
 - ["PSo18UIFocusEnvironment", "init"]
 - !private ["PSo18UIFocusEnvironment", "navigationController"]
 - !private ["PSo18UIFocusEnvironment", "popToRootViewControllerAnimated"]
@@ -302,6 +348,7 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "presentViewController"]
 - ["PSo18UIFocusEnvironment", "result"]
 - ["PSo18UIFocusEnvironment", "showAlertController"]
+- ["PSo18UIFocusEnvironment", "viewDidAppear"]
 - ["PSo18UIFocusEnvironment", "viewDidLoad"]
 - ["PSo18UIFocusEnvironment", "viewWillAppear"]
 - ["PSo18UIFocusEnvironment", ""]
@@ -317,6 +364,7 @@ depends-member:
 - ["CSo11UIResponder", "UIButton"]
 - !private ["CSo11UIResponder", "addAction"]
 - ["CSo11UIResponder", "dataManager"]
+- !private ["CSo11UIResponder", "enabled"]
 - ["CSo11UIResponder", "init"]
 - !private ["CSo11UIResponder", "navigationController"]
 - !private ["CSo11UIResponder", "popToRootViewControllerAnimated"]
@@ -325,6 +373,7 @@ depends-member:
 - !private ["CSo11UIResponder", "presentViewController"]
 - ["CSo11UIResponder", "result"]
 - ["CSo11UIResponder", "showAlertController"]
+- ["CSo11UIResponder", "viewDidAppear"]
 - ["CSo11UIResponder", "viewDidLoad"]
 - ["CSo11UIResponder", "viewWillAppear"]
 - !private ["PSo16UIStateRestoring", "UIAlertAction"]
@@ -341,6 +390,7 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "presentViewController"]
 - ["PSo16UIStateRestoring", "result"]
 - ["PSo16UIStateRestoring", "showAlertController"]
+- ["PSo16UIStateRestoring", "viewDidAppear"]
 - ["PSo16UIStateRestoring", "viewDidLoad"]
 - ["PSo16UIStateRestoring", "viewWillAppear"]
 - ["PSo16UIStateRestoring", ""]
@@ -350,6 +400,7 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "UIAlertControllerStyle"]
 - !private ["PSo18UITraitEnvironment", "addAction"]
 - ["PSo18UITraitEnvironment", "dataManager"]
+- !private ["PSo18UITraitEnvironment", "enabled"]
 - ["PSo18UITraitEnvironment", "init"]
 - !private ["PSo18UITraitEnvironment", "navigationController"]
 - !private ["PSo18UITraitEnvironment", "popToRootViewControllerAnimated"]
@@ -358,9 +409,11 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "presentViewController"]
 - ["PSo18UITraitEnvironment", "result"]
 - ["PSo18UITraitEnvironment", "showAlertController"]
+- ["PSo18UITraitEnvironment", "viewDidAppear"]
 - ["PSo18UITraitEnvironment", "viewDidLoad"]
 - ["PSo18UITraitEnvironment", "viewWillAppear"]
 - ["PSo18UITraitEnvironment", ""]
+- !private ["CSo6UIView", "enabled"]
 - ["CSo16UIViewController", "AnyObject"]
 - ["CSo16UIViewController", "Bool"]
 - ["CSo16UIViewController", "DataManager"]
@@ -380,15 +433,21 @@ depends-member:
 - !private ["CSo16UIViewController", "presentViewController"]
 - ["CSo16UIViewController", "result"]
 - ["CSo16UIViewController", "showAlertController"]
+- ["CSo16UIViewController", "viewDidAppear"]
 - ["CSo16UIViewController", "viewDidLoad"]
 - ["CSo16UIViewController", "viewWillAppear"]
 - ["CSo16UIViewController", ""]
+- !private ["C10Starscream9WebSocket", "onText"]
 - !private ["P10Starscream17WebSocketDelegate", "drinkOrder"]
+- !private ["P10Starscream17WebSocketDelegate", "parseResponseDataFromServer"]
 - !private ["P10Starscream17WebSocketDelegate", "requestDataFromServer"]
+- !private ["P10Starscream17WebSocketDelegate", "socket"]
+- !private ["P10Starscream17WebSocketDelegate", "status"]
 - !private ["Ps21_ObjectiveCBridgeable", "Key"]
 - !private ["Ps21_ObjectiveCBridgeable", "Value"]
 - !private ["Ps12_Reflectable", "Key"]
 - !private ["Ps12_Reflectable", "Value"]
+- !private ["Ps12_Reflectable", "enabled"]
 depends-nominal:
 - "Ps9AnyObject"
 - "Ps11CVarArgType"
@@ -406,23 +465,32 @@ depends-nominal:
 - "PSo26NSExtensionRequestHandling"
 - "CSo8NSObject"
 - "PSo16NSObjectProtocol"
+- !private "PSo16NSStreamDelegate"
 - !private "Sq"
 - "C6barbot18PourViewController"
 - !private "Ps16RawRepresentable"
 - !private "Ps12SequenceType"
 - !private "SS"
+- !private "PSo29UIAccessibilityIdentification"
 - !private "CSo13UIAlertAction"
 - !private "OSC18UIAlertActionStyle"
 - !private "CSo17UIAlertController"
 - !private "OSC22UIAlertControllerStyle"
+- !private "PSo12UIAppearance"
 - "PSo21UIAppearanceContainer"
+- !private "CSo8UIButton"
 - "PSo18UIContentContainer"
+- !private "CSo9UIControl"
+- !private "PSo17UICoordinateSpace"
+- !private "PSo13UIDynamicItem"
 - "PSo18UIFocusEnvironment"
 - !private "CSo22UINavigationController"
 - "CSo11UIResponder"
 - "PSo16UIStateRestoring"
 - "PSo18UITraitEnvironment"
+- !private "CSo6UIView"
 - "CSo16UIViewController"
+- !private "C10Starscream9WebSocket"
 - !private "P10Starscream17WebSocketDelegate"
 - !private "Ps21_ObjectiveCBridgeable"
 - !private "Ps12_Reflectable"
@@ -445,4 +513,4 @@ depends-external:
 - "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Intermediates/ArchiveIntermediates/barbot/BuildProductsPath/Release-iphoneos/Starscream/Starscream.framework/Headers/Starscream-umbrella.h"
 - "/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Intermediates/ArchiveIntermediates/barbot/BuildProductsPath/Release-iphoneos/Starscream/Starscream.framework/Modules/module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreData.swiftmodule"
-interface-hash: "b298883183dab7e2af6413589271e5a5"
+interface-hash: "6026f745cfad0e7e18a30287c5aa8bbe"

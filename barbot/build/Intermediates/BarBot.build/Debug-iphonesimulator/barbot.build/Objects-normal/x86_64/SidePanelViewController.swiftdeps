@@ -16,29 +16,29 @@ provides-member:
 - ["VVC6barbot23SidePanelViewController9TableView15CellIdentifiers", ""]
 - ["C6barbot11SettingCell", ""]
 provides-dynamic-lookup:
+- "numberOfSectionsInTableView"
 - "settingButton"
 - "tableView"
 - "tableView"
 - "tableView"
 - "tableView"
-- "numberOfSectionsInTableView"
 - "viewDidLoad"
 depends-top-level:
 - "UIViewController"
-- "UIButton"
-- "Setting"
-- "SettingCell"
-- "Int"
-- "UITableView"
-- "Array"
-- "SidePanelViewControllerDelegate"
-- "UITableViewDataSource"
-- "StringLiteralType"
-- "SidePanelViewController"
-- "NSIndexPath"
 - "UITableViewDelegate"
-- "UITableViewCell"
+- "UIButton"
+- "NSIndexPath"
+- "UITableView"
+- "SidePanelViewControllerDelegate"
+- "Setting"
+- "UITableViewDataSource"
 - !private "UIControlState"
+- "StringLiteralType"
+- "Array"
+- "UITableViewCell"
+- "SettingCell"
+- "SidePanelViewController"
+- "Int"
 depends-member:
 - !private ["Ps9AnyObject", "TableView"]
 - !private ["Ps9AnyObject", "UIControlState"]

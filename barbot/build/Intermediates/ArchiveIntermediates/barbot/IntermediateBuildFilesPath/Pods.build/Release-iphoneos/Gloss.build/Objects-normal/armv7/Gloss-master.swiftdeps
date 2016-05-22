@@ -1,6 +1,6 @@
 version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
 options: "663878327905eb9050febe1d1f4e57fe"
-build_time: [516942178, 638451000]
+build_time: [517194562, 321480000]
 inputs:
   "/Users/Naveen/Documents/barbot/barbotios/barbot/Pods/Gloss/Sources/Decoder.swift": [9223372036854775807, 0]
   "/Users/Naveen/Documents/barbot/barbotios/barbot/Pods/Gloss/Sources/Encoder.swift": [9223372036854775807, 0]

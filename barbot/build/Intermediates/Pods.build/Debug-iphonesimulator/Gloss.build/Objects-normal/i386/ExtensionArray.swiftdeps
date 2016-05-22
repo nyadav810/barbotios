@@ -7,9 +7,9 @@ provides-member:
 - ["Sa", "toJSONArray"]
 provides-dynamic-lookup:
 depends-top-level:
-- "Encodable"
 - "Decodable"
 - "Array"
+- "Encodable"
 - "JSON"
 depends-member:
 - ["Sa", "Decodable"]

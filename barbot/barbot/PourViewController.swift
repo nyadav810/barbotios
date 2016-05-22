@@ -20,7 +20,14 @@ class PourViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        
+        self.pourButton.enabled = self.dataManager.status
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.dataManager.socket.onText = { (text: String) in
+            self.dataManager.parseResponseDataFromServer(text)
+            self.pourButton.enabled = self.dataManager.status
+        }
     }
     
     @IBAction func pourDrink(sender: AnyObject) {

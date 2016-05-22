@@ -8,9 +8,9 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - "JSON"
+- "Decodable"
 - "Encodable"
 - "Array"
-- "Decodable"
 depends-member:
 - ["Sa", "Decodable"]
 - ["Sa", "Element"]

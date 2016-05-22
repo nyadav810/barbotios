@@ -7,11 +7,11 @@ provides-member:
 - ["V6barbot5Drink", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "Drink"
-- !private "StringLiteralType"
 - "String"
-- "Decodable"
 - !private "<~~"
+- "Decodable"
+- !private "StringLiteralType"
+- "Drink"
 - "JSON"
 depends-member:
 - !private ["P5Gloss9Decodable", "imageURLString"]

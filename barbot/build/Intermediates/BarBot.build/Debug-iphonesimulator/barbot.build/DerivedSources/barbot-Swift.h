@@ -230,6 +230,7 @@ SWIFT_CLASS("_TtC6barbot18PourViewController")
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified pourButton;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidAppear:(BOOL)animated;
 - (IBAction)pourDrink:(id _Nonnull)sender;
 - (void)showAlertController;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;

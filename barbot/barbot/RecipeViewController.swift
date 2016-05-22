@@ -100,6 +100,10 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }.resume()
             }
         }
+        
+        if self.recipe.custom {
+            self.orderButton.enabled = false
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -153,21 +157,20 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         if recipe.custom {
-            self.dataManager.requestDataFromServer("create_custom_drink", args: recipe.toJSON()!)
-            
             // respond to create_custom_drink
             self.dataManager.socket.onText = {(text: String) in
                 
-                // respond to order_drink
+//                // respond to order_drink
                 self.dataManager.socket.onText = { (text: String) in
                     self.dataManager.parseResponseDataFromServer(text)
                     self.dataManager.socket.onText = nil                // set nil to avoid loop
                 }
                 self.dataManager.parseResponseDataFromServer(text)
                 self.recipe.id = self.dataManager.recipeId
-                self.dataManager.requestDataFromServer("order_drink", args: ["barbot_id": self.dataManager.barbotId, "recipe_id": self.dataManager.recipeId])
+                self.dataManager.requestDataFromServer("order_drink", args: ["barbot_id": self.dataManager.barbotId, "recipe_id": self.recipe.id])
             }
             
+            self.dataManager.requestDataFromServer("create_custom_drink", args: recipe.toJSON()!)
         } else {
             // respond to order_drink
             self.dataManager.socket.onText = { (text: String) in
@@ -274,7 +277,9 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.tableView.endUpdates()
             }
             self.hideAddNewIngredientRow()
-            self.orderButton.enabled = true
+            if !self.recipe.steps.isEmpty {
+                self.orderButton.enabled = true
+            }
         }
         super.setEditing(editing, animated: animated)
         self.tableView.setEditing(editing, animated: animated)

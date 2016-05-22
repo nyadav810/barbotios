@@ -22,7 +22,7 @@ struct Recipe: Glossy {
         self.name = name
         self.id = ""
         self.steps = []
-        self.imageURLString = "/custom.png"
+        self.imageURLString = "http://192.168.1.41/barbot/public/img/recipe_images/custom.png"
         self.custom = custom
     }
     
@@ -48,7 +48,8 @@ struct Recipe: Glossy {
     func toJSON() -> JSON? {
         return jsonify([
             "recipe.name" ~~> self.name,
-            "recipe.steps" ~~> self.steps
+            "recipe.steps" ~~> self.steps,
+            "recipe.img" ~~> self.imageURLString
         ])
     }
     

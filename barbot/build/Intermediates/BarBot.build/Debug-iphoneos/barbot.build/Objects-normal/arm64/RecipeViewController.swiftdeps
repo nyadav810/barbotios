@@ -7,121 +7,121 @@ provides-nominal:
 provides-member:
 - ["C6barbot20RecipeViewController", ""]
 provides-dynamic-lookup:
-- "sizeSegmentedControl"
-- "uniqueQuantity"
-- "viewDidLoad"
-- "tableView"
-- "tableView"
-- "tableView"
-- "tableView"
-- "tableView"
-- "tableView"
-- "tableView"
-- "tableView"
-- "tableView"
-- "stepCell"
-- "addIngredientPickerIsShown"
-- "configureStepCell"
-- "shouldPerformSegueWithIdentifier"
-- "viewWillDisappear"
-- "setEditing"
-- "calculateIndexPathForNewPicker"
-- "configureDisplayStringForCell"
-- "imageView"
-- "titleLabel"
-- "quantityArray"
-- "orderDrink"
-- "barbotBlue"
-- "orderButton"
-- "sizeSegmentedControlChanged"
-- "configureView"
-- "numberOfComponentsInPickerView"
-- "configureAddIngredientPickerCell"
-- "pickerView"
-- "pickerView"
-- "pickerView"
-- "hideExistingPicker"
-- "viewWillAppear"
-- "addIngredientPickerCell"
-- "iceSegmentedControl"
-- "showNewPickerAtIndex"
 - "montserratFont"
+- "addIngredientPickerCell"
 - "showAddNewIngredientRow"
-- "rowIsAddIngredientCell"
-- "showAlertController"
 - "prepareForSegue"
+- "iceSegmentedControl"
+- "rowIsAddIngredientCell"
+- "tableView"
+- "tableView"
+- "tableView"
+- "tableView"
+- "tableView"
+- "tableView"
+- "tableView"
+- "tableView"
+- "tableView"
 - "hideAddNewIngredientRow"
-- "iceSegmentedControlChanged"
 - "addIngredientPickerIndexPath"
+- "viewDidLoad"
+- "iceSegmentedControlChanged"
+- "titleLabel"
+- "orderButton"
+- "viewWillAppear"
+- "calculateIndexPathForNewPicker"
+- "configureStepCell"
+- "hideExistingPicker"
+- "quantityArray"
+- "setEditing"
+- "showAlertController"
+- "sizeSegmentedControlChanged"
+- "configureDisplayStringForCell"
+- "shouldPerformSegueWithIdentifier"
+- "imageView"
+- "barbotBlue"
+- "numberOfComponentsInPickerView"
+- "addIngredientPickerIsShown"
+- "sizeSegmentedControl"
+- "configureView"
+- "configureAddIngredientPickerCell"
+- "viewWillDisappear"
+- "showNewPickerAtIndex"
+- "pickerView"
+- "pickerView"
+- "pickerView"
+- "uniqueQuantity"
+- "stepCell"
+- "orderDrink"
 depends-top-level:
-- !private "NSURLSession"
-- "NSIndexPath"
-- "UIStoryboardSegue"
-- !private "UIAlertControllerStyle"
-- !private "Step"
-- "UIPickerViewDataSource"
-- "CGFloat"
-- "UITableViewDataSource"
-- "UIPickerViewDelegate"
-- "RecipeViewController"
-- !private "!"
-- "UIColor"
-- !private "Array"
-- "Double"
-- "UITableViewCellEditingStyle"
-- !private "+"
-- "StringLiteralType"
-- !private ">"
-- "UITableViewCell"
-- "UIFont"
-- "UIPickerView"
-- !private "NSIndexSet"
-- "/"
-- !private "Void"
-- "UITableViewDelegate"
-- "Recipe"
-- "Int"
-- !private "UIAlertController"
-- !private "NSHTTPURLResponse"
-- !private "&&"
-- !private "-"
-- "UISegmentedControl"
-- "UINavigationItem"
-- "UITableView"
-- !private "NSURL"
-- "UIButton"
-- !private "..."
 - "DataManager"
+- "UITableViewCell"
+- "Int"
+- "UITableViewDataSource"
+- !private "UIAlertController"
+- !private "Array"
+- !private "Ingredient"
+- "UIStoryboardSegue"
+- "RecipeViewController"
+- "StringLiteralType"
+- "AnyObject"
+- !private "print"
+- !private "NSHTTPURLResponse"
+- "String"
+- "UIImageView"
+- "Recipe"
+- "Bool"
+- !private "..."
+- !private "NSIndexSet"
+- !private "NSURLSession"
+- "UITableView"
+- !private "UIEdgeInsetsMake"
+- !private "UnicodeScalarType"
+- "IngredientList"
+- !private "UIBarButtonItem"
+- "UINavigationItem"
+- !private "NSURLRequest"
+- !private "UIBarButtonItemStyle"
+- !private "<"
+- !private "UIControlState"
+- "UIButton"
+- "UISegmentedControl"
+- "kAddIngredientPickerTag"
+- !private "Step"
+- "/"
+- !private "NSForegroundColorAttributeName"
+- !private "!"
+- !private "Dictionary"
+- !private "*"
 - !private "~="
 - !private "=="
-- !private "UIBarButtonItem"
-- !private "UIControlState"
-- !private "UnicodeScalarType"
-- !private "dispatch_async"
-- "String"
-- "kAddIngredientPickerTag"
-- !private "+="
-- !private "print"
-- !private "dispatch_get_main_queue"
-- !private "Ingredient"
-- !private "*"
-- !private "NSForegroundColorAttributeName"
-- !private "||"
-- !private "<"
-- !private "UIBarButtonItemStyle"
+- "Double"
 - !private "UIImage"
-- "AnyObject"
-- !private "PourViewController"
-- !private "Dictionary"
+- !private "+"
+- "UIColor"
+- "NSIndexPath"
+- "UITableViewCellEditingStyle"
+- !private ">"
 - !private "UIAlertAction"
-- "Bool"
-- "UIImageView"
-- !private "NSURLRequest"
-- "BooleanLiteralType"
-- !private "UIEdgeInsetsMake"
-- "UIViewController"
-- "IngredientList"
+- !private "+="
+- !private "||"
+- "UIPickerView"
+- "UIFont"
+- !private "Void"
 - !private "!="
+- "UITableViewDelegate"
+- !private "PourViewController"
+- "UIPickerViewDelegate"
+- "UIPickerViewDataSource"
+- "CGFloat"
+- !private "-"
+- !private "dispatch_async"
+- "UIViewController"
+- !private "&&"
+- !private "NSURL"
+- "BooleanLiteralType"
+- !private "UIAlertControllerStyle"
+- !private "dispatch_get_main_queue"
 depends-member:
 - !private ["Ps16AbsoluteValuable", "init"]
 - !private ["Ps9AnyObject", "CGColor"]
@@ -274,6 +274,7 @@ depends-member:
 - !private ["Sa", "first"]
 - !private ["Sa", "indexOf"]
 - !private ["Sa", "insert"]
+- !private ["Sa", "isEmpty"]
 - !private ["Sa", "removeAtIndex"]
 - !private ["Sa", "removeFirst"]
 - !private ["Sa", "subscript"]
@@ -289,6 +290,7 @@ depends-member:
 - !private ["Ps23ArrayLiteralConvertible", "first"]
 - !private ["Ps23ArrayLiteralConvertible", "indexOf"]
 - !private ["Ps23ArrayLiteralConvertible", "insert"]
+- !private ["Ps23ArrayLiteralConvertible", "isEmpty"]
 - !private ["Ps23ArrayLiteralConvertible", "removeAtIndex"]
 - !private ["Ps23ArrayLiteralConvertible", "removeFirst"]
 - !private ["Ps23ArrayLiteralConvertible", "subscript"]
@@ -467,6 +469,7 @@ depends-member:
 - !private ["Ps14CollectionType", "first"]
 - !private ["Ps14CollectionType", "indexOf"]
 - !private ["Ps14CollectionType", "insert"]
+- !private ["Ps14CollectionType", "isEmpty"]
 - !private ["Ps14CollectionType", "removeAtIndex"]
 - !private ["Ps14CollectionType", "removeFirst"]
 - !private ["Ps14CollectionType", "subscript"]
@@ -558,6 +561,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "insert"]
 - !private ["Ps28CustomDebugStringConvertible", "insertRowsAtIndexPaths"]
+- !private ["Ps28CustomDebugStringConvertible", "isEmpty"]
 - !private ["Ps28CustomDebugStringConvertible", "kAddIngredientPickerTag"]
 - !private ["Ps28CustomDebugStringConvertible", "layer"]
 - ["Ps28CustomDebugStringConvertible", "montserratFont"]
@@ -712,6 +716,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "init"]
 - !private ["Ps23CustomStringConvertible", "insert"]
 - !private ["Ps23CustomStringConvertible", "insertRowsAtIndexPaths"]
+- !private ["Ps23CustomStringConvertible", "isEmpty"]
 - !private ["Ps23CustomStringConvertible", "kAddIngredientPickerTag"]
 - !private ["Ps23CustomStringConvertible", "layer"]
 - ["Ps23CustomStringConvertible", "montserratFont"]
@@ -1163,6 +1168,7 @@ depends-member:
 - !private ["Ps9Indexable", "first"]
 - !private ["Ps9Indexable", "indexOf"]
 - !private ["Ps9Indexable", "insert"]
+- !private ["Ps9Indexable", "isEmpty"]
 - !private ["Ps9Indexable", "removeAtIndex"]
 - !private ["Ps9Indexable", "removeFirst"]
 - !private ["Ps9Indexable", "subscript"]
@@ -1211,6 +1217,7 @@ depends-member:
 - !private ["Ps21MutableCollectionType", "first"]
 - !private ["Ps21MutableCollectionType", "indexOf"]
 - !private ["Ps21MutableCollectionType", "insert"]
+- !private ["Ps21MutableCollectionType", "isEmpty"]
 - !private ["Ps21MutableCollectionType", "removeAtIndex"]
 - !private ["Ps21MutableCollectionType", "removeFirst"]
 - !private ["Ps21MutableCollectionType", "subscript"]
@@ -1225,6 +1232,7 @@ depends-member:
 - !private ["Ps16MutableIndexable", "first"]
 - !private ["Ps16MutableIndexable", "indexOf"]
 - !private ["Ps16MutableIndexable", "insert"]
+- !private ["Ps16MutableIndexable", "isEmpty"]
 - !private ["Ps16MutableIndexable", "removeAtIndex"]
 - !private ["Ps16MutableIndexable", "removeFirst"]
 - !private ["Ps16MutableIndexable", "subscript"]
@@ -1239,6 +1247,7 @@ depends-member:
 - !private ["Ps16MutableSliceable", "first"]
 - !private ["Ps16MutableSliceable", "indexOf"]
 - !private ["Ps16MutableSliceable", "insert"]
+- !private ["Ps16MutableSliceable", "isEmpty"]
 - !private ["Ps16MutableSliceable", "removeAtIndex"]
 - !private ["Ps16MutableSliceable", "removeFirst"]
 - !private ["Ps16MutableSliceable", "subscript"]
@@ -1801,6 +1810,7 @@ depends-member:
 - !private ["Ps30RangeReplaceableCollectionType", "first"]
 - !private ["Ps30RangeReplaceableCollectionType", "indexOf"]
 - !private ["Ps30RangeReplaceableCollectionType", "insert"]
+- !private ["Ps30RangeReplaceableCollectionType", "isEmpty"]
 - !private ["Ps30RangeReplaceableCollectionType", "removeAtIndex"]
 - !private ["Ps30RangeReplaceableCollectionType", "removeFirst"]
 - !private ["Ps30RangeReplaceableCollectionType", "subscript"]
@@ -1945,6 +1955,7 @@ depends-member:
 - !private ["Ps12SequenceType", "indexOf"]
 - !private ["Ps12SequenceType", "init"]
 - !private ["Ps12SequenceType", "insert"]
+- !private ["Ps12SequenceType", "isEmpty"]
 - !private ["Ps12SequenceType", "removeAtIndex"]
 - !private ["Ps12SequenceType", "removeFirst"]
 - !private ["Ps12SequenceType", "subscript"]
@@ -3402,6 +3413,7 @@ depends-member:
 - !private ["Ps10_ArrayType", "first"]
 - !private ["Ps10_ArrayType", "indexOf"]
 - !private ["Ps10_ArrayType", "insert"]
+- !private ["Ps10_ArrayType", "isEmpty"]
 - !private ["Ps10_ArrayType", "removeAtIndex"]
 - !private ["Ps10_ArrayType", "removeFirst"]
 - !private ["Ps10_ArrayType", "subscript"]
@@ -3435,6 +3447,7 @@ depends-member:
 - !private ["Ps24_DestructorSafeContainer", "first"]
 - !private ["Ps24_DestructorSafeContainer", "indexOf"]
 - !private ["Ps24_DestructorSafeContainer", "insert"]
+- !private ["Ps24_DestructorSafeContainer", "isEmpty"]
 - !private ["Ps24_DestructorSafeContainer", "removeAtIndex"]
 - !private ["Ps24_DestructorSafeContainer", "removeFirst"]
 - !private ["Ps24_DestructorSafeContainer", "subscript"]
@@ -3472,6 +3485,7 @@ depends-member:
 - !private ["Ps21_ObjectiveCBridgeable", "indexOf"]
 - !private ["Ps21_ObjectiveCBridgeable", "init"]
 - !private ["Ps21_ObjectiveCBridgeable", "insert"]
+- !private ["Ps21_ObjectiveCBridgeable", "isEmpty"]
 - !private ["Ps21_ObjectiveCBridgeable", "removeAtIndex"]
 - !private ["Ps21_ObjectiveCBridgeable", "removeFirst"]
 - !private ["Ps21_ObjectiveCBridgeable", "subscript"]
@@ -3517,6 +3531,7 @@ depends-member:
 - !private ["Ps12_Reflectable", "init"]
 - !private ["Ps12_Reflectable", "insert"]
 - !private ["Ps12_Reflectable", "insertRowsAtIndexPaths"]
+- !private ["Ps12_Reflectable", "isEmpty"]
 - !private ["Ps12_Reflectable", "layer"]
 - !private ["Ps12_Reflectable", "reloadData"]
 - !private ["Ps12_Reflectable", "reloadSections"]
