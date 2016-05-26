@@ -1,14 +1,19 @@
 # Barbot iOS 9.0 Mobile Application
+
 ## Drink Flow
-### Open WebSocket with the Web Server
+
+### 1. Open WebSocket with the Web Server
   - Send query to retrieve all recipes and ingredients for barbot with barbotID
-### MenuCollectionViewController (TODO)
+
+### 2. MenuCollectionViewController (TODO)
   - Displays drinks with images in a grid-like view
-### MenuTableViewController
+
+### 3. MenuTableViewController
   - Display all recipes for barbot in table view
   - Display search bar for recipes by name - hidden under navigation bar
   - Add new custom drink button - prompts user to enter name
-### RecipeViewController
+
+### 4. RecipeViewController
   - User selects drink
     1. Send query to retrieve recipe for drink with recipeID
     2. Display Image
@@ -21,9 +26,11 @@
   - User places drink order
     1. Send command with recipeID or custom recipe JSON to server over WebSocket
     2. Receive reply with drink_order uid
-### ConfirmOrderViewController (TODO)
+
+### 5. ConfirmOrderViewController (TODO)
   - Present order details to user, including price
-### PourViewController
+
+### 6. PourViewController
   - When Web Server sends message that barbot is to ready to pour, pour option becomes available
   - To pour, send drink_order uid
   - If not available, prompts user to move to the barbot (show distance with LRB) (TODO)
