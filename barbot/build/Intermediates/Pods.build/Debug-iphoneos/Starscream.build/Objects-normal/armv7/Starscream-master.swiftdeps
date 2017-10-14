@@ -1,6 +1,0 @@
-version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
-options: "7a75573e5a0c3eb848b8b62657634473"
-build_time: [517194361, 48524000]
-inputs:
-  "/Users/Naveen/Documents/barbot/barbotios/barbot/Pods/Starscream/Source/SSLSecurity.swift": [516934144, 0]
-  "/Users/Naveen/Documents/barbot/barbotios/barbot/Pods/Starscream/Source/WebSocket.swift": [516934144, 0]

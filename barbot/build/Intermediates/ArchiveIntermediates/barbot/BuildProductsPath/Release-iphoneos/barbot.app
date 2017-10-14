@@ -1,1 +1,0 @@
-/Users/Naveen/Documents/barbot/barbotios/barbot/Build/Intermediates/ArchiveIntermediates/barbot/InstallationBuildProductsLocation/Applications/barbot.app
