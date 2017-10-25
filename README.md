@@ -1,4 +1,7 @@
-# Barbot iOS 9.0 Mobile Application
+# BarBot Mobile Application
+
+![Menu](https://raw.githubusercontent.com/nyadav810/barbotios/master/barbot/screenshots/Menu.png)
+![Recipe Detail](https://raw.githubusercontent.com/nyadav810/barbotios/master/barbot/screenshots/RecipeDetail.png)
 
 ## Drink Flow
 
