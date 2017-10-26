@@ -1,0 +1,15 @@
+PODS:
+  - Gloss (2.0.0-beta.1)
+  - Starscream (3.0.2)
+
+DEPENDENCIES:
+  - Gloss (= 2.0.0-beta.1)
+  - Starscream (~> 3.0.2)
+
+SPEC CHECKSUMS:
+  Gloss: 3224f4d6e345138475216855a32e880d9e03e6d2
+  Starscream: b512c62f6706421221b5ceb2ba01a9f58aca5bea
+
+PODFILE CHECKSUM: e498d7e682ed1583f61e68ced3702a89d4793704
+
+COCOAPODS: 1.2.1

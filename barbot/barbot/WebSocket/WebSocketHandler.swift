@@ -14,11 +14,9 @@ class WebSocketHandler: WebSocketDelegate {
     var jsonSerializer: GlossJSONSerializer
     
     init(url: String) {
-        //let url: String = "ws://\(self.ipAddress):\(self.portNumber)/ws?username=\(self.user.name)&password=\(self.user.password)"
+        jsonSerializer = GlossJSONSerializer.init()
         socket = WebSocket(url: URL(string: url)!)
         socket.delegate = self
-        
-        jsonSerializer = GlossJSONSerializer.init()
     }
     
     func openConnection() -> Bool {

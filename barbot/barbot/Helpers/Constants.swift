@@ -9,7 +9,9 @@
 import Foundation
 
 struct Config {
-    
+    static let ipAddress = "10.0.0.5"
+    static let portNumber = "8080"
+    static let user: User = User.init(userId: "4aeefa", name: "panda", email: "panda@panda.com", password: "password")
 }
 
 struct WebSockets {

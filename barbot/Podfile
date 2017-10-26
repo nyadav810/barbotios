@@ -6,8 +6,6 @@ target 'barbot' do
   use_frameworks!
 
   # Pods for barbot
-  target 'barbot' do
-	pod 'Gloss', '2.0.0-beta.1'
-    pod 'Starscream', '~> 3.0.2'
-  end
+  pod 'Gloss', '2.0.0-beta.1'
+  pod 'Starscream', '~> 3.0.2'
 end

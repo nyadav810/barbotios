@@ -9,12 +9,10 @@
 /* Begin PBXBuildFile section */
 		01004BB31CECF82500AE7472 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01004BB11CECF82500AE7472 /* Montserrat-Bold.ttf */; };
 		01004BB41CECF82500AE7472 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01004BB21CECF82500AE7472 /* Montserrat-Regular.ttf */; };
-		011C9B391CD435D7003B9B46 /* MenuCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011C9B381CD435D7003B9B46 /* MenuCollectionViewController.swift */; };
 		011E3EA51C7A876F00A34C5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011E3EA41C7A876F00A34C5F /* AppDelegate.swift */; };
 		011E3EAD1C7A876F00A34C5F /* barbot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 011E3EAB1C7A876F00A34C5F /* barbot.xcdatamodeld */; };
 		011E3EAF1C7A876F00A34C5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 011E3EAE1C7A876F00A34C5F /* Assets.xcassets */; };
 		011E3EB21C7A876F00A34C5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 011E3EB01C7A876F00A34C5F /* LaunchScreen.storyboard */; };
-		013854DA1C7D50870070E112 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013854D91C7D50870070E112 /* MenuTableViewController.swift */; };
 		016F982F1F927DCB00DEBBC8 /* ContainerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016F98241F927DCB00DEBBC8 /* ContainerList.swift */; };
 		016F98301F927DCB00DEBBC8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016F98251F927DCB00DEBBC8 /* User.swift */; };
 		016F98311F927DCB00DEBBC8 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016F98261F927DCB00DEBBC8 /* Container.swift */; };
@@ -26,25 +24,23 @@
 		016F98371F927DCB00DEBBC8 /* RecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016F982C1F927DCB00DEBBC8 /* RecipeList.swift */; };
 		016F98381F927DCB00DEBBC8 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016F982D1F927DCB00DEBBC8 /* CategoryList.swift */; };
 		016F98391F927DCB00DEBBC8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016F982E1F927DCB00DEBBC8 /* Category.swift */; };
-		017203361CA76D6A002C3168 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017203351CA76D6A002C3168 /* RecipeViewController.swift */; };
-		017D28C41CC31DA800EDBD3D /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D28C31CC31DA800EDBD3D /* ContainerViewController.swift */; };
-		017D28C61CC31F2900EDBD3D /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017D28C51CC31F2900EDBD3D /* SidePanelViewController.swift */; };
-		018BAFC71CA3BE3B008AA729 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018BAFC61CA3BE3B008AA729 /* DataManager.swift */; };
-		01D3609F1CBB25FB009AA383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01D3609E1CBB25FB009AA383 /* Main.storyboard */; };
-		01DA902D1CB0FD6B007A1B02 /* PourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA902C1CB0FD6B007A1B02 /* PourViewController.swift */; };
+		016F983B1F9282AC00DEBBC8 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016F983A1F9282AC00DEBBC8 /* Setting.swift */; };
+		016F983E1F92854700DEBBC8 /* WebSocketHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016F983D1F92854700DEBBC8 /* WebSocketHandler.swift */; };
+		016F98411F9285BA00DEBBC8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016F98401F9285BA00DEBBC8 /* Constants.swift */; };
+		016F98431F9350A600DEBBC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 016F98421F9350A600DEBBC8 /* Main.storyboard */; };
+		016F98451F93514900DEBBC8 /* MenuCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016F98441F93514900DEBBC8 /* MenuCollectionViewController.swift */; };
+		6A140983D0B6E427952CFE0A /* Pods_barbot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F7BB161577F4E162F01E2D9 /* Pods_barbot.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		01004BB11CECF82500AE7472 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "Res/Fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		01004BB21CECF82500AE7472 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "Res/Fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
-		011C9B381CD435D7003B9B46 /* MenuCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewController.swift; sourceTree = "<group>"; };
 		011E3EA11C7A876F00A34C5F /* barbot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = barbot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		011E3EA41C7A876F00A34C5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		011E3EAC1C7A876F00A34C5F /* barbot.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = barbot.xcdatamodel; sourceTree = "<group>"; };
 		011E3EAE1C7A876F00A34C5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		011E3EB11C7A876F00A34C5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		011E3EB31C7A876F00A34C5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		013854D91C7D50870070E112 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		016F98241F927DCB00DEBBC8 /* ContainerList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerList.swift; path = Model/ContainerList.swift; sourceTree = "<group>"; };
 		016F98251F927DCB00DEBBC8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
 		016F98261F927DCB00DEBBC8 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Container.swift; path = Model/Container.swift; sourceTree = "<group>"; };
@@ -56,12 +52,14 @@
 		016F982C1F927DCB00DEBBC8 /* RecipeList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipeList.swift; path = Model/RecipeList.swift; sourceTree = "<group>"; };
 		016F982D1F927DCB00DEBBC8 /* CategoryList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryList.swift; path = Model/CategoryList.swift; sourceTree = "<group>"; };
 		016F982E1F927DCB00DEBBC8 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = Model/Category.swift; sourceTree = "<group>"; };
-		017203351CA76D6A002C3168 /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
-		017D28C31CC31DA800EDBD3D /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
-		017D28C51CC31F2900EDBD3D /* SidePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidePanelViewController.swift; sourceTree = "<group>"; };
-		018BAFC61CA3BE3B008AA729 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		01D3609E1CBB25FB009AA383 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		01DA902C1CB0FD6B007A1B02 /* PourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PourViewController.swift; sourceTree = "<group>"; };
+		016F983A1F9282AC00DEBBC8 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Setting.swift; path = Model/Setting.swift; sourceTree = "<group>"; };
+		016F983D1F92854700DEBBC8 /* WebSocketHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebSocketHandler.swift; path = WebSocket/WebSocketHandler.swift; sourceTree = "<group>"; };
+		016F98401F9285BA00DEBBC8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Helpers/Constants.swift; sourceTree = "<group>"; };
+		016F98421F9350A600DEBBC8 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main.storyboard; path = View/Main.storyboard; sourceTree = "<group>"; };
+		016F98441F93514900DEBBC8 /* MenuCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCollectionViewController.swift; path = Controller/MenuCollectionViewController.swift; sourceTree = "<group>"; };
+		17D6D5A9934D2C414461B1C5 /* Pods-barbot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-barbot.release.xcconfig"; path = "Pods/Target Support Files/Pods-barbot/Pods-barbot.release.xcconfig"; sourceTree = "<group>"; };
+		6F7BB161577F4E162F01E2D9 /* Pods_barbot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_barbot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		922765CFC5005D8EDC287DD0 /* Pods-barbot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-barbot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-barbot/Pods-barbot.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A140983D0B6E427952CFE0A /* Pods_barbot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +79,8 @@
 			children = (
 				011E3EA31C7A876F00A34C5F /* barbot */,
 				011E3EA21C7A876F00A34C5F /* Products */,
+				A5EA6F27CB984E655E6D5FDC /* Pods */,
+				CCB526DDA42F6431530B5F94 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,16 +96,33 @@
 			isa = PBXGroup;
 			children = (
 				011E3EA41C7A876F00A34C5F /* AppDelegate.swift */,
-				018BAFC61CA3BE3B008AA729 /* DataManager.swift */,
+				011E3EAE1C7A876F00A34C5F /* Assets.xcassets */,
 				018A07951CBA1F3D00BB063B /* Controller */,
 				018BAFBD1CA3B5C1008AA729 /* Core Data */,
+				016F983F1F9285B100DEBBC8 /* Helpers */,
+				011E3EB31C7A876F00A34C5F /* Info.plist */,
 				018A07941CBA1F0D00BB063B /* Model */,
 				019565A21CB2C8DD00F16F6C /* Res */,
 				018BAFC41CA3BD9D008AA729 /* View */,
-				011E3EAE1C7A876F00A34C5F /* Assets.xcassets */,
-				011E3EB31C7A876F00A34C5F /* Info.plist */,
+				016F983C1F92853400DEBBC8 /* WebSocket */,
 			);
 			path = barbot;
+			sourceTree = "<group>";
+		};
+		016F983C1F92853400DEBBC8 /* WebSocket */ = {
+			isa = PBXGroup;
+			children = (
+				016F983D1F92854700DEBBC8 /* WebSocketHandler.swift */,
+			);
+			name = WebSocket;
+			sourceTree = "<group>";
+		};
+		016F983F1F9285B100DEBBC8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				016F98401F9285BA00DEBBC8 /* Constants.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		018A07941CBA1F0D00BB063B /* Model */ = {
@@ -120,6 +138,7 @@
 				016F98271F927DCB00DEBBC8 /* Message.swift */,
 				016F98291F927DCB00DEBBC8 /* Recipe.swift */,
 				016F982C1F927DCB00DEBBC8 /* RecipeList.swift */,
+				016F983A1F9282AC00DEBBC8 /* Setting.swift */,
 				016F98251F927DCB00DEBBC8 /* User.swift */,
 			);
 			name = Model;
@@ -128,12 +147,7 @@
 		018A07951CBA1F3D00BB063B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				017D28C31CC31DA800EDBD3D /* ContainerViewController.swift */,
-				013854D91C7D50870070E112 /* MenuTableViewController.swift */,
-				011C9B381CD435D7003B9B46 /* MenuCollectionViewController.swift */,
-				017203351CA76D6A002C3168 /* RecipeViewController.swift */,
-				017D28C51CC31F2900EDBD3D /* SidePanelViewController.swift */,
-				01DA902C1CB0FD6B007A1B02 /* PourViewController.swift */,
+				016F98441F93514900DEBBC8 /* MenuCollectionViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -149,8 +163,8 @@
 		018BAFC41CA3BD9D008AA729 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				01D3609E1CBB25FB009AA383 /* Main.storyboard */,
 				011E3EB01C7A876F00A34C5F /* LaunchScreen.storyboard */,
+				016F98421F9350A600DEBBC8 /* Main.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -172,6 +186,23 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		A5EA6F27CB984E655E6D5FDC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				922765CFC5005D8EDC287DD0 /* Pods-barbot.debug.xcconfig */,
+				17D6D5A9934D2C414461B1C5 /* Pods-barbot.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CCB526DDA42F6431530B5F94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F7BB161577F4E162F01E2D9 /* Pods_barbot.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -179,12 +210,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 011E3EB61C7A876F00A34C5F /* Build configuration list for PBXNativeTarget "barbot" */;
 			buildPhases = (
-				BB6496AC369452B869BA6446 /* 📦 Check Pods Manifest.lock */,
+				BB6496AC369452B869BA6446 /* [CP] Check Pods Manifest.lock */,
 				011E3E9D1C7A876F00A34C5F /* Sources */,
 				011E3E9E1C7A876F00A34C5F /* Frameworks */,
 				011E3E9F1C7A876F00A34C5F /* Resources */,
-				C3F4A1C4C4EF8CDFB0377C89 /* 📦 Embed Pods Frameworks */,
-				622D40BA1F4921400E343C0D /* 📦 Copy Pods Resources */,
+				C3F4A1C4C4EF8CDFB0377C89 /* [CP] Embed Pods Frameworks */,
+				622D40BA1F4921400E343C0D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,8 +266,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				01004BB31CECF82500AE7472 /* Montserrat-Bold.ttf in Resources */,
+				016F98431F9350A600DEBBC8 /* Main.storyboard in Resources */,
 				011E3EB21C7A876F00A34C5F /* LaunchScreen.storyboard in Resources */,
-				01D3609F1CBB25FB009AA383 /* Main.storyboard in Resources */,
 				01004BB41CECF82500AE7472 /* Montserrat-Regular.ttf in Resources */,
 				011E3EAF1C7A876F00A34C5F /* Assets.xcassets in Resources */,
 			);
@@ -245,14 +276,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		622D40BA1F4921400E343C0D /* 📦 Copy Pods Resources */ = {
+		622D40BA1F4921400E343C0D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,29 +291,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-barbot/Pods-barbot-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BB6496AC369452B869BA6446 /* 📦 Check Pods Manifest.lock */ = {
+		BB6496AC369452B869BA6446 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		C3F4A1C4C4EF8CDFB0377C89 /* 📦 Embed Pods Frameworks */ = {
+		C3F4A1C4C4EF8CDFB0377C89 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,25 +328,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01DA902D1CB0FD6B007A1B02 /* PourViewController.swift in Sources */,
+				016F98411F9285BA00DEBBC8 /* Constants.swift in Sources */,
 				016F98371F927DCB00DEBBC8 /* RecipeList.swift in Sources */,
 				016F98311F927DCB00DEBBC8 /* Container.swift in Sources */,
-				017D28C41CC31DA800EDBD3D /* ContainerViewController.swift in Sources */,
-				013854DA1C7D50870070E112 /* MenuTableViewController.swift in Sources */,
 				016F98351F927DCB00DEBBC8 /* IngredientList.swift in Sources */,
-				017D28C61CC31F2900EDBD3D /* SidePanelViewController.swift in Sources */,
 				016F98361F927DCB00DEBBC8 /* Ingredient.swift in Sources */,
-				017203361CA76D6A002C3168 /* RecipeViewController.swift in Sources */,
 				016F982F1F927DCB00DEBBC8 /* ContainerList.swift in Sources */,
-				018BAFC71CA3BE3B008AA729 /* DataManager.swift in Sources */,
+				016F983B1F9282AC00DEBBC8 /* Setting.swift in Sources */,
 				016F98391F927DCB00DEBBC8 /* Category.swift in Sources */,
+				016F983E1F92854700DEBBC8 /* WebSocketHandler.swift in Sources */,
 				011E3EA51C7A876F00A34C5F /* AppDelegate.swift in Sources */,
 				016F98341F927DCB00DEBBC8 /* Recipe.swift in Sources */,
 				016F98321F927DCB00DEBBC8 /* Message.swift in Sources */,
 				011E3EAD1C7A876F00A34C5F /* barbot.xcdatamodeld in Sources */,
 				016F98381F927DCB00DEBBC8 /* CategoryList.swift in Sources */,
+				016F98451F93514900DEBBC8 /* MenuCollectionViewController.swift in Sources */,
 				016F98331F927DCB00DEBBC8 /* DrinkOrder.swift in Sources */,
-				011C9B391CD435D7003B9B46 /* MenuCollectionViewController.swift in Sources */,
 				016F98301F927DCB00DEBBC8 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,6 +469,7 @@
 		};
 		011E3EB71C7A876F00A34C5F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 922765CFC5005D8EDC287DD0 /* Pods-barbot.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -471,6 +500,7 @@
 		};
 		011E3EB81C7A876F00A34C5F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17D6D5A9934D2C414461B1C5 /* Pods-barbot.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
